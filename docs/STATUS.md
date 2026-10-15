@@ -1,5 +1,15 @@
 # Active status
 
+## Actual240 repairs launch; input acceptance remains the next gate — 2026-10-15
+
+Runtime240 passes fresh source review and root admission on the unchanged Integration235 tuple. It omits the rejected empty DLC CLI option, uses the verified empty default, and revalidates the authentic Runtime236 neutral evidence. Actual title33956 passes loaded-module admission, logs guarded effective60, warning coalescing and positive actual EDRAM clamps. Native captures validate Press Start and autosave. Title and observer exit0 with ordinary close, no watchdog, no survivor and no cleanup errors.
+
+The observer stops safely in SETUP at `NO_VALIDATED_UI_TRANSITION_AFTER_A`. Start is recorded as native neutral/Start/neutral; A was requested and one packet successfully published, but no native A change is logged. The A packet had a40ms expiry and no successful nonneutral refresh before release. Poll alignment, expiry or another admission condition remain hypotheses; game-side rejection is not established. Prepare a separately reviewed, visually grounded longer UI-only A hold with fresh short expiries, immediate neutral release and no automatic retry. No gameplay or replay sequence was reached. Independent actual review is PARTIAL under ignored `runtime240-preparation/independent-actual-review/`; the diagnostic startup/menu CSV is not gameplay FPS evidence.
+
+Closed-run storage housekeeping preserves all24 capture filenames and content hashes, deduplicates them to7 payloads, and compresses unique-payload storage from19,353,712 to3,223,552 bytes as measured by GetCompressedFileSizeW. Logical bytes across all capture names are66,355,584; filesystem metadata is excluded. Records are under ignored `research/housekeeping240/`.
+
+Dispatch242 source review holds the proposed single-object performance relink on three findings: bounded linker cleanup, post-input audit on failed links, and source-freeze binding in root intent. The original frozen preparation is retained; revision2 is being prepared. No linker or dispatch-counter runtime trial has run. The inspected dispatcher, rebuilt runtime TUs and reused GPU render-target code use optimized -O2 builds; no FPS gain is claimed. VSync remains off.
+
 ## GitHub bootstrap published; actual236 launch argument failure retained — 2026-10-15
 
 The private repository https://github.com/Syenar/fight-night-champion-venom is created. Branch `codex/venom-bootstrap` is the default; commit `d42874d71e434196f34796300e898f12040d09f0` contains 172 audited text files (1,303,751 bytes). Remote identity and commit were verified after push. The canonical Xbox workspace has its own Git root; the parent deprecated repository is unchanged. Research, generated title code, native binaries, captures and owned game data were excluded. Local audit records remain under ignored `research/github238-publication-audit/`.

@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-15",
+  "agent": "/root",
+  "status": "PARTIAL",
+  "card": 8,
+  "run": "probe80-bout121-60-l",
+  "source_freeze240_sha256": "DA84C02BB8A3D7087524E8C1C4DE3957DB25F449CE3A67F9BE7A2DD02FE4B3C7",
+  "source_review_sha256": "69F906667B74AE3F751592D2B5C4C5C4E80EFA4C43E58B16839742D45B17DABA",
+  "admission_sha256": "053B7E53BF077107125853DB2D5DA4C39FFC5BFD36526ED07D181C8071BFC2A3",
+  "actual_command": "Pinned Python -B -X utf8 Supervisor240.py --probe-id l --game-frame-rate 60; retained trusted execution verifies source/adoption/marker hashes and fixed PSModulePath. Full native argv in ignored probe-manifest.json.",
+  "observed": [
+    "loaded tuple admitted",
+    "Press Start",
+    "autosave",
+    "native Start state",
+    "effective60 guard and GPU diagnostics invoked",
+    "title and observer ordinary exit0"
+  ],
+  "unresolved": [
+    "A published but not logged as returned native state",
+    "no menu transition after A",
+    "gameplay",
+    "FPS improvement",
+    "replays",
+    "save/reload",
+    "in-game DLC",
+    "SBS",
+    "browser"
+  ],
+  "next": "review longer bounded UI-only A hold hypothesis on unchanged tuple; preserve40ms per-packet expiry and no automatic retry",
+  "proprietary_data": "excluded; local-only research evidence references"
+}
