@@ -1,5 +1,13 @@
 # Quality-loop progress
 
+## Manual254 and corrected link252 — 2026-10-15
+
+- User test session254 is running on235 with physical SDL and no synthetic inputs or automatic stop; fresh profile has no DLC.
+- Link252 passes fresh actual ABI review, preserving all10257 old ordinals. Candidate remains unstaged/unloaded; FPS unmeasured.
+- Source251 passes actual-continuation review; effective inherited get-up wait is60seconds, correcting249's component-only45 claim. Runtime observation pending.
+- DLC250 source passes after additive CRLF provenance correction; compile-only253 review and title-wide license caller audit continue.
+- Physical/scripted controller arbitration255 preparation continues; current game avoids the overwrite path by disabling scripts.
+
 ## Actual244 / performance245 / DLC247 — 2026-10-15
 
 - Actual244 source passed fresh review; runtime reached boxing and a visually confirmed get-up screen. Strict recognition failed at the neutral LS phase; prepare a narrow subtype while preserving neutral observation and lifecycle bounds.

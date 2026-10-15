@@ -1,5 +1,19 @@
 # Active status
 
+## Manual254 running; corrected performance DLL passes ABI review — 2026-10-15
+
+At the user's request, Manual254 launches unchanged Integration235 with normal physical SDL controllers, scripted controller/start/accept/get-up overrides disabled, no automatic close, no PPM/CSV capture and field20/EDRAM tracing off. Title25832 has a responsive game window. The user subsequently reports missing DLC; this session uses a fresh copy of the known profile/cache seed and has no DLC installed. Keep this user test session running while source work continues. Launch alone is not controller, FPS or full-game acceptance.
+
+Corrected performance relink252 returns0, reaps its direct linker and passes all226 pre/post input checks. Independent artifact review passes link/ABI only: every original10257 export name/ordinal is preserved; the sole new accessor is10258;390 title and107 GPU named imports resolve. DLL SHA `7AA0184FB95A8B5B44BD817057BA25CCCC2F9E5C18EEFFC705F75366E35DD74E`. It is not staged or loaded, and no FPS gain is claimed. [Evidence](evidence/cards/08-dispatch252-link-abi-20261015.json).
+
+Reader249 passes independent component review. Full continuation251 then discovers the actual inherited get-up wait is60seconds (205's45 plus208's15), correcting the component-only45-second description. Reader-only251 preserves that existing60-second bound, the600-second total limit and input lifecycle; fresh source review passes. No new game run has exercised it.
+
+DLC250 source review passes with an explicit additive correction binding the physical CRLF patch bytes; original freeze and patch are retained. Checked extraction/header completion and path containment remain uncompiled. Compile-only253 prepares two optimized translation units with the new helper include first, preserving203 runtime objects. Its first source review holds compiler frontend child ownership; successor revision2 adds explicit integrated frontend/assembler flags and sanitized child environment. Root metadata-only257 confirms both driver commands run in-process without creating objects. Title-wide license causality remains unsupported by the visible guest caller, while a separate package-open caller reads persisted license bits0/1. In-game DLC availability remains open.
+
+Controller255 source preparation addresses the observed arbitration defect: synthetic neutral/expired file commands currently overwrite physical SDL state. A separate candidate gives real controller activity priority and requests SDL background events before gamepad initialization while retaining overlay capture semantics. It is not built or loaded. The live manual session avoids synthetic overrides entirely; simultaneous physical/scripted control remains unverified.
+
+Closed-run244 capture compression retains138 paths and matching pre/post hashes: reported unique-file storage changes381,544,608 to125,648,896 bytes. No deletion or deduplication was performed; records stay under ignored `research/housekeeping244/`.
+
 ## Actual244 reaches knockdown recovery; performance ABI and DLC defects isolated — 2026-10-15
 
 Private GitHub repository: https://github.com/Syenar/fight-night-champion-venom, default branch `codex/venom-bootstrap`. Only the audited source/documentation tree is published; proprietary inputs, generated guest code, research captures and native binaries remain local.

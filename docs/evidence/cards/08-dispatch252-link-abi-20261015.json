@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-15",
+  "agent": "/root",
+  "card": 8,
+  "status": "PARTIAL",
+  "milestone": "PASS_LINK_AND_ABI_ONLY",
+  "source_freeze_sha256": "6A4FB1123ECAD3B30E64AE67E97EAFE1499B4392A940372EC33357A598606133",
+  "source_review_sha256": "3EB43C5F73DACA71B325F489F52AA9F1985AD5745AFE6307C8872B96D8438EBD",
+  "artifact_review_sha256": "7BB584A5FE65537FB2FD37DBB59702DCFFD8BB607754028A2E521C43D5F4AABB",
+  "executed_response_sha256": "34B51E6974561363A82CA7924954845C2CDF9DD3F02270B278834C45140BB708",
+  "dll_sha256": "7AA0184FB95A8B5B44BD817057BA25CCCC2F9E5C18EEFFC705F75366E35DD74E",
+  "command": "Pinned Python trusted bootstrap invokes revision8/relink_dispatch242.py --execute with exact freeze, root intent and fresh real-desktop no-title proof. Actual child C:/LLVM/bin/lld-link.exe @absolute/executed-lld242.rsp; trusted invocation retained locally.",
+  "counts": {"objects": 205, "input_libraries": 47, "audited_paths": 226, "preserved_exports": 10257, "new_accessor_ordinal": 10258, "title_imports_resolved": 390, "gpu_imports_resolved": 107},
+  "link": {"exit_code": 0, "reaped": true, "timeout": false, "pre_post_inputs_stable": true},
+  "staged": false,
+  "loaded": false,
+  "performance_gain": "UNKNOWN",
+  "next": "Separate reviewed staging and fixed-pair restart A/B trial after the user's manual session; no live-session mutation",
+  "local_evidence": "research/runtime252-execution/independent-artifact-review",
+  "proprietary_data": "excluded from repository"
+}
