@@ -1,5 +1,13 @@
 # Active status
 
+## GitHub bootstrap published; actual236 launch argument failure retained — 2026-10-15
+
+The private repository https://github.com/Syenar/fight-night-champion-venom is created. Branch `codex/venom-bootstrap` is the default; commit `d42874d71e434196f34796300e898f12040d09f0` contains 172 audited text files (1,303,751 bytes). Remote identity and commit were verified after push. The canonical Xbox workspace has its own Git root; the parent deprecated repository is unchanged. Research, generated title code, native binaries, captures and owned game data were excluded. Local audit records remain under ignored `research/github238-publication-audit/`.
+
+Runtime236 passed fresh source and closed-neutral reviews, then actual launch failed before title-start admission or scripted input. Native stderr reports `CLI11 parse error: --dlc_import_root: 1 required TEXT missing`; the supervisor subsequently reports loaded-module admission timeout because the GPU never loads. Final status records title exit1, observer quiescent, ordinary close requested, no watchdog and complete cleanup. Preserve `probe80-bout121-60-k`; prepare a separate successor that omits the empty optional DLC argument. This failure provides no gameplay or performance evidence.
+
+Storage239 moved two misplaced PE build outputs into ignored research and compressed their approximately 1.02 GB logical bytes to approximately 212 MB of reported storage; streamed pre/post hashes match. Debug compression records cover approximately 94 MB of logical bytes; runtime debug pre/post hashes match, while GPU debug hashes are post-only. Their allocation-size measurement was not saved, so no debug storage-saving or exact freed-cluster claim is made. Full gameplay, replay correctness, FPS improvement, save/reload, in-game DLC availability, SBS and browser acceptance remain open.
+
 ## User-authorized root control;232/233 builds and native DLC import237 succeed — 2026-10-15
 
 User authorizes root control and confirms hands off. Sky keyboard actions keep refusing on input guard. Root uses the existing project normal lifecycle close only after checking PID22628, normalized executable path and UTC creation identity. First identity attempt refuses before action because a DateTime Z cast converts local; corrected explicit DateTimeOffset.UtcDateTime matches actual20:30:45.4161094Z. Manual225 then closes ordinarily0 at22:01:53.598989Z, no forced termination, seed sources unchanged.
