@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-14",
+  "status": "PARTIAL",
+  "scope": "Short-bout observer source and deadline policy only",
+  "candidate": "research/rexglue-qualification-20261012/short-bout98/README.md",
+  "source_sha256": "DC33C5C2F5640166C4615453A8AC60AD8C3ED77FED35EDFF373F5D980CAD0030",
+  "independent_review": "research/rexglue-qualification-20261012/bout98-review/README.md",
+  "review_verdict": "ADMIT_SCOPED_SOURCE_POLICY",
+  "controls": "13 manifest hashes match. Independent validation-attempt4 passed 10 retained-frame and 13 policy/deadline controls.",
+  "repair": "WAIT_RESULT expiry checked by the outer monotonic loop without another frame; OCR timeout capped to remaining wait/global budgets; late observations discarded before policy/action. Timeout remains UNKNOWN and input neutral.",
+  "limitations": "45 seconds is a policy boundary, not hard real-time OS cleanup or process exit. Capture time estimated from file publication metadata. No retained zero-clock/corner/result positive; no live OCR, game launch, controller input or gameplay qualification.",
+  "next": "Independently review a separate retained supervisor before any future isolated scripted probe. Preserve the user's Manual91 session."
+}

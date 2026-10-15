@@ -1,0 +1,11 @@
+# Data-table leaf regression review — 2026-10-13
+
+Independent static conditional admission PASS for 75 exact two-instruction leaves. Canonical pointer references and Ghidra bytes match; 72 are adjustment/tail-branch thunks and three are return leaves. None overlaps the 46,217 nonzero canonical exception-directory function extents, has a direct incoming transfer, or is an emitted label/registration. All follow unconditional nonlink transfers. This batch's 103 pointer references are all in `.rdata`; expanding inventory to `.data` does not imply this batch contains `.data` targets.
+
+The admission condition is now satisfied by independent actual generation review: **69,569 old bodies and 69,871 old registrations are unchanged**, and exactly 76 registrations were added (75 reviewed leaves plus runtime-observed `0x823DB9A0`). Every new leaf's executable statements match its raw PPC pair. The large-function warning at `0x82AE07E8` is identical in previous cycles and was not introduced here.
+
+The critic identified a future-rerun audit weakness: a saved initial PASS could skip preservation checks on later artifacts. Fixed: every rerun compares all old bodies and mappings again; no saved PASS substitutes for current validation. Current rerun PASS, zero old changes. Compilation passed; main-menu/runtime acceptance remains open.
+
+Private evidence: `research/rexglue-qualification-20261012/data-leaf-admission.json`, `data-leaf-initial-regression.json`, `data-leaf-generated-audit.json`, `logs/data-leaf-forced-codegen.txt`, `data-leaf-native-build-status.json` and cycle37 records.
+
+Research comparison: [rexauto](https://github.com/Player124413/rexauto) uses runtime missing-entry repair plus static screening. Pinned read-only source commit `dac49b331f2632f0b050f469e35747721300b8b2` was downloaded locally, never executed. Its `sub_HEX`-only ownership recognition misses Venom's named functions; its broad outside-code scan is insufficient admission proof here. Venom's inventory uses actual PE sections, all symbol names, canonical/Ghidra proofs and a complete generation-preservation guard. This is an adaptation of the screening idea, not wholesale adoption or a full-game success claim.

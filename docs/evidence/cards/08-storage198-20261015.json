@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS_STORAGE_EVIDENCE_REVIEW",
+  "scope": "Closed19860-a direct runtime logs and PPM captures only",
+  "preparation": "research/rexglue-qualification-20261012/capture198-storage/preparation.json",
+  "dedup_proof": "research/rexglue-qualification-20261012/capture198-storage/dedup198-proof.json",
+  "compression_result": "research/rexglue-qualification-20261012/capture198-storage/compression198-result.json",
+  "independent_review": "research/rexglue-qualification-20261012/capture198-storage/independent-review/storage-review.json",
+  "independent_review_sha256": "0F0D4FE1A08349EBDAD1AA1EB7BB4929EFA8CA74050DFF5B508C49EC83D2F5BD",
+  "independent_checks": 8,
+  "ppm_paths": 52,
+  "duplicate_groups": 24,
+  "hardlinks_created": 28,
+  "logical_duplicate_bytes_avoided": 77414848,
+  "compressed_scope_paths": 54,
+  "unique_identities": 26,
+  "logical_unique_bytes_before": 73762163,
+  "compressed_file_size_api_unique_bytes_after": 39301120,
+  "derived_logical_minus_compressed_api_bytes": 34461043,
+  "all_hashes_lengths_identities_attributes_verified": true,
+  "dedup_and_compression_accounting_separate": true,
+  "physical_cluster_allocation_measured": false
+}

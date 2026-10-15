@@ -1,0 +1,46 @@
+# User-owned data, research evidence, generated guest code and local tools.
+/research/
+/generated/
+/.codex/
+/rewrite/
+/native/host/
+/native/launcher/
+# Known misplaced PE files (root may quarantine them under research).
+/leaut32
+/System.Management.Automation.Internal.Host.InternalHost
+# Build/package outputs at any depth.
+**/target/
+**/build/
+**/build-*/
+**/node_modules/
+**/dist/
+**/__pycache__/
+*.iso
+*.xex
+*.xbe
+*.elf
+*.bin
+*.key
+*.pem
+*.p12
+*.pfx
+*.exe
+*.dll
+*.lib
+*.rlib
+*.obj
+*.o
+*.pdb
+*.dmp
+*.raw
+*.wast
+*.wasm
+*.zip
+*.7z
+*.ppm
+*.mp4
+*.etl
+*.csv
+.env
+.env.*
+!.env.example

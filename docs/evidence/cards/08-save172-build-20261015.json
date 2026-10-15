@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL",
+  "result": "INDEPENDENT_STATIC_BUILD_PASS_RUNTIME_PENDING",
+  "source": "research/performance-20261015/save-io163-revision2",
+  "source_handoff_sha256": "F12AF7B3FDEE38AEEC029D86AAA9355EF2271C2545E6C95FF1840441303A7960",
+  "runtime_sha256": "30A1915CF472A808BFC458E72918298EF70D4377FA59823E465861965B8B7BD9",
+  "actual_response_sha256": "B2B974C8BDC38C5D2C2A23AAC6B4898F93F4F1126AB86E052C286D0061A664BD",
+  "objects": 205,
+  "trailing_tokens": 47,
+  "changed_zero_based_slots": [
+    48,
+    49,
+    50,
+    137
+  ],
+  "unchanged_objects": 201,
+  "compile_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "link_attempt": 2,
+  "link_exit_code": 0,
+  "compile_affinity_mask": 1,
+  "compile_priority": "BelowNormal",
+  "candidate_exports": 10288,
+  "baseline_exports": 10257,
+  "added_exports": 32,
+  "removed_exports": 1,
+  "common_ordinal_changes": 9623,
+  "consumer_runtime_named_imports": 497,
+  "consumer_ordinal_imports": 0,
+  "missing_runtime_import_names": 0,
+  "runtime_imports_unchanged": true,
+  "review_path": "research/rexglue-qualification-20261012/integration172-review",
+  "review_sha256": "072AD6E0F599C3AEACF6E949303517C78ED9466245AD016A6D241D3FB8A3D907",
+  "handoff_sha256": "FB71861AD3A293C2E245C76B9B29C09D128AE70AA903E3004E1DA95EEF04247D",
+  "limitations": [
+    "No pair staged or title run",
+    "Constructor compatibility covers rebuilt runtime and reviewed consumers only",
+    "Successful save reads and metadata tracing remain unverified",
+    "No FPS claim"
+  ],
+  "next_action": "Prepare separately reviewed exact-seed save-reload procedure; independently admit actual loaded pair and trace events"
+}

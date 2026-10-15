@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-15",
+  "status": "PRETITLE_FAILURE",
+  "evidence_path": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-30-v",
+  "source_sha256": "0CCC54FF3E0C0C877B3FAA5A0CB56B85B470312AA7EA51ED478DD2CFB49B6F84",
+  "intended_pair": "integration137",
+  "game_pid": null,
+  "failure": "RuntimeError('process checker name coverage mismatch')",
+  "observer_exit_code": 1,
+  "cleanup_status": "CLEANUP_COMPLETE",
+  "survivor": false,
+  "cause": "Frozen checker returns frame_rate105 list;148 incorrectly expects frame_rate136. Actual candidate EXE is still canonical and needs no alias rename.",
+  "next": "151 exact known-list restoration plus actual checker invocation and wrong-list negative before fresh admission"
+}

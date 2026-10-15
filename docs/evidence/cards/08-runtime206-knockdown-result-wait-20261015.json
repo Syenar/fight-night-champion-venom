@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-15",
+  "agent": "root",
+  "status": "PARTIAL",
+  "case": "actual206-knockdown-result-wait",
+  "full_bout_result": "UNKNOWN",
+  "independent_review": {
+    "json_path": "research\\rexglue-qualification-20261012\\runtime206-review\\actual60-f\\actual206-60-f.json",
+    "json_sha256": "A4C0B8264CC8E7D68387188CCA4C47253BEB490F3EE5C2CB89752F27302B8BA2",
+    "markdown_path": "research\\rexglue-qualification-20261012\\runtime206-review\\actual60-f\\actual206-60-f.md",
+    "markdown_sha256": "276C252687C84BF27337B75C3A79A79BA5CAA63C25D5B0F79AC15DB075D5B02A",
+    "verdict": "PARTIAL_STOP_CAUSE_IDENTIFIED"
+  },
+  "raw_run_evidence": [
+    {
+      "path": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-f\\post-run-summary.json",
+      "sha256": "362ADA9D2BDE8DE5B85F20CD8E63BAB3232E2DCC333043080861C19BA86279F1"
+    },
+    {
+      "path": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-f\\final-supervisor-status.json",
+      "sha256": "4B495548305E98F94266E421C37383FBED2EFBFE240B33ED23890D755313D464"
+    },
+    {
+      "path": "research\\rexglue-qualification-20261012\\runtime206-review\\actual60-f\\pins\\guest-77.ppm",
+      "sha256": "779FD9F0B01C594F257FD46384008EEDAD3AAF21BF2ADC76EA2276C3B21A795C"
+    }
+  ],
+  "run": {
+    "id": "actual206-60-f",
+    "start_utc": "2026-10-15T15:47:06.829424Z",
+    "end_utc": "2026-10-15T15:53:43.102616Z",
+    "duration_seconds": 396.273,
+    "game_exit_code": 0,
+    "observer_exit_code": 0,
+    "ordinary_close_requested": true,
+    "observer_quiescent": true,
+    "game_left_alive": false,
+    "targeted_watchdog_used": false,
+    "cleanup_errors": []
+  },
+  "observed_progress": {
+    "selected_rounds": 1,
+    "selected_length_minutes": 1,
+    "script_requests": 5,
+    "strict_clock_decreases": 7,
+    "getup_wait_origin": "verified_getup_prompt",
+    "getup_frame": "pins/guest-69.ppm",
+    "getup_entry_elapsed_seconds": 349.815946,
+    "ordinary_input_after_getup_entry": false,
+    "getup_axes_sent": false
+  },
+  "result_wait": {
+    "status": "RESULT_OBSERVATION_TIMEOUT_UNKNOWN",
+    "result": "UNKNOWN",
+    "candidate": null,
+    "wait_seconds": 45,
+    "started_elapsed_seconds": 349.815946,
+    "deadline_elapsed_seconds": 394.815946,
+    "first_scorecard_loading_frame": "guest-77.ppm",
+    "first_scorecard_elapsed_seconds": 392.026,
+    "seconds_before_deadline": 2.79,
+    "visible_content": "JUDGES' SCORECARD heading is visible; the score table/rows are extremely dim and appear to be only beginning to load. No readable WINNER, DECISION, or KNOCKOUT outcome is visible.",
+    "scorecard_frames_72_through_76_unchanged": true,
+    "completion_claim": "NONE",
+    "cause_assessment": "The retained pixels support an observation-window timing stop: frames 72-76 remain unchanged, then the first visibly changed scorecard-loading frame arrives about 2.8 seconds before the result wait expires. The evidence does not yet establish that the existing recognizer is deficient."
+  },
+  "display194": {
+    "status": "PARTIAL",
+    "collector_launched": true,
+    "outcome": "WMI provider error; CSV contains one header and two data rows, insufficient for a measurement. Corrected after direct CSV parsing; original header-only description was inaccurate.",
+    "captured_fps": "UNKNOWN",
+    "fps_claimed": false,
+    "interpretation": "Display194 did not yield a usable performance measurement; no FPS result is inferred."
+  },
+  "diagnostic_log_counts": {
+    "runtime_log_warning_entries": 173655,
+    "runtime_log_error_entries": 4,
+    "runtime_log_fatal_or_exception_entries": 0,
+    "summary": "Four startup cache device resolution errors: ResolvePath(cache:\\) failed - device not found. No fatal/exception evidence; title and observer exited 0."
+  },
+  "next_experiment": {
+    "proposal": "One fresh bounded run with only the verified-getup-origin neutral result wait extended from 45 to 60 seconds (+15s). Preserve the existing 45-second clock-zero behavior unchanged; do not send additional input, infer recovery success, auto-pass, or relax the winner/result gate.",
+    "not_yet_run": true,
+    "condition": "Keep clock-zero wait and actual result gate unchanged; no additional input, no inferred get-up success, no auto-pass."
+  },
+  "limitations": [
+    "Status remains PARTIAL and the full bout/result remains UNKNOWN; scorecard heading/loading pixels do not show a WINNER, DECISION, or KNOCKOUT outcome.",
+    "No successful get-up, completed bout, FPS, SBS, or browser acceptance is established.",
+    "The 60-second post-get-up neutral wait is a proposed experiment, not an implementation or a passed gate."
+  ]
+}

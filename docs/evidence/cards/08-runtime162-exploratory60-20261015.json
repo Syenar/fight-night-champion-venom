@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL",
+  "pair": "integration159",
+  "exe_sha256": "55EDDFF568FA1758E2067AAF1E784AB854A37B15E1FB1C8FD79A24206D4DE9E7",
+  "evidence_path": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-60-1",
+  "pid": 40776,
+  "start_utc": "2026-10-15T08:41:33.441231Z",
+  "end_utc": "2026-10-15T04:47:17.421785-04:00",
+  "cleanup": {
+    "status": "CLEANUP_COMPLETE",
+    "cleanup_status": "CLEANUP_COMPLETE",
+    "failure": null,
+    "game_pid": 40776,
+    "actual_exit_code": 0,
+    "ordinary_close_requested": true,
+    "targeted_watchdog_used": false,
+    "observer_quiescent": true,
+    "cleanup_blocked": false,
+    "title_cleanup_blocked": false,
+    "title_close_forbidden_due_to_live_observer": false,
+    "game_left_alive": false,
+    "live_handles_retained_through_final_status": true,
+    "shutdown_event_order": [
+      "neutral-before-observer-stop",
+      "neutral-after-observer-stop",
+      "ordinary-title-close"
+    ],
+    "cleanup_errors": [],
+    "observer_pid": 43532,
+    "observer_exit_code": 0
+  },
+  "clock_observations": [
+    {
+      "round": 1,
+      "clock_seconds": 180,
+      "frame_sha256": "7666bf461a9071f26c962ac72d8bb3dadb3d8dfb07a8dbc04730c690441d3599",
+      "retained_frame": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-1\\frames\\guest-60.ppm"
+    },
+    {
+      "round": 1,
+      "clock_seconds": 170,
+      "frame_sha256": "3831cc5cf2110b435fd40ee50fd55843a5aaf667ba7db2af54c44f1fe4a5c56c",
+      "retained_frame": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-1\\frames\\guest-61.ppm"
+    },
+    {
+      "round": 1,
+      "clock_seconds": 161,
+      "frame_sha256": "f93fb90afd0e252b573087f459e8442a747ff1439e410cb51023f4658a592b80",
+      "retained_frame": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-1\\frames\\guest-62.ppm"
+    },
+    {
+      "round": 1,
+      "clock_seconds": 153,
+      "frame_sha256": "120eedcf14075b4c02991d59674274e764fc1a9ce77aab317d47db6540475f70",
+      "retained_frame": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-1\\frames\\guest-63.ppm"
+    },
+    {
+      "round": 1,
+      "clock_seconds": 144,
+      "frame_sha256": "3b48c4c79c916441024326608f53ad92a7d98c742459c21b111d05d12a11f091",
+      "retained_frame": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-1\\frames\\guest-64.ppm"
+    },
+    {
+      "round": 1,
+      "clock_seconds": 135,
+      "frame_sha256": "e4a152e43b39a1edc392b97e88e820406cb314e68ab4fbdd8c11b4e6d47685d9",
+      "retained_frame": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-1\\frames\\guest-65.ppm"
+    },
+    {
+      "round": 1,
+      "clock_seconds": 125,
+      "frame_sha256": "f000062ecd3d6f06ec6585d14c417be50a39e4f016a61445e20235a1cc7cc287",
+      "retained_frame": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-1\\frames\\guest-66.ppm"
+    }
+  ],
+  "clock_decreases": 6,
+  "script_count": 4,
+  "script_scope": "Four request vectors correlate exactly with native accepted packet logs and next-sequence neutral releases; no landed-punch or calibrated-latency claim",
+  "terminal": "FIGHT_HUD_LOST_RESULT_UNKNOWN:UNKNOWN",
+  "final_frame": {
+    "path": "frames/guest-67.ppm",
+    "root_visual": "Active Tyson/Ali boxing; 1:56 ROUND1OF1; strict primary and tight RGB OCR blank",
+    "sha256": "7BBF4FDE9C9C5A0264F4A2DFF7270C9F6DC7782816F74491EE21A28D2355C6D1"
+  },
+  "timer": {
+    "requested": 60,
+    "proof": "timer-trace162-observation/actual162-live-timer-review",
+    "snapshot_sha256": "842BD15FAD1B780449D4C678DAE103D1DE0CE2117FD93D141F993B59E6626176",
+    "effective": 60
+  },
+  "performance": "Exploratory all-scene guest submissions only, no displayed FPS or clock/physics/audio qualification",
+  "next": "168 bounded neutral HUD retry and fresh critic;166 default-off GPU logging candidate build;163 exact-root save I/O telemetry preparation",
+  "input_correlation": {
+    "path": "research/rexglue-qualification-20261012/input169-analysis/report.json",
+    "sha256": "98D935531B588C2B4031A5B110D01AC394E290DE6375CC28504B28DBF69D5B1A",
+    "independent_review": "research/rexglue-qualification-20261012/input169-review/verdict.json"
+  }
+}

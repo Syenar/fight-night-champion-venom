@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-08",
+  "card": "07 — native compile and runtime scaffold",
+  "status": "PARTIAL",
+  "scope": "Register six TU2-discovered dynamic XAM party/community procedures, make XexGetProcedureAddress resolve callable guest tokens without static IAT entries, and validate the runtime dispatch boundary.",
+  "source": {
+    "titleId": "45410915",
+    "mediaId": "2DC50868",
+    "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "titleUpdateApplied": true,
+    "originalInputsModified": false
+  },
+  "build": {
+    "configuration": "Release",
+    "hostPath": "research/third_party/xenon-recomp/out/build/d3d12-probe/runtime_host/Release/xenon_runtime_host.exe",
+    "hostSha256": "A8C1DBFAB9EFF3C0A4BE8D43149073E6937FA5726822FC0207F9AA450CA79730",
+    "runtimeExtensionPath": "research/native-host-probe-20261008-wait-syscall-run55/xenon_game_module.run55.dll",
+    "runtimeExtensionSha256": "92CAF56F9B8C8977BC71302C689F7B64CBA086D6A8C872A24B1FB5DEC9073BA9",
+    "commands": [
+      "cmake --build research/third_party/xenon-recomp/out/build/d3d12-probe --config Release --target xenon_runtime_host_tests xenon_xam_export_ordinal_tests xenon_runtime_host --parallel 8",
+      "ctest --test-dir research/third_party/xenon-recomp/out/build/d3d12-probe -C Release --output-on-failure -R '^(xenon_runtime_host_tests|xenon_xam_export_ordinal_tests)$'",
+      "cmake --build research/third_party/xenon-recomp/out/build/d3d12-probe --config Release --target xenon_session_tests --parallel 8",
+      "ctest --test-dir research/third_party/xenon-recomp/out/build/d3d12-probe -C Release --output-on-failure -R '^xenon_session_tests$'"
+    ],
+    "tests": {
+      "xenon_runtime_host_tests": "PASS",
+      "xenon_xam_export_ordinal_tests": "PASS",
+      "xenon_session_tests": "PASS"
+    },
+    "testEvidence": "Release CTest: 3 focused test executables pass; the final rebuild/rerun of xenon_session_tests passed 1/1 in 6.20 seconds."
+  },
+  "changes": [
+    "Added six real XAM export identities: ordinals 0xAFF, 0xB00, 0xB0B, 0xB10, 0x305, and 0x30B, each with explicitly limited offline behavior.",
+    "XexGetProcedureAddress now allocates stable runtime-owned guest thunk tokens for registered XAM procedures even when the title has no matching static import thunk; calls are routed through the normal ExportRegistry handler, never through a host pointer.",
+    "Added a session integration test that performs dynamic ordinal lookup twice, checks stable thunk identity and import recognition, and calls the returned thunk through XenonSession::call to verify the offline XamPartyGetUserList result."
+  ],
+  "probeEvidence": [
+    {
+      "run": "run95 and run96",
+      "path": "research/native-host-probe-20261008-dynamic-xam-cadence-run96/log.txt",
+      "result": "All six XexGetProcedureAddress requests returned stable guest tokens at 0x3FEF9000 through 0x3FEF9014. This proves lookup only; the title did not invoke these six callbacks in the observed trace."
+    },
+    {
+      "run": "run97",
+      "path": "research/native-host-probe-20261008-dynamic-xam-dispatch-run97/",
+      "hostSha256": "A8C1DBFAB9EFF3C0A4BE8D43149073E6937FA5726822FC0207F9AA450CA79730",
+      "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+      "result": "Release host mounted the exact TU2 image and executed the startup initializer path. A bounded 90-second run stopped at 2,840 guest blocks; no dynamic XAM lookup, renderer, first frame, or gameplay was observed. The cooperative stop completed."
+    },
+    {
+      "run": "run98",
+      "path": "research/native-host-probe-20261008-startup-progress-run98/",
+      "configSha256": "4B5DDEC6C434141DAB641C01CAD3DEBA8553325F81CAC0E826A17C46D7072402",
+      "hostSha256": "A8C1DBFAB9EFF3C0A4BE8D43149073E6937FA5726822FC0207F9AA450CA79730",
+      "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+      "result": "The headless Release session remained active for roughly six minutes and recorded guest-thread samples across threads 1–5 and 9. Latest persisted samples were thread 1 at 0x82C71598 (sample 901120), thread 2 at 0x8229B38C (679936), thread 3 at 0x8283E578 (663552), thread 4 at 0x8229B344 (663552), thread 5 at 0x8229B2C0 (778240), and thread 9 at 0x8229F744 (4096). No XexGetProcedureAddress request for the six party/UI exports appeared in the trace. The stop signal did not end guest execution within the runtime's five-second grace, so the host terminated the process. No renderer or first-frame claim is made; the config intentionally selected renderer=None/headless mode.",
+      "logSha256": "70398D03D6A9D2AAFACA17CFDCB339F65EC4A445EB3B975E6A54283482AC75DE",
+      "adaptiveObservations": "research/native-host-probe-20261008-startup-progress-run98/adaptive-observations.jsonl",
+      "ghidraThreadSamples": "research/ghidra/run98-thread-samples.txt"
+    }
+  ],
+  "review": {
+    "independentEvidenceReview": "The integration test exercises the production session registry, XexGetProcedureAddress handler, import recognition, and XenonSession::call dispatch. Runtime logs prove exact-TU2 pointer resolution in runs 95/96. The title-level callback invocation and full startup/rendering path remain unproven.",
+    "gate": "Card 07 remains PARTIAL; native execution, first frame, gameplay, SBS, browser-native execution, and release acceptance remain open.",
+    "nextAction": "Map the current multi-thread startup samples and slow initializer path to exact guest functions, then instrument the first unobserved call/return boundary with low-overhead per-thread evidence before changing service semantics."
+  }
+}

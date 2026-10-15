@@ -1,0 +1,58 @@
+{
+  "card": "07-native-compile-and-runtime-scaffold",
+  "date": "2026-10-08",
+  "status": "PARTIAL",
+  "title": "Merged EB archive overlays and exact-TU2 guest probe",
+  "inputs": {
+    "base_iso_sha256": "75E9D3EAA8440A24BFE1052B6E051F2A29DF189DDBE854969C1406E31D2E8242",
+    "effective_tu2_sha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "effective_tu2_sha256_run117": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "eb_archives_sha256": {
+      "be_gp.big": "6F53E8B31BC1E9C74376BBEE6869A1DF912A52F5E0686E519EE46B7A6DCD7667",
+      "boot_other.big": "DB30648F3BE6D5E199F6F049BDF56E5DBBACFD3DE045A82DF1B9A51C6C330FC1",
+      "boot.big": "634B073F98CEDF8CFC55338941C80075F9777E56DEB54F1C6D7E71569CABBDF2",
+      "fe.big": "F584AE369A1E9A80040161324B4DDE67F23D15F234032E17515454775A25CAD0",
+      "shaders.big": "43920B847711B3081F548635FF15FA3C54DCE95A70A234818A94184E2BA3632E"
+    }
+  },
+  "changes": [
+    "Added a read-only LayeredDevice that merges loose extracted files with archive-backed directories and falls through on missing members.",
+    "ContentManager indexes the five verified Fight Night EB archives as overlays over the unchanged extracted disc tree.",
+    "Added a synthetic archive/loose-file merge regression and real-content coverage for all five archives, the English database path, and the FE archive member path."
+  ],
+  "verification": {
+    "command": "cmake --build out/build/d3d12-probe --target xenon_filesystem_tests xenon_runtime_host --config Debug -j 6; ctest --test-dir out/build/d3d12-probe -C Debug --output-on-failure -R 'xenon_(filesystem|kernel_io|session)_'",
+    "test_result": "4/4 passed; XENON_TEST_EB_ARCHIVE_DIR pointed to the original extracted archives read-only.",
+    "run116": {
+      "path": "research/native-host-probe-20261008-layered-all-archives-run116",
+      "duration_seconds": 150.9,
+      "host_sha256": "980C756E1C2B73BD859B9A381798A00D469AB63D2F494516CBC9D04450BD2CEB",
+      "result": "Exact TU2 loaded, all five archives indexed; stop completed and session shutdown was logged."
+    },
+    "run117": {
+      "path": "research/native-host-probe-20261008-layered-all-archives-run117",
+      "duration_seconds": 312.3,
+      "host_sha256": "980C756E1C2B73BD859B9A381798A00D469AB63D2F494516CBC9D04450BD2CEB",
+      "launch_config_sha256": "6BD4A98D1D5CB45E8AC4F23B4E3473D1C59755E3C65F9D8EF4FAC5A0D4C45BD2",
+      "guest_io": [
+        "D:\\databigs\\xenon\\boot.big opened successfully",
+        "D:\\data\\xenon\\fe\\main.big opened successfully through the FE archive overlay",
+        "D:\\data\\common\\ai\\ opened successfully through the AI archive overlay",
+        "\\Device\\Harddisk0\\Cache1 opened successfully, including directory form and device controls",
+        "cache:\\ remained STATUS_OBJECT_NAME_NOT_FOUND, matching the intentionally absent generic cache alias"
+      ],
+      "thread_sample": "An in-run status sample recorded 10 guest threads and 7,323,233 cumulative guest blocks.",
+      "shutdown": "The stop request ended game execution; the log reached session teardown but did not emit the final shutdown line before the probe watchdog force-terminated the host. Exit code -1 is the watchdog termination, not a guest crash."
+    },
+    "run118": {
+      "path": "research/native-host-probe-20261008-layered-shutdown-grace-run118",
+      "duration_seconds": 185.2,
+      "host_sha256": "980C756E1C2B73BD859B9A381798A00D469AB63D2F494516CBC9D04450BD2CEB",
+      "launch_config_sha256": "EB5D7FDAB2796E59AB657A440D3A3E9594B0C744049793354B1963E5E0D5631F",
+      "guest_io": "Same successful boot.big, FE main.big, and AI directory opens; all five archives indexed.",
+      "shutdown": "After the stop signal, the runtime-host's documented five-second non-cooperative guest stop path fired and called std::_Exit(0). Process exit was 0 while status.json correctly remained failed with 'game did not exit cooperatively and was terminated'; this is forced termination, not successful guest shutdown."
+    }
+  },
+  "gate_result": "The previous two missing guest paths now open. Real archive VFS coverage passes. The probe still has no GPU or rendered frame and did not reach the English database open during Run117; native boot/gameplay gates remain open.",
+  "next_action": "Trace why guest execution remains non-cooperative and does not initialize graphics; distinguish the main-thread loop from the worker-thread startup path. The host's five-second forced-exit status is expected probe behavior, not a guest crash. Keep headless execution explicitly separate from visual acceptance."
+}

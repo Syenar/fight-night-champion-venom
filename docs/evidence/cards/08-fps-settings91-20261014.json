@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-14",
+  "status": "PARTIAL",
+  "feature": "Live host presentation FPS-limit dropdown: Unlimited, 30, 60, 90, 120, 144, 165, 240",
+  "user_interface": "F4 > UI/Presenter > present_fps_limit; Save to config",
+  "display_vsync": "D3D12 Present sync interval remains zero. Internal guest clocks/vblank were preserved. OS/driver/compositor effects remain outside this setting.",
+  "build": "research/performance-20261014/fps-setting86/runtime-attempt2/manifest.json",
+  "fresh_review": "research/performance-20261014/fps-setting86-review/critic.md",
+  "launcher_review": "research/rexglue-qualification-20261012/manual91-launch-review/critic.md",
+  "live_pair": "research/rexglue-qualification-20261012/manual91-fps-settings/live-state.json",
+  "launch": "research/rexglue-qualification-20261012/manual91-fps-settings/launch-manifest.json",
+  "pid": 28204,
+  "actual_end": {"utc": "2026-10-15T02:45:12.653827Z", "exit_hex": "0xC0000409", "automatic_input": false, "automatic_stop": false, "forced_termination": false, "final_fatal": "Call to invalid or unregistered function at guest address 0x823DDFE0", "log_local_time": "2026-10-14 22:45:08.588", "exception_stack_subcode": "UNKNOWN"},
+  "observed": "Responding native title window; exact loaded EXE and three DLL hashes match the corrected reviewed pair; renderer title/Press Start capture retained. Follow-up retained frames30/60 show Tyson/Ali round1 clock2:15 and round2 clock0:22; frames90/120 show pause. PID28204 remains responding in Windows session1. No complete match result. All automatic inputs and shutdown disabled. User-approved restart closed manual80 normally with exit0; saves and cache copied with hash checks.",
+  "limitations": "In-session dropdown selection, persistence/reload and displayed-frame pacing have not been independently observed. Deterministic scheduler checks and source/build review passed; no gameplay speedup is claimed. Initial EXE-only integration was rejected and preserved.",
+  "next": "Retain user testing, actual settings-save/reload and presentation-rate evidence. Investigate CPU simulation/render cost while continuing native offline qualification. Rust, true SBS and browser gates remain open."
+}

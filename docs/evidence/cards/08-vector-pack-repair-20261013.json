@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-13T22:36:35.971532+00:00",
+  "evidence": "research/rexglue-qualification-20261012/vector-pack-repair-evidence.json",
+  "baseline": "research/rexglue-qualification-20261012/probe37-capture-baseline/guest.png",
+  "failed_tolerance_only": "research/rexglue-qualification-20261012/probe38-capture-tolerance/guest.png",
+  "fixed": "research/rexglue-qualification-20261012/probe39-vpk-fixed-capture/guest.png",
+  "acceptance": "Correct captured intro movie frame observed after repair. Full startup progression, menus, gameplay, audio, Rust, SBS, browser and release remain incomplete. Invalid-fetch tolerance alone failed visual comparison."
+}

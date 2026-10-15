@@ -1,0 +1,370 @@
+{
+  "date": "2026-10-15",
+  "probe": 119,
+  "status": "BLOCKED_OBSERVER_OCR_ENCODING",
+  "performance_result": "NONE",
+  "game_final": {
+    "status": "CLEANUP_COMPLETE",
+    "cleanup_status": "CLEANUP_COMPLETE",
+    "failure": null,
+    "game_pid": 18816,
+    "actual_exit_code": 0,
+    "ordinary_close_requested": true,
+    "targeted_watchdog_used": false,
+    "observer_quiescent": true,
+    "cleanup_blocked": false,
+    "title_cleanup_blocked": false,
+    "title_close_forbidden_due_to_live_observer": false,
+    "game_left_alive": false,
+    "live_handles_retained_through_final_status": true,
+    "shutdown_event_order": [
+      "neutral-before-observer-stop",
+      "neutral-after-observer-stop",
+      "ordinary-title-close"
+    ],
+    "cleanup_errors": [],
+    "observer_pid": 30152,
+    "observer_exit_code": 1
+  },
+  "supervisor": {
+    "status": "CLEANUP_COMPLETE",
+    "cleanup_status": "CLEANUP_COMPLETE",
+    "pid": 18816,
+    "start": {
+      "start_utc_ms": 1792038502856,
+      "start_utc": "2026-10-15T04:28:22.856591+00:00",
+      "start_monotonic_ns": 43739703000000,
+      "pid": 18816,
+      "supervisor_pid": 33260
+    },
+    "end_utc": "2026-10-15T04:28:41.372245+00:00",
+    "exit_code": 0,
+    "exit_hex": "0x00000000",
+    "observer_exit_code": 1,
+    "terminal_reason": "OBSERVER_EXIT",
+    "deadline_reached": false,
+    "close_requested": true,
+    "targeted_watchdog_used": false,
+    "observer_quiescent_before_title_close": true,
+    "cleanup_blocked": false,
+    "title_cleanup_blocked": false,
+    "cleanup_errors": [],
+    "shutdown_event_order": [
+      "neutral-before-observer-stop",
+      "neutral-after-observer-stop",
+      "ordinary-title-close"
+    ],
+    "loaded_modules": [
+      {
+        "name": "venom_fnc_canonical_tu2.exe",
+        "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\integration112\\pair\\venom_fnc_canonical_tu2.exe",
+        "sha256": "7044DEE0A456F522563D3007F3DC75FA54323F4E9FC41027C8CF716451502E52"
+      },
+      {
+        "name": "rexruntimerd.dll",
+        "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\integration112\\pair\\rexruntimerd.dll",
+        "sha256": "137A36C87B5456479311593B3C6A8987C76C5104F3CB489D03032750A94E3771"
+      },
+      {
+        "name": "TracyClientrd.dll",
+        "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\integration112\\pair\\TracyClientrd.dll",
+        "sha256": "850E4CBE76C5729812160AD3E34774A039262E48F983C8AC70A611F9C98783C7"
+      },
+      {
+        "name": "rexgpu-xenosrd.dll",
+        "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\integration112\\pair\\rexgpu-xenosrd.dll",
+        "sha256": "64B57F53658E64873F2978D019B406475E8D5DAF2B58043DB1A8B33E03F410C7"
+      }
+    ],
+    "game_left_alive_after_cleanup": false,
+    "game_handle_retained_through_status": true,
+    "observer_pid": 30152,
+    "observer_exit_code_at_cleanup": 1,
+    "terminal_observation": {
+      "observer_exit": 1,
+      "supervisor_stop_reason": "OBSERVER_EXIT",
+      "publisher_diagnostics": {
+        "observed_utc_ms": 1792038520241,
+        "heartbeat": {
+          "utc_ms": 1792038520137,
+          "sequence": 797,
+          "controller_expiry_utc_ms": 1792038520177,
+          "ordinary_fields": {
+            "buttons": 0,
+            "lt": 0,
+            "rt": 0,
+            "lx": 0,
+            "ly": 0,
+            "rx": 0,
+            "ry": 0
+          },
+          "neutral": true
+        },
+        "heartbeat_age_ms": 104,
+        "latest_published_packets": {
+          "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\published-packets.jsonl",
+          "rows": [
+            {
+              "utc_ms": 1792038520073,
+              "packet": [
+                1792038520113,
+                793,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "utc_ms": 1792038520089,
+              "packet": [
+                1792038520129,
+                794,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "utc_ms": 1792038520120,
+              "packet": [
+                1792038520160,
+                795,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "utc_ms": 1792038520136,
+              "packet": [
+                1792038520176,
+                796,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "utc_ms": 1792038520137,
+              "packet": [
+                1792038520177,
+                797,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "bytes_read": 16384,
+          "file_size": 63652
+        },
+        "recent_publication_collisions": {
+          "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\publication-collisions.jsonl",
+          "rows": [
+            {
+              "utc_ms": 1792038519570,
+              "operation": {
+                "operation": "replace_heartbeat",
+                "source": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\publisher-heartbeat.tmp",
+                "target": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\publisher-heartbeat.json"
+              },
+              "error": "PermissionError(13, 'Access is denied')",
+              "errno": 13,
+              "winerror": 5,
+              "retryable_replace_collision": true,
+              "heartbeat_collision_attempts": 1,
+              "candidate_packet": [
+                1792038519610,
+                773,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\base71.py\", line 321, in publish\n    self.replace(heartbeat,heartbeat_target)\nPermissionError: [WinError 5] Access is denied: 'C:\\\\Users\\\\samsa\\\\Desktop\\\\Workplace\\\\Projects\\\\Fight Night Champion Mods\\\\xbox-full-game-sbs\\\\research\\\\rexglue-qualification-20261012\\\\bout102-supervisor\\\\probe80-bout119-30-20261015-a\\\\publisher-heartbeat.tmp' -> 'C:\\\\Users\\\\samsa\\\\Desktop\\\\Workplace\\\\Projects\\\\Fight Night Champion Mods\\\\xbox-full-game-sbs\\\\research\\\\rexglue-qualification-20261012\\\\bout102-supervisor\\\\probe80-bout119-30-20261015-a\\\\publisher-heartbeat.json'\n"
+            },
+            {
+              "utc_ms": 1792038519601,
+              "operation": {
+                "operation": "replace_controller",
+                "source": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\controller71.tmp",
+                "target": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\controller.txt"
+              },
+              "error": "PermissionError(13, 'Access is denied')",
+              "errno": 13,
+              "winerror": 5,
+              "retryable_replace_collision": true,
+              "candidate_packet": [
+                1792038519641,
+                775,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\base71.py\", line 286, in publish\n    try: self.replace(temp,target)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^\nPermissionError: [WinError 5] Access is denied: 'C:\\\\Users\\\\samsa\\\\Desktop\\\\Workplace\\\\Projects\\\\Fight Night Champion Mods\\\\xbox-full-game-sbs\\\\research\\\\rexglue-qualification-20261012\\\\bout102-supervisor\\\\probe80-bout119-30-20261015-a\\\\controller71.tmp' -> 'C:\\\\Users\\\\samsa\\\\Desktop\\\\Workplace\\\\Projects\\\\Fight Night Champion Mods\\\\xbox-full-game-sbs\\\\research\\\\rexglue-qualification-20261012\\\\bout102-supervisor\\\\probe80-bout119-30-20261015-a\\\\controller.txt'\n"
+            },
+            {
+              "utc_ms": 1792038519868,
+              "operation": {
+                "operation": "replace_controller",
+                "source": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\controller71.tmp",
+                "target": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\controller.txt"
+              },
+              "error": "PermissionError(13, 'Access is denied')",
+              "errno": 13,
+              "winerror": 5,
+              "retryable_replace_collision": true,
+              "candidate_packet": [
+                1792038519908,
+                787,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\base71.py\", line 286, in publish\n    try: self.replace(temp,target)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^\nPermissionError: [WinError 5] Access is denied: 'C:\\\\Users\\\\samsa\\\\Desktop\\\\Workplace\\\\Projects\\\\Fight Night Champion Mods\\\\xbox-full-game-sbs\\\\research\\\\rexglue-qualification-20261012\\\\bout102-supervisor\\\\probe80-bout119-30-20261015-a\\\\controller71.tmp' -> 'C:\\\\Users\\\\samsa\\\\Desktop\\\\Workplace\\\\Projects\\\\Fight Night Champion Mods\\\\xbox-full-game-sbs\\\\research\\\\rexglue-qualification-20261012\\\\bout102-supervisor\\\\probe80-bout119-30-20261015-a\\\\controller.txt'\n"
+            },
+            {
+              "utc_ms": 1792038519883,
+              "operation": {
+                "operation": "replace_heartbeat",
+                "source": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\publisher-heartbeat.tmp",
+                "target": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\publisher-heartbeat.json"
+              },
+              "error": "PermissionError(13, 'Access is denied')",
+              "errno": 13,
+              "winerror": 5,
+              "retryable_replace_collision": true,
+              "heartbeat_collision_attempts": 1,
+              "candidate_packet": [
+                1792038519923,
+                787,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\base71.py\", line 321, in publish\n    self.replace(heartbeat,heartbeat_target)\nPermissionError: [WinError 5] Access is denied: 'C:\\\\Users\\\\samsa\\\\Desktop\\\\Workplace\\\\Projects\\\\Fight Night Champion Mods\\\\xbox-full-game-sbs\\\\research\\\\rexglue-qualification-20261012\\\\bout102-supervisor\\\\probe80-bout119-30-20261015-a\\\\publisher-heartbeat.tmp' -> 'C:\\\\Users\\\\samsa\\\\Desktop\\\\Workplace\\\\Projects\\\\Fight Night Champion Mods\\\\xbox-full-game-sbs\\\\research\\\\rexglue-qualification-20261012\\\\bout102-supervisor\\\\probe80-bout119-30-20261015-a\\\\publisher-heartbeat.json'\n"
+            },
+            {
+              "utc_ms": 1792038519962,
+              "operation": {
+                "operation": "replace_heartbeat",
+                "source": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\publisher-heartbeat.tmp",
+                "target": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout119-30-20261015-a\\publisher-heartbeat.json"
+              },
+              "error": "PermissionError(13, 'Access is denied')",
+              "errno": 13,
+              "winerror": 5,
+              "retryable_replace_collision": true,
+              "heartbeat_collision_attempts": 1,
+              "candidate_packet": [
+                1792038520002,
+                791,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\base71.py\", line 321, in publish\n    self.replace(heartbeat,heartbeat_target)\nPermissionError: [WinError 5] Access is denied: 'C:\\\\Users\\\\samsa\\\\Desktop\\\\Workplace\\\\Projects\\\\Fight Night Champion Mods\\\\xbox-full-game-sbs\\\\research\\\\rexglue-qualification-20261012\\\\bout102-supervisor\\\\probe80-bout119-30-20261015-a\\\\publisher-heartbeat.tmp' -> 'C:\\\\Users\\\\samsa\\\\Desktop\\\\Workplace\\\\Projects\\\\Fight Night Champion Mods\\\\xbox-full-game-sbs\\\\research\\\\rexglue-qualification-20261012\\\\bout102-supervisor\\\\probe80-bout119-30-20261015-a\\\\publisher-heartbeat.json'\n"
+            }
+          ],
+          "bytes_read": 16384,
+          "file_size": 169611
+        },
+        "publisher_failure": null,
+        "observer_status": {
+          "status": "BLOCKED_NEUTRAL",
+          "blocker": "WATCHER_FAILURE:TypeError('data must be str, not NoneType')",
+          "start_utc_ms": 1792038502856,
+          "stage": "SETUP",
+          "setup_proof": null,
+          "selected_configuration": null,
+          "clock_observations": [],
+          "clock_decreases": 0,
+          "script_count": 0,
+          "end_result": "UNKNOWN",
+          "result_candidate": null,
+          "result_observe_started_elapsed": null,
+          "result_observe_deadline_elapsed": null,
+          "result_observations": [],
+          "completion_claim": "NONE; only a visible result candidate plus independent review can close the bout observation."
+        },
+        "observer_stderr_tail": "File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\bout98.py\", line 482, in <module>\n    if __name__ == '__main__': main()\n                               ^^^^^^\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\bout98.py\", line 402, in main\n    obs=base.read_fresh_observation(raw,modified,reader)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\base71.py\", line 73, in read_fresh_observation\n    obs=reader.read(image)\n        ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\bout98.py\", line 169, in read\n    candidate = self._result_candidate(image, image.tobytes())\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\bout98.py\", line 143, in _result_candidate\n    data = self._ocr(image, 'result-full-frame', (0,0,1280,720), scale=2)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\bout98.py\", line 102, in _ocr\n    (self.ocr_output/(label+'-'+stamp+'.stdout.txt')).write_text(completed.stdout, encoding='utf-8')\n  File \"C:\\Users\\samsa\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\pathlib.py\", line 1075, in write_text\n    raise TypeError('data must be str, not %s' %\nTypeError: data must be str, not NoneType\n"
+      },
+      "observer_status": {
+        "status": "BLOCKED_NEUTRAL",
+        "blocker": "WATCHER_FAILURE:TypeError('data must be str, not NoneType')",
+        "start_utc_ms": 1792038502856,
+        "stage": "SETUP",
+        "setup_proof": null,
+        "selected_configuration": null,
+        "clock_observations": [],
+        "clock_decreases": 0,
+        "script_count": 0,
+        "end_result": "UNKNOWN",
+        "result_candidate": null,
+        "result_observe_started_elapsed": null,
+        "result_observe_deadline_elapsed": null,
+        "result_observations": [],
+        "completion_claim": "NONE; only a visible result candidate plus independent review can close the bout observation."
+      }
+    }
+  },
+  "observer": {
+    "status": "BLOCKED_NEUTRAL",
+    "blocker": "WATCHER_FAILURE:TypeError('data must be str, not NoneType')",
+    "start_utc_ms": 1792038502856,
+    "stage": "SETUP",
+    "setup_proof": null,
+    "selected_configuration": null,
+    "clock_observations": [],
+    "clock_decreases": 0,
+    "script_count": 0,
+    "end_result": "UNKNOWN",
+    "result_candidate": null,
+    "result_observe_started_elapsed": null,
+    "result_observe_deadline_elapsed": null,
+    "result_observations": [],
+    "completion_claim": "NONE; only a visible result candidate plus independent review can close the bout observation."
+  },
+  "observer_stderr": "Exception in thread Thread-5 (_readerthread):\nTraceback (most recent call last):\n  File \"C:\\Users\\samsa\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\threading.py\", line 1045, in _bootstrap_inner\n    self.run()\n  File \"C:\\Users\\samsa\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\threading.py\", line 982, in run\n    self._target(*self._args, **self._kwargs)\n  File \"C:\\Users\\samsa\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\subprocess.py\", line 1599, in _readerthread\n    buffer.append(fh.read())\n                  ^^^^^^^^^\n  File \"<frozen codecs>\", line 322, in decode\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0x81 in position 26: invalid start byte\nTraceback (most recent call last):\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\bout98.py\", line 482, in <module>\n    if __name__ == '__main__': main()\n                               ^^^^^^\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\bout98.py\", line 402, in main\n    obs=base.read_fresh_observation(raw,modified,reader)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\base71.py\", line 73, in read_fresh_observation\n    obs=reader.read(image)\n        ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\bout98.py\", line 169, in read\n    candidate = self._result_candidate(image, image.tobytes())\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\bout98.py\", line 143, in _result_candidate\n    data = self._ocr(image, 'result-full-frame', (0,0,1280,720), scale=2)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime119-preparation\\observer\\bout98.py\", line 102, in _ocr\n    (self.ocr_output/(label+'-'+stamp+'.stdout.txt')).write_text(completed.stdout, encoding='utf-8')\n  File \"C:\\Users\\samsa\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\pathlib.py\", line 1075, in write_text\n    raise TypeError('data must be str, not %s' %\nTypeError: data must be str, not NoneType\n",
+  "hypothesis": "Windows PowerShell OCR emits OEM bytes while Python-Xutf8 text capture decodesUTF8. UnicodeDecodeError on0x81 produces stdoutNone and secondarywrite_textTypeError.",
+  "next": "Runtime120 local UTF8-output OCR script, route allthree OCR calls, actual WinRT roundtrip retainedframes/Unicode control, freshcritic beforelaunch."
+}

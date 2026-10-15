@@ -1,0 +1,11 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Fight Night SBS local host</title>
+<style>body{margin:2rem;background:#090b10;color:#e8edf7;font:16px system-ui}video{width:min(100%,1100px);background:#000;display:block;margin-top:1rem}input,button{font:inherit;padding:.5rem;margin:.25rem}#status{white-space:pre-wrap;color:#9dd7ff}</style>
+<h1>Fight Night SBS local host</h1>
+<p>Select the running Xenia window when prompted. The selected window must already be using the Vulkan SBS build.</p>
+<label>Session <input id="session" value="localtest01" pattern="[A-Za-z0-9_-]{6,64}"></label>
+<button id="start">Start capture host</button>
+<video id="preview" autoplay muted playsinline></video>
+<p id="status">Idle.</p>
+<script type="module" src="./host.js"></script>

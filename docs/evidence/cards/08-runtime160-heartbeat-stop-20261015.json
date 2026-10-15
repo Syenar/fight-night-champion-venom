@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL_TIMER_HOOK_PROOF_OBSERVER_READ_FAILURE",
+  "output": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-30-0",
+  "final": {
+    "status": "CLEANUP_COMPLETE",
+    "cleanup_status": "CLEANUP_COMPLETE",
+    "failure": null,
+    "game_pid": 16364,
+    "actual_exit_code": 0,
+    "ordinary_close_requested": true,
+    "targeted_watchdog_used": false,
+    "observer_quiescent": true,
+    "cleanup_blocked": false,
+    "title_cleanup_blocked": false,
+    "title_close_forbidden_due_to_live_observer": false,
+    "game_left_alive": false,
+    "live_handles_retained_through_final_status": true,
+    "shutdown_event_order": [
+      "neutral-before-observer-stop",
+      "observer-terminate",
+      "neutral-after-observer-stop",
+      "ordinary-title-close"
+    ],
+    "cleanup_errors": [],
+    "observer_pid": 30448,
+    "observer_exit_code": 1
+  },
+  "end_utc": "2026-10-15T08:25:44.958395+00:00",
+  "terminal": "PUBLISHER_HEARTBEAT_READ_FAILED",
+  "heartbeat_read_error": {
+    "kind": "read_error",
+    "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-30-0\\publisher-heartbeat.json",
+    "exception_type": "FileNotFoundError",
+    "exception": "FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)",
+    "errno": 2,
+    "winerror": 2,
+    "attempts": 21,
+    "retry_count": 20,
+    "elapsed_ms": 46.999999998661224,
+    "raw_bytes": 0,
+    "raw_prefix_hex": "",
+    "raw_prefix_text": "",
+    "raw_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "previous_valid_heartbeat_sequence": 12104,
+    "previous_valid_heartbeat_utc_ms": 1792052743392
+  },
+  "previous_verified_age_at_failure_ms": 155,
+  "published_packet_progress": "Actualretainedneutralpackets12105..12108 afterlastverifiedheartbeat12104; notfreshheartbeatreadproof.",
+  "last_frame": "frames/guest-57.ppm",
+  "root_visual": "Ali introduction card at290.609s; no HUD in this run.",
+  "timer_hook_proof": "Immutable3eventsconfirmseparate60guardfalse/render30guardtrue/requested30effective30; independentactual160timerreview.",
+  "watcher_status": {
+    "status": "ABSENT_NOT_FABRICATED",
+    "reason": "No watcher-status.json retained; supervisor may have terminated the observer before its final report. Use raw supervisor terminal diagnostics."
+  },
+  "guest_swap_intervals": {
+    "count": 8779,
+    "interval_sum_seconds": 293.252367,
+    "median_interval_ms": 33.408,
+    "p99_interval_ms": 51.107,
+    "arrival_rate_hz": 29.936672258812493
+  },
+  "limits": "No completedbout or FPS/effective60 qualification. Title0 afterordinaryclose; supervisor terminatedobserver1. Missingwatcherfinalreportexplicitlyretainedasabsence.",
+  "next": "162 neutral-only bounded read-race repair; keeporiginaltimestamp/seq/freshness/input expiry."
+}

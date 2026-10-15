@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-14",
+  "card": "08",
+  "status": "PARTIAL",
+  "build": "native64",
+  "binary_hashes": {
+    "venom_fnc_canonical_tu2.exe": "BD39FD5146F1E1D61BE0CF3B93989B4D220727BD96FC5D35041EC741127BB83C",
+    "rexruntimerd.dll": "C5A644C838C75990B27C710F7567ECD29BD28E7B85AF65E91CA25817F9177491",
+    "rexgpu-xenosrd.dll": "64B57F53658E64873F2978D019B406475E8D5DAF2B58043DB1A8B33E03F410C7",
+    "TracyClientrd.dll": "850E4CBE76C5729812160AD3E34774A039262E48F983C8AC70A611F9C98783C7"
+  },
+  "manifest": "research\\rexglue-qualification-20261012\\probe65-native64-profile-reload\\probe-manifest.json",
+  "lifecycle": {
+    "status": "PROBE_ENDED_RUNTIME_UNQUALIFIED",
+    "pid": 41296,
+    "start_utc": "2026-10-14T23:00:00.845291+00:00",
+    "end_utc": "2026-10-14T23:04:02.249428+00:00",
+    "exit_code": 0,
+    "exit_hex": "0x00000000",
+    "deadline_reached": true,
+    "close_requested": true,
+    "forced_termination": false,
+    "watcher_pid": 41548,
+    "watcher_exit_code": 1,
+    "watcher_ready": true,
+    "watcher_failed_during_game": false,
+    "supervisor_error": null,
+    "cleanup_errors": [],
+    "watcher_terminated_by_supervisor": true
+  },
+  "profile_files": {
+    "baseline_source_preserved": true,
+    "before": {
+      "B13EBABEBABEBABE\\45410915\\00000001\\FN4PROFILE 20261014210828\\FN4PROFILE 20261014210828": "4734015FDE213A5592F1CC84C40AC55CC9B680CF1521C66A9E32A8D740A82DBF",
+      "B13EBABEBABEBABE\\45410915\\Headers\\00000001\\FN4PROFILE 20261014210828.header": "C013A67FF20531CAB99C4728ABA2925BDC8CFC514562CCCA792BACEA2BA9A77D"
+    },
+    "after": {
+      "B13EBABEBABEBABE\\45410915\\00000001\\FN4PROFILE 20261014210828\\FN4PROFILE 20261014210828": {
+        "sha256": "4734015FDE213A5592F1CC84C40AC55CC9B680CF1521C66A9E32A8D740A82DBF",
+        "bytes": 900028
+      },
+      "B13EBABEBABEBABE\\45410915\\Headers\\00000001\\FN4PROFILE 20261014210828.header": {
+        "sha256": "C013A67FF20531CAB99C4728ABA2925BDC8CFC514562CCCA792BACEA2BA9A77D",
+        "bytes": 328
+      }
+    }
+  },
+  "aggregate_enumerator_counts": [
+    "1",
+    "1"
+  ],
+  "captures": 110,
+  "fatals": [],
+  "visual_primary_review": {
+    "main_menu_frames": [
+      15,
+      18
+    ],
+    "boxer_selection": [
+      20,
+      22
+    ],
+    "arena_selection": [
+      23,
+      33
+    ],
+    "controls_loading": [
+      34,
+      36
+    ],
+    "rendered_bout": [
+      43,
+      72
+    ],
+    "pause": [
+      73,
+      110
+    ],
+    "fight_capture_interval_utc": [
+      "2026-10-14T23:01:42.002430+00:00",
+      "2026-10-14T23:02:41.199908+00:00"
+    ],
+    "missing_fighter_observation": "No disappeared boxer in these reviewed action frames; camera/referee occlusion observed. Full sustained rendering remainsunqualified."
+  },
+  "input_observation": "Live analogcontrollerchanges at35.766s precede45sStartfixture; mixedphysical/scripted session. Do not claim deterministicautomaticmenunavigation or ABI gameplaycausality.",
+  "independent_review": "Bodyadmission criticPASS; visual/integrationcriticservicehitusage; primaryall110frames/integrationreview only",
+  "limits": [
+    "Matchingpair hashed beforelaunch; live loadedDLLpaths notcaptured inprobe65",
+    "Fullguest/translatedXUID/pathtrace absent; profilereload inferred fromenumeration+mainmenu+existingfiles",
+    "Fullmatch/tutorial/lifecycle/nativeoffline/Rust/SBS/browser/release open",
+    "Callback82DAFF58 invocationnottraced; crashsubcode/stack remainsmissing"
+  ],
+  "next": "Userselectedscriptedbout; isolatedordinarycontrollerfixture66 contract415checksPASS, expiry/packetnegativecontrolsFAIL as expected; admitprobe67"
+}

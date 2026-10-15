@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-08",
+  "card": "07",
+  "milestone": "Self-run exact-TU2 failed guest file request trace",
+  "status": "PARTIAL",
+  "runner": {
+    "hostSha256": "83897930132025086FC3C98BE5BD578D5D7449C726FA89736E9C91C233EECC51",
+    "hostPath": "research/third_party/xenon-recomp/out/build/d3d12-probe/runtime_host/Release/xenon_runtime_host.exe",
+    "diagnostic": "XENON_TRACE_GUEST_IO=1 passed explicitly to child environment",
+    "run35": {"durationSeconds": 90, "guestIoFailureLines": 0, "note": "Short exploratory run; no negative inference from the empty trace."},
+    "run36": {"durationSeconds": 90, "guestIoFailureLines": 0, "note": "Explicit child environment verified; short run only."},
+    "run37": {
+      "durationSeconds": 300,
+      "shutdown": "Launcher requested stop; guest did not stop cooperatively within 8 seconds and process was terminated.",
+      "guestIoFailureLines": 6,
+      "pathsAndStatus": [
+        {"operation": "NtCreateFile", "path": "D:\\data\\xenon\\fe\\main.big", "status": "0xC0000034"},
+        {"operation": "NtCreateFile", "path": "D:\\data\\common\\ai\\", "status": "0xC0000034"},
+        {"operation": "NtQueryFullAttributesFile", "path": "D:\\data\\common\\ai\\", "status": "0xC0000034"},
+        {"operation": "NtCreateFile", "path": "cache:\\", "status": "0xC0000034"},
+        {"operation": "NtQueryFullAttributesFile", "path": "cache:\\", "status": "0xC0000034"},
+        {"operation": "NtCreateFile", "path": "\\Device\\Harddisk0\\partition0", "status": "0xC0000034"}
+      ],
+      "logSha256": "51D39231B506A6298E1F427F6BC47408A8177A33A59EE6796300A8CA489E88A5",
+      "observationsSha256": "5BF2C103927286F5E4383237E211BCBB47CFD7B3A23A9C5016CDB4DFE8107720",
+      "configSha256": "F140F17A5DE26F4DF6690C99DF6A77305C45EA0F3C22663DF22D091894F5530C",
+      "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+      "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+      "titleId": "45410915",
+      "mediaId": "2DC50868",
+      "titleUpdateApplied": true,
+      "titleScreen": false,
+      "firstFrame": false,
+      "vdCalls": 0,
+      "gpuRingConfigured": false,
+      "frontBufferConfigured": false
+    }
+  },
+  "sourceLayout": {
+    "extractionManifest": "research/source/EXTRACTION_MANIFEST.json",
+    "gameDataDirectories": {
+      "data/common": ["config", "fmv"],
+      "data/xenon": ["audio", "gameexplorer", "loc"]
+    },
+    "archiveDirectories": {
+      "databigs/xenon/fe.big": {
+        "size": 248528752,
+        "sha256": "F584AE369A1E9A80040161324B4DDE67F23D15F234032E17515454775A25CAD0",
+        "headerBytes": "45 42 00 03"
+      },
+      "databigs/xenon/be_gp.big": {
+        "size": 46797776,
+        "sha256": "6F53E8B31BC1E9C74376BBEE6869A1DF912A52F5E0686E519EE46B7A6DCD7667",
+        "headerBytes": "45 42 00 03"
+      }
+    },
+    "interpretation": "The failed guest requests are absent from the currently mounted loose directory tree. Separate EB-signature .big archives exist under databigs. Their exact relationship to main.big and common/ai has not yet been established; do not rename or alias archives until their index/path contract is parsed. cache: and Harddisk0\\partition0 also lack runtime mounts."
+  },
+  "nextAction": "Parse and independently validate the EA BIG EB index for fe.big and be_gp.big, establish whether they contain the guest-requested logical paths, then implement read-only archive-backed path resolution plus writable cache/HDD devices with focused VFS tests. Rerun the same exact-TU2 trace and require the missing path requests to resolve before revisiting GPU startup."
+}

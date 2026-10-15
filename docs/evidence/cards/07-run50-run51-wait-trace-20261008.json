@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "date": "2026-10-08",
+  "card": "07",
+  "runs": [
+    {
+      "id": "fnc-tu2-queue-trace-run50",
+      "purpose": "Capture guest wait return and queue state immediately before consumer pop.",
+      "result": "The wait helper returned once with r3=0xFFFFFFFFFFFFFFFE. The queue consumer pre-pop hook was never reached, so this run cannot establish the queue state at consumption.",
+      "elapsedSeconds": 305.533,
+      "stopMethod": "stop-signal; guest did not stop cooperatively and was terminated by the host after its grace period",
+      "hostSha256": "9D53F1F90E38DD823E9185BB8E34177184C9FBB0441EC42052F5F13EEA84C7F2",
+      "configSha256": "0E568D9C8E089F6284A0B7D49D63F26C2445CBA4104EE28CCCF4965BAF0AE701",
+      "diagnosticModuleSha256": "4BABF061F1E4A11BA5B1F3C207DF469ABA39474D13C8E7C9BD45CA7B2C2F7D01",
+      "evidenceDirectory": "research/native-host-probe-20261008-queue-trace-run50",
+      "waitTrace": "research/native-host-probe-20261008-queue-trace-run50/wait-results.jsonl",
+      "consumerPrePopTrace": "research/native-host-probe-20261008-queue-trace-run50/consumer-prepop.jsonl",
+      "consumerPrePopLines": 0
+    },
+    {
+      "id": "fnc-tu2-wait-trace-run51",
+      "purpose": "Record wait arguments, object state, queue-global pointers, result, and exit signal state.",
+      "result": "One wait invocation used object 0x83002B90 and timeout value 0xFFFFFFFF (infinite); the object byte at +0xC was 1. It returned 0xFFFFFFFFFFFFFFFE. At return, global 0x83002B2C remained 0. The globals 0x83002B30 and 0x83002B34 contained pointers 0xBD80B0E0 and 0xBD80B0C0, respectively. These are queue/header pointers, not decoded queue begin/end values. Consumer pre-pop was not reached.",
+      "elapsedSeconds": 305.516,
+      "stopMethod": "stop-signal; guest did not stop cooperatively and was terminated by the host after its grace period",
+      "hostSha256": "9D53F1F90E38DD823E9185BB8E34177184C9FBB0441EC42052F5F13EEA84C7F2",
+      "configSha256": "C62ED44F537D60ADF5664BB855884EAB5AAF3C9FAE8D2E1F67EFDA2B128AEA8E",
+      "effectiveTu2ImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+      "diagnosticModuleSha256": "2828EF689CD8209FE918E9F5ED304FEE42A70A643F21F862434186BDE640DEDD",
+      "aotSourceBaselineSha256": "C5A97139347C7D07BB16AAB808E8BB038FA4B88155E93C72EE319D99A8607296",
+      "aotSourceRestoredSha256": "C5A97139347C7D07BB16AAB808E8BB038FA4B88155E93C72EE319D99A8607296",
+      "waitCallTraceSha256": "62927900072C4221DE1AE9012B96769975C5860BCDD33153A2B8D4F3C0D774E7",
+      "waitReturnTraceSha256": "9075179E06C2119A84C11FD85C60E404565501FDE5D0C8CC1823A1A5961E3268",
+      "evidenceDirectory": "research/native-host-probe-20261008-wait-trace-run51",
+      "waitCallTrace": "research/native-host-probe-20261008-wait-trace-run51/wait-call.jsonl",
+      "waitReturnTrace": "research/native-host-probe-20261008-wait-trace-run51/wait-return.jsonl",
+      "probeResult": "research/native-host-probe-20261008-wait-trace-run51/probe-result.json"
+    }
+  ],
+  "interpretation": [
+    "Run50 and Run51 both used the exact TU2 effective image and the pinned Release runtime host.",
+    "The captured -2 result is a fact about the generated guest helper's return value; its semantic meaning is not established by these traces.",
+    "The object byte at +0xC and timeout arguments alone do not prove a host wait/import defect or guest queue defect.",
+    "No consumer pre-pop, Vd call, ring/front-buffer configuration, title, or rendered frame was observed. Neither run advances Card 07 to boot acceptance.",
+    "Do not change synchronization, syscall, queue, or import behavior until the exact guest helper, queue-header layout, and import contract are traced and independently validated."
+  ],
+  "nextAction": "Instrument both pointed-to queue headers (all fields and cursor elements), the producer-side mutations and signal writes, and the call/return around the wait helper's kernel/syscall path. Resolve the exact TU2 import/syscall metadata and compare against the official runtime contract before proposing a causal change."
+}

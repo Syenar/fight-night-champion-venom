@@ -1,0 +1,50 @@
+{
+  "card": "08-runtime221-closed-and-offline222-reader",
+  "date": "2026-10-15",
+  "project": "Fight Night Champion Venom",
+  "status": "PARTIAL",
+  "hypothesis": "Retained221 cover images might contain a prompt missed by the existing fallback",
+  "hypothesis_result": "DISPROVEN_FOR_RETAINED_FRAMES",
+  "observed": "Actual final Reader205 and exact diagnostic transform reject seven221 cover frames;208 positive passes. Native221 closes ordinary0/observer0 before setup actions. Six field20 rows show one normal attachment/callback sequence.",
+  "proofs": {
+    "actual221_review": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\runtime221-review\\actual60-i\\review221-actual.json",
+      "sha256": "9ACCE76AD707B86C00E8FFEADF245D56CD183DE8EFBC8EEECE3193B1B5C20929"
+    },
+    "actual221_final": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-i\\final-supervisor-status.json",
+      "sha256": "2B433357CFC4D148281883CCABE2C629C68C608DB94BB0CCEEC58E5CC97CBF3E"
+    },
+    "offline222_report": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime222-reader-replay\\runtime222-reader-replay-report.md",
+      "sha256": "9951394F390E5CE6C50B027E531D73F8A3FBD13C4626F24E5AE169B88C7A3A06"
+    },
+    "offline222_results": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime222-reader-replay\\reader-replay222.json",
+      "sha256": "DBB1B7D0E31F4A4552C5198A41FECD5EAC218A9F8D25F3E0F05BE36A0C2EEAB3"
+    },
+    "offline222_roi": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime222-reader-replay\\roi-pixel-comparison222.json",
+      "sha256": "8879119BC34FC87ACD548B2ADD984DC91DC06B136A223FE91DD4DA87F9C882DC"
+    },
+    "storage224_dedup": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\capture224-storage\\dedup224-proof-attempt-02.json",
+      "sha256": "8B095CAFDB2CCFCA0DAFEEFDE4188B6A5125F8D6CBBEC619F99A078CF326426B"
+    },
+    "storage224_compression": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\capture224-storage\\compression224-result.json",
+      "sha256": "4919E9DFD8F7400D263FFA18F6DEEAC245300CCA0F0A34CE0D15FF8C03442ED1"
+    }
+  },
+  "qualified_hud_decreases": 0,
+  "script_requests": 0,
+  "displayed_fps": "UNMEASURED",
+  "full_bout": "UNKNOWN",
+  "crash212_repair": "UNPROVEN",
+  "next": "Prepare and independently review223 fixed initial capture delay5 to6.25; interval5/count120/total600 and strict scene guards unchanged. Phase alias unproved. Separately review storage224 and narrow performance candidate.",
+  "limitations": [
+    "Offline replay conclusions concern retained images and the configured prompt ROI.",
+    "No unchanged broad native retry; no OCR or startup-timeout relaxation.",
+    "Dedup preserves content but intentionally changes duplicate file identities; compression size API is not exact physical cluster allocation."
+  ]
+}

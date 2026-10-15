@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-15",
+  "agent": "root",
+  "status": "PARTIAL",
+  "case": "actual208-first-black-frame-stop",
+  "command": [
+    "C:\\Users\\samsa\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime208-preparation\\revision2\\Supervisor208.py",
+    "--probe-id",
+    "g",
+    "--game-frame-rate",
+    "60"
+  ],
+  "input_and_output_pins": {
+    "research\\rexglue-qualification-20261012\\runtime208-review\\actual60-g\\actual60-g-review.json": "E6478249DE7172D3919D10E003643733993B24866C7F3BC4B81A56EA6BA76465",
+    "research\\rexglue-qualification-20261012\\runtime208-review\\actual60-g\\actual60-g-review.md": "3DB78AAB252401E5985AE9CAD7D50D191C89634364AA593E85F5458A6088FB6C",
+    "research\\rexglue-qualification-20261012\\runtime208-preparation\\revision2\\root-actual-intent208-60-g.json": "9CE90921EBBE9C58C6C26527A3A3D242E1D5BAF3440B79D915508890DFB24206",
+    "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\final-supervisor-status.json": "7CCE43113352A0E5BDB91EE56CBE3BD744A8622366AF70C41E8CBF5E1E72A261",
+    "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\post-run-summary.json": "2453A5E3C5C649814D772DB59AC7E0E212C0CE4E3BA9FE5578F5D1D237B87314",
+    "research\\performance-20261015\\display208-actual60-g\\root-execution-intent.json": "4B041C5BAA617948F874851806EE1D6B179FBFC39C9D2423EABA28117F015A90",
+    "research\\performance-20261015\\display209-preparation\\captures\\20261015T123044Z-afd3d8268ede7ba2\\result.json": "7B0E599DD8A3CB8DF01D1A7572DDBAF87C3FE8BF7B8360E69C5AE861B303A9E7",
+    "research\\performance-20261015\\display208-closed-analysis\\timing-and-failure-clarification.md": "4F3ADAF22270483914230DFC3666F5EE49AE02C746F81A006B0E1898EB74D2F8"
+  },
+  "verified": {
+    "setup_request_publication_commit_chains": 10,
+    "native_down_release_packet_joins": 20,
+    "hud_clock_decreases": 10,
+    "script_requests": 8,
+    "title_pid": 37256,
+    "observer_pid": 9380,
+    "exits": [
+      0,
+      0
+    ],
+    "watchdog": false,
+    "survivors": false,
+    "last_hud_clock_seconds": 95,
+    "first_black_capture_elapsed": 360.1918213691679,
+    "terminal_decision_elapsed": 361.35122970389784,
+    "getup_seen": false,
+    "result_wait_entered": false,
+    "full_bout": "UNKNOWN",
+    "displayed_fps": "UNKNOWN"
+  },
+  "display_sample": {
+    "status": "UNKNOWN_OR_INCOMPLETE",
+    "requested_seconds": 45,
+    "child_elapsed_seconds": 40.0,
+    "foreground_target_samples": 0,
+    "foreground_samples": 40,
+    "notes": "Exact v2 schema; owned-child cleanup and private-session absence retained. Fatal WinError31 has no traceback: exact API/source location remains unproven. Do not attribute it to foreground sampling. Supervisor end time is post-cleanup, not exact process exit."
+  },
+  "next": "Source210 neutral-only uniform-black grace <=15s after fresh qualified HUD; independent production-entry review then unique212 binding. No knockdown/result origin inferred from black pixels."
+}

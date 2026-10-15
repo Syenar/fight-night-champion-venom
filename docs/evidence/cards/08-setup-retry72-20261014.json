@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-14",
+  "card": "08",
+  "status": "PARTIAL",
+  "hypothesis_result": "PUBLICATION_COLLISION_RECOVERY_OBSERVED; PRESS_START_DETECTOR_FALSE_NEGATIVE",
+  "lifecycle": {
+    "status": "MEASUREMENT_INVALID",
+    "pid": 36280,
+    "start_utc": "2026-10-15T00:01:04.557898+00:00",
+    "end_utc": "2026-10-15T00:02:05.555038+00:00",
+    "exit_code": 0,
+    "exit_hex": "0x00000000",
+    "deadline_reached": false,
+    "close_requested": true,
+    "forced_termination": false,
+    "watcher_pid": 31776,
+    "watcher_exit_code": 0,
+    "watcher_ready": true,
+    "setup_verified": false,
+    "watcher_failed_during_game": true,
+    "supervisor_error": null,
+    "cleanup_errors": [],
+    "watcher_terminated_by_supervisor": false
+  },
+  "watcher": {
+    "status": "BLOCKED_NEUTRAL",
+    "blocker": "UNKNOWN_SCENE_FOR_15_SECONDS",
+    "start_utc_ms": 1792022464578,
+    "minimum_rounds": null,
+    "minimum_length_minutes": null,
+    "elapsed": 60.02549719810486,
+    "startup_elapsed": 60.125,
+    "accepted_packets": "accepted-packets.jsonl binds raw runtime lines and local timestamp conversion. Publications are not acceptance. No completed fight claim."
+  },
+  "publication": {
+    "successful_packets": 2585,
+    "nonneutral_successful_packets": 0,
+    "collision_count": 313,
+    "collision_operations": [
+      "replace_controller"
+    ],
+    "winerrors": [
+      5
+    ]
+  },
+  "frames": 11,
+  "actual_watcher_sha256": "3B05CF7EE8C350FDFBC37D56187CAE97163421D841820FA0849CBFF687138DCF",
+  "independent_review_limit": "Prelaunch critic reviewed2285 version; builder finalized3B05 before launch. Actualhash captured; finaldelta needs retrospective review, not retroactive prelaunch qualification.",
+  "observations": [
+    "Visible PRESS START in guest8 is rejected by animated brightness template. No Start pulse sent.",
+    "All published ordinary packets neutral. Actual replace_controller WinError5 collisions recovered without publisher failure through60second probe.",
+    "Loaded-module measurement failed: child WindowsPowerShell Get-FileHash unavailable. Prelaunch pair hashes only; livepair unknown.",
+    "CloseMainWindow true, exit0, noforcedtermination/cleanup error. Shutdown unqualified."
+  ],
+  "next_action": "Retain coordinate-bound exact PRESS START OCR classifier against actual bright/dim retained frames + non-title controls; freshcritic; freeze and enforceexact reviewedsourcehash with snapshot execution; repair modulemeasurement using.NET builtin hash."
+}

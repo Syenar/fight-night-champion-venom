@@ -1,0 +1,86 @@
+{
+  "schema": "runtime179-actual-30-8-independent-review/v1",
+  "verdict": "PASS_SCOPED_STARTUP_RELOAD",
+  "scope": "Read-only review of the closed native 30-8 startup/profile-read run, all retained runtime logs, save trace snapshot, exact source/pair pins, profile inventory, and main-menu capture.",
+  "run": {
+    "status": "CLEANUP_COMPLETE",
+    "title_pid": 36676,
+    "title_exit_code": 0,
+    "observer_pid": 22648,
+    "observer_exit_code": 0,
+    "start_utc": "2026-10-15T10:50:46.988187Z",
+    "end_utc": "2026-10-15T10:51:49.487531Z",
+    "watchdog_used": false,
+    "survivor": false,
+    "cleanup_errors": 0,
+    "probe_id": "8",
+    "rate_hz": 30
+  },
+  "outcome": {
+    "watcher_status": "RELOAD_ONLY_MAIN_MENU_POSITIVELY_OBSERVED",
+    "blocker": "RELOAD_ONLY_MAIN_MENU_REACHED",
+    "main_elapsed_seconds": 61.3538629,
+    "main_action": null,
+    "main_selection": "FIGHT_NOW",
+    "visually_reviewed_overview_sha256": "19AED6FA7DD3D95C9002FA45E26E3F40BAC3116DE4DCC5351DD59CFA929F1D1B",
+    "corrupt_settings_or_damaged_profile_observed": false,
+    "recovery_or_create_action_observed": false,
+    "startup_profile_read_gate": "PASS_SCOPED"
+  },
+  "loaded_pair": {
+    "venom_fnc_canonical_tu2.exe": "55EDDFF568FA1758E2067AAF1E784AB854A37B15E1FB1C8FD79A24206D4DE9E7",
+    "rexruntimerd.dll": "30A1915CF472A808BFC458E72918298EF70D4377FA59823E465861965B8B7BD9",
+    "rexgpu-xenosrd.dll": "64B57F53658E64873F2978D019B406475E8D5DAF2B58043DB1A8B33E03F410C7",
+    "TracyClientrd.dll": "850E4CBE76C5729812160AD3E34774A039262E48F983C8AC70A611F9C98783C7"
+  },
+  "save_trace": {
+    "full_runtime_log_sha256": "E7CD184706F07622246E7E8E2D62E0C16CCC63B6FB299E6B7B874AB277B779D9",
+    "immutable_snapshot_sha256": "67945A18182285D10591DF1A3E9971CBD2508CDE20A3FC68C04823D33169D9C6",
+    "snapshot_index_sha256": "E4C8C5779ED33466C99D7605488E3AB7377948836ECBB66DB75F7464D4728F91",
+    "profile_path_rows_in_full_and_snapshot": 8,
+    "matched_events": {
+      "header_open_read": 3,
+      "header_full_read_328_of_328": 2,
+      "header_license_read_short_file_4_requested_0_actual": 1,
+      "payload_open_existing_create_false_truncate_false": 1,
+      "payload_read_900028_of_900028": 1,
+      "profile_create_truncate_write_delete_rename": 0
+    },
+    "snapshot_errors": 0,
+    "short_license_tail_disclosed": true
+  },
+  "integrity": {
+    "marker_equals_probe_manifest_marker": true,
+    "loaded_four_modules_match_marker": true,
+    "source_profile_unchanged": true,
+    "prepost_user_root_diff_empty": true,
+    "profile_payload_sha256": "8B2D72922CB2E5325E11FDEFF92B12FA2913DD4442035CCD541B610C0219F749",
+    "profile_header_sha256": "A433A573AEF60FCE4125DF7E797D8EAE8E47ABFE20BFD3737A12416CF42671E5",
+    "effective_config_sha256": "76DB468B63BF0169987909BC05D07C12DB89767B11CE2BBE02D8D533A54BC908",
+    "effective_config_read_only": true,
+    "cache_file_count": 2
+  },
+  "remaining_unpassed": [
+    "A write-then-relaunch save persistence cycle",
+    "Side selection and complete fight/bout",
+    "Progression and full offline matrix",
+    "Comparable active-gameplay FPS/performance",
+    "SBS and browser acceptance"
+  ],
+  "reviewer_actions": {
+    "process_checker_invoked": false,
+    "observer_or_ocr_invoked": false,
+    "title_invoked": false,
+    "build_or_compile_invoked": false,
+    "run_artifacts_modified": false
+  },
+  "date": "2026-10-15",
+  "status": "PARTIAL_SCOPED_STARTUP_RELOAD_REVIEWED",
+  "evidence": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-30-8",
+  "trace_snapshot_evidence": "research/rexglue-qualification-20261012/save-trace179-observation",
+  "independent_review": {
+    "path": "research/rexglue-qualification-20261012/runtime179-review/verdict-actual-30-8.json",
+    "sha256": "C5696E7B457E5F864B9C4C436B27E4E5362A757FB5EEE5F948E41E756469A022"
+  },
+  "card_repair_note": "Failed PowerShell module loading during metadata update wrote null to this index. Reconstructed index from immutable independent closed-run verdict. Raw run and review artifacts unchanged; original card remains in pre-update tool output."
+}

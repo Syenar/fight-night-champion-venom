@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS_INDEPENDENT_STORAGE_REVIEW",
+  "evidence": "research\\rexglue-qualification-20261012\\capture152-storage",
+  "closed_probe": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-30-c",
+  "linked_paths": 75,
+  "logical_duplicate_bytes_avoided": 207361200,
+  "all_paths_hashes_sizes_attributes_preserved": true,
+  "target_identities_intentionally_changed": 75,
+  "post_compression_api_allocation_bytes": 86888448,
+  "derived_difference_from_logical_baseline_bytes": 84202978,
+  "exact_cluster_savings_measured": false,
+  "dedup_and_compression_not_added": true,
+  "review": "research/rexglue-qualification-20261012/capture152-storage/verdict.json"
+}

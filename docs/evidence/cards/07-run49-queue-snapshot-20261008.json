@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-08",
+  "card": "07",
+  "milestone": "Exact-TU2 Release queue-consumer fault snapshot",
+  "status": "PARTIAL",
+  "sourceIdentity": {
+    "isoSha256": "75E9D3EAA8440A24BFE1052B6E051F2A29DF189DDBE854969C1406E31D2E8242",
+    "baseXexSha256": "90A698C71AA714E383CE092750CE767E07145F1CA38D8A9C9B3BD8005EA29FF6",
+    "titleUpdateSha256": "10D3B95C630F774D376FF504574E6107457A0A24768079D69BDD343BEF88BB68",
+    "titleId": "45410915",
+    "mediaId": "2DC50868",
+    "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "titleUpdateApplied": true
+  },
+  "build": {
+    "configuration": "Release",
+    "hostPath": "research/third_party/xenon-recomp/out/build/d3d12-probe/runtime_host/Release/xenon_runtime_host.exe",
+    "hostSha256": "9D53F1F90E38DD823E9185BB8E34177184C9FBB0441EC42052F5F13EEA84C7F2",
+    "sourcePath": "research/third_party/xenon-recomp/src/core/session.cpp",
+    "sourceSha256": "BD1FFF5B52906C7FF96CA2F4B93A3075EAC47AA8D6C437F155DF79B0FE0B0F92",
+    "generatedConsumerPath": "research/generated/EC2C955DB9E55A6207A391A2AB80F60332DC41C3FE4C07968C7F07D5A9621CA4/ppc-tu2-instructions19/ppc_recomp.75.cpp",
+    "generatedConsumerSha256": "070EF4B3E729955BFE2F06FA90910F4E3CB1D10AD8FCD5ECDE27FED628523401",
+    "diagnosticChange": "Read-only queue-header snapshot gated on guest PC 0x825EBFD4; no guest data or control flow is changed."
+  },
+  "run": {
+    "id": "fnc-tu2-queue-snapshot-run49",
+    "directory": "research/native-host-probe-20261008-queue-snapshot-run49",
+    "startedUtc": "2026-10-08T05:16:32.9406411Z",
+    "endedUtc": "2026-10-08T05:21:38.3310066Z",
+    "durationSeconds": 305,
+    "hostPid": 3872,
+    "shutdown": "stop.signal moved status to stopping; guest did not exit within the launcher grace period and was force-terminated; exitCode -1 is not a clean shutdown",
+    "configSha256": "DBFC9ECB4791CBBFFF77763EDD06F7AE0D47AA2BE462A7CCEF8F783B685C8660",
+    "logSha256": "F8BC32A2E08725C0422C207227DF34ADDB2FF248D2F75ED4FAE7FA1DFAF95012",
+    "observationsSha256": "06518A60D9AC0560A8861FAE0104D4671A746C107A97CF8D529143039B6F4E9D",
+    "statusSha256": "8FB7960BCDDF9183B92DAEDA9019F6656C7D007359A95970A2D2B6E5DD32C99A",
+    "effectiveImageExportSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "effectiveImageExportSize": 20316160,
+    "generatedModuleSha256": "85C29E095B39BC6A1922890B7ED85D2E5CFDDD6AE51C85BBC804B529831AEFBC"
+  },
+  "fault": {
+    "guestThread": 8,
+    "guestPc": "0x825EBFD4",
+    "instruction": "lwz r10,20(r31)",
+    "effectiveAddress": "0x00000014",
+    "r31": "0x00000000",
+    "callReturnAddress": "0x825EED90",
+    "queueGlobal": "0x83002B34",
+    "queueHeader": "0xBD80B0C0",
+    "queueBegin": "0xBC90EDE0",
+    "queueEnd": "0xBC90EDDC",
+    "queueCapacity": "0xBC90F5E0",
+    "queueEndMinusBeginBytes": -4,
+    "snapshotTiming": "Captured when sub_825EBFB0 faulted while dereferencing the queue item. Its caller sub_825EE3E0 had already stored end-4 at guest address 0x825EE468. The observed end-before-begin difference may therefore be the current consumer's own pop update; it is not proof that the queue was invalid before consumption.",
+    "interpretation": "The consumer passed a null item into sub_825EBFB0 and faulted reading its reference-count field. Pre-consumption bounds and producer/wait chronology are unknown. Empty-queue consumption, concurrent mutation, stale item, or another guest-state defect remain possible."
+  },
+  "startup": {
+    "mainThreadGuestBlocks": 636554,
+    "guestExceptions": 1,
+    "graphicsExportCallsObserved": 0,
+    "gpuProbeTicks": 1380,
+    "gpuRingConfigured": false,
+    "frontBufferConfigured": false,
+    "titleScreen": false,
+    "firstFrame": false,
+    "gameplay": false,
+    "stereoSbs": false,
+    "browser": false
+  },
+  "focusedTests": {
+    "command": "Run Release xenon_session_execution_tests.exe and xenon_session_tests.exe",
+    "executionTests": "PASS (Session execution tests passed)",
+    "sessionTests": "PASS (All tests passed!)",
+    "scope": "Host-session regression coverage only; not a game boot or queue-root-cause test."
+  },
+  "analysis": {
+    "observed": [
+      "Generated guest code in sub_825EED90 invokes sub_825EE3E0 after sub_827AF928; the caller does not branch on the wait helper's return value.",
+      "sub_825EE3E0 reads an item at begin, adjusts the queue, then decrements end by four bytes before calling sub_825EBFB0 on the item.",
+      "At the later null-item fault inside sub_825EBFB0, the observed end is one slot before begin. Since end has already been decremented in this consumer path, the snapshot cannot establish the pre-pop queue state.",
+      "Two generated call-interior entries at 0x82EE2B2C and 0x82EE2B3C encode sc 2 followed by blr in the legacy generated C++ path. Their syscall/import mapping and relevance to this worker remain unproven."
+    ],
+    "unprovenCandidates": [
+      "empty-queue consumption due ignored wait result or event/list contract mismatch",
+      "concurrent producer/consumer mutation or stale item",
+      "guest initialization defect",
+      "generated sc/syscall dispatch or import mapping gap"
+    ],
+    "nextAction": "Trace the vector's producer operations and guest wait result on every access to global 0x83002B34. In parallel, resolve the XEX import/thunk metadata for 0x82EE2B2C/0x82EE2B3C and prove whether these generated sc entries must invoke RuntimeServices. Add deterministic queue/synchronization fixtures before changing semantics; rerun the exact TU2 scenario with read-only instrumentation."
+  },
+  "acceptance": {
+    "nativeRecompile": false,
+    "firstRenderedFrame": false,
+    "completeOfflineGame": false,
+    "trueSbs": false,
+    "browserNative": false,
+    "card07": "IN_PROGRESS"
+  }
+}

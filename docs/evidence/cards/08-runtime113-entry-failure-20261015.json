@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-15",
+  "probe": 113,
+  "status": "BLOCKED_BEFORE_TITLE",
+  "hypothesis": "combined complete getter repair108 and timer105 may permit a controlled original30Hz baseline",
+  "command": "python -X utf8 research/rexglue-qualification-20261012/runtime113-preparation/SupervisorBout113.py --probe-id 20261015-a --game-frame-rate 30",
+  "actual_supervisor_exit": 1,
+  "title_launched": false,
+  "checker_invoked": false,
+  "actual_final_status": {
+    "status": "SUPERVISOR_ERROR",
+    "cleanup_status": "CLEANUP_COMPLETE",
+    "failure": "RuntimeError('neutral observer ready/liveness handshake failed; title not launched')",
+    "game_pid": null,
+    "actual_exit_code": null,
+    "ordinary_close_requested": false,
+    "targeted_watchdog_used": false,
+    "observer_quiescent": true,
+    "cleanup_blocked": false,
+    "title_cleanup_blocked": false,
+    "title_close_forbidden_due_to_live_observer": false,
+    "game_left_alive": false,
+    "live_handles_retained_through_final_status": true,
+    "shutdown_event_order": [
+      "neutral-before-observer-stop",
+      "neutral-after-observer-stop"
+    ],
+    "cleanup_errors": [],
+    "observer_pid": 40760,
+    "observer_exit_code": 1
+  },
+  "failure": "Actual observer entry rejects precreated output directory and wrong prefix; mocked integration controls missed the directory ownership contract.",
+  "evidence_sha256": {
+    "research\\rexglue-qualification-20261012\\integration113-review\\README.md": "4AAC6EACEDBFF14F386136AE64BF16400A5CA35386ADE5E32423F91258B3E452",
+    "research\\rexglue-qualification-20261012\\runtime113-preparation\\runtime-admission.json": "97D4A072792089FD71844E880B03E6A251F0543BA51C80993754106BFC830494",
+    "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout113-30-20261015-a\\observer.stderr.txt": "83C089A0ECA13508D35797AABE0607A68E6F6A60F724D2806E90CA30FADFFD4A",
+    "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout113-30-20261015-a\\final-supervisor-status.json": "A1B14354D7854D253355CBC0489526B91F6F0DD503B05B3EF8840B8DCB0F326D",
+    "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout113-30-20261015-a\\probe-manifest.json": "DBEB1D0310B8AD2993F6D7BDC73D0A8A818A2AB17B46EA0BC1B43EA93BCD9804"
+  },
+  "performance_result": "NONE",
+  "next": "Repair minimal observer/supervisor contract116, execute actual neutral helper entry without title/start/OCR and independently review before new bounded probe."
+}

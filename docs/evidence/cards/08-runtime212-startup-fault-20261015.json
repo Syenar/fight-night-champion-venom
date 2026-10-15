@@ -1,0 +1,71 @@
+{
+  "card": "08-native-runtime212-startup-fault",
+  "date": "2026-10-15",
+  "project": "Fight Night Champion Venom",
+  "status": "FAIL",
+  "intent": "Exercise strict reviewed black grace15 afterqualifiedboxing onunchanged159nativepair",
+  "observed": "LogoPPM, explicitguestnullreadat17:30:26.760Z, observerfreshnessstop, exactchildwatchdogcleanup",
+  "proofs": {
+    "root_intent": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime212-preparation\\root-actual-intent212-60-h.json",
+      "sha256": "66E2E6CE64707175122D37C3C313EBD7BB1AFE5E9411EBEA6683C9E37E353882"
+    },
+    "source_review": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime212-preparation\\independent-review212\\review212.json",
+      "sha256": "08D765D0E627107F9D3B1EEEFF75BCC92BC8AB8711288E4476FBE162A1580C7C"
+    },
+    "neutral_review": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime212-preparation\\neutral-independent-review212\\review212-neutral.json",
+      "sha256": "9E8E728EB50F146CA977E84EF6FD8940844ED008BDA33348448F523FAB07594B"
+    },
+    "admission": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime212-preparation\\runtime-admission212.json",
+      "sha256": "B0892382231B2C67020456D8DFFEC146D3C28BBEAEE09D29481208E16249C50D"
+    },
+    "closed_review": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime212-review\\actual60-h\\actual60-h-independent-review.json",
+      "sha256": "345043A6CB6DA26666EB36015C17B23802BDE5FE7ACB239F19EF9650ED5E6627"
+    },
+    "final_status": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-h\\final-supervisor-status.json",
+      "sha256": "8BADA0A232498AB402818BF85957E588B9B6435B36FB3AF7D34580BB1F97CF9B"
+    },
+    "post_closed_summary": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-h\\post-run-summary.json",
+      "sha256": "F8CF8C1E95392E8AC4F44C8C011204A5D2232CDDCD4C32D40238DEDA8F7B6CD7"
+    },
+    "windows_fault_events": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\crash219-analysis\\windows-application-events212.json",
+      "sha256": "B3E76450C6177D4DDEDF92A81448E9EDAD6F96E23170B32ADBD1A8C46FD60BD6"
+    },
+    "symbol_map": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\crash219-analysis\\root-symbol-map212.json",
+      "sha256": "B13B747F1AF5253A16BF91B13509A1B451872FF8D103B0E08FE2B377D3095DEE"
+    },
+    "dump_command": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\crash219-analysis\\root-dump212-command.json",
+      "sha256": "CA04B142A9786EF866D02313AF188F38F32D9CB36E6ECA8748A3C8CF18E041B7"
+    },
+    "no_display_start": {
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime212-preparation\\root-display-no-start212.json",
+      "sha256": "7FFAE6F09434CF0FF3A3C27D12C493C8DEADF2C49E9FFE6278AE35EE00D94AC2"
+    }
+  },
+  "setup_inputs_requested": 0,
+  "qualified_hud_decreases": 0,
+  "script_requests": 0,
+  "black_grace_exercised": false,
+  "display_collector_started": false,
+  "title_exit_code": 3221225477,
+  "observer_exit_code": 0,
+  "watchdog_used": true,
+  "survivors": false,
+  "full_bout": "UNKNOWN",
+  "performance": "UNMEASURED",
+  "next": "Crash219 originalcontrolflow/objectlifetimeanalysis usingretainedmini; causalrepairbeforetargetedregression; separatelyreviewed218GPUheldwithoutnativeproof",
+  "limitations": [
+    "Post-close0xC0000005aloneisnotterminationcausality; rawWindowsfaultanddumpindependentlyconfirmguestreadzero.",
+    "Minidumpcontainsregistersandstackbutnotguestheap/objecthistory.",
+    "Failedactualnonzeroexcludedfromnormal0/0closedstoragecleanupguard."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-15",
+  "project": "Fight Night Champion Venom",
+  "status": "PARTIAL",
+  "card": "08 native gameplay",
+  "observed": "User-controlled manual225 reaches active round9, round10 and ten-round judges scorecard. Muhammad Ali wins by decision 96-94,97-93,97-93.",
+  "proofs": {
+    "launch_manifest": {
+      "path": "research\\rexglue-qualification-20261012\\manual225\\launch-manifest.json",
+      "sha256": "59DF589B88D7AA05CF58F23B50CBC2D99F513DEA938FC051734370E24B01FE3B"
+    },
+    "live_inspection_note": {
+      "path": "research\\runtime232-build-preparation\\live-inspection-note.json",
+      "sha256": "37A702E06D8282AB4D2192E01B333A481D6B108529AAD6C7766E726E0922977F"
+    },
+    "visual_evidence": "Supported Sky screenshots displayed in current chat: round9 1:59, round10 2:36/1:28, black transition, final judges scorecard. No copied screenshot artifact or fabricated image hash."
+  },
+  "input": "Physical SDL; user confirmed Start/A/sticks; no agent controls injected",
+  "process": "PID22628; status RUNNING_MANUAL at latest check; no ordinary-exit claim yet",
+  "performance": "Display228 closes foreground sample, unique guest FPS unknown; user reports poor motion. Original30 guest timer retained.",
+  "remaining": [
+    "Independent live-artifact acceptance",
+    "Replay/knockdown sequence repair and verification",
+    "Save/reload acceptance",
+    "All connected controller coverage",
+    "Owned DLC native enumeration/open/in-game",
+    "Acceptable motion/performance",
+    "Full offline matrix",
+    "True SBS",
+    "Standalone browser WASM/WebGPU"
+  ],
+  "next": "After user-approved natural close, reviewed replay230R2 GPU218 trial and matched cadence231R3 settings comparison; fresh desktop no-title gate before binary reads."
+}

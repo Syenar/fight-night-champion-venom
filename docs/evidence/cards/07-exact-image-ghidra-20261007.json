@@ -1,0 +1,168 @@
+{
+  "date": "2026-10-07",
+  "card": "07",
+  "status": "PARTIAL",
+  "goal": "Export the exact canonical TU2 image selected by the native loader and verify Ghidra address mapping before using any trace to change runtime behavior.",
+  "builderReviewer": "primary agent; adversarial self-review; no independent fresh-context critic",
+  "inputs": {
+    "titleId": "45410915",
+    "baseXexSha256": "90A698C71AA714E383CE092750CE767E07145F1CA38D8A9C9B3BD8005EA29FF6",
+    "selectedTitleUpdatePackageSha256": "10D3B95C630F774D376FF504574E6107457A0A24768079D69BDD343BEF88BB68",
+    "nativeTitleUpdateXexpSha256": "8429D60620012112285809E6B6545AF646056B9FCCBA3D1B88BB71C32EA9A8AE",
+    "priorXeniaCaptureSha256": "EC2C955DB9E55A6207A391A2AB80F60332DC41C3FE4C07968C7F07D5A9621CA4",
+    "priorXeniaCaptureSha1": "B4DEAE876E2E04F42CF0582AF1B6563B625BDB0B",
+    "nativeModuleSha256": "50258050C0FF8C779385558E110013BD92D76401F828783E919DD2F5E3FEA162",
+    "xeniaSourceCommit": "b083312b8b18e07e6e410b82104191f126722794"
+  },
+  "changes": [
+    "Added an opt-in launch-config effectiveImageExportPath that writes the selected effective_image after title-update application and before map_xex_image or import binding.",
+    "Rebuilt the Debug runtime host and ran a new bounded headless probe in research/native-host-probe-20261007-effective-image-export; it applied TU2, reported the expected title/version/entrypoint, exported the image and shut down cooperatively.",
+    "Imported that exact raw memory-layout image into Ghidra with BinaryLoader at 0x82000000; targeted direct-byte checks passed at guest PCs 0x82290ED4 and 0x82297D58.",
+    "Saved the initial targeted trace and PE/raw import audit; these remain historical where the processor or mapping was wrong.",
+    "Imported the canonical effective image into a new section-aware project using PowerPC:BE:64:64-32addr, applied the 12-section protection map, clipped the out-of-image .reloc range, and seeded 0x82297338.",
+    "Completed and saved PPC64/32-address autoanalysis in research/ghidra/FNC_TU2_PPC64_32addr_DecodeOnly_20261007; a separate read-only critic verified saved function ownership and selected instruction windows.",
+    "Ran PowerPC:BE:64:A2ALT-32addr as a decode comparison only. Its full analysis was run read-only and did not persist; do not treat its autoanalysis as saved evidence.",
+    "Compared the saved Ghidra window at 0x82297D58 to XenonRecomp output: subfe is inside compiled function 0x82297CA0 and is reached internally from block 0x82297D4C; the generated registry does not expose 0x82297D58 as a separate canonical function entry.",
+    "Inspected the old fallback trap and later subfe probe observations. The old runtime reports fallback detail 0x58470001 at 0x82297D58; the later tu2-subfe observation log contains no event at that PC. Cause is unresolved; the logs do not justify a new FunctionHint at this PC.",
+    "Rebuilt/verified the current Debug runtime host (SHA-256 EAABB58507A4116F25E72156A2415AF014818687103CCC690501769C14B591B6) and ran an isolated 60-second null-renderer probe with the same exact TU2 image and generated DLL. The probe produced no guest trap and stopped cooperatively, but did not reach the 0x82C80030 import-thunk loop reported by an older probe.",
+    "Reviewed current XenonSession::call: a handled recognized import returns FlowReason::Return to the aligned guest LR. This source behavior matches the old loop's apparent return-to-thunk pattern, but the old runtime binary hash was not recorded and the fresh run did not reach that exact site; runtime repair at that address is not yet verified.",
+    "Fixed dynamic fallback boundary handling so a branch-entry block that returns through its inherited LR propagates FlowReason::Return; added a direct regression test.",
+    "Fixed instruction-limit diagnostics to set CpuState CIA/NIA to the actual next guest PC and added sequential-limit assertions.",
+    "Added a bounded 16-instruction PC/word ring to instruction-limit observations so the executed loop can be distinguished from stale session CIA.",
+    "Built and ran xenon_dynamic_fallback_tests and xenon_dynamic_fallback_semantic_tests; both pass, including 960 semantic comparisons.",
+    "Ran an isolated exact-TU2 probe with dynamicFallbackMaxInstructions=250000. It emitted no instruction-limit event or guest trap, passed the loop at 0x82297B0C..0x82297B30, continued through startup services, then required forced termination after a five-second noncooperative stop.",
+    "Added bounded observational sampling of the first 16 KeDelayExecutionThread 100-ns interval values and guest caller IDs; sample instrumentation does not change timing behavior.",
+    "Updated active project status to reject the old 0x82C80030 thunk as the current diagnosis and prioritize delay intervals plus cooperative-stop/thread-state evidence.",
+    "Rebuilt the host with bounded observation of up to 16 global KeDelayExecutionThread intervals; a fresh run captured thread 2 passing -10000 100-ns units (relative 1 ms), proving the sampler executes without changing timing.",
+    "A longer exact-TU2 run reached the previously observed dispatch/wait path but stopped advancing in that trace before the known thread-10 delay loop; it was stopped after the cooperative timeout.",
+    "Added a separate first-16 diagnostic cap for guest thread 10 so early calls by other threads cannot exhaust the sample budget."
+  ],
+  "effectiveImage": {
+    "path": "research/native-host-probe-20261007-effective-image-export/effective-tu2-image.bin",
+    "bytes": 20316160,
+    "sha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "sha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "runtimeReportedSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "baseAddress": "0x82000000",
+    "entryPoint": "0x82297338",
+    "effectiveVersion": "0x00000203",
+    "titleUpdateApplied": true,
+    "manifest": "research/native-host-probe-20261007-effective-image-export/effective-image-manifest.json"
+  },
+  "ghidra": {
+    "version": "12.1.2_PUBLIC",
+    "loader": "BinaryLoader",
+    "processor": "PowerPC:BE:64:64-32addr",
+    "targetTrace": "research/ghidra/FNC_TU2_StartupTrace_20261007/startup-addresses.txt",
+    "exactAnalysisProject": "research/ghidra/FNC_TU2_PPC64_32addr_DecodeOnly_20261007/FNC_TU2_PPC64_32addr_DecodeOnly_20261007.gpr",
+    "exactAnalysisStateAtRecord": "completed and saved; full analysis took about 339 seconds; a separate read-only/noanalysis critic verified the persisted program",
+    "sampleAddresses": {
+      "0x82290ED4": "Ghidra instruction and 16 bytes match effective image offset address-0x82000000",
+      "0x82297D58": "Ghidra instruction and 16 bytes match effective image offset address-0x82000000"
+    },
+    "limitation": "The 32-bit processor analysis and initial all-executable project are historical and unsuitable for PPC64 instruction/function claims. The standard PPC64/32-address project is saved and critic-checked at selected windows, not validated as a complete ISA lift. Ghidra emitted p-code and embedded image-format analyzer warnings; each must be classified by memory range before trusting affected decompiler output. The A2ALT comparison was read-only and its full analysis did not persist."
+  },
+  "sectionMap": {
+    "path": "research/native-host-probe-20261007-section-map-minimal/effective-tu2-image.bin.sections.csv",
+    "sha256": "9E5229F5BDAF88AEE2C74E5AFF7998EABEC852DAC1DCEA681F337ADD9747CB07",
+    "source": "Xenon XexImage section records after title-update application, including page-descriptor protections when present",
+    "sectionCount": 12,
+    "executableSection": ".text at 0x82290000 through 0x82EE45A0 (end-exclusive)",
+    "mappedImageRange": "0x82000000 through 0x83360000 (end-exclusive)",
+    "outsideImageRange": ".reloc declares 0x83320200 through 0x834030F0; the analysis import clips it at 0x83360000",
+    "correctedProject": "research/ghidra/FNC_TU2_SectionAware2_20261007",
+    "builderReport": "research/ghidra/FNC_TU2_SectionAware2_20261007_report.txt",
+    "readOnlyCriticReport": "research/ghidra/FNC_TU2_SectionAware2_20261007_critic.txt",
+    "criticResult": "PASS: .text is RX, .data is RW/non-executable, the image header gap is inaccessible, and entrypoint function FNC_TU2_EntryPoint exists at 0x82297338"
+  },
+  "priorXeniaCapture": {
+    "captureStage": "Pinned Xenia source emulator.cc writes after ApplyTitleUpdate and FinishLoadingUserModule.",
+    "equalLengthBytes": 20316160,
+    "differentByteCount": 5700,
+    "differentContiguousRanges": 343,
+    "interpretation": "The captures represent different loader stages. The byte differences remain unexplained; do not normalize or use the older post-load dump as canonical pre-map bytes."
+  },
+  "currentHostProbe": {
+    "path": "research/native-host-probe-20261007-currenthost-criticalpath-60s",
+    "durationSeconds": 60,
+    "runtimeHostSha256": "EAABB58507A4116F25E72156A2415AF014818687103CCC690501769C14B591B6",
+    "runtimeHostSourceSessionCppSha256": "09BC0CBFC9B54ADD240B34A1AD19E73BE6182E19F68567D912FF458620A2FE45",
+    "generatedModuleSha256": "50258050C0FF8C779385558E110013BD92D76401F828783E919DD2F5E3FEA162",
+    "launchConfigSha256": "A4B69B05A4EE1D34CFE377A7B89DB59305C09666C5E5E25F98F0B5CD0B88DA78",
+    "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "titleUpdateApplied": true,
+    "status": "STOPPED_CLEANLY_BY_PROBE",
+    "traps": 0,
+    "fallbackUnsupported": 0,
+    "observationCount": 26,
+    "repeatedBranchToImportThunkCount": 0,
+    "criticalThunkAddressReached": false,
+    "limit": "The run reached early TU2 initialization but did not reach the 0x82C80030 -> 0x82EE2B1C loop; it does not prove that source fix at runtime or establish title-screen/first-frame boot."
+  },
+  "verification": {
+    "runtimeHostBuild": "PASS",
+    "boundedTU2ExportProbe": "PASS: applied TU2, exported 20,316,160 bytes, closed cleanly; no game-boot claim",
+    "runtimeIdentityEqualsExportSha1": "PASS",
+    "rawLoaderAddressBase": "PASS: Ghidra block begins at 0x82000000",
+    "sampleByteEquality": "PASS at the two addresses listed above",
+    "fullGhidraAnalysis": "PASS: PPC64/32-address section-aware project completed and saved; selected function/instruction windows independently re-read from saved project; global decompilation quality remains unproven",
+    "sectionAwareImportAndEntrypointSeed": "PASS: fresh import applies 12 loader-parsed section records with .reloc clipped to the actual image; read-only critic confirms RX/RW/NX/gap and entry function",
+    "a2altAnalysisPersistence": "NOT PASS: comparison ran read-only; its autoanalysis changes were discarded",
+    "fallbackTrapAt82297D58": "REVISED: current Ghidra and generated code identify a valid internally compiled subfe; the old fallback report is historical for current analysis. Do not add an entry hint without an observed external edge.",
+    "repeatedImportThunkAt82C80030": "SOURCE_FIX_PRESENT_RUNTIME_REPRO_PENDING: XenonSession::call returns handled imports to aligned LR as FlowReason::Return; the older host hash is unavailable. This is no longer the active next trace site.",
+    "branchEntryFallbackReturn": "PASS: regression and semantic tests pass; fixes control-flow boundary behavior only, not startup scan completion.",
+    "instructionLimitPcDiagnostics": "PASS: sequential limit regression confirms stop CIA/NIA and recent instruction ring.",
+    "startupScanAt82297B28": "PASS: bounded probe ran beyond the prior 4096 scan limit with no trap or limit event; startup still produced no frame and shutdown was noncooperative.",
+    "delayIntervalSampling": "PASS for observed thread 2 call: captured signed -10000 (100-ns units); thread-10-specific sample remains pending.",
+    "cooperativeStopDiagnosis": "PENDING: one 90-second probe stopped cooperatively; the long/through-first-call probes reached the launcher grace timeout. Per-thread stop-state evidence not yet captured."
+  },
+  "commands": [
+    "cmake --build research/third_party/xenon-recomp/out/build/ninja-min --config Debug --target xenon_runtime_host --parallel 8",
+    "xenon_runtime_host.exe --launch-config research/native-host-probe-20261007-effective-image-export/launch-config.json",
+    "analyzeHeadless.bat <project> FNC_TU2_StartupTrace_20261007 -import <effective-tu2-image.bin> -loader BinaryLoader -loader-baseAddr 0x82000000 -processor PowerPC:BE:32:default -cspec default -noanalysis -postScript DumpBootAddresses.class ... -readOnly (historical, wrong ISA width)",
+    "analyzeHeadless.bat <project> FNC_TU2_PPC64_32addr_DecodeOnly_20261007 -import <effective-tu2-image.bin> -loader BinaryLoader -loader-baseAddr 0x82000000 -processor PowerPC:BE:64:64-32addr -cspec default (12 section blocks applied before saved full analysis)",
+    "Read-only critic: analyzeHeadless.bat <project> FNC_TU2_PPC64_32addr_DecodeOnly_20261007 -process effective-tu2-image.bin -noanalysis -readOnly -postScript DumpSavedBootInstructions.class"
+  ],
+  "acceptance": {
+    "nativeGameBoot": false,
+    "firstFrame": false,
+    "gameplay": false,
+    "sbs": false,
+    "browser": false
+  },
+  "nextAction": "Rebuild and run a fresh exact-TU2 probe with the new thread-10-specific first-16 sample cap. Capture its signed 100-ns delay interval and inspect that guest thread state/wait transition through a controlled stop. Do not infer thread-10 timing from thread 2's observed -10000 interval. Keep the default 4096 fallback instruction limit unchanged; continue Card 07 boot and classify the 5700-byte/343-range Xenia post-load delta.",
+  "boundedScanProbe": {
+    "path": "research/native-host-probe-20261007-bounded-startup-loop-250k",
+    "configuredFallbackInstructionLimit": 250000,
+    "instructionLimitEvents": 0,
+    "guestTraps": 0,
+    "adaptiveObservationRows": 2298,
+    "keDelayExecutionThreadCalls": 9684,
+    "callsByGuestThread10": 9676,
+    "firstFrame": false,
+    "cooperativeStop": false,
+    "stopOutcome": "launcher terminated process after five-second cooperative-stop timeout",
+    "interpretation": "Guest progressed beyond the 4096-instruction array scan; call counts do not establish delay duration or identify the noncooperative thread."
+  },
+  "delayIntervalProbe": {
+    "sampleRunPath": "research/native-host-probe-20261007-delay-interval-samples-through-first-call",
+    "sampleRunHostSha256": "8D0F20DB8315D5436F41DB5BB49607649E3E913E3C98DEC817C3B9D9D729D8CD",
+    "launchConfigSha256": "196485A23DFBF585F97046D7FAA2B72BDC0EF72C31338FBA74B584CEF13F6129",
+    "logSha256": "433B55F6B905687A7B492B725733F7B98A0FD4B1B73D86B0A59AB78725B6BACF",
+    "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "titleUpdateApplied": true,
+    "observedDelaySamples": [
+      {
+        "globalSample": 0,
+        "guestThread": 2,
+        "intervalPointer": "0x3FFDE290",
+        "signed100ns": -10000,
+        "meaning": "relative 1 ms"
+      }
+    ],
+    "thread10Samples": 0,
+    "stopOutcome": "forced termination after five-second grace; status marked failed",
+    "firstFrame": false,
+    "interpretation": "The sampler works; this run did not reach the thread-10 delay loop from the earlier 250k trace."
+  }
+}

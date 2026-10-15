@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-14",
+  "status": "PARTIAL",
+  "scope": "Core recompilation diagnostic candidate; no title execution",
+  "candidate": "research/rexglue-qualification-20261012/callback-trace85",
+  "review": "research/rexglue-qualification-20261012/callback-trace85-review/evidence.json",
+  "pair_hashes": "research/rexglue-qualification-20261012/callback-trace85/pair-hashes.json",
+  "trace_control": "Compile-time opt-in only. The diagnostic executable always includes a one-shot trace; there is no runtime environment switch.",
+  "checks": "Independent review reran 128 synthetic dispatch fixtures, both failing negative controls, and compared 242 disabled-arm instructions with the original.",
+  "limitations": "No runtime invocation or causality proof. Synchronous first-call logging can perturb execution; a filtered or unavailable logger can consume the one-shot without retaining a line. Copied matching DLLs prepare a pair but do not qualify its runtime.",
+  "next": "After the user-owned manual session ends, retain a separately admitted probe with exact loaded pair hashes, actual callback line, process exit and exception evidence. Full offline/Rust/SBS/browser gates remain open."
+}

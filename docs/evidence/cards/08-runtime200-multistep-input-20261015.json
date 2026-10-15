@@ -1,0 +1,76 @@
+{
+  "card": "08",
+  "date": "2026-10-15",
+  "agent": "Codex root with independent critics",
+  "status": "PARTIAL",
+  "decision": "PASS_SCOPED_REPEATED_INPUT_WITH_PIXEL_GUARD_STOP",
+  "scope": "Seven separate settings decrements, then strict neutral stop; no full bout",
+  "probe": "probe80-bout121-60-b",
+  "started_utc": "2026-10-15T13:55:18.373053+00:00",
+  "ended_utc": "2026-10-15T13:58:09.968234+00:00",
+  "title_pid": 26020,
+  "observer_pid": 40736,
+  "supervisor_pid": 33776,
+  "title_exit_code": 0,
+  "observer_exit_code": 0,
+  "ordinary_close": true,
+  "watchdog_used": false,
+  "surviving_title": false,
+  "cleanup_errors": [],
+  "qualified_decrements": [
+    [
+      10,
+      9
+    ],
+    [
+      9,
+      8
+    ],
+    [
+      8,
+      7
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      4,
+      3
+    ]
+  ],
+  "next_action": "Qualify Settings203 factory integration204, then a new bounded full-bout run.",
+  "independent_top_level_checks": 24,
+  "independent_transaction_assertions": 88,
+  "review": {
+    "path": "research/rexglue-qualification-20261012/runtime200-review/actual-60-b/VERDICT.json",
+    "sha256": "684F180C627264184B855B23318F0B1BA8D2A6DB1E691EC708F013AD8573FC29"
+  },
+  "manifest": {
+    "path": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-60-b/probe-manifest.json",
+    "sha256": "360C5E7D118182B64D08AB5FC85395D96D2C1BDABF5A67C523D05A1B7C6C51B0"
+  },
+  "actual_intent": {
+    "path": "research/rexglue-qualification-20261012/runtime200-preparation/revision3/root-actual-intent200-60-b.json",
+    "sha256": "86FEF782975498672A821DC57381934E7785CC42B231C92B464065F05F4092E0"
+  },
+  "rate_wording_correction": {
+    "path": "research/rexglue-qualification-20261012/root-rate-wording-correction200201.json",
+    "sha256": "8E3473524ED11C4F69CF87A9668B4AB522DC6C2B4C7B6C4451874CF1C239E0D2"
+  },
+  "present_fps_limit": "Unlimited",
+  "game_frame_rate": 60,
+  "game_frame_rate_meaning": "Internal title render-wait override, not host presentation limit",
+  "display_vsync_policy": "unchanged; source Present(0), actual display synchronization unmeasured",
+  "all_scene_swap_arrival_hz": 57.831124367013295,
+  "no_displayed_fps_claim": true,
+  "hud_script_result_observations": 0
+}

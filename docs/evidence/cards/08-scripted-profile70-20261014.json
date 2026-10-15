@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-14",
+  "card": "08",
+  "status": "PARTIAL",
+  "hypothesis_result": "CSV_WIRING_SUPPORTED; SHORT_BOUT_MEASUREMENT_FAILED",
+  "lifecycle": {
+    "status": "PROBE_ENDED_RUNTIME_UNQUALIFIED",
+    "pid": 36624,
+    "start_utc": "2026-10-14T23:26:23.983059+00:00",
+    "end_utc": "2026-10-14T23:36:25.241027+00:00",
+    "exit_code": 0,
+    "exit_hex": "0x00000000",
+    "deadline_reached": true,
+    "close_requested": true,
+    "forced_termination": false,
+    "watcher_pid": 20312,
+    "watcher_exit_code": 1,
+    "watcher_ready": true,
+    "watcher_failed_during_game": false,
+    "supervisor_error": null,
+    "cleanup_errors": [],
+    "watcher_terminated_by_supervisor": true
+  },
+  "manifest": "research\\rexglue-qualification-20261012\\probe70-short-bout-profile\\probe-manifest.json",
+  "observations": [
+    "Scheduled inputs reached boxer selection; missing opponent confirmation meant Y randomized boxer instead of opening settings. Subsequent ordinary input reached arena and settings.",
+    "Retained settings shows 10 rounds and 2 MINUTES. No fight started.",
+    "220ms DOWN overshot one row; 80ms UP was not published by 100ms publisher. These are observer/controller timing failures, not evidence of guest defect.",
+    "CSV contains 17991 positive intervals, mean33.332830ms and p9936.187ms, about30 guest swaps/s in menus/settings; not display FPS or bout performance."
+  ],
+  "csv_sha256": "7AFBEACF3831BCAF0F71F4E59754404D99ECCC56C88A7E3299B5E18B45667363",
+  "performance_report": "research/performance-20261014/probe70-observation/POST_EXIT_REPORT.md",
+  "next_action": "Repair and independently review scene-gated watcher with independent20ms publisher, coordinate-bound OCR, accepted GetState press/release trace, immediate freshness checks. Qualify minimum settings before scripted bout.",
+  "limitations": [
+    "No complete bout, save/reload gameplay, full offline, Rust, trueSBS or browser gate passes.",
+    "Hard exit bypasses ordinary teardown; exit0 not shutdown qualification."
+  ]
+}

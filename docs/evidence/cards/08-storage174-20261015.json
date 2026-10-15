@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS",
+  "scope": "Closed actual174 capture/log deduplication and compression",
+  "evidence": "research/rexglue-qualification-20261012/capture174-storage",
+  "review": "research/rexglue-qualification-20261012/capture174-storage/independent-review",
+  "review_sha256": "A5D45632A5860CF280EE308AB55BDFA813647BCBB53FF11E0ABA84596D50E7D6",
+  "ppm_paths": 56,
+  "duplicate_groups": 24,
+  "intentional_hardlink_identity_changes": 30,
+  "logical_duplicate_bytes_avoided": 82944480,
+  "compression_paths": 58,
+  "unique_identities": 28,
+  "unique_logical_bytes": 79891209,
+  "compressed_size_api_bytes": 41029632,
+  "derived_compression_difference": 38861577,
+  "checked_mismatches": 0,
+  "limitation": "No exact physical-cluster savings measurement; deduplication and derived compression differences are not added as physical savings"
+}

@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL_CLOSED_RUN_REVIEWED",
+  "scope": "Bounded single menu-step qualification; no LEFT issued",
+  "source_handoff": "research/rexglue-qualification-20261012/runtime190-preparation/handoff190.json",
+  "marker_sha256": "CEB62575DA5B0C6DEF9DE0B13D092545563AAC9D100A7E9D1D8F98D929A229E1",
+  "evidence": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-60-6",
+  "pair": "integration159",
+  "pid": 38260,
+  "observer_pid": 26076,
+  "start_utc": "2026-10-15T11:33:36.521353+00:00",
+  "end_utc": "2026-10-15T11:36:13.228773+00:00",
+  "title_observer_exit_codes": [
+    0,
+    0
+  ],
+  "ordinary_close": true,
+  "watchdog": false,
+  "survivors": false,
+  "cleanup_errors": [],
+  "blocker": "NO_FRESH_PPM_WITHIN_15_SECONDS",
+  "stage": "SETUP",
+  "settings_frame25": {
+    "scene_distance": 0.0,
+    "row": 1,
+    "numeric_glyph_rounds": 10,
+    "label_verified": false,
+    "rounds_roi_ocr": "timeout after5 seconds",
+    "policy_rounds_length": "UNKNOWN"
+  },
+  "later_stale_post_ocr_frame_wall_ages_seconds": [
+    12.184373378753662,
+    13.476186990737915
+  ],
+  "later_stale_frame_numbers": [
+    26,
+    28
+  ],
+  "stale_frames_invoke_policy_or_input": false,
+  "left_requests": 0,
+  "script_count": 0,
+  "hud_or_result": "UNKNOWN",
+  "root_visual_review": "Overview confirms settings10 rounds,2 minutes; this does not replace strict live label validation",
+  "fps_scope": "8952 all-scene submission intervals,155.328162s,57.63281999049213Hz; not displayed FPS or speedup",
+  "checker_environment_repair": "Actual190 checker PASS and title Popen observed, unlike189 pre-title failure",
+  "publisher_scope": "Telemetry retained; no heartbeat terminal stop in this run, no general stall-fix claim",
+  "next_action": "Independent closed-run review;193 strict retained-pixel settings-label/digit oracle preparation; no unchanged OCR retry",
+  "independent_review": {
+    "path": "research/rexglue-qualification-20261012/runtime190-review/actual-60-6/VERDICT.json",
+    "sha256": "0495BDE60856F2160B3D07A80B255E18E4037F9492A6A1CD757E3A914394339D",
+    "verdict": "CLOSED_RUN_REVIEW_LIMITED_SCOPE"
+  }
+}

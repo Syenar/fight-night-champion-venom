@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL",
+  "scope": "Observed native fight HUD and active-boxing pixels; not completed scripted bout/FPS acceptance",
+  "evidence_path": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-30-z",
+  "pair": "integration127",
+  "pid": 40112,
+  "start_utc": "2026-10-15T07:13:44.133804Z",
+  "end_utc": "2026-10-15T07:18:56.366858+00:00",
+  "title_exit_code": 0,
+  "observer_exit_code": 0,
+  "watchdog": false,
+  "survivor": false,
+  "setup_rounds": 1,
+  "setup_length_minutes": 1,
+  "hud_observation": {
+    "elapsed": 305.66517959213525,
+    "round": 1,
+    "total_rounds": 1,
+    "clock_seconds": 180,
+    "frame": "frames/guest-60.ppm",
+    "sha256": "CFD144752ED4A1987A6B8DDDCB47A495708DBA56123CBEB0277725E8EED84412"
+  },
+  "next_frame": {
+    "elapsed": 310.7751795921358,
+    "frame": "frames/guest-61.ppm",
+    "sha256": "607EBC7292FE4569AC6BCEEC41DBEBB72228529DC051DE07F5E9FD084F84F1D8",
+    "root_visual_review": "Active boxing, clock2:51; original binary clock OCR blank; round OCR ROUND1OF1 remains valid"
+  },
+  "observer_clock_decreases": 0,
+  "script_count": 0,
+  "terminal": "FIGHT_HUD_LOST_RESULT_UNKNOWN:UNKNOWN",
+  "failed_oracle": "HUD_ORACLE_FAILURE:actual round/clock OCR did not match strict format",
+  "rotation_reader": "Passed former280-second stop depth; no vanished-generation event observed in this run, not a live skipped-generation causal proof",
+  "guest_swap_intervals": {
+    "count": 9311,
+    "interval_sum_seconds": 310.706816,
+    "median_interval_ms": 33.354,
+    "p99_interval_ms": 48.614,
+    "arrival_rate_hz": 29.967157205846426
+  },
+  "cadence_limit": "Mixed-scene guest swaps, not displayed FPS or controlled active-play comparison",
+  "next": "150 tight clock-pixel crop fallback; names/ring/round/deadline and exact numeric format remain required"
+}

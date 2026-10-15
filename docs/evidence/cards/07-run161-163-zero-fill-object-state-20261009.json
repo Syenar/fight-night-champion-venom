@@ -1,0 +1,36 @@
+{
+  "card": "07",
+  "date": "2026-10-09",
+  "status": "IN_PROGRESS",
+  "review": "builder plus artifact critic; no first-frame or gameplay acceptance",
+  "hypothesis": "The proven zero-fill hot path is the dominant startup cost, and the post-zero-fill object-state loop can be instrumented at 0x825EDDFC to distinguish a missing signal from control-flow/runtime error.",
+  "inputs": {
+    "sourceImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "run161ModuleSha256": "F7E00A2244DAE109A4AE6A57E7AFA7161C20B6AF4587EB1EA8E83347FE57C80A",
+    "run163ModuleSha256": "2ECADCBC75926495D941C08EE7B02D828FDCB261D6376B027208829EB8207923",
+    "run161Manifest": "research/repair/startup-readiness/attempt-04/run161/probe-manifest.json",
+    "run162Manifest": "research/repair/startup-readiness/attempt-04/run162/probe-manifest.json",
+    "run163Manifest": "research/repair/startup-readiness/attempt-04/run163/probe-manifest.json"
+  },
+  "results": {
+    "run161": {
+      "status": "FAILED_WATCHDOG",
+      "sampledBlocks": 847872,
+      "finding": "The constrained bulk zero-fill path increased startup throughput from roughly 635k to 848k sampled blocks in 120 seconds and moved the trace beyond 0x8229B3F8 into a guest object-state polling region around 0x825EDDF8/0x825EBE98. No frame was observed.",
+      "evidence": "research/repair/startup-readiness/attempt-04/run161/process-result.json"
+    },
+    "run162": {
+      "status": "STOPPED_BEFORE_TARGET",
+      "finding": "The instrumentation build and host loaded, but the 60-second run stopped before reaching the post-zero-fill target; it is not evidence about the object-state value.",
+      "evidence": "research/repair/startup-readiness/attempt-04/run162/process-result.json"
+    },
+    "run163": {
+      "status": "FAILED_WATCHDOG",
+      "finding": "The 180-second instrumentation run loaded the exact TU2 image and instrumented module, produced 128 startup register samples and 119 periodic thread samples, but captured no 0x825EDDFC sample and no first frame. The run reached only about 630784 sampled blocks, so it did not reproduce Run161's post-zero-fill depth; the instrumentation result is inconclusive.",
+      "evidence": "research/repair/startup-readiness/attempt-04/run163/process-result.json",
+      "trace": "research/repair/startup-readiness/attempt-04/run163/adaptive-observations.jsonl"
+    }
+  },
+  "criticFinding": "The bulk optimization is a causal throughput improvement, but Run163 does not validate the new object-state hypothesis. Do not patch event, reservation, or wait semantics from this evidence.",
+  "nextAction": "Rebuild the instrumented module from the same generated source that produced Run161's 848k path, verify its hash and generated-function diff, then run a bounded probe long enough to capture 0x825EDDFC. Add a per-function reference test for the zero-fill fast path before retaining it as a runtime change."
+}

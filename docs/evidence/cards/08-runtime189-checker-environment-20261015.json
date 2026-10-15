@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL_STOPPED_BEFORE_TITLE",
+  "scope": "Qualified observer entry; actual game launch blocked by process-checker environment",
+  "source_handoff": "research/rexglue-qualification-20261012/runtime189-preparation/handoff189.json",
+  "neutral_review": "research/rexglue-qualification-20261012/runtime189-review/actual-neutral/final-review.json",
+  "neutral_report_sha256": "3841B332C926AE3E6B6C9E557FF4B2505F106A0AFD6E93C85B6EB32564299AAF",
+  "marker_sha256": "568AB1EBF040A0516609678BC85C16614FDD8EFD813FC8C497212EB6B71AEC94",
+  "actual_evidence": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-60-4",
+  "checker_status": "CHECK_FAILED",
+  "checker_error": "Get-FileHash is not recognized in the Windows PowerShell child",
+  "game_pid": null,
+  "observer_pid": 36876,
+  "observer_exit_code": 1,
+  "cleanup_status": "CLEANUP_COMPLETE",
+  "cleanup_errors": [],
+  "game_left_alive": false,
+  "gameplay_or_fps_claim": false,
+  "cause": "Actual entry inherited PSModulePath; neutral helper explicitly normalized it",
+  "repair": "Runtime190 sets Windows PowerShell module path inside the entry before child creation, reuses frozen189 and187, and reserves a fresh actual60-6/neutral30-1 path",
+  "next_action": "Fresh190 source review, neutral qualification, final admission then bounded single-step probe"
+}

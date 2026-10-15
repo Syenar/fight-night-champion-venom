@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS_SCOPED_STORAGE_REVIEW",
+  "evidence": "research/rexglue-qualification-20261012/capture162-storage",
+  "closed_run": "probe80-bout121-60-1",
+  "deduplicated_ppm_paths": 134,
+  "linked_path_count": 80,
+  "target_identities_intentionally_changed": 80,
+  "logical_duplicate_bytes_avoided": 221185280,
+  "compressed_paths": 142,
+  "compressed_unique_files": 62,
+  "logical_unique_bytes": 189793602,
+  "compressed_size_api_bytes": 94396416,
+  "derived_difference": 95397186,
+  "content_paths_lengths_preserved": true,
+  "physical_cluster_allocation_measured": false,
+  "dedup_and_compression_not_added_as_physical_savings": true,
+  "next": "Continue bounded builds and diagnostics; repeat scoped cleanup only after future runs close",
+  "independent_review": {
+    "path": "research/performance-20261015/capture-storage167-review/verdict.json",
+    "sha256": "CE5EBF5EDA9EB1CEFAD7BC34509423415DEA6CA8C51B622AA509BC60316F7E08",
+    "status": "PASS_WITH_PHYSICAL_ALLOCATION_LIMIT"
+  }
+}

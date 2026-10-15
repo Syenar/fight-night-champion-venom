@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-15",
+  "status": "LIVE_PARTIAL_TIMER_INVOCATION_OBSERVED",
+  "pid": 16364,
+  "start_utc": "2026-10-15T08:20:49.710906Z",
+  "source_sha256": "789D82C2DDACBBD17829C01CF893C873718CB4C8D5469D1D7E7C9C9B193A593F",
+  "pair": "integration159",
+  "exe_sha256": "55EDDFF568FA1758E2067AAF1E784AB854A37B15E1FB1C8FD79A24206D4DE9E7",
+  "output": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-30-0",
+  "loaded_modules_admitted_before_start": true,
+  "trace": [
+    {
+      "observed_utc": "2026-10-15T08:21:06.392368+00:00",
+      "source_name": "runtime.log",
+      "line": "[2026-10-15 04:20:50.733] [info] [core] [t35312] VENOM_FRAME_RATE156 entry=0 caller_lr=0x00000000822AA558 original_f1=60 original_f1_bits=0x404E000000000000 exact_guard=false requested_rate=30",
+      "snapshot": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\timer-trace160-observation\\snapshot-8EB19DA51E2796C7756C-runtime.log",
+      "sha256": "8EB19DA51E2796C7756C718320C23C7F6A4777DC1CB03951D53E1740C414E780"
+    },
+    {
+      "observed_utc": "2026-10-15T08:21:06.401882+00:00",
+      "source_name": "runtime.log",
+      "line": "[2026-10-15 04:20:50.744] [info] [core] [t35312] VENOM_FRAME_RATE156 entry=1 caller_lr=0x00000000822A9564 original_f1=30 original_f1_bits=0x403E000000000000 exact_guard=true requested_rate=30",
+      "snapshot": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\timer-trace160-observation\\snapshot-8EB19DA51E2796C7756C-runtime.log",
+      "sha256": "8EB19DA51E2796C7756C718320C23C7F6A4777DC1CB03951D53E1740C414E780"
+    },
+    {
+      "observed_utc": "2026-10-15T08:21:06.403385+00:00",
+      "source_name": "runtime.log",
+      "line": "[2026-10-15 04:20:50.744] [info] [core] [t35312] VENOM_FRAME_RATE136 caller_lr=0x822A9564 original_f1=30.0 requested_startup_rate=30 effective_f1=30.0",
+      "snapshot": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\timer-trace160-observation\\snapshot-8EB19DA51E2796C7756C-runtime.log",
+      "sha256": "8EB19DA51E2796C7756C718320C23C7F6A4777DC1CB03951D53E1740C414E780"
+    }
+  ],
+  "observed_contract": "Separate LR822AA558 receives60, exactguardfalse. Render LR822A9564 receives30, exactguardtrue,requested30/effective30.",
+  "qualification": "Actual hook caller/input/guard/startup-value evidence only; not performance, full bout or higher-rate qualification.",
+  "next": "Completeboundedoriginal30regression thenindependentreview beforeexplicit60comparison.",
+  "no60_admission": true
+}

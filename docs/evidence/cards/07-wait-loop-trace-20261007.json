@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-07",
+  "milestone": "Card 07 exact-TU2 startup wait-loop trace and focused regression review",
+  "status": "PARTIAL",
+  "source": {
+    "titleId": "0x45410915",
+    "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "effectiveImageBytes": 20316160,
+    "titleUpdateSha256": "8429D60620012112285809E6B6545AF646056B9FCCBA3D1B88BB71C32EA9A8AE"
+  },
+  "probe": {
+    "sessionId": "fnc-tu2-sync-trace-run3",
+    "configuration": "research/native-host-probe-20261007-sync-trace-run3/launch-config.json",
+    "renderer": "d3d12",
+    "headless": false,
+    "dynamicFallbackMaxInstructions": 250000,
+    "logSha256": "D45CF8E272BA13762D000655C05C14E77FEC40AEAE51A239E648CE0F04A0158F",
+    "adaptiveObservationsSha256": "34E8C13A90E185CC164735C72617806198BD6ADF6DDC78AAE9F37534A6168AD5",
+    "effectiveImageExportSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "observations": {
+      "waitForSingleObjectCalls": 2058,
+      "timeoutReturns": 2018,
+      "delayExecutionCalls": 70228,
+      "firstSixteenDelaySamples": [
+        {"thread": 3, "signedInterval100ns": -10000},
+        {"thread": 3, "signedInterval100ns": -10000},
+        {"thread": 11, "signedInterval100ns": -10000},
+        {"thread": 11, "signedInterval100ns": -10000},
+        {"thread": 3, "signedInterval100ns": -30000}
+      ],
+      "criticalSectionEnterWaitAndWakeSamples": 3,
+      "presentationWindowCreated": true,
+      "verifiedGameFrameOrPresent": false,
+      "guestTrapObserved": false
+    },
+    "stop": "The request did not finish within the five-second cooperative-stop grace; the probe host terminated guest execution and recorded stateName=failed. This does not identify which guest thread prevented shutdown.",
+    "startCommand": "Not retained as a standalone command; use the recorded launch-config.json and sessionId as the reproducible probe inputs rather than inventing a command."
+  },
+  "validation": {
+    "command": "ctest --test-dir research/third_party/xenon-recomp/out/build/test-core -C Debug -R 'xenon_(session|thread_creation|kernel_thread_lifecycle|rtl_critical_section_export)_tests' --output-on-failure",
+    "result": "PASS 4/4; total reported time 59.11 seconds.",
+    "ctestLog": "research/third_party/xenon-recomp/out/build/test-core/Testing/Temporary/LastTest.log",
+    "executables": {
+      "xenon_session_tests": "117643E41D30A6FE12E6D4D825A22A9A86A778B2BCE4610D16DD17932AB27CDD",
+      "xenon_thread_creation_tests": "E4F95BC4D539AEF122B045063AE96E7E70E45CDAC24D76914F3453C536CEC277",
+      "xenon_kernel_thread_lifecycle_tests": "1C9E1AFB548B09DEED20CAD3398A939806F67B5656DEAD072AE3F15151152D4F",
+      "xenon_rtl_critical_section_export_tests": "C4A2F351A7A04BB6C65E828A4260D4154C255E63FC9CF90208C166E2C804E8E5"
+    },
+    "note": "The first CTest invocation omitted -C Debug and therefore reported multi-config tests as Not Run. It was corrected; only the four passing Debug results count."
+  },
+  "changesThisPass": [
+    "Updated active status, loop progress, and Card 07 checklist text to supersede the stale thread-10-delay next action.",
+    "Corrected the evidence location for the earlier MmQueryAddressProtect record: it is under research/evidence/cards/.",
+    "No guest wait/delay semantics, default fallback limit, source image, title update, DLC, or Xenia installation were changed."
+  ],
+  "critic": {
+    "verdict": "PARTIAL; evidence and docs agree on no first frame and on noncooperative stop; focused Debug tests pass.",
+    "remainingLargestGap": "The trace does not identify the startup condition preventing graphics presentation or the guest thread blocking cooperative shutdown.",
+    "nextAction": "Correlate bounded wait handle/type/state and return status with thread/PC, startup file/service events, and D3D device/swap/present events in a fresh exact-TU2 run. Inspect per-thread shutdown state before changing synchronization or timing semantics."
+  },
+  "acceptance": {
+    "nativeFirstFrame": "OPEN",
+    "completeOfflineGame": "OPEN",
+    "trueSbs": "OPEN",
+    "browserNativeNormalAndSbs": "OPEN",
+    "portableRelease": "OPEN"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-14",
+  "card": "08",
+  "status": "PARTIAL",
+  "hypothesis_result": "MAPPED_ROI_GOLD9_REPAIR_SUPPORTED; GOLD4_READ_FAILED",
+  "lifecycle": {
+    "status": "MEASUREMENT_INVALID",
+    "pid": 3324,
+    "start_utc": "2026-10-15T00:18:45.047943+00:00",
+    "end_utc": "2026-10-15T00:21:25.825983+00:00",
+    "exit_code": 0,
+    "exit_hex": "0x00000000",
+    "deadline_reached": false,
+    "close_requested": true,
+    "forced_termination": false,
+    "watcher_pid": 32412,
+    "watcher_exit_code": 0,
+    "watcher_ready": true,
+    "setup_verified": false,
+    "watcher_failed_during_game": true,
+    "supervisor_error": null,
+    "cleanup_errors": [],
+    "watcher_terminated_by_supervisor": false
+  },
+  "watcher": {
+    "status": "BLOCKED_NEUTRAL",
+    "blocker": "UNREADABLE_OR_NONUNIT_SETTINGS_CHANGE",
+    "start_utc_ms": 1792023525059,
+    "minimum_rounds": null,
+    "minimum_length_minutes": null,
+    "elapsed": 159.60299723434218,
+    "startup_elapsed": 159.7029999999977,
+    "accepted_packets": "accepted-packets.jsonl binds raw runtime lines and local timestamp conversion. Publications are not acceptance. No completed fight claim."
+  },
+  "loaded_modules": [
+    {
+      "name": "venom_fnc_canonical_tu2.exe",
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\venom_fnc_canonical_tu2.exe",
+      "sha256": "204D52D3DE8FD18319199216381074DF59AFFABB5E3BB6C5466CA4FDE3FAFC64"
+    },
+    {
+      "name": "rexruntimerd.dll",
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\rexruntimerd.dll",
+      "sha256": "CBD4F9D73CEEEF84BE622E0B9F3248769312B7C78D3495659619736AC5AB4DE6"
+    },
+    {
+      "name": "TracyClientrd.dll",
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\TracyClientrd.dll",
+      "sha256": "850E4CBE76C5729812160AD3E34774A039262E48F983C8AC70A611F9C98783C7"
+    },
+    {
+      "name": "rexgpu-xenosrd.dll",
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\rexgpu-xenosrd.dll",
+      "sha256": "64B57F53658E64873F2978D019B406475E8D5DAF2B58043DB1A8B33E03F410C7"
+    }
+  ],
+  "frames": 31,
+  "observed_round_sequence": [
+    10,
+    9,
+    8,
+    7,
+    6,
+    5,
+    4
+  ],
+  "limits": [
+    "4 is independently visually read in rawguest31; OCR read UNKNOWN. It is not inferred from input counts.",
+    "Neither minimum clamp passed, no fight started",
+    "Exit0 windowclose not generalshutdown qualification"
+  ],
+  "critic": "watcher71_critic",
+  "critic_input_witness_last_LEFT": {
+    "press_delay_ms": 35,
+    "neutral_delay_ms": 69
+  },
+  "source_admission": {
+    "supervisor": "33071FAA340F4F66808A843DBB8A90E253047A3080DFFF517D963500F6C05AC7",
+    "setup75": "ABFA4301565E57480255F91D1CA9C0EF94CC6277B80BD58527E89413AFC4A019",
+    "base": "123F3464DB9218BA468A5164EB1B9BAD0EB27FF1036E67C16230E4A7E13E2153",
+    "prompt": "0A4C69E77A6E034E85162686F3EC0816573B21F7EFAD24A4E282BF885509CCAD",
+    "OCR": "06C7FBD9166BF662A03841E3AFE2001FB7F3B78CFF79C81AD42B58528D9960ED"
+  },
+  "csv_sha256": "5761EEE9C2A815FB7EFA26FF9464B8B3C882A8AD1CFD5974A2472E5FD98D1C0E",
+  "CPU_sampler": "research/performance-20261014/process-sampler74/setup76-pid3324-user-session",
+  "next_action": "Use actual retained glyph references and mapped label/value coordinates; validate gold4 and narrow1/2, other observed digits/removed/misplaced controls. Preserve ordinary input and neutral unknown state; freshcritic then newprobe. No value inference from button counts."
+}

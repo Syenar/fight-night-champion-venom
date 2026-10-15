@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-14",
+  "agent": "Codex primary with separate launcher and visual critics",
+  "card": "08",
+  "status": "PARTIAL",
+  "hypothesis_result": "SUPPORTED for opening recovery; independent visual review pending",
+  "native_build": "native61",
+  "manifest": "research\\rexglue-qualification-20261012\\probe62-native61-rs-recovery\\probe-manifest.json",
+  "manifest_sha256": "3fb3fbef205420a25420ba443b2a495c803b6c4b3f89d607858862b48cfcdb5c",
+  "binary_hashes": {
+    "venom_fnc_canonical_tu2.exe": "53481BAC6C1889D61B104FD214E596E760FA14E83B623A4322BC8C00F5B4602F",
+    "rexruntimerd.dll": "C5A644C838C75990B27C710F7567ECD29BD28E7B85AF65E91CA25817F9177491",
+    "rexgpu-xenosrd.dll": "64B57F53658E64873F2978D019B406475E8D5DAF2B58043DB1A8B33E03F410C7",
+    "TracyClientrd.dll": "850E4CBE76C5729812160AD3E34774A039262E48F983C8AC70A611F9C98783C7"
+  },
+  "loaded_module_evidence": "research\\rexglue-qualification-20261012\\probe62-native61-rs-recovery\\loaded-modules.json",
+  "lifecycle": {
+    "status": "PROBE_ENDED_RUNTIME_UNQUALIFIED",
+    "pid": 34916,
+    "start_utc": "2026-10-14T21:07:04.289374+00:00",
+    "end_utc": "2026-10-14T21:11:05.678814+00:00",
+    "exit_code": 0,
+    "exit_hex": "0x00000000",
+    "deadline_reached": true,
+    "close_requested": true,
+    "forced_termination": false,
+    "watcher_pid": 27780,
+    "watcher_exit_code": 1,
+    "watcher_ready": true,
+    "watcher_failed_during_game": false,
+    "supervisor_error": null,
+    "cleanup_errors": [],
+    "watcher_terminated_by_supervisor": true
+  },
+  "capture_count": 100,
+  "detector_observation_count": 100,
+  "rs_up_frames": [
+    "guest-17.ppm"
+  ],
+  "fatals": [],
+  "save_files": [
+    {
+      "path": "user\\B13EBABEBABEBABE\\45410915\\00000001\\FN4PROFILE 20261014210828\\FN4PROFILE 20261014210828",
+      "bytes": 900028,
+      "sha256": "4734015fde213a5592f1cc84c40ac55cc9b680cf1521c66a9e32a8d740a82dbf"
+    },
+    {
+      "path": "user\\B13EBABEBABEBABE\\45410915\\Headers\\00000001\\FN4PROFILE 20261014210828.header",
+      "bytes": 328,
+      "sha256": "c013a67ff20531cab99c4728aba2925bdc8cfc514562ccca792bacea2ba9a77d"
+    }
+  ],
+  "enumerator_counts": [
+    "0",
+    "1"
+  ],
+  "bounded_events": "research\\rexglue-qualification-20261012\\probe62-native61-rs-recovery\\bounded-events.txt",
+  "visual_observation": "Opening knockdown, RS-up/referee, then two-boxer fight, prison cutscene and tutorial prompts in retained renderer frames. No complete tutorial/match. All100captures reviewed by primary via sampled sheet; independent all-frame critic requested.",
+  "shutdown_observation": "Window closing, KernelState::TerminateTitle, Execution complete, Title terminated; hard-exiting process. No watchdog kill. Not general clean-shutdown acceptance.",
+  "next_card": "Continue Card08 tutorial and missing82DAFF58 callback repair; full native matrix remains open",
+  "limitations": [
+    "Combined ABI61+detector59 changes do not establish ABI gameplay causality",
+    "Full guest/handlerXUID/path trace absent",
+    "Profile files and0\u21921enumerator counts are partial save evidence; reload not validated",
+    "No sustained full match, audio acceptance, SBS, Rust, browser or release promotion"
+  ]
+}

@@ -1,0 +1,13 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Fight Night Champion SBS</title>
+<style>html,body{margin:0;background:#090b10;color:#e8edf7;font:16px system-ui}main{max-width:1100px;margin:2rem auto;padding:1rem}video{display:block;width:100%;background:#000;aspect-ratio:16/9}button,input{font:inherit;padding:.5rem;margin:.25rem}#status{white-space:pre-wrap;color:#9dd7ff}</style>
+<main>
+  <h1>Fight Night Champion — SBS session</h1>
+  <label>Session <input id="session" pattern="[A-Za-z0-9_-]{6,64}" value="localtest01"></label>
+  <button id="connect">Connect</button>
+  <button id="fullscreen">Fullscreen</button>
+  <video id="video" autoplay playsinline controls></video>
+  <p id="status">Disconnected.</p>
+</main>
+<script type="module" src="./client.js"></script>

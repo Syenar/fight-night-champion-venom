@@ -1,0 +1,61 @@
+{
+  "card": "08",
+  "date": "2026-10-15",
+  "agent": "Codex root with independent critics",
+  "status": "PARTIAL",
+  "decision": "PASS_STARTUP_TELEMETRY_ONLY",
+  "scope": "Integration191 startup through positively recognized main menu; no menu advance",
+  "probe": "probe80-bout121-60-c",
+  "started_utc": "2026-10-15T14:14:49.292581+00:00",
+  "main_frame_elapsed_seconds": 61.54478035545617,
+  "title_pid": 39764,
+  "observer_pid": 29348,
+  "supervisor_pid": 43296,
+  "title_exit_code": 0,
+  "observer_exit_code": 0,
+  "ordinary_close": true,
+  "watchdog_used": false,
+  "surviving_title": false,
+  "cleanup_errors": [],
+  "extra_command_option": "venom_heap188_telemetry=true",
+  "runtime_sha256": "7CD523FD10FCA9F4653ABEAADF05C4C2FB3C208415F99C9A2E6A7D6B927DAF77",
+  "review": {
+    "path": "research/rexglue-qualification-20261012/runtime201-review/actual-60-c/actual-60-c-review.json",
+    "sha256": "C6CCEB62BB94A0F9E0AA3255A8399411AF26D3CE59665A3191D29EDD2D505F29"
+  },
+  "manifest": {
+    "path": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-60-c/probe-manifest.json",
+    "sha256": "D3AE06437745C84CF5E8B9907765248821CDA1FF591408F5379E79633890A759"
+  },
+  "actual_intent": {
+    "path": "research/rexglue-qualification-20261012/runtime201-preparation/revision4/root-actual-intent201-60-c.json",
+    "sha256": "6F095BB4783D1379C94E856B3BC601A8C1DC16C41B2BA5E0639DFBB70AC434F7"
+  },
+  "rate_wording_correction": {
+    "path": "research/rexglue-qualification-20261012/root-rate-wording-correction200201.json",
+    "sha256": "8E3473524ED11C4F69CF87A9668B4AB522DC6C2B4C7B6C4451874CF1C239E0D2"
+  },
+  "analysis_review": {
+    "path": "research/performance-20261015/heap201-analysis/independent-review/verdict.json",
+    "sha256": "BA26368E62018A0A6C845227D03FFA0F9AEF5926D93904C29EA986B4BDF1E508"
+  },
+  "heap_summary_count": 9,
+  "last_cumulative_snapshot_lifetime_seconds": 56,
+  "allocations": 10283,
+  "requested_and_zeroed_bytes": 571984,
+  "successful_nonnull_frees": 9985,
+  "timer_sampling": "Deterministic 1/256, inclusive overlapping raw host ticks; no numeric frequency conversion or CPU denominator",
+  "retained_diagnostics": {
+    "retryable_replace_collisions": 374,
+    "runtime_warnings": 10385,
+    "cache_vfs_resolution_errors": 4,
+    "terminal_publisher_failures": 0
+  },
+  "present_fps_limit": "Unlimited",
+  "game_frame_rate_meaning": "60 internal title render-wait override; no host cap60 claim",
+  "limits": [
+    "Startup only; no allocator benefit, heap reuse, full bout, displayed FPS or optimization claim.",
+    "No linker map; historical source-to-old-baseline-xmemory-object binding remains UNKNOWN."
+  ],
+  "next_action": "Measure admitted active gameplay with a CPU/frame-time denominator; retain allocation semantics until evidence supports a specific change."
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS_STATIC_BUILD_ONLY_RUNTIME_UNADMITTED",
+  "candidate": "integration166",
+  "handoff": {
+    "sha256": "609D614FC306AAA526274C1DA7F340FD407642379F0D16CC41AFB22A55F5647C",
+    "path": "research/rexglue-qualification-20261012/integration166/SEALED_BUILD_HANDOFF.json"
+  },
+  "gpu_sha256": "3C82F572B53C009609F1AAFCA56C09D819A20E7AB3BC1E40969D228D634E7E03",
+  "actual_executed_response": {
+    "sha256": null,
+    "path": null
+  },
+  "changed_gpu_object_slots": [
+    2,
+    16
+  ],
+  "total_gpu_objects": 35,
+  "original_objects_reused": 33,
+  "default_off": true,
+  "invalid_fetch_semantics_preserved": true,
+  "independent_review": {
+    "sha256": "8DF902E476F74086A2780736260088ACFDB094C48BDE21BE38C16F83E8A6D755",
+    "path": "research/rexglue-qualification-20261012/integration166-review/verdict.json"
+  },
+  "limits": "Static source/build provenance only. No runtime warning cadence, performance, displayed FPS or gameplay result.",
+  "next": "170 isolated same-pair false/true warning-rate-limit runtime preparation after168 bout diagnostic closes"
+}

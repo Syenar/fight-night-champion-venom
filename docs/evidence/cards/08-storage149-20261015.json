@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-15",
+  "scope": "Exact completed127a/q/r/t/x diagnostic roots; no source, save, config or active146 files",
+  "x_dedup": {
+    "verdict": "CONTENT_AND_HARDLINKS_PASS_METADATA_CLAIM_REVISED",
+    "paths": 110,
+    "unique_file_identities_after": 46,
+    "links_created": 64,
+    "duplicate_logical_bytes_avoided": 176948224,
+    "paths_and_hashes_preserved": true,
+    "readonly_preservation": "UNPROVEN: before manifest omitted attributes. Do not claim pre-dedup ReadOnly attributes were preserved.",
+    "first_failed_link_attempt": "Builder reported WinError5 before replacement, then approved escalation succeeded; README is secondary provenance, no separate original failed-command transcript retained.",
+    "proof": "research/rexglue-qualification-20261012/capture135-compression/x-dedup-proof.json"
+  },
+  "extended_lossless_compression": {
+    "verdict": "INDEPENDENT_PASS",
+    "paths": 145,
+    "unique_identities_and_commands": 69,
+    "command_exit_codes": "all0",
+    "compressed_allocation_bytes_after": 89571328,
+    "derived_logical_minus_compressed_allocation_bytes": 114099146,
+    "exact_physical_cluster_reclamation_measured": false,
+    "hashes_paths_identities_and_noncompression_attributes_preserved_relative_to_post_dedup_manifest": true,
+    "proof": "research/rexglue-qualification-20261012/capture135-compression/compression-extended-result.json"
+  },
+  "independent_review": "research/rexglue-qualification-20261012/capture135-compression/extended-independent-review.md",
+  "accounting_limit": "Do not sum derived compression savings with logical hardlink counts as measured disk reclamation or a whole-workspace inventory."
+}

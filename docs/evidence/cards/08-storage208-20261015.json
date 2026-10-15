@@ -1,0 +1,1324 @@
+{
+  "date": "2026-10-15",
+  "agent": "root",
+  "status": "PASS",
+  "case": "closed208-storage",
+  "review": {
+    "path": "research\\rexglue-qualification-20261012\\capture208-storage\\independent-review\\verdict.json",
+    "sha256": "A9404BE6D888CCEDAA196519D003C36E12110D9F435C3DF1CFCFB89117519DEC",
+    "markdown_path": "research\\rexglue-qualification-20261012\\capture208-storage\\independent-review\\verdict.md",
+    "markdown_sha256": "9D08E457481839B2CF414DCC70544D4B65F6A8A7D3F1A6233F15A2220215B042",
+    "audit_path": "research\\rexglue-qualification-20261012\\capture208-storage\\independent-review\\audit208.py",
+    "audit_sha256": "B821CCF44798FA66B486429DA424F706FE17D6D3E78C4F6D95575A0534B9B0A1",
+    "artifact_hash_manifest_path": "research\\rexglue-qualification-20261012\\capture208-storage\\independent-review\\artifact-hashes.json",
+    "artifact_hash_manifest_sha256": "54F96AA55B80FAD23AF4AD6ABC0AA64E4F9ACADDF1AB7CD16071F6909A05BE77"
+  },
+  "scope": "Closed actual208-60-g only. Independently verified all dedup baseline/proof and compression records against current data and Win32 metadata.",
+  "template_pins": [
+    {
+      "path": "research\\rexglue-qualification-20261012\\capture208-storage\\dedup208.py",
+      "sha256": "39E072E0797DD6D6DAB392B39BE07794380B0888DCEA7055E2482DEAE9DC8B2F"
+    },
+    {
+      "path": "research\\rexglue-qualification-20261012\\capture208-storage\\compress208.py",
+      "sha256": "CBD902B7BF69632A8CF614065BD973D178F677758B9B115C9EC5B544F744724A"
+    }
+  ],
+  "proof": {
+    "dedup_path": "research\\rexglue-qualification-20261012\\capture208-storage\\dedup208-proof.json",
+    "dedup_sha256": "351D94D33C1979B3B7C72BD7B3DB3F7434AE9EE2EDBFA6B5F55D2102EC7EC566",
+    "compression_path": "research\\rexglue-qualification-20261012\\capture208-storage\\compression208-result.json",
+    "compression_sha256": "8D6B4805571B248BC47604A0026C56EE68F6A2E59E18C9FBA4A89689E16FDE3B",
+    "dedup_baseline_path": "research\\rexglue-qualification-20261012\\capture208-storage\\dedup208-before.json",
+    "dedup_baseline_sha256": "91024C17EB2271353E383FD7D61A5B46525F069552C9A0D33AF10476A09CE1EE",
+    "compression_baseline_path": "research\\rexglue-qualification-20261012\\capture208-storage\\compression208-before.json",
+    "compression_baseline_sha256": "5D82F2380B99D8F568776F0591CEE9AB252C79F57733E4817E630C1390BD1AD3"
+  },
+  "dedup": {
+    "ppm_paths": 142,
+    "duplicate_groups": 57,
+    "linked_paths": 85,
+    "logical_duplicate_bytes_avoided": 235009360,
+    "physical_cluster_allocation_measured": false,
+    "records_currently_verified": [
+      "SHA-256",
+      "logical length",
+      "Win32 file ID",
+      "hardlink group membership",
+      "Win32 link count",
+      "compressed flag",
+      "GetCompressedFileSizeW",
+      "non-compression file attributes"
+    ],
+    "operation": "Each retained link row maps to os.link(source, target-name + .dedup208.tmp), then os.replace(temp, target); exact source/target/hash rows are retained below.",
+    "links": [
+      {
+        "source": "frames\\guest-10.ppm",
+        "target": "guest-10.ppm",
+        "sha256": "0792C9A03EE307B6127CC968D9571960A849D47F345CEA4266D1DB9E654AA30C"
+      },
+      {
+        "source": "frames\\guest-11.ppm",
+        "target": "guest-11.ppm",
+        "sha256": "988835367D0475A6F377CD3E6101FAF386FD71B653F9E08369F2673823A8D18F"
+      },
+      {
+        "source": "frames\\guest-12.ppm",
+        "target": "guest-12.ppm",
+        "sha256": "669A094475C7E18D59CE0DB554436B208ED0CA12D40A96C6160E4C2F207FF23A"
+      },
+      {
+        "source": "frames\\guest-13.ppm",
+        "target": "guest-13.ppm",
+        "sha256": "0EC0A517BC3B6AE66B82BE340A2F9AC4CA701E93BADD2589B21257141F07217C"
+      },
+      {
+        "source": "frames\\guest-14.ppm",
+        "target": "guest-14.ppm",
+        "sha256": "045FC014EB259A0F52FEAA009E4A7DF01E5092B38596D2EF84979AF04ACFFFF6"
+      },
+      {
+        "source": "frames\\guest-15.ppm",
+        "target": "guest-15.ppm",
+        "sha256": "7680D32EADAF8EC067E88EB445F7D0CE680F617DA456ED5EC22533276FC60CA7"
+      },
+      {
+        "source": "frames\\guest-16.ppm",
+        "target": "guest-16.ppm",
+        "sha256": "5CD7EAAA5D951066A35C6A28B6410CEA229F272A0D44EC1273C97F2FB83BE04B"
+      },
+      {
+        "source": "frames\\guest-17.ppm",
+        "target": "guest-17.ppm",
+        "sha256": "83A57A056C8D2A1FC139CFD85DCA08FB319D71E83A2A85BB72404F5538C684A7"
+      },
+      {
+        "source": "frames\\guest-18.ppm",
+        "target": "guest-18.ppm",
+        "sha256": "70157288F452C8679A8A7E62CBD7B343169E37666C7CD64C3C5A739622921983"
+      },
+      {
+        "source": "frames\\guest-19.ppm",
+        "target": "guest-19.ppm",
+        "sha256": "3F9E71C5BF6A061EEA36803973A21EDB7A4ED3ED8926992B76DB8871E54E8A9C"
+      },
+      {
+        "source": "frames\\guest-2.ppm",
+        "target": "guest-2.ppm",
+        "sha256": "1B92B080FF6D24B77374B0146BF4A396500FA5CA7CC0C6A83BECAD3810999437"
+      },
+      {
+        "source": "frames\\guest-20.ppm",
+        "target": "guest-20.ppm",
+        "sha256": "29ECE5885BD91BB951BE241EB4F08559486C879B2B1983BD671CD99D843008CE"
+      },
+      {
+        "source": "frames\\guest-21.ppm",
+        "target": "guest-21.ppm",
+        "sha256": "0510F73C5DC0E3BC60374FB696109F1504FD14A77FCA41B143A346F026627016"
+      },
+      {
+        "source": "frames\\guest-22.ppm",
+        "target": "frames\\guest-23.ppm",
+        "sha256": "44652E74EA77CEACF3CD2781225989C897B84EB1F3337713F71099A97124D197"
+      },
+      {
+        "source": "frames\\guest-22.ppm",
+        "target": "frames\\guest-37.ppm",
+        "sha256": "44652E74EA77CEACF3CD2781225989C897B84EB1F3337713F71099A97124D197"
+      },
+      {
+        "source": "frames\\guest-22.ppm",
+        "target": "guest-22.ppm",
+        "sha256": "44652E74EA77CEACF3CD2781225989C897B84EB1F3337713F71099A97124D197"
+      },
+      {
+        "source": "frames\\guest-22.ppm",
+        "target": "guest-23.ppm",
+        "sha256": "44652E74EA77CEACF3CD2781225989C897B84EB1F3337713F71099A97124D197"
+      },
+      {
+        "source": "frames\\guest-22.ppm",
+        "target": "guest-37.ppm",
+        "sha256": "44652E74EA77CEACF3CD2781225989C897B84EB1F3337713F71099A97124D197"
+      },
+      {
+        "source": "frames\\guest-24.ppm",
+        "target": "guest-24.ppm",
+        "sha256": "E0AF8328F5D7326A35037E2D91073719F894719E3E1592014CD419AEAC1B9DF3"
+      },
+      {
+        "source": "frames\\guest-25.ppm",
+        "target": "guest-25.ppm",
+        "sha256": "0539397ACEA8E82B7FCB221DEA2ED527EC649B9C5796BA1A075DC26A576B271E"
+      },
+      {
+        "source": "frames\\guest-26.ppm",
+        "target": "guest-26.ppm",
+        "sha256": "1F0EBF8105B5A08CFE4B39075AD4B3A8FA748F80ED489D03836D6F7C99E4FE6A"
+      },
+      {
+        "source": "frames\\guest-27.ppm",
+        "target": "guest-27.ppm",
+        "sha256": "B38EB0AC0376B07AFC2D477720C3C6EEA42C510EEA69B6E6A63DC490881153D7"
+      },
+      {
+        "source": "frames\\guest-28.ppm",
+        "target": "guest-28.ppm",
+        "sha256": "ACD6DFA4763EC00407C14CBDF963165F5CC2CE66EE177649C9D5C3E8A1021EE5"
+      },
+      {
+        "source": "frames\\guest-29.ppm",
+        "target": "guest-29.ppm",
+        "sha256": "02602F1DBC8215F44E53C50389DC7EC6F843D6F718833427D11627EC6924D592"
+      },
+      {
+        "source": "frames\\guest-3.ppm",
+        "target": "guest-3.ppm",
+        "sha256": "AED060958C3D3A9961B95090DEBFCFB1B50DCD9F8E99AAB5F4FC1FCBC1BE718B"
+      },
+      {
+        "source": "frames\\guest-30.ppm",
+        "target": "guest-30.ppm",
+        "sha256": "E1896203B19E58CABD404BFC346EE0BA73EEA66D13C2BDF41D999292D610C59B"
+      },
+      {
+        "source": "frames\\guest-31.ppm",
+        "target": "guest-31.ppm",
+        "sha256": "5ECB501B37C9FC4D96066CAE6BDCE2C3947E9BE36BB7972E7DC0D64DF89F7F24"
+      },
+      {
+        "source": "frames\\guest-32.ppm",
+        "target": "guest-32.ppm",
+        "sha256": "035E9F9890E10BB29A45F46D28A8AA46C42D2D201EAE845A1C37DD7D563A2300"
+      },
+      {
+        "source": "frames\\guest-33.ppm",
+        "target": "guest-33.ppm",
+        "sha256": "408B2423486BA77AD26A4A014B62A67631C716C6240FC7449C2FCC414C6CC303"
+      },
+      {
+        "source": "frames\\guest-34.ppm",
+        "target": "guest-34.ppm",
+        "sha256": "3F573081BA853BFEB45974323088C7651FCD15B8A4E8304D3C0F5C6E729B6181"
+      },
+      {
+        "source": "frames\\guest-35.ppm",
+        "target": "guest-35.ppm",
+        "sha256": "BFDD35726311C37F80DE55A2AFF5749EBDAEEA6A63AD407A320F0050ACC0EE0E"
+      },
+      {
+        "source": "frames\\guest-36.ppm",
+        "target": "guest-36.ppm",
+        "sha256": "F91F3A10F4C779E10BE8DA942FDB4A09F35F1A3B6417B5A179E31D94CBE86796"
+      },
+      {
+        "source": "frames\\guest-38.ppm",
+        "target": "guest-38.ppm",
+        "sha256": "1FB983CAD308F02F3334CF972A22F92A098B10DE0D58001C8A47F8AA53078FD0"
+      },
+      {
+        "source": "frames\\guest-39.ppm",
+        "target": "guest-39.ppm",
+        "sha256": "A886B50CF2989E753D248A859987D615301F7A672F5A8F214B1383B859FED3C5"
+      },
+      {
+        "source": "frames\\guest-4.ppm",
+        "target": "guest-4.ppm",
+        "sha256": "189A564724B4F553278A81CFC7D60AF59A82AB90A4733D5253687EC9DEA2AAF2"
+      },
+      {
+        "source": "frames\\guest-40.ppm",
+        "target": "guest-40.ppm",
+        "sha256": "EE1F55C848199494399EA439C182AAF436D8B316FA4A7F28C5D3D1D270C8CB6B"
+      },
+      {
+        "source": "frames\\guest-41.ppm",
+        "target": "guest-41.ppm",
+        "sha256": "2D96EB9454C95EC33CE68B8F9A2986D68A788EE289946358657AEC170FE9F84C"
+      },
+      {
+        "source": "frames\\guest-42.ppm",
+        "target": "guest-42.ppm",
+        "sha256": "4A1198622771804B8C266E88D954C747E9D1C3D562C47C0E4B95C5DA72674C8F"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "frames\\guest-44.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "frames\\guest-45.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "frames\\guest-46.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "frames\\guest-47.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "frames\\guest-50.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "frames\\guest-51.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "frames\\guest-52.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "frames\\guest-53.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "frames\\guest-56.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "frames\\guest-59.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "frames\\guest-71.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-43.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-44.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-45.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-46.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-47.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-50.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-51.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-52.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-53.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-56.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-59.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-43.ppm",
+        "target": "guest-71.ppm",
+        "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486"
+      },
+      {
+        "source": "frames\\guest-48.ppm",
+        "target": "guest-48.ppm",
+        "sha256": "CC722F6CB54BDCAD81BCBDBCCADA8DF5AFC32ACAE77DCF0386F6464AFB3CB58B"
+      },
+      {
+        "source": "frames\\guest-49.ppm",
+        "target": "guest-49.ppm",
+        "sha256": "99C4892F92CA641E5FD4FEE6A59321D87BB020339BDE752047AB7C5B11B9FFCB"
+      },
+      {
+        "source": "frames\\guest-5.ppm",
+        "target": "guest-5.ppm",
+        "sha256": "602D38624DFF2527321295DE20F519A5F45CF9C4D979875ED80FFC03593981BD"
+      },
+      {
+        "source": "frames\\guest-54.ppm",
+        "target": "guest-54.ppm",
+        "sha256": "643CA37FC3579EF0C51457EF5138188A5FD37E761F0DF5C4035562930270E546"
+      },
+      {
+        "source": "frames\\guest-55.ppm",
+        "target": "guest-55.ppm",
+        "sha256": "9B381247236951524556CF484BCBAD97C1C4FBA41D96FDFF1CE72F7A970F5904"
+      },
+      {
+        "source": "frames\\guest-57.ppm",
+        "target": "guest-57.ppm",
+        "sha256": "990D3848F1C51545DB522752E79446FE611CC66DC52D3E506365533C3B10DB43"
+      },
+      {
+        "source": "frames\\guest-58.ppm",
+        "target": "guest-58.ppm",
+        "sha256": "2CC9BE80DAC1E5C148F07E0B25F7A959CABC6E98677EC64D2C3E5B2D72FDD9F7"
+      },
+      {
+        "source": "frames\\guest-6.ppm",
+        "target": "guest-6.ppm",
+        "sha256": "86BF312405AA57E8A5A67BAAB9152D6B57B3897E93D5A2456F56D3A487082427"
+      },
+      {
+        "source": "frames\\guest-60.ppm",
+        "target": "guest-60.ppm",
+        "sha256": "14475CBC809EF8FB39CDED41C9D76856947157224F2F07D1A3C030A8159B3A70"
+      },
+      {
+        "source": "frames\\guest-61.ppm",
+        "target": "guest-61.ppm",
+        "sha256": "55F187F4AA343AA105AF89EA8C641C4311AC4BD5F7AC6E215A2B16235D73FAAD"
+      },
+      {
+        "source": "frames\\guest-62.ppm",
+        "target": "guest-62.ppm",
+        "sha256": "EC75E7F204CF3367918490C99A8D2B069302ECF59C27C06F35F3F9E629334446"
+      },
+      {
+        "source": "frames\\guest-63.ppm",
+        "target": "guest-63.ppm",
+        "sha256": "A191980DBA908A12AE62F8BA81CDAF70C6D7768FA368339894935385C2FAD612"
+      },
+      {
+        "source": "frames\\guest-64.ppm",
+        "target": "guest-64.ppm",
+        "sha256": "4487EB8C1180A791DC063425F1EF8BA6DE8B125EF0D48684AAE5795293BFC32D"
+      },
+      {
+        "source": "frames\\guest-65.ppm",
+        "target": "guest-65.ppm",
+        "sha256": "F8F758C5D8C36D8FC64302750CDBC49FBD5B43A6B0E3DCDCED34922D15AFC8ED"
+      },
+      {
+        "source": "frames\\guest-66.ppm",
+        "target": "guest-66.ppm",
+        "sha256": "57E141D9BF05E2A9C5469E12E9D6D67F75F06BFE79B9EE81BC281BFE1A6A65F8"
+      },
+      {
+        "source": "frames\\guest-67.ppm",
+        "target": "guest-67.ppm",
+        "sha256": "48EAFF11DD6D0778A64D0573233AD129F581EA51E423C8741F9761B6EA7456F6"
+      },
+      {
+        "source": "frames\\guest-68.ppm",
+        "target": "guest-68.ppm",
+        "sha256": "703D7FEBE1F2495FCED75A49555F39F9F6747EB6DD1005CF04465A244B910FAF"
+      },
+      {
+        "source": "frames\\guest-69.ppm",
+        "target": "guest-69.ppm",
+        "sha256": "83B4F98E16B43D9821F81C001F21FCA0D44A96F549F167DEC107F88FF6141423"
+      },
+      {
+        "source": "frames\\guest-7.ppm",
+        "target": "guest-7.ppm",
+        "sha256": "F775460AFCAE40B4D9488DE420AF864D0DCCCA3E62E1F7976BE52CE13AFCA2A2"
+      },
+      {
+        "source": "frames\\guest-70.ppm",
+        "target": "guest-70.ppm",
+        "sha256": "EAB791221114462B325D08FC05272021B2B506CF89F5F4A8E184EC9E69225561"
+      },
+      {
+        "source": "frames\\guest-8.ppm",
+        "target": "frames\\guest-9.ppm",
+        "sha256": "3552561CCA3590EF852C73503F72D0460A5BCD37324D6E9D4FBAF4014E38E456"
+      },
+      {
+        "source": "frames\\guest-8.ppm",
+        "target": "guest-8.ppm",
+        "sha256": "3552561CCA3590EF852C73503F72D0460A5BCD37324D6E9D4FBAF4014E38E456"
+      },
+      {
+        "source": "frames\\guest-8.ppm",
+        "target": "guest-9.ppm",
+        "sha256": "3552561CCA3590EF852C73503F72D0460A5BCD37324D6E9D4FBAF4014E38E456"
+      },
+      {
+        "source": "frames\\guest.ppm",
+        "target": "guest.ppm",
+        "sha256": "D104043B6E81A170B20DE8DE2D458247695617243E02F12AF6E294DA2E731E88"
+      }
+    ]
+  },
+  "compression": {
+    "paths": 151,
+    "unique_file_identities": 66,
+    "logical_unique_bytes": 202149923,
+    "current_get_compressed_file_size_w_bytes": 103362560,
+    "derived_logical_minus_api_bytes": 98787363,
+    "all_unique_files_compressed": true,
+    "records_currently_verified": [
+      "SHA-256",
+      "logical length",
+      "Win32 file ID",
+      "hardlink group membership",
+      "Win32 link count",
+      "compressed flag",
+      "GetCompressedFileSizeW",
+      "non-compression file attributes"
+    ],
+    "command_executable": "C:\\Windows\\System32\\compact.exe",
+    "command_arguments": [
+      "/C",
+      "/Q",
+      "<full path>"
+    ],
+    "retained_runs": [
+      {
+        "path": "runtime.1.log",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\runtime.1.log"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n5,242,849 total bytes of data are stored in 1,253,376 bytes.\nThe compression ratio is 4.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "runtime.2.log",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\runtime.2.log"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n5,242,812 total bytes of data are stored in 1,167,360 bytes.\nThe compression ratio is 4.5 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "runtime.3.log",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\runtime.3.log"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n5,242,840 total bytes of data are stored in 1,208,320 bytes.\nThe compression ratio is 4.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "runtime.4.log",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\runtime.4.log"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n5,242,840 total bytes of data are stored in 1,048,576 bytes.\nThe compression ratio is 5.0 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "runtime.5.log",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\runtime.5.log"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n5,242,826 total bytes of data are stored in 1,142,784 bytes.\nThe compression ratio is 4.6 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "runtime.6.log",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\runtime.6.log"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n5,242,812 total bytes of data are stored in 1,200,128 bytes.\nThe compression ratio is 4.4 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "runtime.7.log",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\runtime.7.log"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n5,242,872 total bytes of data are stored in 991,232 bytes.\nThe compression ratio is 5.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "runtime.8.log",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\runtime.8.log"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n5,242,645 total bytes of data are stored in 1,024,000 bytes.\nThe compression ratio is 5.1 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "runtime.log",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\runtime.log"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,612,915 total bytes of data are stored in 589,824 bytes.\nThe compression ratio is 4.4 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-10.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-10.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,699,840 bytes.\nThe compression ratio is 1.6 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-11.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-11.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,744,896 bytes.\nThe compression ratio is 1.6 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-12.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-12.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,748,992 bytes.\nThe compression ratio is 1.6 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-13.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-13.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,724,416 bytes.\nThe compression ratio is 1.6 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-14.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-14.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,744,896 bytes.\nThe compression ratio is 1.6 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-15.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-15.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,753,088 bytes.\nThe compression ratio is 1.6 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-16.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-16.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,117,632 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-17.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-17.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,052,096 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-18.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-18.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,076,672 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-19.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-19.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,183,168 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-2.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-2.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,470,464 bytes.\nThe compression ratio is 1.9 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-20.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-20.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,220,032 bytes.\nThe compression ratio is 1.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-21.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-21.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,170,880 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-22.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-22.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,970,176 bytes.\nThe compression ratio is 1.4 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-24.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-24.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,310,720 bytes.\nThe compression ratio is 2.1 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-25.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-25.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,290,240 bytes.\nThe compression ratio is 2.1 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-26.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-26.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,236,992 bytes.\nThe compression ratio is 2.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-27.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-27.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,302,528 bytes.\nThe compression ratio is 2.1 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-28.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-28.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,314,816 bytes.\nThe compression ratio is 2.1 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-29.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-29.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,273,856 bytes.\nThe compression ratio is 2.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-3.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-3.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,241,088 bytes.\nThe compression ratio is 2.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-30.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-30.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,228,800 bytes.\nThe compression ratio is 2.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-31.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-31.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,282,048 bytes.\nThe compression ratio is 2.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-32.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-32.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,318,912 bytes.\nThe compression ratio is 2.1 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-33.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-33.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,273,856 bytes.\nThe compression ratio is 2.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-34.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-34.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,232,896 bytes.\nThe compression ratio is 2.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-35.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-35.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,261,568 bytes.\nThe compression ratio is 2.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-36.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-36.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,323,008 bytes.\nThe compression ratio is 2.1 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-38.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-38.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,585,152 bytes.\nThe compression ratio is 1.7 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-39.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-39.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,035,712 bytes.\nThe compression ratio is 1.4 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-4.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-4.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,216,512 bytes.\nThe compression ratio is 2.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-40.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-40.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,072,576 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-41.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-41.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,536,000 bytes.\nThe compression ratio is 1.8 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-42.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-42.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,458,176 bytes.\nThe compression ratio is 1.9 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-43.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-43.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 4,096 bytes.\nThe compression ratio is 675.0 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-48.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-48.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,482,752 bytes.\nThe compression ratio is 1.9 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-49.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-49.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,212,416 bytes.\nThe compression ratio is 2.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-5.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-5.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,220,608 bytes.\nThe compression ratio is 2.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-54.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-54.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,802,240 bytes.\nThe compression ratio is 1.5 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-55.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-55.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,769,472 bytes.\nThe compression ratio is 1.6 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-57.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-57.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,125,824 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-58.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-58.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,080,768 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-6.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-6.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,220,608 bytes.\nThe compression ratio is 2.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-60.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-60.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,297,856 bytes.\nThe compression ratio is 1.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-61.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-61.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,174,976 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-62.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-62.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,269,184 bytes.\nThe compression ratio is 1.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-63.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-63.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,093,056 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-64.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-64.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,019,328 bytes.\nThe compression ratio is 1.4 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-65.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-65.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,056,192 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-66.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-66.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,379,776 bytes.\nThe compression ratio is 1.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-67.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-67.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,048,000 bytes.\nThe compression ratio is 1.4 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-68.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-68.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,179,072 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-69.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-69.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,154,496 bytes.\nThe compression ratio is 1.3 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-7.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-7.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,073,152 bytes.\nThe compression ratio is 2.6 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-70.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-70.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 2,236,416 bytes.\nThe compression ratio is 1.2 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest-8.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest-8.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 1,069,056 bytes.\nThe compression ratio is 2.6 to 1.\n",
+        "stderr": ""
+      },
+      {
+        "path": "guest.ppm",
+        "executable": "C:\\Windows\\System32\\compact.exe",
+        "arguments": [
+          "/C",
+          "/Q",
+          "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\guest.ppm"
+        ],
+        "exit_code": 0,
+        "stdout": "\n Compressing files in C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-g\\\n\n\n1 files within 1 directories were compressed.\n2,764,816 total bytes of data are stored in 294,912 bytes.\nThe compression ratio is 9.4 to 1.\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "savings": {
+    "hardlink_duplicate_logical_bytes_avoided": 235009360,
+    "compression_derived_logical_minus_api_bytes": 98787363,
+    "additive_savings_claimed": false,
+    "exact_physical_ntfs_cluster_delta_measured": false
+  },
+  "run_closure": {
+    "status": "CLEANUP_COMPLETE",
+    "title_pid": 37256,
+    "observer_pid": 9380,
+    "title_exit_code": 0,
+    "observer_exit_code": 0,
+    "ordinary_close_requested": true,
+    "observer_quiescent": true,
+    "game_left_alive": false,
+    "watchdog_used": false,
+    "cleanup_errors": []
+  },
+  "limitations": [
+    "Storage-only evidence; does not establish full-bout completion or FPS/performance acceptance.",
+    "GetCompressedFileSizeW reports compressed file-size allocation and is not a direct physical NTFS cluster delta.",
+    "Hardlink duplicate-byte accounting and compression-derived byte reduction are separate and are not additive."
+  ],
+  "next": "Retain proof records. Do not promote full-bout or FPS acceptance from storage results."
+}

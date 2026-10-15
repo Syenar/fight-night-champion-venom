@@ -1,0 +1,7 @@
+{
+  "evidence": "research/rexglue-qualification-20261012/fighter-disappearance-evidence.json",
+  "visual_gate": "FAIL",
+  "cause": "UNKNOWN",
+  "comparison_probe": "probe41-full-memexport",
+  "later_callback": "0x82DAFF88"
+}

@@ -1,0 +1,36 @@
+{
+  "card": "07",
+  "date": "2026-10-11",
+  "status": "PARTIAL",
+  "review": "fresh critic correction",
+  "hypothesis": "The prior standalone-blr handling was masking a zero-LR control-flow failure, and the 0x822A5B14 dispatch table was using the wrong load width.",
+  "changes": [
+    "Removed standalone-blr return shortcuts from XenonSession::call, the dispatch loop, and dynamic fallback.",
+    "Corrected TU2 0x822A5B1C (0x7C0C58AE) to lbzx byte semantics in generated and manual dispatch paths."
+  ],
+  "inputs": {
+    "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "runEffectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "moduleSha256": "5C58440AA6F0F933EB318A7EFD460E27DA65F020E28D425C331C4DDC29420EB6",
+    "runtimeHostSha256": "E4CF528B65A3DBDCA54E86890FF3E3818E00CB225288A761EF5361712D0A3550"
+  },
+  "commands": [
+    "cmake --build research/pc-trace-cache-hinted/workspaces/a3ba350781924e52cd0ff07cb04b02f8/build-o1 --target xenon_game xenon_game_module -- -j2",
+    "cmake --build research/third_party/xenon-recomp/out/build/d3d12-probe --target xenon_runtime_host:Debug -- -j2",
+    "powershell -NoProfile -ExecutionPolicy Bypass -File research/repair/startup-readiness/attempt-04/Run-DispatcherProbeRun204.ps1 -DurationSeconds 90"
+  ],
+  "run": {
+    "path": "research/repair/startup-readiness/attempt-04/run204",
+    "mainThreadBlocks": 139688,
+    "formerBoundary": "0x82A760D4 was passed without shortcut handling",
+    "failure": "Guest memory fault at cia=0x82A43880, lr=0x82A43870, ctr=0x822A5B3C; attempted width-1 write to guest address 0x80 on an unmapped/protected page",
+    "titleFrame": false,
+    "gpuFrontBuffer": false
+  },
+  "criticVerdict": "Run201/202 no-trap claims are invalidated because they depended on the removed shortcuts. Run204 is valid diagnostic evidence and does not pass native startup.",
+  "nextAction": "Map 0x82A43880 and its caller/CTR path in exact-TU2 Ghidra and generated code; determine whether the write target 0x80 is an invalid guest pointer caused by a missing loader/runtime contract before changing memory protection or initialization.",
+  "limitations": [
+    "No title screen, first frame, gameplay, SBS, browser, or release gate passed.",
+    "ffmpeg PDB linker warnings are non-fatal and unrelated to this run."
+  ]
+}

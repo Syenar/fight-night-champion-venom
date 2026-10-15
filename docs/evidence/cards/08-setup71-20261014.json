@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-14",
+  "card": "08",
+  "status": "PARTIAL",
+  "hypothesis_result": "MEASUREMENT_INVALID_PUBLISHER_ACCESS_DENIED",
+  "lifecycle": {
+    "status": "MEASUREMENT_INVALID",
+    "pid": 34180,
+    "start_utc": "2026-10-14T23:58:11.543792+00:00",
+    "end_utc": "2026-10-14T23:58:16.254769+00:00",
+    "exit_code": 0,
+    "exit_hex": "0x00000000",
+    "deadline_reached": false,
+    "close_requested": true,
+    "forced_termination": false,
+    "watcher_pid": 20140,
+    "watcher_exit_code": 0,
+    "watcher_ready": true,
+    "setup_verified": false,
+    "watcher_failed_during_game": true,
+    "supervisor_error": null,
+    "cleanup_errors": [],
+    "watcher_terminated_by_supervisor": false
+  },
+  "watcher": {
+    "status": "BLOCKED_NEUTRAL",
+    "blocker": "PUBLISHER_FAILURE:PermissionError(13, 'Access is denied')",
+    "start_utc_ms": 1792022291555,
+    "minimum_rounds": null,
+    "minimum_length_minutes": null,
+    "elapsed": 3.587968280793575,
+    "startup_elapsed": 3.6559999999990396,
+    "accepted_packets": "accepted-packets.jsonl binds raw runtime lines and local timestamp conversion. Publications are not acceptance. No completed fight claim."
+  },
+  "observations": [
+    "Watcher readiness/launch epoch handshake succeeded; no ordinary non-neutral input or renderer capture before early stop.",
+    "Publisher failed with PermissionError13 Access denied; operation/path not retained, so Windows reader/delete-sharing collision is a hypothesis pending targeted fixture.",
+    "Title closed by supervisor, exit0 and no forced termination. No setup/gameplay inference."
+  ],
+  "next_action": "Retain operation/path/WinError; reproduce bounded Windows reader sharing collision and repair retry publication without replaying expired pulses. Fresh probe only after critic.",
+  "source_admission": "research/rexglue-qualification-20261012/probe71-source-admission.json"
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS",
+  "scope": "Closed actual177 capture and log deduplication/compression",
+  "evidence": "research/rexglue-qualification-20261012/capture177-storage",
+  "independent_review": "research/rexglue-qualification-20261012/capture177-storage/independent-review",
+  "review_sha256": "B598378EEBB44DD009C900C35455B74116D7A4CF3378F84CB375EB6D8EA938D7",
+  "ppm_paths": 92,
+  "duplicate_groups": 45,
+  "hardlink_changes": 47,
+  "logical_duplicate_bytes_avoided": 129946352,
+  "compression_paths": 95,
+  "unique_identities": 48,
+  "logical_unique_bytes": 136941507,
+  "compressed_size_api_bytes": 66682880,
+  "derived_compression_difference": 70258627,
+  "checked_mismatches": 0,
+  "limitation": "No physical-cluster allocation measurement; dedup and derived compression accounting kept separate",
+  "initial_guard_correction": "Inherited160 terminal-reason assertion failed before inventory/mutation; prior scripts preserved; exact177 reason checked before retry"
+}

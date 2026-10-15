@@ -1,0 +1,37 @@
+{
+  "card": "07",
+  "date": "2026-10-08",
+  "status": "PARTIAL",
+  "review": "artifact self-review; no independent gameplay or visual acceptance",
+  "sourceImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+  "run157": {
+    "manifest": "research/native-host-probe-20261008-cdb-load-game-run157/probe-manifest.json",
+    "status": "research/native-host-probe-20261008-cdb-load-game-run157/status.json",
+    "log": "research/native-host-probe-20261008-cdb-load-game-run157/log.txt",
+    "trace": "research/native-host-probe-20261008-cdb-load-game-run157/adaptive-observations.jsonl",
+    "ghidraDisassembly": "research/repair/startup-readiness/attempt-01/startup-disasm.txt",
+    "generatedCoreInspection": "research/pc-trace-cache-hinted/workspaces/a3ba350781924e52cd0ff07cb04b02f8/generated/functions/shard_3902.cpp",
+    "findings": [
+      "Exact TU2/module loaded and guest threads executed; English localization database/XML reads succeeded; explicit stop was cooperative in this run.",
+      "Main PC samples 0x8229B38C/0x8229B39C are register-restoring instructions in generic epilogue 0x8229B360, not proof of a fixed startup stall.",
+      "Later main samples execute generated function 0x82EAEAD8. Its sampled r30 moved from 3168516132 to 3168576252 over the observed interval, so those samples show work progressing. The surrounding startup dependency is still unidentified.",
+      "Worker 0x82C676DC calls xboxkrnl ordinal 206 NtClearEvent; one first-callsite observation records a successful result. This call alone is not proven to block graphics.",
+      "No frame or GPU ring/front buffer was verified."
+    ]
+  },
+  "run158": {
+    "manifest": "research/repair/startup-readiness/attempt-02/run158/probe-manifest.json",
+    "result": "research/repair/startup-readiness/attempt-02/run158/process-result.json",
+    "log": "research/repair/startup-readiness/attempt-02/run158/log.txt",
+    "trace": "research/repair/startup-readiness/attempt-02/run158/adaptive-observations.jsonl",
+    "ghidraDisassembly": "research/repair/startup-readiness/attempt-02/run158-pc-disasm.txt",
+    "hypothesisResult": "INCONCLUSIVE: Release host reached guest execution, but this bounded run only recorded main-thread samples through 65,536 blocks and did not establish a comparable traversal interval or graphics transition. The loaded native module was unchanged; this was not a fully optimized game-core comparison.",
+    "findings": [
+      "Current Release host built; focused Release guest-I/O test passed 1/1.",
+      "The last sampled PC 0x8229CD68 is a bounded byte-copy helper. Existing targeted samples show lengths 20-26, decrementing CTR and a reached tail/return. It is not evidence of an infinite copy loop.",
+      "GPU ring/front buffer stayed zero through the logged probe ticks; no frame was verified.",
+      "The host's internal watchdog called std::_Exit(0) after its five-second cooperative-stop grace. Exit code 0 and WaitForExit are not a clean guest shutdown; final status is failed. The process-result record was corrected accordingly."
+    ]
+  },
+  "currentNextAction": "Trace the caller and expected return/readiness state around the active main startup work with a bounded stack/callsite observation, then compare the exact service or CPU contract with pinned Xenia before changing semantics. Preserve independent Card 04/reference capture work. Do not infer a specific missing import from the unresolved count."
+}

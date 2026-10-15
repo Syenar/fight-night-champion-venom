@@ -1,0 +1,45 @@
+{
+  "card": "08",
+  "date": "2026-10-15",
+  "agent": "Codex root with independent source critics",
+  "status": "PARTIAL",
+  "scope": "Runtime200 settings observer source and neutral-only entry qualification",
+  "source_reviews": {
+    "observer_revision2": {
+      "sha256": "CA7A8BF43ACC6BBA328BA159AE5E9B73AF33694C72EB6269080779EA232A1D82",
+      "checks": 55,
+      "verdict_sha256": "2D6AAE297C961F799DCEF037485DD467D19815F0DCE82424A8E63C6C9C93EA1A",
+      "status": "PASS_SOURCE_ONLY"
+    },
+    "supervisor_revision2": {
+      "checks": 68,
+      "verdict_sha256": "CA798797B4A51561449215A11AC2E761B2E7DD3D8D6B8192FC2BF42D0E21070A",
+      "status": "PASS_SOURCE_PREPARATION_ONLY"
+    }
+  },
+  "neutral_attempt": {
+    "output": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-n-aa",
+    "command": "C:\\Users\\samsa\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe -B -X utf8 research/rexglue-qualification-20261012/runtime200-preparation/revision2/RunNeutralEntry200.py",
+    "root_execution_intent_sha256": "79E165565618AFA153AC9B81E40715B66E7A8213DB4A2B538E87251B44F2EBBF",
+    "helper_sha256": "C16F236317E58481D68416153C3682F24F139E36500A3953391E5AFF247C81AE",
+    "helper_exit_code": 1,
+    "error": "prepared output path/prefix mismatch",
+    "cause": "Frozen prepared-output regex requires a 30 or 60 prefix; proposed n-aa does not match.",
+    "watcher_ready": false,
+    "controller_created": false,
+    "title_started": false,
+    "effective_config_staged": false,
+    "admission_marker_created": false,
+    "profile_and_cache_seed_copies_unchanged": true,
+    "post_failure_process_checker_exit_code": 0,
+    "post_failure_title_processes": [],
+    "closed_failure_record": "research/rexglue-qualification-20261012/runtime200-preparation/revision2/root-closed-neutral-failure200-revision2.json",
+    "closed_failure_record_sha256": "6FC4D315D808E3EBB79F8D1C505C6552222973A98A31C4384EF709E0779382A8"
+  },
+  "next_action": "Freshly review binder revision3 with accepted neutral 30-aa and unchanged actual60-b, then rerun neutral qualification before any title admission.",
+  "limits": [
+    "Neutral259-character payload path is below the inherited exclusive260 budget and never opened by a title; no actual-game259 compatibility is claimed.",
+    "Actual60-b retains the previously qualified258-character path.",
+    "No full bout, displayed FPS, optimization, SBS or browser gate is closed."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-13",
+  "status": "GAME_OUTPUT_OBSERVED_CORRECT_RENDERING_AND_PROGRESSION_FAIL",
+  "scope": "Native ReXGlue recompilation normal-view startup only; not Xenia/SBS/browser acceptance",
+  "observations": [
+    "Venom window title identifies the recompiled native host",
+    "Recognizable Fight Night Champion/EA Sports startup artwork and copyright text are visible",
+    "All three screenshots show severe green/black rendering corruption",
+    "User reports inability to proceed past start screen"
+  ],
+  "screenshots": [
+    {
+      "path": "research\\rexglue-qualification-20261012\\user-start-screen-evidence-20261013\\Screenshot (53).png",
+      "sha256": "340ad9447741ef76a1f5386621915927d5786cc2cbc5cd3483500eed53d75864",
+      "source": "user-provided screenshot; copied without image modification"
+    },
+    {
+      "path": "research\\rexglue-qualification-20261012\\user-start-screen-evidence-20261013\\Screenshot (55).png",
+      "sha256": "59323284b00cb11c1a5ad7aa11a9c43df5942798dc31635a9e44207c4afe508d",
+      "source": "user-provided screenshot; copied without image modification"
+    },
+    {
+      "path": "research\\rexglue-qualification-20261012\\user-start-screen-evidence-20261013\\Screenshot (57).png",
+      "sha256": "d98ee9d773d6584facb301ef0db4b10115544efb4668751a9c27fd639b4c28b1",
+      "source": "user-provided screenshot; copied without image modification"
+    }
+  ],
+  "launch_manifest": {
+    "mode": "user_requested_visible_interactive",
+    "xex_sha256": "6BF4C44B9EBD2D7CA27929E0B6D7DC3308CC420D932511F0CDAD9C48671ED91C",
+    "arguments": [
+      "--game_data_root=\"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\repair15-canonical-tu2\\assets\" --user_data_root=\"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\interactive-20261013-172311\\user\" --cache_root=\"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\interactive-20261013-172311\\cache\" --log_file=\"C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\interactive-20261013-172311\\runtime.log\" --log_level=info --gpu_plugin=xenos --fullscreen=false --allow_game_relative_writes=false"
+    ],
+    "no_automatic_close": true,
+    "exe": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\native-build15\\RelWithDebInfo\\venom_fnc_canonical_tu2.exe",
+    "exe_sha256": "D06D2CDC195C844FCE61DFB269B763326909F7E26C5C4FB208440CC0C5F1AAD0"
+  },
+  "session_status": {
+    "exit_code": -1073740791,
+    "status": "EXITED",
+    "end": "2026-10-13T17:28:25.9781992-04:00",
+    "pid": 14692
+  },
+  "log_findings": [
+    "Repeated invalid texture fetch constants",
+    "Terminal fatal: invalid or unregistered function at guest address 0x82B00028"
+  ],
+  "diagnostic_boundary": "The terminal missing-entry trap is confirmed. The exact graphics corruption cause is not yet proven; byte order at texture-constant production/transfer is a targeted hypothesis, not an accepted fix. Do not globally swap values or enable invalid-fetch bypass merely to hide the warnings.",
+  "acceptance": {
+    "produces_recognizable_game_output": "OBSERVED_USER_SCREENSHOTS",
+    "correct_first_frame": "FAIL",
+    "title_to_menu_progression": "FAIL",
+    "playable_game": "UNVERIFIED",
+    "native_sbs": "UNVERIFIED",
+    "browser": "UNVERIFIED"
+  },
+  "next_actions": [
+    "Inspect/discover full reachable body for observed 0x82B00028 and rerun start/menu transition",
+    "Trace raw texture-constant words through guest producer, command packet, register upload and texture interpretation against pinned Xenia",
+    "Repeat normal-mode screenshots after causal repair; retain originals and compare visually"
+  ],
+  "preservation": "Owned game/update/DLC/Xenia unchanged. Screenshots and all game data remain private research."
+}

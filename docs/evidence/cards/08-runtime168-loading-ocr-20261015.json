@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL",
+  "pair": "integration159",
+  "pid": 10944,
+  "start_utc": "2026-10-15T05:15:42.970816-04:00",
+  "end_utc": "2026-10-15T05:19:52.487455-04:00",
+  "cleanup": {
+    "status": "CLEANUP_COMPLETE",
+    "cleanup_status": "CLEANUP_COMPLETE",
+    "failure": null,
+    "game_pid": 10944,
+    "actual_exit_code": 0,
+    "ordinary_close_requested": true,
+    "targeted_watchdog_used": false,
+    "observer_quiescent": true,
+    "cleanup_blocked": false,
+    "title_cleanup_blocked": false,
+    "title_close_forbidden_due_to_live_observer": false,
+    "game_left_alive": false,
+    "live_handles_retained_through_final_status": true,
+    "shutdown_event_order": [
+      "neutral-before-observer-stop",
+      "neutral-after-observer-stop",
+      "ordinary-title-close"
+    ],
+    "cleanup_errors": [],
+    "observer_pid": 40348,
+    "observer_exit_code": 0
+  },
+  "watcher_status": {
+    "status": "SAFE_UI_SETUP_SELECTED_SHORT_NEUTRAL",
+    "blocker": "INVALID_FRAME_OR_PULSE:stale or future frame after OCR",
+    "start_utc_ms": 1792055742970,
+    "stage": "LOADING",
+    "setup_proof": {
+      "selected_rounds": 1,
+      "selected_length_minutes": 1,
+      "rounds_proof": {
+        "frame_sha256": "99a0543582d72846e83bf4fb4ee6ac2ab360d032054a8c93783a7e0b46d69345",
+        "retained_frame": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-5\\frames\\guest-34.ppm",
+        "value": 1,
+        "before_request": [
+          "settings",
+          1,
+          2,
+          2,
+          "LEFT"
+        ],
+        "before_request_utc_ms": 1792055912625,
+        "scope": "Actual validated selected1; no LEFT-at1 and no minimum assertion"
+      },
+      "length_proof": {
+        "frame_sha256": "28f61f2bc2e6539a19b1cd0c1704949bf0daca86e119753ec919c53b492c1551",
+        "retained_frame": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-5\\frames\\guest-36.ppm",
+        "value": 1,
+        "before_request": [
+          "settings",
+          2,
+          1,
+          2,
+          "LEFT"
+        ],
+        "before_request_utc_ms": 1792055922728,
+        "accepted_left_and_release": true
+      },
+      "minimum_rounds": null,
+      "minimum_length": null,
+      "scope": "Observed selected values only; no clamp/minimum assertion."
+    },
+    "selected_configuration": {
+      "rounds": 1,
+      "length_minutes": 1
+    },
+    "clock_observations": [],
+    "clock_decreases": 0,
+    "script_count": 0,
+    "end_result": "UNKNOWN",
+    "result_candidate": null,
+    "result_observe_started_elapsed": null,
+    "result_observe_deadline_elapsed": null,
+    "result_observations": [],
+    "completion_claim": "NONE; only a visible result candidate plus independent review can close the bout observation."
+  },
+  "swap_intervals": null,
+  "fps_scope": "Closed all-scene guest submissions only; not displayed FPS, unique frames, matched fight performance or speed correctness",
+  "result": "LOADING result OCR timed out; next identical black frame failed post-OCR freshness. No HUD/script/168-retry exercise.",
+  "retained_frame": {
+    "sha256": "847B7F79E03D5C6627EBAB623434BE40BBABE552C8A3566755C717D621598486",
+    "root_visual": "Entirely black1280x720",
+    "path": "frames/guest-46.ppm",
+    "png": "last168.png"
+  },
+  "timer": {
+    "proof_scope": "Hook selection only",
+    "snapshot_sha256": "C3867F67A300DA9B82503E55B5696F93BEB9C2F45DDCC2A8237042421C04A551",
+    "path": "research/rexglue-qualification-20261012/timer-trace168-observation/actual168-live-timer-review",
+    "effective": 60
+  },
+  "evidence": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-60-5",
+  "next": "174 qualified-bout-only result OCR; fresh review and targeted controls before another bout"
+}

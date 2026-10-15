@@ -1,0 +1,38 @@
+{
+  "card": "07",
+  "probe": "fnc-tu2-release-xamfix-visual-run99",
+  "date": "2026-10-08",
+  "status": "PARTIAL",
+  "scope": "Self-run exact-TU2 Release startup probe and read-only import-boundary audit. Does not pass startup, rendering, gameplay, SBS, browser, or release acceptance.",
+  "inputs": {
+    "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "titleUpdateSha256": "8429D60620012112285809E6B6545AF646056B9FCCBA3D1B88BB71C32EA9A8AE",
+    "hostSha256": "A8C1DBFAB9EFF3C0A4BE8D43149073E6937FA5726822FC0207F9AA450CA79730",
+    "launchConfigSha256": "BD0762C05F88A88D84555CB94DBDD1DB81CCA0390E622710C96982A2828CE07C",
+    "nativeModuleSha256": "92CAF56F9B8C8977BC71302C689F7B64CBA086D6A8C872A24B1FB5DEC9073BA9",
+    "generatedImportsSha256": "89D7588A139FF0BF52D32E9B65DD5A897BEC941E1B53BEE05FE59BE3572A6251"
+  },
+  "observations": [
+    "The Release host loaded title 45410915/media 2DC50868, applied TU2, bound the active native module, and created a D3D12 presentation window.",
+    "No first frame was verified. GPU front-buffer and ring addresses remained zero; no Vd graphics call was recorded.",
+    "The main thread reached 639698 observed blocks and the last saved status PC was 0x827B01A4. The status snapshot remained stale with running=true after the foreground process was interrupted; the PID was subsequently confirmed absent.",
+    "The generated import table maps callable thunk 0x82EE2B3C to xboxkrnl.exe ordinal 304 (0x130, RtlLeaveCriticalSection). Status reported 183 unresolved imports and zero unresolved ordinal-304 records; the log contains RtlLeaveCriticalSection probe events. The static import path is therefore observed working for this export, not established as the graphics-startup cause.",
+    "The branch at 0x822A33D8 dynamically reached the RtlLeaveCriticalSection thunk. That transfer alone is not a failure: runtime logs also show the export handler executing.",
+    "Read-only Ghidra output labels 0x82EE2B3C as a one-byte data function with bytes 0101013002010130..., consistent with import placeholder metadata rather than guest PPC. Do not decode those bytes as code or infer a broken thunk from the Ghidra label.",
+    "A module-inspector attempt on the extracted base XEX ended after collecting 28428 function candidates with exit code 1 and emitted no import report; it is not used as evidence. A separate header-table scan found no base-XEX import record whose address equals 0x82EE2B3C, while the exact active TU2-generated imports.cpp and runtime status do identify the thunk."
+  ],
+  "artifacts": {
+    "runResult": "research/native-host-probe-20261008-release-xamfix-visual-run99/run-result.json",
+    "statusSnapshot": "research/native-host-probe-20261008-release-xamfix-visual-run99/status.json",
+    "log": "research/native-host-probe-20261008-release-xamfix-visual-run99/log.txt",
+    "adaptiveObservations": "research/native-host-probe-20261008-release-xamfix-visual-run99/adaptive-observations.jsonl",
+    "generatedImportTable": "research/pc-trace-cache-hinted/workspaces/a3ba350781924e52cd0ff07cb04b02f8/generated/imports.cpp",
+    "ghidraDynamicTargetReport": "research/ghidra/run99-dynamic-target.txt",
+    "moduleInspectorPartialOutput": "research/native-host-probe-20261008-release-xamfix-visual-run99/module-inspector-base-imports.txt"
+  },
+  "logSha256": "46EF29D0D86E3EA6D52BC388E31626273AC84D7BBED3D18DF1445E244CDA9F79",
+  "adaptiveObservationsSha256": "6BEAE95B9D25EAEB2CEDD5F4014B2F88FFDD279B0CB2174DF15D0BE6E631315B",
+  "ghidraDynamicTargetReportSha256": "AF17E8620992CCD4826CDC7D45BEE6012DE54A445DBD468D75FFD68FC49B84D7",
+  "nextAction": "Instrument the exact startup path around the last recorded main-thread PCs and graphics entry points. Trace import calls and Vd/device/swap/present entrypoints with bounded arguments, return statuses, thread IDs, and caller PCs. Use the loaded TU2 image and active module; do not change import semantics based on the RtlLeaveCriticalSection branch trace. Re-run with a clean stop/snapshot protocol and capture an actual frame before any visual/SBS claims."
+}

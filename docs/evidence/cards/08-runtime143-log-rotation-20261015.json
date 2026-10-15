@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL",
+  "scope": "Original30Hz menu/setup/intro regression; no verified HUD/bout/FPS acceptance",
+  "evidence_path": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-30-x",
+  "supervisor_sha256": "76F50B5C4F9E91A9082C5237C409C3E8325EDD17CFC167C6CB68C9C0DD129ECC",
+  "observer_sha256": "E42B84C52F101673970A3D3C58F51C6B4CF9307019EA31562E93FA72328BA8D7",
+  "pair": "integration127",
+  "pid": 34744,
+  "start_utc": "2026-10-15T06:52:22.353675Z",
+  "end_utc": "2026-10-15T06:57:03.803415+00:00",
+  "title_exit_code": 0,
+  "observer_exit_code": 0,
+  "watchdog": false,
+  "survivor": false,
+  "start_action_elapsed_seconds": 32.13379883766174,
+  "start_oracle": "unchanged raw exact PRESS START; new local-contrast fallback not needed by this Start frame",
+  "settings": {
+    "rounds": 1,
+    "length_minutes": 1
+  },
+  "terminal_elapsed_seconds": 280.0557988376604,
+  "terminal": "INVALID_FRAME_OR_PULSE:[Errno 2] No such file or directory: 'C:\\\\Users\\\\samsa\\\\Desktop\\\\Workplace\\\\Projects\\\\Fight Night Champion Mods\\\\xbox-full-game-sbs\\\\research\\\\rexglue-qualification-20261012\\\\bout102-supervisor\\\\probe80-bout121-30-x\\\\runtime.3.log'",
+  "root_visual_review": "last143.png/frames/guest-55.ppm: normal rendered Mike Tyson intro card, no HUD",
+  "cadence": {
+    "count": 8380,
+    "interval_sum_seconds": 279.882887,
+    "median_interval_ms": 33.4735,
+    "p99_interval_ms": 36.43,
+    "arrival_rate_hz": 29.941094612190422
+  },
+  "cadence_limit": "Mixed-scene guest swaps, not displayed/unique FPS or active-play comparison",
+  "next": "146 targeted rotation-safe AcceptedPackets reader; do not launch unchanged144/145 wrappers until composed with reviewed146 repair"
+}

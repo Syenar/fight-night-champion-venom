@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-14",
+  "status": "RUNNING_USER_MANUAL_TEST",
+  "pid": 29272,
+  "live_state": {
+    "time_utc": "2026-10-15T00:58:06.0401349Z",
+    "pid": 29272,
+    "responding": true,
+    "session": 1,
+    "window_title": "Fight Night Champion Venom [rexglue-v1.0.0.1-dev.g36d4808-RelWithDebInfo]",
+    "window_handle": 2101358,
+    "modules": [
+      {
+        "name": "venom_fnc_canonical_tu2.exe",
+        "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\venom_fnc_canonical_tu2.exe",
+        "sha256": "204D52D3DE8FD18319199216381074DF59AFFABB5E3BB6C5466CA4FDE3FAFC64"
+      },
+      {
+        "name": "rexruntimerd.dll",
+        "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\rexruntimerd.dll",
+        "sha256": "CBD4F9D73CEEEF84BE622E0B9F3248769312B7C78D3495659619736AC5AB4DE6"
+      },
+      {
+        "name": "TracyClientrd.dll",
+        "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\TracyClientrd.dll",
+        "sha256": "850E4CBE76C5729812160AD3E34774A039262E48F983C8AC70A611F9C98783C7"
+      },
+      {
+        "name": "rexgpu-xenosrd.dll",
+        "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\rexgpu-xenosrd.dll",
+        "sha256": "64B57F53658E64873F2978D019B406475E8D5DAF2B58043DB1A8B33E03F410C7"
+      }
+    ]
+  },
+  "manifest": "research\\rexglue-qualification-20261012\\manual80-controller-test\\launch-manifest.json",
+  "automatic_input": false,
+  "automatic_stop": false,
+  "native_scope": "Profiling69/native64 callback and ABI pair; input fixture is disabled. Complete game/browser/SBS/release acceptance remains open.",
+  "next_action": "Preserve user manual session; retain actual exit/captures/logs, then analyze user feedback before another automatic launch."
+}

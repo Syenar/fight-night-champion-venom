@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-14",
+  "status": "PARTIAL",
+  "request": "Keep directory storage bounded",
+  "inventory": "research/cleanup-20261014/inventory.json",
+  "inventory_scope": "research/performance-20261014 only; 1823960549 logical bytes; not a full-workspace total",
+  "completed": "Forty explicitly frozen research EXE/DLL paths examined;342751232 bytes of duplicate file storage replaced with NTFS hardlinks. Paths and bytes unchanged, before/after hashes and shared identities verified; no errors in successful attempt2.",
+  "operation_log": "research/cleanup-20261014/hardlink-result-attempt2.json",
+  "protection": "Shared frozen binaries marked read-only; all future builds must write fresh output paths. Frame-rate105 active build excluded. Its three runtime dependencies were subsequently staged as verified hardlinks with zero copied bytes.",
+  "preserved": "Original game data/installations; source pins and objects; captures; logs; manifests; failed experiment evidence; unique binaries.",
+  "limitations": "Logical folder sizes count hardlinks repeatedly. Full workspace inventory not completed. Initial restricted attempt could not create links, restored attempted files, and removed zero duplicates; its failure log and source are preserved.",
+  "next": "Reuse frozen objects and dependency hardlinks for further builds. Prune only reproducible caches after preserving compile/config/provenance evidence."
+}

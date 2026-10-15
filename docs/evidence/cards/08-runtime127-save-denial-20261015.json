@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL",
+  "scope": "Card08 isolated save recovery diagnostic; no gameplay or performance acceptance",
+  "evidence_path": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-30-20261015-127a",
+  "supervisor_sha256": "96D20FE8BF04780EFDB4A5A67ABD75B7BA8281D57026822A8EAD9FCF68CF96B4",
+  "exe_sha256": "7044DEE0A456F522563D3007F3DC75FA54323F4E9FC41027C8CF716451502E52",
+  "runtime_sha256": "82A445202AAAC0468B8EE0F3ACD3AE78068847D29EC11722AC34CAC48217DD41",
+  "config_sha256": "190BD71F268F65BDA0E6D7A7BC4981E32AC3BD14C0AEA946006255EA82CF7B89",
+  "command": "Pinned Python -B -X utf8 runtime127-preparation/SupervisorBout127.py --probe-id 20261015-127a --game-frame-rate 30; exact child command and environment in probe-manifest.json",
+  "pid": 37392,
+  "start_utc": "2026-10-15T05:28:16.047075Z",
+  "end_utc": "2026-10-15T05:29:24.360172Z",
+  "module_admission_ms": 110,
+  "observations": [
+    "Original30Hz; SETTINGS Down at52.25s, Create New row1 A at57.16s, damaged PROFILE Retry row0 A at62.27s",
+    "Repeated damaged-profile dialog at67.25s safely stopped input",
+    "Old rmcsave profile open returns0xC000000F; new dated profile child open returns0xC0000022",
+    "New package directory and328-byte header exist; new profile payload absent; old seed files unchanged",
+    "No publisher heartbeat terminal failure in this run",
+    "No filesystem debug lines despite pinned adjacent TOML; runtime logging effect unverified"
+  ],
+  "new_header_sha256": "A09BB6142613FC6875E3DDEEC7BA4474F570571A483E851F061FDE873E3A1D7F",
+  "last_frame_sha256": "9F621C6E0AEA4617429C23079BD241E70AB87C5B093E9CC91D62721503068A61",
+  "title_exit_code": 0,
+  "observer_exit_code": 0,
+  "ordinary_close": true,
+  "watchdog": false,
+  "survivor": false,
+  "capture_storage": "16 byte-identical completed-probe captures replaced with read-only hardlinks; all paths and hashes preserved;44237056 unique file-data bytes reclaimed, physical clusters unmeasured",
+  "hypothesis_classification": "Controller liveness observed for this scenario; save recovery failed; fs-debug instrumentation inconclusive",
+  "next": "Diagnose content-child access denial and missing fs debug instrumentation, implement causal repair, fresh critic, repeat bounded scenario and verify title-side save reload. Independently review additive leaf128 build."
+}

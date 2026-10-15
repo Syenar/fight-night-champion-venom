@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL",
+  "pair": "integration159",
+  "pid": 18820,
+  "observer_pid": 30620,
+  "start_utc": "2026-10-15T06:22:36.092823-04:00",
+  "end_utc": "2026-10-15T06:26:33.273514-04:00",
+  "cleanup": {
+    "status": "CLEANUP_COMPLETE",
+    "cleanup_status": "CLEANUP_COMPLETE",
+    "failure": null,
+    "game_pid": 18820,
+    "actual_exit_code": 0,
+    "ordinary_close_requested": true,
+    "targeted_watchdog_used": false,
+    "observer_quiescent": true,
+    "cleanup_blocked": false,
+    "title_cleanup_blocked": false,
+    "title_close_forbidden_due_to_live_observer": false,
+    "game_left_alive": false,
+    "live_handles_retained_through_final_status": true,
+    "shutdown_event_order": [
+      "neutral-before-observer-stop",
+      "observer-terminate",
+      "neutral-after-observer-stop",
+      "ordinary-title-close"
+    ],
+    "cleanup_errors": [],
+    "observer_pid": 30620,
+    "observer_exit_code": 1
+  },
+  "watcher_status": {
+    "status": "ABSENT_NOT_FABRICATED",
+    "reason": "No watcher-status.json retained; supervisor may have terminated the observer before its final report. Use raw supervisor terminal diagnostics."
+  },
+  "terminal_reason": "PUBLISHER_HEARTBEAT_STALE_OR_FUTURE",
+  "frame_rows": 46,
+  "invalid_frame_errors": [],
+  "ocr_transport_counts": {
+    "MISS_CACHED": 52,
+    "MISS_UNCACHED": 1
+  },
+  "result": "OCR-positive setup10 through2 then15; unqualified non-unit transition holds neutral. Later stale active heartbeat stops supervisor; no HUD/script/result.",
+  "heartbeat": "Last heartbeat age1601ms exceeds active1500ms threshold; neutral250ms deferral does not apply. Gap cause UNKNOWN; successful publications followed the last collisions.",
+  "swap_intervals": {
+    "count": 13719,
+    "interval_sum_seconds": 235.762319,
+    "median_interval_ms": 16.552,
+    "p99_interval_ms": 33.951,
+    "arrival_rate_hz": 58.18996037275999
+  },
+  "fps_scope": "Closed all-scene guest submission cadence only, not displayed FPS or controlled improvement",
+  "process_cpu": {
+    "samples": 191,
+    "sampled_wall_seconds": 190.0,
+    "weighted_process_cpu_core_equivalents": 1.9607730263157894,
+    "last_exit_code": 0,
+    "process_exit_observed": true,
+    "scope": "All sampled scenes; process CPU includes all runtime threads, not hot-function or GPU-device proof"
+  },
+  "evidence": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-60-3",
+  "setup_investigation": "research/rexglue-qualification-20261012/runtime182-investigation",
+  "publication_investigation": "research/rexglue-qualification-20261012/runtime183-publication-investigation",
+  "next_action": "Causal bounded UI-step qualification and monotonic publisher diagnostics; no unchanged broad retry",
+  "acceptance": "Full bout, performance, successful save reads, true SBS and browser remain open",
+  "independent_review": {
+    "path": "research/rexglue-qualification-20261012/runtime177-review/actual-60-3",
+    "verdict_sha256": "A58CCA9F3654D82FC93D9F47985551ACDA8064DE2EFDF50F0BE33892C8173282",
+    "scope": "PASS_SCOPED_ACTUAL_60_3_PARTIAL"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS_WITH_METADATA_CORRECTION",
+  "scope": "Only completed actual151b capture/log storage",
+  "evidence": "research\\rexglue-qualification-20261012\\capture151-storage",
+  "logical_duplicate_bytes_avoided": 199066752,
+  "paths_hashes_lengths_attributes_preserved": true,
+  "hardlinked_target_identities_intentionally_changed": 72,
+  "compressed_allocation_bytes_after": 91389952,
+  "derived_difference_bytes": 87923194,
+  "physical_cluster_savings_measured": false,
+  "correction": "identity-reporting-correction.json",
+  "not_additive_physical_totals": true
+}

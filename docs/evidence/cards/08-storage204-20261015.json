@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-15",
+  "agent": "root",
+  "status": "PASS",
+  "case": "closed204-storage",
+  "review": {
+    "path": "research\\rexglue-qualification-20261012\\capture204-storage\\independent-review\\verdict.json",
+    "sha256": "A93738FF313890B0ACF542E3AD35730456F6D92695F9E8EEED063B010195391B"
+  },
+  "scope": "Closedprobe60-e only, all144compressionrecords+136dedupPPMpaths checked independently",
+  "hardlink_groups": 56,
+  "hardlinks_created": 80,
+  "logical_duplicate_bytes_avoided": 221185280,
+  "compressed_paths": 144,
+  "unique_identities": 64,
+  "logical_unique_bytes": 195315295,
+  "compressed_file_size_api_bytes": 95821824,
+  "limitations": [
+    "Losslesshash/length/identity/attributeproofonly",
+    "Dedupandcompressionnotadditivephysicalclustersavings",
+    "No native/fullbout/FPS/SBS/browser claim"
+  ],
+  "next": "Retainproofs; applyclosed-runstorageworkflowafterfutureboundedruns"
+}

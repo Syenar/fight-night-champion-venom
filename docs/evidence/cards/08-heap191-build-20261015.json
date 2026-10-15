@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS_STATIC_BUILD_ABI_IMPORT_WITH_MAP_LIMITATION",
+  "scope": "Default-off heap188 telemetry integration; runtime and FPS unverified",
+  "handoff": "research/performance-20261015/integration191-candidate/BUILD-HANDOFF-rev2.json",
+  "handoff_sha256": "DA749CE6066A0441AEBE0F982643B572C7951BF9B880271AB327CCFDCDFB7534",
+  "independent_review": "research/performance-20261015/integration191-candidate/independent-review/verdict.json",
+  "pair_review": "research/performance-20261015/integration191-candidate/independent-review/pair-stage-addendum.json",
+  "runtime_sha256": "7CD523FD10FCA9F4653ABEAADF05C4C2FB3C208415F99C9A2E6A7D6B927DAF77",
+  "actual_response_sha256": "3BBB3740706FB0B1B54A4F0E08FA33B1966D940501F67AE487D8EEC073445E29",
+  "objects": 205,
+  "changed_slot_zero_based": 115,
+  "unchanged_objects": 204,
+  "trailing_link_tokens": 47,
+  "preserved_exports_and_ordinals": 10257,
+  "unchanged_runtime_import_symbols": 749,
+  "runnable_pair": "research/performance-20261015/integration191-candidate/run-pair",
+  "pair_members": 5,
+  "hardlink_identity_matches": 5,
+  "default_venom_heap188_telemetry": false,
+  "vsync": "off",
+  "runtime_admitted": false,
+  "measured_fps_improvement": false,
+  "limitations": [
+    "No linker map was generated; PDB module attribution is not a complete symbol contribution proof.",
+    "Historical source-to-baseline-xmemory-object binding remains unknown.",
+    "The pre-correction export report bytes are unavailable; corrected direct controller126 comparison is reviewed in revision2.",
+    "Allocation behavior is preserved; telemetry does not implement heap reuse or establish a performance bottleneck."
+  ],
+  "next_action": "Review an exact runtime/config/lifecycle entry before a bounded telemetry run"
+}

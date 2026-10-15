@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-06",
+  "card": "07",
+  "status": "PARTIAL",
+  "builder": "primary agent",
+  "critic": "primary-agent adversarial self-review of actual source, pinned Xenia reference, tests, build output, probe status/logs and hashes; not an independent fresh-context critic",
+  "inputIdentity": {
+    "titleId": "45410915",
+    "effectiveTu2ImageHash": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "effectiveVersion": "0x203",
+    "titleUpdateXexpSha256": "8429D60620012112285809E6B6545AF646056B9FCCBA3D1B88BB71C32EA9A8AE",
+    "baseIsoSha256": "75E9D3EAA8440A24BFE1052B6E051F2A29DF189DDBE854969C1406E31D2E8242",
+    "nativeModuleSha256": "50258050C0FF8C779385558E110013BD92D76401F828783E919DD2F5E3FEA162"
+  },
+  "changes": [
+    "KeDelayExecutionThread yields for zero/expired/sub-millisecond intervals and returns STATUS_ACCESS_VIOLATION for a null interval pointer; focused regression coverage added.",
+    "ExTerminateThread ordinal 0x19 marks the active guest thread terminated and propagates a non-returning Halt with its exit code.",
+    "Critic pass removed an inaccurate partial-capability label from ExTerminateThread; pinned Xenia source confirms this export terminates the current thread and does not return."
+  ],
+  "tests": {
+    "debug": "xenon_session_tests, xenon_xboxkrnl_time_export_tests, xenon_dynamic_fallback_tests: 3/3 passed after rebuilding",
+    "release": "xenon_session_tests, xenon_xboxkrnl_time_export_tests, xenon_dynamic_fallback_tests: 3/3 passed after rebuilding",
+    "hostBuild": "xenon_runtime_host Debug rebuilt successfully",
+    "runtimeHostSha256": "F76C8438F21662659A4168BFEBB5807C5D749ED40FBABAFB063A666914E3F25A"
+  },
+  "probe": {
+    "config": "research/native-host-probe-20261006-tu2-exterminate4/launch-config.json",
+    "status": "research/native-host-probe-20261006-tu2-exterminate4/status.json",
+    "log": "research/native-host-probe-20261006-tu2-exterminate4/log.txt",
+    "adaptiveObservationsPath": "research/native-host-probe-20261006-tu2-exterminate4/adaptive-observations.jsonl",
+    "result": "TU2 applied and effective image hash matched; generated native module bound. Startup ran for about two minutes and was then stopped cooperatively by this diagnostic probe. No guest trap or runtime lastError was recorded. This is not a successful game boot.",
+    "unresolvedImports": 214,
+    "loggedImportCalls": 1896,
+    "adaptiveObservationCount": 1617,
+    "lastObservedGuestService": "RtlLeaveCriticalSection at guest import call site 0x82A41ACC during repeated startup heap/pool initialization",
+    "renderer": "null",
+    "audio": "disabled",
+    "firstFrame": false,
+    "gameplay": false,
+    "stopCause": "stop.signal requested after bounded diagnostic run; no guest crash"
+  },
+  "commands": [
+    "cmake --build research/third_party/xenon-recomp/out/build/test-core --config Debug --target xenon_session_tests xenon_xboxkrnl_time_export_tests xenon_dynamic_fallback_tests --parallel 8",
+    "ctest --test-dir research/third_party/xenon-recomp/out/build/test-core -C Debug -R 'xenon_session_tests|xenon_xboxkrnl_time_export_tests|xenon_dynamic_fallback_tests' --output-on-failure",
+    "cmake --build research/third_party/xenon-recomp/out/build/test-core --config Release --target xenon_session_tests xenon_xboxkrnl_time_export_tests xenon_dynamic_fallback_tests --parallel 8",
+    "ctest --test-dir research/third_party/xenon-recomp/out/build/test-core -C Release -R 'xenon_session_tests|xenon_xboxkrnl_time_export_tests|xenon_dynamic_fallback_tests' --output-on-failure",
+    "cmake --build research/third_party/xenon-recomp/out/build/ninja-min --config Debug --target xenon_runtime_host --parallel 8",
+    "research/third_party/xenon-recomp/out/build/ninja-min/runtime_host/Debug/xenon_runtime_host.exe --launch-config research/native-host-probe-20261006-tu2-exterminate4/launch-config.json"
+  ],
+  "nextAction": "Trace the active guest startup path around 0x82290ED4 and 0x82297D44 against the exact TU2 image and reference disassembly; classify the 214 unresolved function/data imports with pinned Xenia export tables; determine why startup continues allocating pools without reaching a first rendered frame. Then rerun the same bounded probe and add a real-renderer normal-mode launch only after the headless service trace yields a reproducible next milestone.",
+  "limitations": [
+    "Dynamic fallback remains active; this does not prove full static recompilation.",
+    "Probe was headless with null renderer and audio disabled; no visual or playable acceptance was performed.",
+    "The 214 unresolved import count is a static coverage diagnostic, not proof all 214 are called by the supported offline game.",
+    "No screenshot, title screen, complete match, SBS output, or browser build was verified."
+  ]
+}

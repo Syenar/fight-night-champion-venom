@@ -1,0 +1,7 @@
+{
+  "status": "PARTIAL",
+  "evidence": "research/rexglue-qualification-20261012/exp2-repair45/evidence.json",
+  "numeric": "871956 checks,1060 failures before,zero after",
+  "rendering": "Sustained correctness remains unpassed",
+  "critic": "Primary adversarial only; independent review pending"
+}

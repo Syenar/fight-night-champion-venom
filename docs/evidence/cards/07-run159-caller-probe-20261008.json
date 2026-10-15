@@ -1,0 +1,28 @@
+{
+  "card": "07",
+  "date": "2026-10-08",
+  "status": "IN_PROGRESS",
+  "review": "artifact self-review; no independent gameplay or visual acceptance",
+  "hypothesis": "An entry probe at 0x82EAEAD8 will capture its caller and first arguments within the bounded run.",
+  "hypothesisResult": "INCONCLUSIVE: the guest did not reach 0x82EAEAD8 in the 420-second run, so no caller sample exists.",
+  "run159": {
+    "manifest": "research/repair/startup-readiness/attempt-03/run159/probe-manifest.json",
+    "result": "research/repair/startup-readiness/attempt-03/run159/process-result.json",
+    "status": "research/repair/startup-readiness/attempt-03/run159/status.json",
+    "log": "research/repair/startup-readiness/attempt-03/run159/log.txt",
+    "trace": "research/repair/startup-readiness/attempt-03/run159/adaptive-observations.jsonl",
+    "sourceImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "hostSha256": "D827774247C3FB5427CEB1D35C07A71C2DE60468EE4243266A45625FD1C571F1",
+    "nativeModuleSha256": "92CAF56F9B8C8977BC71302C689F7B64CBA086D6A8C872A24B1FB5DEC9073BA9",
+    "observations": [
+      "Exact TU2 and generated module loaded; the main thread executed at least 630784 sampled blocks and no graphics frame or GPU ring/front buffer was observed.",
+      "No 0x82EAEAD8 first-entry observation exists. Its absence in this capped, shallow run does not imply the function is unreachable.",
+      "The final sampled 0x8229CD68 PC is inside a bounded byte-copy helper; a single PC sample does not prove the helper stalls.",
+      "The launcher requested stop at 420 seconds; the internal five-second watchdog terminated the game process. Final state failed and exit code 0 is not cooperative shutdown.",
+      "An isolated -O1 build of the exact generated TU2 module was configured to test native core throughput. The build is separate from the unchanged -O0 baseline."
+    ],
+    "sourceChange": "Only adds a bounded diagnostic PC to the host observer and extends its hit-counter array; no guest behavior semantics changed.",
+    "regression": "Debug host compiled and xenon_session_execution_tests passed 1/1. Isolated optimized module compilation is underway, not yet accepted."
+  },
+  "nextAction": "Finish and validate the isolated -O1 module build, rerun the exact-TU2 bounded caller probe with its hash recorded before launch, then inspect the captured caller and Xenia contract. If throughput does not improve, investigate host guest-execution progress and resource saturation with a retained diagnostic instead of repeating the same run."
+}

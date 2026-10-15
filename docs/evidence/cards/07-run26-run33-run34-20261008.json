@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-08",
+  "card": "07",
+  "milestone": "Correct Run26 interpretation; self-run Release content mount and five-minute TU2 startup trace",
+  "status": "PARTIAL",
+  "sourceIdentity": {
+    "titleId": "0x45410915",
+    "mediaId": "0x2DC50868",
+    "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "titleUpdateApplied": true
+  },
+  "run26": {
+    "directory": "research/native-host-probe-20261007-all-thread-vd-run26",
+    "hostStarted": true,
+    "hostSha256": "9D2F1A05F4E574D0A885C28DCD70DA72673A4215E9CC80E1EA46B3B986F04C19",
+    "startedUtc": "2026-10-08T02:04:51Z",
+    "completedUtc": "2026-10-08T02:09:57Z",
+    "result": "The user-run elevated helper loaded the exact TU2 image and ran the planned five-minute all-thread/callsite probe. No Vd calls or GPU ring/front-buffer setup were observed. Watchdog shutdown required forced termination. No title or first frame was verified.",
+    "logSha256": "5F4DE0BBC3D6BAE6976F45CC995EDDEFFF2C51A99FBF867653B9D9291322F0E0",
+    "observationsSha256": "FEF91F80A81F54E6DC5362F0AA3D9852A52701E779079F6666356B87172E8BF3",
+    "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F"
+  },
+  "run33": {
+    "directory": "research/native-host-probe-20261008-release-content-mount-run33",
+    "hostSha256": "83897930132025086FC3C98BE5BD578D5D7449C726FA89736E9C91C233EECC51",
+    "startedUtc": "2026-10-08T02:49:23Z",
+    "completedUtc": "2026-10-08T02:51:23Z",
+    "exitCode": 0,
+    "titleUpdateApplied": true,
+    "contentMount": "PASS under restricted token after validated lexical-normal fallback",
+    "generatedModuleBound": true,
+    "guestIoErrors": 0,
+    "logSha256": "3C18957B5F985E54DBB2B4AF63D04BB104FE873E021C2B2D8B03BEABF8ABF416",
+    "observationsSha256": "F882DD10AFA59E0993F7D17159AC934162A85393AB1AE719526173B96708A204",
+    "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "acceptance": {
+      "titleScreen": false,
+      "firstFrame": false,
+      "gameplay": false,
+      "stereoSbs": false,
+      "browser": false
+    }
+  },
+  "run34": {
+    "directory": "research/native-host-probe-20261008-release-content-mount-run34",
+    "hostSha256": "83897930132025086FC3C98BE5BD578D5D7449C726FA89736E9C91C233EECC51",
+    "startedUtc": "2026-10-08T02:53:25Z",
+    "completedUtc": "2026-10-08T02:58:34Z",
+    "watchdogDurationSeconds": 300,
+    "cooperativeStop": true,
+    "titleUpdateApplied": true,
+    "generatedModuleBound": true,
+    "structuredRecordCount": 4378,
+    "periodicGuestSamples": 297,
+    "periodicSampleThreads": [3, 4, 5, 6, 7],
+    "successfulExportCallsites": 213,
+    "successfulExportsByLibrary": {
+      "xboxkrnl.exe": 205,
+      "xam.xex": 8
+    },
+    "vdExportCalls": 0,
+    "unresolvedImportCount": 189,
+    "gpuProbeTicks": 1380,
+    "gpuRingConfigured": false,
+    "frontBufferConfigured": false,
+    "guestIoErrors": 0,
+    "logSha256": "3979ECC451DAE4E7F494EA4182A28AD08DBB37CEB8A884FE2323FBD9C284BE2D",
+    "observationsSha256": "8EDF51689FD55240A66B64A7579F5DE9A71C374CE4967CD0384E2781EB13EDEF",
+    "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "acceptance": {
+      "titleScreen": false,
+      "firstFrame": false,
+      "gameplay": false,
+      "stereoSbs": false,
+      "browser": false
+    }
+  },
+  "interpretation": {
+    "closed": [
+      "The prior claim that Run26 was blocked before the host started was false.",
+      "The restricted-token content-mount failure is repaired by the validated, reparse-point-rejecting path fallback and works in Release runs 33/34."
+    ],
+    "stillOpen": [
+      "Exact TU2 guest startup does not reach a title or first rendered frame.",
+      "The guest does not call a Vd export in the observed startup interval; this is not enough evidence to identify a specific missing import as the cause.",
+      "GPU command ring and front-buffer state remain zero.",
+      "Complete native game, graphics, SBS, browser, and release acceptance remain open."
+    ],
+    "nextAction": "Correlate per-thread startup PCs and successful import callsites with the exact TU2 generated code and Ghidra analysis. Trace the first guest main-thread exit and its callers before changing runtime semantics; add targeted diagnostic coverage at the identified boundary."
+  }
+}

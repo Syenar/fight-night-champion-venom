@@ -1,0 +1,48 @@
+{
+  "card": "07-native-bootstrap",
+  "run": "Run167",
+  "date": "2026-10-09",
+  "status": "INCONCLUSIVE_REPAIR_TARGET",
+  "goal": "Make the exact captured TU2 effective image consumable by the XEX loader and apply a revision-bound dispatcher interior hint.",
+  "inputs": {
+    "effectiveImageRaw": "research/repair/startup-readiness/attempt-04/run166/effective-tu2.xex",
+    "effectiveImageRawSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "syntheticXex": "research/repair/startup-readiness/attempt-04/synthetic-current-tu2-rehashed.xex",
+    "syntheticXexSha256": "1e4361641d84d3b9cb1c13dd6e208bb079ee76c0e11154687b740eac19d9616b",
+    "hintAnalysis": "research/repair/startup-readiness/attempt-04/run167/module-hints-fnc/revisions/b771b41caef2483549bfbc7d726be3eb56943f99/analysis.json",
+    "hintAnalysisSha256": "d60bee42c0aca6496a9f64df830576b9c3e29412dd2b695ede8613d2b4ec6255",
+    "targetObservations": "research/repair/startup-readiness/attempt-04/run167/target-observations.jsonl",
+    "targetObservationsSha256": "1ae46bb27b9b2c1b9f9732a82463ba3e19f7c0863409a6cd5f5c526437bcc610"
+  },
+  "commands": [
+    "xenon-prepare.exe --content synthetic-current-tu2-rehashed.xex --query --config Release",
+    "xenon-prepare.exe --content synthetic-current-tu2-rehashed.xex --cache-root research/r167 --module run167/module-hints-fnc --observations run166/adaptive-observations-driver.jsonl --recomp-root research/third_party/xenon-recomp --config Release --force",
+    "xenon-prepare.exe --content synthetic-current-tu2-rehashed.xex --cache-root research/r167-min --module run167/module-hints-fnc --observations run167/target-observations.jsonl --recomp-root research/third_party/xenon-recomp --config Release --force",
+    "recomp-driver.exe synthetic-current-tu2-rehashed.xex run167/generated --module run167/module-hints-fnc --observations run167/target-observations.jsonl --graph-cache research/pc-trace-cache-hinted/graph-v1 --jobs 1 --quiet --json"
+  ],
+  "results": {
+    "loaderQuery": {
+      "status": "PASS",
+      "titleId": "45410915",
+      "mediaId": "2DC50868",
+      "effectiveImageHash": "b771b41caef2483549bfbc7d726be3eb56943f99",
+      "needsPreparation": true
+    },
+    "wrapperConstruction": "PASS: copied the existing 16 KiB research header, replaced section_digest using SHA1(first 65536 effective bytes + first descriptor), and appended the exact effective image twice to preserve the header-declared image size/container layout.",
+    "hintSchema": "PASS after adding FunctionHint address 0x822A5A60/end 0x822A5C7C; structural package has one parent function, one chunk, one indirect branch.",
+    "preparation": "INCONCLUSIVE: full-trace attempt reached analysis wave 1 (30031 analyzed, 75107 newly discovered) but was bounded/terminated before artifact creation; narrow attempt reached the same 15% analysis phase and was interrupted at the turn boundary.",
+    "generatedOutput": "FAIL/UNKNOWN: no new generated directory or module was produced by the bounded attempts; canonical workspace remains unchanged."
+  },
+  "critic": {
+    "largestGap": "The loader wrapper is accepted, but the recompilation pass still does not complete within the bounded attempts; no generated alternate entry has been independently verified.",
+    "notProven": [
+      "native boot",
+      "first frame",
+      "gameplay",
+      "SBS",
+      "browser",
+      "full-game acceptance"
+    ]
+  },
+  "nextAction": "Use the loader-accepted synthetic XEX with a short-lived background preparation job and a dedicated status file; if analysis still expands, reuse the existing exact-image graph/artifact cache or add the dispatcher chunk directly to an isolated generated workspace, then build and rerun Run168."
+}

@@ -1,0 +1,9 @@
+{
+  "name": "fight-night-sbs-browser-client",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun run server.ts",
+    "test": "bun test"
+  }
+}

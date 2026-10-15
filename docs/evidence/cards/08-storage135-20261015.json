@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-15",
+  "scope": "Completed127a/q/r PPM evidence only; no original inputs or active captures",
+  "dedup134": {
+    "status": "EXACT_BYTES_PATHS_PRESERVED",
+    "links": 65,
+    "unique_file_data_bytes_reclaimed": 179713040,
+    "proof": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-30-r/capture-dedup-proof.json"
+  },
+  "lossless_ntfs_compression": {
+    "status": "LOSSLESS_NTFS_COMPRESSION_VERIFIED",
+    "paths": 169,
+    "unique_files": 70,
+    "GetCompressedFileSizeW_bytes_before": 193537120,
+    "GetCompressedFileSizeW_bytes_after": 99987456,
+    "difference_bytes": 93549664,
+    "paths_hashes_identities_and_readonly_preserved": true,
+    "proof": "research/rexglue-qualification-20261012/capture135-compression/compression-result.json",
+    "independent_review": "research/rexglue-qualification-20261012/capture135-compression/review.md; content PASS, physical-savings wording corrected",
+    "difference_interpretation": "derived uncompressed logical bytes minus compressed allocation; not exact physical reclamation"
+  },
+  "accounting": "Deduplication measures unique logical file-data reduction; compression measures GetCompressedFileSizeW difference on remaining identities. Do not describe either as a complete workspace size inventory."
+}

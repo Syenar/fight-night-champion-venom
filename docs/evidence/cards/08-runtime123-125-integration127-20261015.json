@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-15",
+  "agent": "Codex",
+  "status": "PARTIAL",
+  "scope": "Actual runtime123-125 outcomes, scoped source/build reviews, and staged integration127 evidence",
+  "evidence_root": "research/rexglue-qualification-20261012",
+  "actual_attempts": [
+    {
+      "id": "123a",
+      "path": "bout102-supervisor/probe80-bout121-30-20261015-123a",
+      "title_pid": 12404,
+      "pair": "integration112; exact four loaded paths and hashes recorded in supervisor-status.json",
+      "observer_status": "BLOCKED_NEUTRAL: UNKNOWN_SCENE_FOR_15_SECONDS",
+      "observer_exit_code": 0,
+      "title_exit_code": 0,
+      "termination": "Ordinary title close after observer quiesced; no watchdog",
+      "observed_progress": "Press Start and autosave were observed before unknown-scene setup observations",
+      "result": "No result candidate, gameplay acceptance, save acceptance, or FPS sample"
+    },
+    {
+      "id": "124a",
+      "path": "bout102-supervisor/probe80-bout121-30-20261015-124a",
+      "title_pid": 29996,
+      "observer_status": "BLOCKED_NEUTRAL",
+      "observed_progress": "Corrupt SETTINGS dialog; Down selected Create New on observed row1, then A; subsequent frames UNKNOWN",
+      "supervisor_status": "PermissionError(13, 'Access is denied') during shutdown neutral-packet replacement",
+      "observer_exit_code": 0,
+      "title_exit_code": 0,
+      "termination": "Cleanup completed; ordinary title close; no watchdog",
+      "seed_state": "Isolated profile/header seed unchanged; no save acceptance",
+      "result": "No demonstrated save creation/reload, gameplay acceptance, or FPS sample"
+    },
+    {
+      "id": "125a",
+      "path": "bout102-supervisor/probe80-bout121-30-20261015-125a",
+      "title_pid": 28744,
+      "stop_reason": "PUBLISHER_HEARTBEAT_STALE_OR_FUTURE",
+      "heartbeat_age_ms": 1007,
+      "associated_evidence": "Repeated WinError 5 replace collisions; heartbeat sequence 240 was stale at stop",
+      "observer_exit_code": 1,
+      "title_exit_code": 0,
+      "termination": "Ordinary title close after observer quiesced; no watchdog",
+      "first_frame": false,
+      "result": "Stopped before first frame; no demonstrated recovery, gameplay acceptance, or FPS sample"
+    }
+  ],
+  "reviews": {
+    "runtime123": "runtime123-review/README.md: PASS for one bounded 30 Hz probe only",
+    "runtime124": "runtime124-review/README.md: PASS for one bounded save-path discrimination attempt only",
+    "runtime125": "runtime125-review/README.md: PASS for bounded candidate and proposed single recovery discriminator only",
+    "controller_share126": "controller-share126-review/README.md: scoped source/build/semantic admission only; one changed object, 204 unchanged response objects, 10257 matching exports; not runtime/gameplay acceptance"
+  },
+  "integration127": {
+    "manifest": "integration127/manifest.json",
+    "status": "STAGED_NOT_RUNTIME_ADMITTED",
+    "hardlinks": 4,
+    "binary_copy_bytes": 0,
+    "runtime_admission_marker": false,
+    "launched": false,
+    "next": "Fresh exact-pair integration review and admission marker before any runtime launch"
+  },
+  "runtime127_preparation": {
+    "status": "BUILDER_CRITIC_UNDERWAY",
+    "changes": [
+      "Reviewed126 controller snapshot reader",
+      "Pinned adjacent filesystem-debug configuration",
+      "1500ms active-process liveness; startup250ms and input40ms unchanged",
+      "64MiB runtime-log cap"
+    ],
+    "launched": false,
+    "next": "After exact-pair admission, bounded30Hz save diagnostic to capture save recovery and filesystem-mount/child failure; then causal repair and same-root reload. FPS only after a completed bout."
+  },
+  "limitations": [
+    "No FPS result exists.",
+    "No save or complete gameplay result is claimed.",
+    "Full offline acceptance, normal and true SBS, standalone browser, and release remain open.",
+    "Source/build reviews and bounded-probe admissions do not retroactively pass the actual attempts."
+  ],
+  "next_card": "Complete runtime127 builder/critic and exact-pair admission; run bounded save diagnostic, repair causally, and verify same-root reload before save acceptance. FPS remains gated on a completed bout."
+}

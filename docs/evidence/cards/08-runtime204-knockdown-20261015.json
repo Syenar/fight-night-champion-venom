@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-15",
+  "agent": "root",
+  "status": "PARTIAL",
+  "case": "actual204",
+  "review": {
+    "path": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-60-e\\actual204-review\\VERDICT.json",
+    "sha256": "DCEE7A105BF0D25B6775374FDC59D1755F8C9A1C46AB84CF6944DF0F3322DEA1"
+  },
+  "input_intent_sha256": "69712AE9695A0211EFB56172E7C51AF38F9ACDD681531D7DF84CC1EEE62588E3",
+  "command": [
+    "C:\\Users\\samsa\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\runtime204-preparation\\revision2\\Supervisor204.py",
+    "--probe-id",
+    "e",
+    "--game-frame-rate",
+    "60"
+  ],
+  "results": {
+    "settings_native_transactions": 10,
+    "rounds": "10 through1",
+    "length": "2 to1",
+    "hud_clock_seconds": [
+      180,
+      170,
+      161,
+      152,
+      142,
+      133,
+      124
+    ],
+    "script_requests": 4,
+    "title_exit": 0,
+    "observer_exit": 0,
+    "watchdog": false,
+    "full_bout": false,
+    "display_capture_started": false,
+    "end_result": "UNKNOWN",
+    "stop": "Explicit knockdown screen classifiedUNKNOWN; neutral ordinaryclose",
+    "last_frame_sha256": "19FA322FCC23A333FC156C2A69E0C46E321C90A20A67578050962B6690513C52"
+  },
+  "next": "Prepare/review conservative205 recovery-screen classifier and neutral45s WAIT_RESULT observation; no axisinput or recoveryclaim. Baseline fullbout precedes GPU202 trial.",
+  "limitations": [
+    "HostUnlimited, internalgame_frame_rate60 title renderwaitoverride separate; no displayFPS/normaltiming claim",
+    "Destination profile/cache legitimatelychanged; prelaunchseed provenance only",
+    "Fullgame/SBS/browser gates remainopen"
+  ]
+}

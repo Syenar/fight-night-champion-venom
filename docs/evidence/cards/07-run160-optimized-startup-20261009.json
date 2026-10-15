@@ -1,0 +1,39 @@
+{
+  "card": "07",
+  "date": "2026-10-09",
+  "status": "IN_PROGRESS",
+  "review": "artifact self-review; no independent gameplay or visual acceptance",
+  "hypothesis": "An isolated -O1 build of the exact generated TU2 core will pass the late startup caller probe within the bounded interval.",
+  "hypothesisResult": "DISPROVEN for the measured interval: the optimized module loaded, but startup reached a similar depth to Run159 and never reached 0x82EAEAD8 or a frame.",
+  "inputs": {
+    "sourceImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "moduleSha256": "B2C18E4072B472A305ECB16181154925C6E8F10B69BB403CA03A785690CB84CC",
+    "modulePath": "research/pc-trace-cache-hinted/workspaces/a3ba350781924e52cd0ff07cb04b02f8/build-o1/xenon_game_module.dll",
+    "buildLog": "research/repair/startup-readiness/attempt-04/optimized-build.log",
+    "buildFlags": "Release with CMAKE_CXX_FLAGS_RELEASE=-O1 -DNDEBUG",
+    "launchConfigSha256": "948A1337D9EFD38EDEB82E2780052758CE7AE0C99C792C80A82ACC7335BAB6CF"
+  },
+  "run160": {
+    "manifest": "research/repair/startup-readiness/attempt-04/run160/probe-manifest.json",
+    "result": "research/repair/startup-readiness/attempt-04/run160/process-result.json",
+    "status": "research/repair/startup-readiness/attempt-04/run160/status.json",
+    "log": "research/repair/startup-readiness/attempt-04/run160/log.txt",
+    "trace": "research/repair/startup-readiness/attempt-04/run160/adaptive-observations.jsonl",
+    "observations": [
+      "The exact TU2 image loaded and the -O1 native module bound successfully.",
+      "The main thread reached 634880 sampled blocks, compared with 630784 in Run159; no graphics ring/front-buffer transition or frame was observed.",
+      "The targeted 0x82EAEAD8 probe produced no sample. The run did produce 141 samples for earlier synchronization probes and reached the alertable wait path around 0x82C715DC/0x82C715EC.",
+      "The wait path passes a 1 ms relative delay to xboxkrnl ordinal 0x5A (KeDelayExecutionThread) at guest target 0x82EE369C and returns through its caller; the trace does not prove a deadlock or justify changing wait semantics.",
+      "The 600-second bound ended with the runtime watchdog; final state failed and exit code 0 is not cooperative shutdown."
+    ],
+    "contractInspection": {
+      "exactImageDisassembly": "research/repair/startup-readiness/attempt-04/run160-wait-target-disasm.txt",
+      "generatedCaller": "research/pc-trace-cache-hinted/workspaces/a3ba350781924e52cd0ff07cb04b02f8/generated/functions/shard_3250.cpp",
+      "guestImport": "generated/imports.cpp maps xboxkrnl.exe ordinal 90 to 0x82EE369C",
+      "xeniaReference": "research/xenia-source/src/xenia/kernel/xboxkrnl/xboxkrnl_threading.cc KeDelayExecutionThread_entry",
+      "nativeImplementation": "research/third_party/xenon-recomp/src/xbox/exports/xboxkrnl_time_exports.cpp ke_delay_execution_thread",
+      "finding": "The native handler and observed trace return STATUS_SUCCESS for the sampled 1 ms relative waits. Alertable APC delivery is not implemented, but no APC or non-success status was observed in this run."
+    }
+  },
+  "nextAction": "The KeDelayExecutionThread contract was inspected and the sampled returns were successful. Trace the indirect AssetStream callback table around 0x82231C60 (the exact image contains the 0x82EAEAD8 entry) and its dispatch owner, then compare that callback path with the generated indirect-call registry before changing service semantics."
+}

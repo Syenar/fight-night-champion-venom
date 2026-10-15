@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-15",
+  "probe": 116,
+  "status": "BLOCKED_HARNESS_HEARTBEAT",
+  "gameplay_performance_result": "NONE",
+  "source_unchanged_sha256": "CD251C730DA7365237A0BC764A6675A07F49F991305D622D8E918A0EB3822F67",
+  "attempt_a": {
+    "path": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout116-30-20261015-a",
+    "title_launched": false,
+    "failure": "Pinned Windows PowerShell could not find Get-FileHash under inherited PSModulePath."
+  },
+  "environment_repair": "Set per-command PSModulePath=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\Modules; actual WindowsPowerShell Get-Command Get-FileHash resolves Microsoft.PowerShell.Utility. No persistent user/system environment changed.",
+  "attempt_b": {
+    "path": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout116-30-20261015-b",
+    "actual_final": {
+      "status": "CLEANUP_COMPLETE",
+      "cleanup_status": "CLEANUP_COMPLETE",
+      "failure": null,
+      "game_pid": 27096,
+      "actual_exit_code": 0,
+      "ordinary_close_requested": true,
+      "targeted_watchdog_used": false,
+      "observer_quiescent": true,
+      "cleanup_blocked": false,
+      "title_cleanup_blocked": false,
+      "title_close_forbidden_due_to_live_observer": false,
+      "game_left_alive": false,
+      "live_handles_retained_through_final_status": true,
+      "shutdown_event_order": [
+        "neutral-before-observer-stop",
+        "observer-terminate",
+        "neutral-after-observer-stop",
+        "ordinary-title-close"
+      ],
+      "cleanup_errors": [],
+      "observer_pid": 20872,
+      "observer_exit_code": 1
+    },
+    "actual_supervisor": {
+      "status": "CLEANUP_COMPLETE",
+      "cleanup_status": "CLEANUP_COMPLETE",
+      "pid": 27096,
+      "start": {
+        "start_utc_ms": 1792037902296,
+        "start_utc": "2026-10-15T04:18:22.296755+00:00",
+        "start_monotonic_ns": 43139140000000,
+        "pid": 27096,
+        "supervisor_pid": 39048
+      },
+      "end_utc": "2026-10-15T04:18:29.257765+00:00",
+      "exit_code": 0,
+      "exit_hex": "0x00000000",
+      "observer_exit_code": 1,
+      "terminal_reason": "PUBLISHER_HEARTBEAT_STALE_OR_FUTURE",
+      "deadline_reached": false,
+      "close_requested": true,
+      "targeted_watchdog_used": false,
+      "observer_quiescent_before_title_close": true,
+      "cleanup_blocked": false,
+      "title_cleanup_blocked": false,
+      "cleanup_errors": [],
+      "shutdown_event_order": [
+        "neutral-before-observer-stop",
+        "observer-terminate",
+        "neutral-after-observer-stop",
+        "ordinary-title-close"
+      ],
+      "loaded_modules": [
+        {
+          "name": "venom_fnc_canonical_tu2.exe",
+          "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\integration112\\pair\\venom_fnc_canonical_tu2.exe",
+          "sha256": "7044DEE0A456F522563D3007F3DC75FA54323F4E9FC41027C8CF716451502E52"
+        },
+        {
+          "name": "rexruntimerd.dll",
+          "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\integration112\\pair\\rexruntimerd.dll",
+          "sha256": "137A36C87B5456479311593B3C6A8987C76C5104F3CB489D03032750A94E3771"
+        },
+        {
+          "name": "TracyClientrd.dll",
+          "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\integration112\\pair\\TracyClientrd.dll",
+          "sha256": "850E4CBE76C5729812160AD3E34774A039262E48F983C8AC70A611F9C98783C7"
+        },
+        {
+          "name": "rexgpu-xenosrd.dll",
+          "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\integration112\\pair\\rexgpu-xenosrd.dll",
+          "sha256": "64B57F53658E64873F2978D019B406475E8D5DAF2B58043DB1A8B33E03F410C7"
+        }
+      ],
+      "game_left_alive_after_cleanup": false,
+      "game_handle_retained_through_status": true,
+      "observer_pid": 20872,
+      "observer_exit_code_at_cleanup": 1,
+      "terminal_observation": {
+        "observer_exit": null,
+        "observer_status": null,
+        "supervisor_stop_reason": "PUBLISHER_HEARTBEAT_STALE_OR_FUTURE"
+      }
+    }
+  },
+  "hypothesis": "Heartbeat emitted every fifth successful packet can exceed250ms under retryable controller-file sharing collisions even while publisher active. Last heartbeat335 at1792037907963; successful packets336 at8010,337 at8105,338 at8183.",
+  "repair": "Emit heartbeat for each successfully published packet, retain40ms packet expiry/180ms collision limit/250ms liveness gate; add terminal heartbeat and publisher error evidence. Fresh118 source/control review before new run."
+}

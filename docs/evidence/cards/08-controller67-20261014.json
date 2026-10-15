@@ -1,0 +1,185 @@
+{
+  "date": "2026-10-14",
+  "card": "08",
+  "status": "PARTIAL",
+  "hypothesis_result": "CONTROLLER_FIXTURE_SUPPORTED; SHORT_BOUT_INCONCLUSIVE",
+  "manifest": "research\\rexglue-qualification-20261012\\probe67-short-bout\\probe-manifest.json",
+  "lifecycle": {
+    "status": "PROBE_ENDED_RUNTIME_UNQUALIFIED",
+    "pid": 42428,
+    "start_utc": "2026-10-14T23:12:45.652948+00:00",
+    "end_utc": "2026-10-14T23:17:16.913342+00:00",
+    "exit_code": 0,
+    "exit_hex": "0x00000000",
+    "deadline_reached": true,
+    "close_requested": true,
+    "forced_termination": false,
+    "watcher_pid": 43736,
+    "watcher_exit_code": 1,
+    "watcher_ready": true,
+    "watcher_failed_during_game": false,
+    "supervisor_error": null,
+    "cleanup_errors": [],
+    "watcher_terminated_by_supervisor": true
+  },
+  "loaded_modules": {
+    "modules": [
+      {
+        "sha256": "CBD4F9D73CEEEF84BE622E0B9F3248769312B7C78D3495659619736AC5AB4DE6",
+        "name": "rexruntimerd.dll",
+        "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\control-fixture66\\native66-attempt3\\rexruntimerd.dll"
+      },
+      {
+        "sha256": "850E4CBE76C5729812160AD3E34774A039262E48F983C8AC70A611F9C98783C7",
+        "name": "TracyClientrd.dll",
+        "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\control-fixture66\\native66-attempt3\\TracyClientrd.dll"
+      },
+      {
+        "sha256": "64B57F53658E64873F2978D019B406475E8D5DAF2B58043DB1A8B33E03F410C7",
+        "name": "rexgpu-xenosrd.dll",
+        "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\control-fixture66\\native66-attempt3\\rexgpu-xenosrd.dll"
+      }
+    ],
+    "time_utc": "2026-10-14T23:13:17.0678120Z",
+    "pid": 42428,
+    "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\control-fixture66\\native66-attempt3\\venom_fnc_canonical_tu2.exe",
+    "session": 1
+  },
+  "controller_packets": [
+    "VENOM_CONTROLLER_PACKET user=0 age=2e-07 active=true packet=1 buttons=0000 lt=0 rt=0 lx=0 ly=0 rx=0 ry=0",
+    "VENOM_CONTROLLER_PACKET user=0 age=43.8153404 active=true packet=2 buttons=0010 lt=0 rt=0 lx=0 ly=0 rx=0 ry=0",
+    "VENOM_CONTROLLER_PACKET user=0 age=44.3153268 active=true packet=3 buttons=0000 lt=0 rt=0 lx=0 ly=0 rx=0 ry=0",
+    "VENOM_CONTROLLER_PACKET user=0 age=63.8809911 active=true packet=4 buttons=1000 lt=0 rt=0 lx=0 ly=0 rx=0 ry=0",
+    "VENOM_CONTROLLER_PACKET user=0 age=64.3819549 active=true packet=5 buttons=0000 lt=0 rt=0 lx=0 ly=0 rx=0 ry=0",
+    "VENOM_CONTROLLER_PACKET user=0 age=117.2123644 active=true packet=6 buttons=1000 lt=0 rt=0 lx=0 ly=0 rx=0 ry=0",
+    "VENOM_CONTROLLER_PACKET user=0 age=117.5140787 active=true packet=7 buttons=0000 lt=0 rt=0 lx=0 ly=0 rx=0 ry=0",
+    "VENOM_CONTROLLER_PACKET user=0 age=160.8094327 active=true packet=8 buttons=1000 lt=0 rt=0 lx=0 ly=0 rx=0 ry=0",
+    "VENOM_CONTROLLER_PACKET user=0 age=160.9092839 active=true packet=9 buttons=0000 lt=0 rt=0 lx=0 ly=0 rx=0 ry=0",
+    "VENOM_CONTROLLER_PACKET user=0 age=160.9254096 active=true packet=10 buttons=1000 lt=0 rt=0 lx=0 ly=0 rx=0 ry=0",
+    "VENOM_CONTROLLER_PACKET user=0 age=161.0254085 active=true packet=11 buttons=0000 lt=0 rt=0 lx=0 ly=0 rx=0 ry=0"
+  ],
+  "controller_events": [
+    {
+      "utc": "2026-10-14T23:12:45.752493+00:00",
+      "elapsed": 0.0,
+      "state": {
+        "buttons": 0,
+        "lt": 0,
+        "rt": 0,
+        "lx": 0,
+        "ly": 0,
+        "rx": 0,
+        "ry": 0
+      }
+    },
+    {
+      "utc": "2026-10-14T23:13:30.761305+00:00",
+      "elapsed": 45.01599999999962,
+      "state": {
+        "buttons": 16,
+        "lt": 0,
+        "rt": 0,
+        "lx": 0,
+        "ly": 0,
+        "rx": 0,
+        "ry": 0
+      }
+    },
+    {
+      "utc": "2026-10-14T23:13:31.267783+00:00",
+      "elapsed": 45.51599999999962,
+      "state": {
+        "buttons": 0,
+        "lt": 0,
+        "rt": 0,
+        "lx": 0,
+        "ly": 0,
+        "rx": 0,
+        "ry": 0
+      }
+    },
+    {
+      "utc": "2026-10-14T23:13:50.826285+00:00",
+      "elapsed": 65.0779999999977,
+      "state": {
+        "buttons": 4096,
+        "lt": 0,
+        "rt": 0,
+        "lx": 0,
+        "ly": 0,
+        "rx": 0,
+        "ry": 0
+      }
+    },
+    {
+      "utc": "2026-10-14T23:13:51.332906+00:00",
+      "elapsed": 65.5779999999977,
+      "state": {
+        "buttons": 0,
+        "lt": 0,
+        "rt": 0,
+        "lx": 0,
+        "ly": 0,
+        "rx": 0,
+        "ry": 0
+      }
+    },
+    {
+      "utc": "2026-10-14T23:14:44.163329+00:00",
+      "elapsed": 118.42199999999866,
+      "state": {
+        "buttons": 4096,
+        "lt": 0,
+        "rt": 0,
+        "lx": 0,
+        "ly": 0,
+        "rx": 0,
+        "ry": 0
+      }
+    },
+    {
+      "utc": "2026-10-14T23:14:44.467541+00:00",
+      "elapsed": 118.71900000000096,
+      "state": {
+        "buttons": 0,
+        "lt": 0,
+        "rt": 0,
+        "lx": 0,
+        "ly": 0,
+        "rx": 0,
+        "ry": 0
+      }
+    },
+    {
+      "utc": "2026-10-14T23:15:27.763366+00:00",
+      "elapsed": 162.01599999999962,
+      "state": {
+        "buttons": 4096,
+        "lt": 0,
+        "rt": 0,
+        "lx": 0,
+        "ly": 0,
+        "rx": 0,
+        "ry": 0
+      }
+    },
+    {
+      "utc": "2026-10-14T23:15:27.971289+00:00",
+      "elapsed": 162.21900000000096,
+      "state": {
+        "buttons": 0,
+        "lt": 0,
+        "rt": 0,
+        "lx": 0,
+        "ly": 0,
+        "rx": 0,
+        "ry": 0
+      }
+    }
+  ],
+  "capture_count": 120,
+  "fatal": [],
+  "observation": "Fresh strictlyexpiring ordinaryGetState packet overrides suppress liveanaloginput; scriptedStart/A reachesmainmenu and subsequentrootA moves throughplayerassignment/boxerselection. Boutnotstarted indeadline.",
+  "measurement_defect": "Rootinteractivecommandlatency consumesadmitted270seconddeadline; finaladvance attempted aftersupervisorstop. Automate previouslyobservedmenuinputs onretainedschedule before newprobe.",
+  "next": "Newplannedmenu sequence; separateprofiling69hostCSVwireunderconstruction. One-roundsettings notyetconfigured; no fullgameacceptance."
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS_READ_ONLY_CURRENT_STORAGE_AUDIT",
+  "scope": "Closed actual19060-6 PPM captures and direct runtime logs only",
+  "evidence": "research/rexglue-qualification-20261012/capture190-storage",
+  "independent_review": "research/rexglue-qualification-20261012/capture190-storage/independent-review/VERDICT.json",
+  "independent_review_sha256": "DC73B0244571021E23E217BD31C6AF30D873E3A7880E9DBE26630FF49E461151",
+  "ppm_paths": 57,
+  "duplicate_groups": 25,
+  "intentional_hardlink_identity_changes": 29,
+  "logical_duplicate_bytes_avoided": 80179664,
+  "compression_paths": 59,
+  "compression_unique_identities": 30,
+  "logical_unique_bytes": 85945969,
+  "compressed_size_api_unique_bytes": 44904448,
+  "derived_difference_bytes": 41041521,
+  "physical_cluster_savings_measured": false,
+  "dedup_and_compression_summed_as_physical_savings": false,
+  "all_current_hashes_lengths_attributes_ids_and_api_sizes_match": true,
+  "title_observer_exit_codes": [0, 0]
+}

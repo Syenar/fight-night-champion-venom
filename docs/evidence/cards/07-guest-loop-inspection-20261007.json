@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-07",
+  "milestone": "Card 07 exact-TU2 guest startup loop inspection",
+  "status": "PARTIAL",
+  "source": {
+    "titleId": "0x45410915",
+    "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "titleUpdateSha256": "8429D60620012112285809E6B6545AF646056B9FCCBA3D1B88BB71C32EA9A8AE"
+  },
+  "probe": {
+    "sessionId": "fnc-tu2-long-startup-run9",
+    "configuration": "research/native-host-probe-20261007-long-startup-run9/launch-config.json",
+    "renderer": "d3d12",
+    "headless": false,
+    "logVerbose": false,
+    "guestBlocksAtObservedPlateau": 632612,
+    "reportedGuestPc": "0x8229CDA8",
+    "reportedPcStableSeconds": ">60",
+    "windowCreated": true,
+    "verifiedFrameOrPresent": false,
+    "eventTransitionTraceCount": 0,
+    "effectiveImageExportSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "logSha256": "56ECBA32808BAB383A59649527A1CEF2D4EAD2FBA100BFD8F2325D344190337E",
+    "adaptiveObservationsSha256": "CDE7A10376A8E68CC64AE10A007E89A88809A0D626DB63C6B4F475CC3FADBB76",
+    "runtimeHostSha256": "C713E97C94F340934C61C785D77DCFA6E60E349397049E8A080CBABBA79C9CE6",
+    "nativeExtensionSha256": "0E784629A65508F40F562CB72B1ED916544CBCA12EBCD203121DC30C390976B0",
+    "termination": "Explicit stop exceeded the five-second cooperative grace; host terminated guest execution and reported stateName=failed."
+  },
+  "followUpRuntimeTrace": {
+    "runs": [
+      {
+        "sessionId": "fnc-tu2-kedelay-per-thread-run13",
+        "configuration": "research/native-host-probe-20261007-kedelay-per-thread-run13/launch-config.json",
+        "launchConfigSha256": "9A8D1EF6B407A51B19F4831E1224758AD4B2602A108769F2D3C8D50896139BD0",
+        "logSha256": "BDE0B231D39072A948FEF2275C6C43B732D4D4B5109FA208CF9426900AE3AF52",
+        "adaptiveObservationsSha256": "E48934A79D336963DE8685924A7E2AA2E2BFFACFE0C2E1D3EC406951FEE9634A",
+        "runtimeHostSha256": null,
+        "runtimeHostHashNote": "The Run 13 executable was overwritten by the later bounded critical-section diagnostic build; a separate hash was not captured before replacement.",
+        "observed": "Exact TU2 image loaded (title update applied, effective SHA-1 b771b41caef2483549bfbc7d726be3eb56943f99). MainThread remained at 0x827AF6B8 with 637680 guest blocks across a 15-second sample interval. KeDelayExecutionThread traces for threads 3 and 11 show mode 1, alertable 1, STATUS_SUCCESS, relative -10000 100-ns units (1 ms); the delay implementation is not shown to be the cause. No first frame/present; explicit stop timed out and forced termination followed.",
+        "result": "PARTIAL"
+      },
+      {
+        "sessionId": "fnc-tu2-rtlcs-main-thread-run14",
+        "configuration": "research/native-host-probe-20261007-rtlcs-main-thread-run14/launch-config.json",
+        "launchConfigSha256": "78A11EE637FA2116F3EDAECEF4AAF3655217F84DAF157A4EA87731BCE23347C4",
+        "logSha256": "2D249004AF1D9F9E4C26C3998168A4BD24DC5E457326C42D5BD39D5B8B074E3C",
+        "adaptiveObservationsSha256": "F5A8511E3B3A3FC3DEE87D3B23E2B15830B5AE0E47A19D0B23AE07F41FE689E9",
+        "runtimeHostSha256": "5AFF02E70B2F02F1B06A09C615AE31EE45E5FED63A8ABEA8B6437C998AC57F54",
+        "observed": "The exact TU2 image again loaded and executed without a guest trap, but MainThread remained at 0x827AF6B8 with 634598 guest blocks. Bounded critical-section traces show ordinary lock acquisition and a thread-11 wait/wake on object 0xB582EF00; the global trace cap was consumed before the main-thread stall site was captured. No first frame/present; forced termination followed.",
+        "result": "PARTIAL"
+      },
+      {
+        "sessionId": "fnc-tu2-rtlcs-callsite-run15",
+        "configuration": "research/native-host-probe-20261007-rtlcs-callsite-run15/launch-config.json",
+        "launchConfigSha256": "7A0F01782AC941006BA2CDAB88011D295D3CC00AF894BB2B4F030D419DA5E9E8",
+        "logSha256": "60EB19AA9DA26A79FA6A75A8A596DB16625ADC0C3EE0F5545293D0FB15637B83",
+        "observed": "Fresh targeted-probe build failed before loading the XEX because the content graph mount returned Failed to mount content graph. This run provides no evidence about the target callsite.",
+        "result": "FAILED_BEFORE_BOOT"
+      },
+      {
+        "sessionId": "fnc-tu2-rtlcs-callsite-run16",
+        "configuration": "research/native-host-probe-20261007-rtlcs-callsite-run16/launch-config.json",
+        "launchConfigSha256": "336AE7FD479B16160301065C53C0E3C206F7FB5317CF227C070C725F20AA60D6",
+        "logSha256": "BA59298EBA253D423C69C4A2F441F1E106E7E374F5E75104AA3BD23C4243FF6F",
+        "observed": "The same content graph mount failure reproduced under the restricted launch context. Elevated CTest later identified HostPathDevice canonicalization as AccessDenied for the restricted path; elevated probes mounted the same content successfully. This run provides no evidence about the target callsite.",
+        "result": "FAILED_BEFORE_BOOT"
+      },
+      {
+        "sessionId": "fnc-tu2-rtlcs-callsite-run17",
+        "configuration": "research/native-host-probe-20261007-rtlcs-callsite-run17/launch-config.json",
+        "launchConfigSha256": "08E1CDB4B5D14B9FB7398BF950C94A702AA6ADA55103DD6EEE6E8A3A9B8910B3",
+        "logSha256": "4D30EED1FC6EDF76C8BA2BD8777665EB6837C3FC56935351B0EA845BB425716C",
+        "adaptiveObservationsSha256": "A630ACE1D9E2840622DF98AB044A2359ECFE316DA6DBC87CDF103E43AE348623",
+        "runtimeHostSha256": "5AFF02E70B2F02F1B06A09C615AE31EE45E5FED63A8ABEA8B6437C998AC57F54",
+        "observed": "Elevated launch resolved content mounting and loaded the exact TU2 image. MainThread progressed to 929485 guest blocks; thread 8 last reported PC was 0x827AF6B8. This PC alone did not establish a stall cause. No first frame/present.",
+        "result": "PARTIAL"
+      },
+      {
+        "sessionId": "fnc-tu2-rtlcs-callsite-run18",
+        "configuration": "research/native-host-probe-20261007-rtlcs-callsite-run18/launch-config.json",
+        "launchConfigSha256": "5A2430C2539D571E0CCBCB5D56E2D0D8985008B083F82173CA833D78EB9C2B30",
+        "logSha256": "18C0AF45C0B0644D3478FF5F33AD6D0F6868E269409761A2E86A4FB83C4C3494",
+        "adaptiveObservationsSha256": "B7C9FFA14B1D7BFF865A3FADDE126F2A8DA68ABB26B4EBD55A90042046C59320",
+        "runtimeHostSha256": "A7BA1CC6B3F130DA2596EB5FE09CB12887FDC7C3B37D05BBD131A7CC0CE23DA6",
+        "observed": "Per-thread traces show threads 3, 8, 11, and 12 repeatedly acquired critical sections reached from 0x827AF6B8. One thread-11 contention on 0xB582EF00 registered, waited, and woke successfully. Guest threads collectively executed millions of blocks; the callsite is not supported as a permanent critical-section deadlock. No first frame/present.",
+        "result": "PARTIAL"
+      },
+      {
+        "sessionId": "fnc-tu2-gpu-pump-run19",
+        "configuration": "research/native-host-probe-20261007-gpu-pump-run19/launch-config.json",
+        "launchConfigSha256": "8DC02548B031B714E738E70804B52245BDA22D3A97FA4835B0FA482C8D672DE6",
+        "logSha256": "E2C91F73A97060C3065BDF7A6F62F85786BEE674F9D85F9DA66C7288EF158296",
+        "adaptiveObservationsSha256": "2DE043C0AF73A1C8E18A63B2114DE3923B940D82EC4FA8B4BF4D58E867C460E6",
+        "runtimeHostSha256": "00068F2EC4E61602EDC60964B79A0B818EBB65C76D7387592DF48184AFD855C7",
+        "nativeExtensionSha256": "85C29E095B39BC6A1922890B7ED85D2E5CFDDD6AE51C85BBC804B529831AEFBC",
+        "observed": "The rebuilt host loaded and bound the same exact TU2 image (SHA-1 b771b41caef2483549bfbc7d726be3eb56943f99; SHA-256 EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F), created its 1280x720 window, and ran until a documented graceful stop. Across 1,380 GPU-pump ticks, the GPU ring stayed unconfigured (base/capacity 0), pending IR stayed 0, and the front buffer stayed unset (base/generation 0); present was skipped each vsync. No guest trap. MainThread reached 442,287 guest blocks. This establishes that the immediate issue precedes GPU submission; it does not identify why guest startup has not reached graphics initialization.",
+        "result": "PARTIAL"
+      },
+      {
+        "sessionId": "fnc-tu2-gpu-pump-run19",
+        "configuration": "research/native-host-probe-20261007-gpu-pump-run19/launch-config.json",
+        "launchConfigSha256": "8DC02548B031B714E738E70804B52245BDA22D3A97FA4835B0FA482C8D672DE6",
+        "logSha256": "E2C91F73A97060C3065BDF7A6F62F85786BEE674F9D85F9DA66C7288EF158296",
+        "adaptiveObservationsSha256": "2DE043C0AF73A1C8E18A63B2114DE3923B940D82EC4FA8B4BF4D58E867C460E6",
+        "runtimeHostSha256": "00068F2EC4E61602EDC60964B79A0B818EBB65C76D7387592DF48184AFD855C7",
+        "nativeExtensionSha256": "85C29E095B39BC6A1922890B7ED85D2E5CFDDD6AE51C85BBC804B529831AEFBC",
+        "observed": "The rebuilt host loaded and bound the same exact TU2 image (SHA-1 b771b41caef2483549bfbc7d726be3eb56943f99; SHA-256 EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F), created its 1280x720 window, and ran until a documented graceful stop. Across 1,380 GPU-pump ticks, the GPU ring stayed unconfigured (base/capacity 0), pending IR stayed 0, and the front buffer stayed unset (base/generation 0); present was skipped each vsync. No guest trap. MainThread reached 442,287 guest blocks. This establishes that the immediate issue precedes GPU submission; it does not identify why guest startup has not reached graphics initialization.",
+        "result": "PARTIAL"
+      }
+    ],
+    "callsiteAnalysis": "Run24 supersedes the stale handoff/critical-section hypothesis: periodic PCs traversed several guest regions, and the focused 0x82C715D8..0x82C715EC path performs successful 1 ms/3 ms relative KeDelayExecutionThread calls. Sampled NtWaitForSingleObjectEx calls on other threads returned expected STATUS_TIMEOUT. No guest trap was reported, but there is still no first frame or Vd ring/front-buffer activity. The updated Vd service trace has compiled, but Run25 could not boot because HostPathDevice failed to mount content.",
+    "testResult": "Updated runtime-host build passed. xenon_gpu_pump_tests and xenon_video_export_tests pass; xenon_session_tests fails at the pre-existing content-mount assertion under the restricted process token. Previous elevated 3/3 result applies to the earlier source build only.",
+    "nextAction": "Superseded: the probe was executed. Continue self-run Release diagnostics; see docs/evidence/cards/07-run26-run33-run34-20261008.json.",
+    "gpuProbe": {
+      "sessionId": "fnc-tu2-gpu-pump-run19",
+      "runtimeHostSha256": "00068F2EC4E61602EDC60964B79A0B818EBB65C76D7387592DF48184AFD855C7",
+      "nativeExtensionSha256": "85C29E095B39BC6A1922890B7ED85D2E5CFDDD6AE51C85BBC804B529831AEFBC",
+      "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+      "gpuPumpTicks": 1380,
+      "ringConfiguredTicks": 0,
+      "ringSubmitCount": 0,
+      "pendingIrObserved": 0,
+      "frontBufferNonzero": false,
+      "frontBufferGeneration": 0,
+      "presentAttempts": 0,
+      "presentSkippedForNoFrontBuffer": 8,
+      "windowCreated": true,
+      "firstFrame": false,
+      "guestTrap": false,
+      "mainThreadGuestBlocksAtStop": 442287,
+      "termination": "Documented stop.signal; statusName=stopped",
+      "testResult": "Targeted Debug tests: xenon_session_tests, xenon_gpu_pump_tests, xenon_video_export_tests all pass 3/3 with elevated path access."
+    },
+    "gpuExportProbe": {
+      "runtimeHostSha256": "4B0A1696CD3804B7DB8EBB9291AB238859B4221E92EAFAC861AB540C9B0A5642",
+      "observedCalls": 0,
+      "status": "NOT_YET_RUN"
+    }
+  },
+  "codeInspection": {
+    "generatedFile": "research/generated/EC2C955DB9E55A6207A391A2AB80F60332DC41C3FE4C07968C7F07D5A9621CA4/ppc-tu2-instructions17/ppc_recomp.1.cpp",
+    "generatedFileSha256": "B5FB82DEAA1F4615F6F6E354BAF5F7CCBABC6F6EC8F78783BF8DFB447C501992",
+    "function": "sub_8229CB50 / interior entry 0x8229CD58",
+    "loop": "At 0x8229CD84, r10 is set to r5-1, checked for zero, copied into CTR, then the 0x8229CDA8 loop stores zero bytes while decrementing CTR.",
+    "interpretation": "The stable reported PC is consistent with execution inside a count-controlled guest loop. Available logs do not capture r5/CTR at loop entry, so they cannot distinguish a valid large operation from an invalid length or a runtime memory/performance problem. No loop semantics were changed."
+  },
+  "observations": {
+    "objectCreateTraceLines": 25,
+    "waitTraceLines": 18,
+    "waitsIncludeOneMillisecondTimeouts": true,
+    "eventTransitionTraceLines": 0,
+    "boundedSuccessfulExportSamples": 128,
+    "adaptiveObservationsIncludeInvalidTargetAt": "0x82EE30B4",
+    "dynamicFallbackCompiledHandoffs": true,
+    "guestTrapObserved": false
+  },
+  "critic": {
+    "verdict": "PARTIAL",
+    "largestGap": "The updated host compiles, but its targeted run cannot reach guest code because HostPathDevice fails to mount content under the available token; the desktop blocks UAC relaunch with Access denied. No run validates the Vd trace or first frame.",
+    "nextAction": "Run the exact-TU2 probe in an actually elevated Windows process, verify the Vd trace and host status, and inspect the resulting calls before changing service semantics."
+  },
+  "acceptance": {
+    "nativeFirstFrame": "OPEN",
+    "completeOfflineGame": "OPEN",
+    "trueSbs": "OPEN",
+    "browserNativeNormalAndSbs": "OPEN",
+    "portableRelease": "OPEN"
+  },
+  "latestContinuation": {
+    "date": "2026-10-07",
+    "run24": {
+      "sessionId": "fnc-tu2-periodic-pc-register-run24",
+      "launchConfigSha256": "ECC181F1E0A6E0FBA7D79F3C51DFC8C97FDDA7AB8AEB0F1908405BE586E11093",
+      "logSha256": "867143729D6CF3DBD78886BF24CFB309FD19A487AA7FF56FE8B7F8285B2713D3",
+      "adaptiveObservationsSha256": "A030BB0E455C2F711BBBB5E0CA23FD7DB8AFAAF47D1B48C2D9004C0625125827",
+      "runtimeHostSha256": "41E59898ED0A1D6B79748BD84B48BDD5858FD3C364EB47699171A96DEB49F9C3",
+      "lastPeriodicMainThreadSample": 884736,
+      "periodicPcs": [
+        "0x82C715D8",
+        "0x825EDE00",
+        "0x82C715DC",
+        "0x825EDDE8",
+        "0x82C715EC",
+        "0x827AF5B0",
+        "0x82C715F4"
+      ],
+      "focusedTrace": "Generated function at 0x82C71598 calls KeDelayExecutionThread from 0x82C715E8. Run24 logs show successful relative 1 ms and 3 ms delays (status 0); sampled NtWaitForSingleObjectEx calls on other guest threads returned expected timeout 0x102. This disproves a permanent delay/critical-section interpretation but does not explain why Vd graphics services have not run.",
+      "gpuState": "No first frame/present. The GPU pump remained unconfigured in Run19; Run24 did not add a GPU-pump probe.",
+      "stop": "Five-second cooperative stop expired; host terminated guest execution.",
+      "result": "PARTIAL"
+    },
+    "run25": {
+      "sessionId": "fnc-tu2-object-walk-reg-probe-run25",
+      "launchConfigSha256": "8857420F97A582F609D36363C4813710000DF6A8338BD658537A494499A89ECE",
+      "logSha256": "FE76E07270D2F16A2BEAD7B97F49782E8F3A4804642F744A315E3474ACF72F3E",
+      "observed": "Probe did not load the XEX: HostPathDevice content graph mount returned Failed to mount content graph. Start-Process -Verb RunAs failed with Access denied in this desktop environment. No guest/runtime conclusion follows.",
+      "result": "FAILED_BEFORE_BOOT"
+    },
+    "diagnosticBuild": {
+      "source": "research/third_party/xenon-recomp/src/core/session.cpp",
+      "sourceSha256": "B3CF0839F60B1658CC3C2566031B23B4D352215CE519370CCE9529E224DF7C2D",
+      "header": "research/third_party/xenon-recomp/include/xenon/core/session.hpp",
+      "headerSha256": "87C91ECF45E2ADFB8A2A9D4499E229631EA9CDA05A995BF5F9F8492C551E1F5E",
+      "runtimeHostSha256": "4B0A1696CD3804B7DB8EBB9291AB238859B4221E92EAFAC861AB540C9B0A5642",
+      "command": "cmake --build research/third_party/xenon-recomp/out/build/d3d12-probe --config Debug --target xenon_runtime_host -j 4",
+      "change": "Adds bounded observational Vd export trace preserving guest argument and result registers, capped at the first 64 calls and every 4096th call thereafter; adds targeted registers at six PCs around 0x822A3648.",
+      "build": "PASS",
+      "tests": "xenon_gpu_pump_tests and xenon_video_export_tests pass; xenon_session_tests fails its directory mount assertion at line 376 under the restricted process token.",
+      "adminProbeScript": "research/native-host-probe-20261007-pc-reg-run25-elevated/Run-AdminProbe.ps1"
+    },
+    "nextAction": "Superseded: the probe was executed. Continue self-run Release diagnostics; see docs/evidence/cards/07-run26-run33-run34-20261008.json."
+  }
+}

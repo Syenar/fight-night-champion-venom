@@ -1,0 +1,9 @@
+# Delegation callback review — 2026-10-13
+
+Fresh read-only critic PASS for entry admission of `0x8244C4F0`, `0x8244C508`, `0x8244C520`, `0x8244C538`, `0x8244C550`, `0x8244C568`, `0x8244C580`, `0x8244C598` and `0x8244C5B0` from constructor-installed table groups `0x8204A87C` and `0x8204A8A8`. Actual slots, canonical bytes and constructor register preservation independently checked.
+
+Eight entries are 24-byte object delegation thunks. `C5B0` is instead a 32-byte conditional reference increment. The critic caught the initial misclassification and an audit-collector defect: conditional `beqlr` was treated as the end of the bounded sample. Collector now continues conditional fallthrough; revised Ghidra evidence includes all eight helper instructions through `0x8244C5CC`. The helper stores the pointer, returns if null, otherwise increments the referenced object's word at offset 8.
+
+Admission/audit logic independently PASS after correction. Baseline generated audit correctly FAILS six missing bodies and passes three existing bodies. Six new name-only seeds were admitted, preserving those three existing symbols. Subsequent independent actual generated-code review PASS for all nine unique bodies and registrations. Delegation vtable offsets are respectively 4, 12, 16, 20, 24, 28, 32 and 40. The helper preserves pointer store, null return and non-null increment. Body/file/register hashes match the semantic audit. The 373-leaf audit also remains PASS. Runtime/menu acceptance remains pending.
+
+Private evidence: `research/rexglue-qualification-20261012/ghidra-delegate-callback-audit.json` (SHA-256 `291a959e14fa33e670a7b59abd0cf023f5a7d771e6cf009323a575fd345cbc78`), `delegate-admission.json`, `delegate-generated-audit-before-admission.json` and numeric probes 29–33. Probe32 reproduced fatal `0x8244C5B0` after Start/A. No main-menu or full-game acceptance is implied.

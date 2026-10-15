@@ -1,0 +1,38 @@
+{
+  "card": "08",
+  "date": "2026-10-15",
+  "agent": "Codex root with independent critics",
+  "status": "PASS",
+  "scope": "Lossless deduplication and NTFS compression of closed200/201 captures and logs only",
+  "independent_review": {
+    "path": "research/rexglue-qualification-20261012/capture200-201-storage-independent-review/verdict.json",
+    "sha256": "0151F10C2D9630C92D77758D1250890C0425C4B6FB9086A6FFAEA2349525C55F"
+  },
+  "live_paths_verified": 93,
+  "cases": {
+    "200": {
+      "path_count": 68,
+      "unique_file_count": 33,
+      "intentional_hardlinks": 35,
+      "duplicate_logical_bytes_avoided": 96768560,
+      "unique_logical_bytes_before_compression": 95021033,
+      "post_compressed_size_api_bytes": 48619520
+    },
+    "201": {
+      "path_count": 25,
+      "unique_file_count": 11,
+      "intentional_hardlinks": 14,
+      "duplicate_logical_bytes_avoided": 38707424,
+      "unique_logical_bytes_before_compression": 30528080,
+      "post_compressed_size_api_bytes": 12738560
+    }
+  },
+  "contents_lengths_identities_and_noncompression_attributes_match_proofs": true,
+  "training_frame203_sha256": "B77112968A9F405806B4C318F996AFF8657482A3BBF8D7710ED1623556F7ED5C",
+  "limits": [
+    "Dedup logical bytes and derived compression differences are separate accounting, not additive physical savings.",
+    "No direct NTFS cluster allocation measurement.",
+    "No original ISO/XEX/TU/DLC/Xenia/source assets changed; no gameplay gate advanced."
+  ],
+  "next_action": "Apply the same closed-run-only procedure to future captures."
+}

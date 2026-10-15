@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-14",
+  "card": "08",
+  "status": "PARTIAL",
+  "hypothesis_result": "PROMPT_REPAIR_AND_NAVIGATION_SUPPORTED; SETTINGS_DIGIT_OCR_FAILED",
+  "lifecycle": {
+    "status": "MEASUREMENT_INVALID",
+    "pid": 3336,
+    "start_utc": "2026-10-15T00:09:22.642023+00:00",
+    "end_utc": "2026-10-15T00:11:36.895769+00:00",
+    "exit_code": 0,
+    "exit_hex": "0x00000000",
+    "deadline_reached": false,
+    "close_requested": true,
+    "forced_termination": false,
+    "watcher_pid": 21696,
+    "watcher_exit_code": 0,
+    "watcher_ready": true,
+    "setup_verified": false,
+    "watcher_failed_during_game": true,
+    "supervisor_error": null,
+    "cleanup_errors": [],
+    "watcher_terminated_by_supervisor": false
+  },
+  "watcher": {
+    "status": "BLOCKED_NEUTRAL",
+    "blocker": "UNREADABLE_OR_NONUNIT_SETTINGS_CHANGE",
+    "start_utc_ms": 1792022962652,
+    "minimum_rounds": null,
+    "minimum_length_minutes": null,
+    "elapsed": 133.08272341537668,
+    "startup_elapsed": 133.18800000000192,
+    "accepted_packets": "accepted-packets.jsonl binds raw runtime lines and local timestamp conversion. Publications are not acceptance. No completed fight claim."
+  },
+  "loaded_modules": [
+    {
+      "name": "venom_fnc_canonical_tu2.exe",
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\venom_fnc_canonical_tu2.exe",
+      "sha256": "204D52D3DE8FD18319199216381074DF59AFFABB5E3BB6C5466CA4FDE3FAFC64"
+    },
+    {
+      "name": "rexruntimerd.dll",
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\rexruntimerd.dll",
+      "sha256": "CBD4F9D73CEEEF84BE622E0B9F3248769312B7C78D3495659619736AC5AB4DE6"
+    },
+    {
+      "name": "TracyClientrd.dll",
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\TracyClientrd.dll",
+      "sha256": "850E4CBE76C5729812160AD3E34774A039262E48F983C8AC70A611F9C98783C7"
+    },
+    {
+      "name": "rexgpu-xenosrd.dll",
+      "path": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\performance-20261014\\profiling69\\pair\\rexgpu-xenosrd.dll",
+      "sha256": "64B57F53658E64873F2978D019B406475E8D5DAF2B58043DB1A8B33E03F410C7"
+    }
+  ],
+  "frames": 26,
+  "requests": [
+    {
+      "elapsed": 47.144723415374756,
+      "utc_ms": 1792023009817,
+      "button": "START",
+      "duration_ms": 60,
+      "frame_sha256": "345f23978232afbcc19b0944d8060db7cf86e6b3e311e5758f4dce2d9235603c"
+    },
+    {
+      "elapsed": 51.175723415373795,
+      "utc_ms": 1792023013847,
+      "button": "A",
+      "duration_ms": 60,
+      "frame_sha256": "3552561cca3590ef852c73503f72d0460a5bcd37324d6e9d4fbaf4014e38e456"
+    },
+    {
+      "elapsed": 66.3477234153761,
+      "utc_ms": 1792023029017,
+      "button": "A",
+      "duration_ms": 60,
+      "frame_sha256": "9640b9b48b47867ba3332edb23f0d1fc6d03e6ba664e255d4b3cfccdc44e99d7"
+    },
+    {
+      "elapsed": 86.56672341537706,
+      "utc_ms": 1792023049246,
+      "button": "A",
+      "duration_ms": 60,
+      "frame_sha256": "3f5ab21ae8432711e87745000cf0756e0f201a821760fe31f8f06f133e0c7279"
+    },
+    {
+      "elapsed": 96.66072341537438,
+      "utc_ms": 1792023059337,
+      "button": "A",
+      "duration_ms": 60,
+      "frame_sha256": "b5a0982abd2c1d950e581659052d1d5b6edd3c0a1e4d5795e37401c167f930a7"
+    },
+    {
+      "elapsed": 106.76972341537476,
+      "utc_ms": 1792023069457,
+      "button": "A",
+      "duration_ms": 60,
+      "frame_sha256": "eaf445674f5958e5e80f10a50730323f687bf98a5a34927299485968eb0cbb9b"
+    },
+    {
+      "elapsed": 116.89472341537476,
+      "utc_ms": 1792023079574,
+      "button": "Y",
+      "duration_ms": 60,
+      "frame_sha256": "dbd96ddf208665daeaee7e99b0372d1ebca6e0b8f736f3098886d323947d05bc"
+    },
+    {
+      "elapsed": 123.06672341537706,
+      "utc_ms": 1792023085763,
+      "button": "DOWN",
+      "duration_ms": 60,
+      "frame_sha256": "98d1c9af6552760aee115060f9875b4eacac05259e2d8aee048ae84efdb4f9de"
+    },
+    {
+      "elapsed": 128.12972341537534,
+      "utc_ms": 1792023090820,
+      "button": "LEFT",
+      "duration_ms": 60,
+      "frame_sha256": "37c47ef83bf36673bab4b76eadc55b79c4a9132b3915392dffb4bc630b59e6ce"
+    }
+  ],
+  "verified_scene_path": [
+    "titleStart",
+    "autosave",
+    "mainFightNow",
+    "sideassignment",
+    "ownTysonAli",
+    "opponentTysonAli",
+    "arena",
+    "GameplaySettings"
+  ],
+  "settings_observations": [
+    "DOWN60ms moved row0\u2192row1 exactly.",
+    "LEFT60ms accepted press/release and screenshotchangedNumberofRounds10\u21929.",
+    "Actualgold9 readable visually in guest26, but fullframeOCR round_textempty. Watcher neutralized; no legalminimumor bout acceptance."
+  ],
+  "csv_sha256": "195555D8BA499BEB5284ADE2109AB2CC7F28EB341BC07F4CB92B43F24444279A",
+  "source_admission": {
+    "critic": "watcher71_critic",
+    "setup": "0A4C69E77A6E034E85162686F3EC0816573B21F7EFAD24A4E282BF885509CCAD",
+    "base": "2956A8E3759BF68ED5496183AD9A5DA4027CCD9C568829F23806F82C7C91A9C2",
+    "supervisor": "A2DA66CD484F8C25D9609BA2A813AF89D46AD32F84C255FCD2C480DDE633B1F1"
+  },
+  "performance": "Read-only actualPID CPU/RSS sampler and guest-swaps.csv retained; analysis pending. No fight or optimizationcomparison.",
+  "next_action": "Isolated settingsrow ROI upscaling+mappedlabel/valuebounds oractualglyph classifier; retainedgold9positive/white10and2minutes/selectedgoldcontrols + unreadable/misplacednegatives; critic, newprobe only.",
+  "independent_postrun_review": {
+    "critic": "watcher71_critic",
+    "status": "SCOPED_NAVIGATION_AND_SINGLE_DECREMENT_PASS_MINIMUM_NOT_PASSED",
+    "actual_left_press_ms_after_request": 28,
+    "actual_neutral_release_ms_after_request": 96,
+    "visual": "guest25 gold10 andguest26 gold9 same row, length2MINUTES",
+    "limitations": "No minimumclamp orfight observed; shutdownqualificationremainsopendespitewindowclose/exit0"
+  },
+  "performance_report": "research/performance-20261014/process-sampler74/POST_EXIT_REPORT.md"
+}

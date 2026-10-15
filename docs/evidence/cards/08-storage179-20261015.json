@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-15",
+  "status": "PASS_SCOPED_STORAGE_AUDIT",
+  "scope": "Closed actual179 30-8 capture and log storage only",
+  "evidence": "research/rexglue-qualification-20261012/capture179-storage",
+  "independent_review": "research/rexglue-qualification-20261012/capture179-storage/independent-review/VERDICT.json",
+  "review_verdict": "PASS_CLOSED_PROBE_STORAGE_AUDIT",
+  "ppm_paths": 24,
+  "duplicate_groups": 10,
+  "intentional_hardlink_identity_changes": 14,
+  "logical_duplicate_bytes_avoided": 38707424,
+  "compression_paths": 25,
+  "compression_unique_identities": 11,
+  "logical_unique_bytes": 29338006,
+  "compressed_file_size_api_unique_bytes": 12484608,
+  "derived_difference_bytes": 16853398,
+  "physical_cluster_savings_measured": false,
+  "dedup_and_compression_summed_as_physical_savings": false,
+  "all_current_hashes_lengths_ids_attributes_and_api_sizes_match": true,
+  "title_observer_exit_codes": [0, 0],
+  "next_action": "Continue native qualification using preserved closed evidence"
+}

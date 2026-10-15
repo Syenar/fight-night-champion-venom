@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL",
+  "pair": "integration137",
+  "supervisor_sha256": "8643CA515C54A4C6D6FF20C23C8FB4B0D8A46116C84DAAFAA6B91974192F1F3D",
+  "output": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-30-c",
+  "pid": 4636,
+  "start_utc": "2026-10-15T07:49:02.497033Z",
+  "end_utc": "2026-10-15T07:54:25.144528+00:00",
+  "final": {
+    "status": "CLEANUP_COMPLETE",
+    "cleanup_status": "CLEANUP_COMPLETE",
+    "failure": null,
+    "game_pid": 4636,
+    "actual_exit_code": 0,
+    "ordinary_close_requested": true,
+    "targeted_watchdog_used": false,
+    "observer_quiescent": true,
+    "cleanup_blocked": false,
+    "title_cleanup_blocked": false,
+    "title_close_forbidden_due_to_live_observer": false,
+    "game_left_alive": false,
+    "live_handles_retained_through_final_status": true,
+    "shutdown_event_order": [
+      "neutral-before-observer-stop",
+      "neutral-after-observer-stop",
+      "ordinary-title-close"
+    ],
+    "cleanup_errors": [],
+    "observer_pid": 33588,
+    "observer_exit_code": 0
+  },
+  "hud": [
+    {
+      "round": 1,
+      "clock_seconds": 169,
+      "frame_sha256": "216f4380a3b5be90280d04a9c186cd217a7eeb4f898c0166d958920d20095283",
+      "retained_frame": "C:\\Users\\samsa\\Desktop\\Workplace\\Projects\\Fight Night Champion Mods\\xbox-full-game-sbs\\research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-30-c\\frames\\guest-62.ppm"
+    }
+  ],
+  "script_count": 0,
+  "clock_decreases": 0,
+  "blocker": "FIGHT_HUD_LOST_RESULT_UNKNOWN:UNKNOWN",
+  "final_frame": {
+    "path": "frames/guest-63.ppm",
+    "sha256": "BC7159186ED1FCFFAA054A6E040E5AB40384F5F5D1B177B1E99D6EF9AD53CC45",
+    "root_visual": "Active boxing,2:41,ROUND1OF1"
+  },
+  "cause": "Right STAMINA mask distance0.178934 exceeds0.12 because ROI includes changing camera background; fighter-name distances0.01176/0 and ring structure pass. Reader150 clock path was not reached on this frame.",
+  "diagnosis": "name-mask152-diagnosis.json",
+  "trace_collector": {
+    "status": "NO_MATCH_OBSERVED",
+    "stop": "FINAL_STATUS_PRESENT",
+    "polls": 62,
+    "elapsed_seconds": 307.5310000000027,
+    "matches": [],
+    "errors": [],
+    "absence_limit": "Polling and rotation cannot prove the hook was never called. No FPS inference.",
+    "not_a_performance_sample": true,
+    "finished_utc": "2026-10-15T07:54:26.623911+00:00"
+  },
+  "limits": "No live fallback invocation or completed bout/FPS proof. Polling absence does not prove timer constructor uncalled.",
+  "next": "158 narrowly repair generic STAMINA mask background contamination;156 bounded disabled-default timer entry telemetry;157 optional warning throttling each separately reviewed."
+}

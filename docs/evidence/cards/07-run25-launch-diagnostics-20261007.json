@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-07",
+  "card": "07",
+  "milestone": "Run25 result; Run26 all-thread/Vd trace executed (corrected 2026-10-08)",
+  "status": "PARTIAL",
+  "observations": [
+    "The elevated helper ran twice at the users request; both invocations reused one research session directory, so concurrent runs could collide on shared logs/status. The captured host stderr for the elevated attempt reports: Launch configuration is not valid JSON: Trailing content after JSON value. The helper was silent because child stdout/stderr were redirected but not displayed.",
+    "The research launch config was reserialized as compact UTF-8 JSON (no BOM), SHA-256 ",
+    "F3FD79AC6B14004C4D23C9A1236C411C7722D1A348CA811E528E7778C26838ED",
+    ". Direct runtime-host runs with compact and separately pretty-printed configs both parsed the config, initialized XenonSession, read the exact extracted base XEX and TU2 package paths, then failed with HostPathDevice: Failed to mount content graph under the current restricted Codex token. They did not boot guest code.",
+    "The helper now quotes the config path passed through Start-Process, rejects concurrent runs with an exclusive lock, prints captured result/stdout/stderr, and keeps the run isolated. Its syntax was validated. An elevated retry is still required to determine whether this invocation can mount content and reach the exact TU2 image."
+  ],
+  "hashes": {
+    "Run-AdminProbe.ps1": "18A45CD8DC86ACAE485F27B92063351B9EEDB34AE82341B424A31DFB72B60AF9",
+    "host-stderr.txt": "4A9C8F6BC8870D57DD39BA794D8F0B0A9556D3B1B6A3A5248508BAE477A0030C",
+    "run-result.json": "42857946999E34BC6D6114BB06A97591B7541FB7EA51AEED0C100A4F9CC357D2",
+    "host-stdout.txt": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "status.json": "631566D7D68A6BC4BDFDA07AD9A35DDD66C6C2257CB5A7B07F1EB7E813864C07",
+    "log.txt": "7BC400793EAD53EF63115691275E3F8367F0BB0D6E3ACAA08AE656E746EEED02",
+    "launch-config.json": "F3FD79AC6B14004C4D23C9A1236C411C7722D1A348CA811E528E7778C26838ED"
+  },
+  "nextAction": "Use self-run Release traces under the current token; correlate exact TU2 startup PCs/imports to the generated image and avoid speculative graphics changes.",
+  "acceptance": {
+    "sbs": false,
+    "guestBooted": false,
+    "gameplay": false,
+    "browser": false,
+    "firstFrame": false,
+    "guestExecutionStarted": true,
+    "titleScreen": false
+  },
+  "run25Elevated": {
+    "startedUtc": "2026-10-07T23:53:02.3842602Z",
+    "completedUtc": "2026-10-07T23:58:08.0858246Z",
+    "status": "guest-executed-until-watchdog-stop",
+    "interpretation": "Content graph mounted; the exact TU2 effective image loaded; XenonSession created a 1280x720 presentation window and guest execution began. This is not evidence of title initialization, first frame, or playable game.",
+    "titleId": "0x45410915",
+    "mediaId": "0x2dc50868",
+    "titleUpdateApplied": true,
+    "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "sectionsCsvSha256": "9E5229F5BDAF88AEE2C74E5AFF7998EABEC852DAC1DCEA681F337ADD9747CB07",
+    "sessionLog": "research/native-host-probe-20261007-pc-reg-run25-elevated/run25-elevated-session-only.log",
+    "sessionLogSha256": "CB8BB9BA0462BE4E35289CC53A881BE71BC8BA0759873837A2897EC9670A8B43",
+    "observationsSha256": "161CD1D67CF5F369D72C0D24CF6D0A905B2A74A8B46445BC336BCA2C8A521B1C",
+    "statusSha256": "AF9C497A488F1E00BEE0C2FD25368A62F8AC147C56485361DBB4BB440C3C507B",
+    "runResultSha256": "E9B4BE8B0092FDEA3BEA16FE1272FD825104D8B6A6B88941FB893FDE66576565",
+    "oldHostSha256": "4B0A1696CD3804B7DB8EBB9291AB238859B4221E92EAFAC861AB540C9B0A5642",
+    "guestDispatchReturns": 18849,
+    "mainThreadPcSamples": 19,
+    "vdStructuredTraceRecords": 0,
+    "gpuPump": "At 1,380 probe ticks: ringConfigured=0, ringBase/capacity/read/write=0, pending IR=0, front-buffer base/size=0; present skipped because front-buffer base is zero.",
+    "stop": "The 5-minute wrapper signaled stop; execution did not stop cooperatively within 5 seconds and was terminated. This is a probe shutdown issue, not a guest crash.",
+    "guestInstructionsExecuted": true,
+    "titleScreenVerified": false,
+    "firstFrameVerified": false
+  },
+  "run26Prepared": {
+    "directory": "research/native-host-probe-20261007-all-thread-vd-run26",
+    "purpose": "Capture bounded PC/register samples for all guest threads and record Vd* export observations in a clean session directory.",
+    "hostSha256": "9D2F1A05F4E574D0A885C28DCD70DA72673A4215E9CC80E1EA46B3B986F04C19",
+    "sourceSha256": "55010F4D5103D45E4A21EF9022583384322279E3A91EE0D089BFC2B68268CC2F",
+    "configSha256": "632BE158A885F5AFDE887299C97282AE4FACFB1DCF35F2DB4836FE08B398B26F",
+    "helperSha256": "B5F56F9B956503887E1B416C46A94EA24E22B1F652171859B3E6CA52537E1E3F",
+    "configJsonValid": true,
+    "helperSyntaxValid": true,
+    "headerSha256": "CFCB8E6172972F597111D9E0C0FEFD12449E54BEA032137856A914FDB3D10E37",
+    "allGuestThreadPcSamples": true,
+    "firstSuccessfulExportCallsitePerExport": true,
+    "vdTraceBounded": true,
+    "focusedTests": {
+      "gpuPump": "PASS",
+      "videoExport": "PASS",
+      "session": "Historical normal-token failure before the validated path fallback; Release xenon_session_tests passed after the fallback with temp paths inside research/test-temp."
+    },
+    "executionStatus": "Subsequently executed by the user; see run26ExecutionAttempt and the 2026-10-08 correction.",
+    "needsElevatedLaunchAtPreparationTime": true
+  },
+  "run26ExecutionAttempt": {
+    "result": "executed-five-minute-probe",
+    "hostStarted": true,
+    "hostSha256": "9D2F1A05F4E574D0A885C28DCD70DA72673A4215E9CC80E1EA46B3B986F04C19",
+    "effectiveImageSha1": "b771b41caef2483549bfbc7d726be3eb56943f99",
+    "effectiveImageSha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+    "resultSummary": "The user-run elevated helper started the exact TU2 guest for five minutes. It recorded all-thread and export-callsite diagnostics. No Vd calls or GPU ring/front-buffer setup were observed. Watchdog shutdown required forced termination. It did not reach title or first frame.",
+    "next": "Continue self-run Release probes; correlate startup PCs and import callsites. Do not request another user-run probe."
+  },
+  "corrections": [
+    "Correction dated 2026-10-08: the prior blocked-before-host-start result was wrong. The user's pasted Run26 output confirms the elevated host started and ran for five minutes; see docs/evidence/cards/07-run26-run33-run34-20261008.json."
+  ]
+}

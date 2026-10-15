@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-14",
+  "status": "SCOPED_SOURCE_BUILD_ADMISSION_PASS_RUNTIME_UNKNOWN",
+  "critic": "capture_bulk_critic",
+  "candidate_exe_sha256": "4853AE622DB895C04DBF82B8E18A1BAA0BCDC0FF12526E5E6428BF06950C6586",
+  "candidate": "research/performance-20261014/capture-bulk71",
+  "preserved_files": 1889,
+  "reused_objects": 217,
+  "replaced_objects": 1,
+  "DLLs": "Identical to profiling69/native66; independent hashes checked",
+  "serialization": "Same P6 header, ascending rows, first3pixelbytes, stridepadding excluded;921600writes becomes720at1280x720",
+  "byte_equivalence_cases": 162,
+  "negative_oracle_controls": "RGBA/reverse-row/BGR disagree in160cases each; not mutatedcandidatebinarycontrols",
+  "synthetic1280x720_cached_file_median_ms": {
+    "baseline": 18.51165,
+    "candidate": 2.6243
+  },
+  "limits": [
+    "Only serializer work benchmark",
+    "Fileopen/close,GPUreadback,title/displayexcluded",
+    "Streamflush notdurabledisksync",
+    "Capturefence/readback unchanged",
+    "No actualgame runtime improvement measured"
+  ],
+  "next_action": "Compare isolated pair in same admitted scene/control/cache/capture settings; retain actual frame/capture/guestswap timing and correctness. No canonical adoption until runtime qualification."
+}

@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-15",
+  "status": "PARTIAL",
+  "evidence_path": "research\\rexglue-qualification-20261012\\bout102-supervisor\\probe80-bout121-30-t",
+  "source_sha256": "5627BF6C56B4E6DD98FED3B23CE9D15E75C1F344A92986CFCFC11E8099F17DBF",
+  "pair": "integration127",
+  "pid": 12504,
+  "start_utc": "2026-10-15T06:27:32.311032Z",
+  "end_utc": "2026-10-15T06:28:33.500351Z",
+  "title_exit": 0,
+  "observer_exit": 0,
+  "survivor": false,
+  "watchdog": false,
+  "blocker": "UNKNOWN_SCENE_FOR_15_SECONDS",
+  "root_visual_review": "press-start140.png: complete dim PRESS START, existing OCR only PRESS/blank",
+  "ordinary_input_sent": false,
+  "remaining": "143 targeted oracle preprocessing with full phrase/logo gates retained; no timeout inflation or unchanged rerun"
+}

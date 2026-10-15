@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-06",
+  "hashes": {
+    "research/third_party/xenon-recomp/tests/xbox/xex_loader_tests.cpp": "7980CEE719ADEDF4782125899B9EBA45CB5FA346F83764BCB438596B8B4DDF5C",
+    "research/source/updates/title-update-2/xenia-netplay-applied-default.xexp": "8429D60620012112285809E6B6545AF646056B9FCCBA3D1B88BB71C32EA9A8AE",
+    "research/third_party/xenon-recomp/runtime_host/src/main.cpp": "30B63039DDA7EEBFFFCEABB9699FA5C687B150229DBB21DE32F30EA2CA50BD26",
+    "research/third_party/xenon-recomp/out/build/ninja-min/runtime_host/Debug/xenon_runtime_host.exe": "041A7B20FCD6D75309BF37B2BDD9E60FB137127C70C63F101DD5F53546C76F0B",
+    "research/third_party/xenon-recomp/src/xbox/xex/xex_loader.cpp": "873E0E837FE7CE005359EC4D03EB4727098233FE74069B25B185A23ED7882DD2"
+  },
+  "critic": "separate adversarial review pass; no independent agent used",
+  "limitations": [
+    "Explicit null renderer, audio disabled: no frame/gameplay proof",
+    "Runtime module DLL was built before this host/loader repair; hashes distinguish revisions"
+  ],
+  "builder": "primary agent",
+  "changes": [
+    "Bound FFI fields by declared record size",
+    "Corrected synthetic patch key binding without bypassing validation",
+    "Explicit metadata-free XEXP reaches validated runtime loader; missing explicit path rejected"
+  ],
+  "unresolvedImportCount": 228,
+  "nativeExtensionBound": true,
+  "status": "PARTIAL",
+  "titleUpdateApplied": true,
+  "card": "07",
+  "probe": "research/native-host-probe-20261006-tu2",
+  "commands": [
+    "cmake --build research/verify-tu2/build --parallel 4",
+    "ctest --test-dir research/verify-tu2/build --output-on-failure --output-junit ../RESULTS.xml",
+    "cmake --build research/third_party/xenon-recomp/out/build/ninja-min --config Debug --target xenon_runtime_host --parallel 4",
+    "xenon_runtime_host --launch-config research/native-host-probe-20261006-tu2/launch-config.json"
+  ],
+  "tests": "4/4 existing CPU/decoder, XEX loader, crypto, LZX suites pass; added negative descriptor key-binding coverage",
+  "nextAction": "Resolve generated interior-target routing and unsupported fallback instruction at 0x82297D58; map/import required runtime contracts; enable real graphics/audio before first-frame gate",
+  "testResults": "research/verify-tu2/RESULTS.xml",
+  "effectiveHash": "b771b41caef2483549bfbc7d726be3eb56943f99",
+  "failure": "Trap 0x58470001 at guest PC 0x82297D58; word 0x7C6A5910. Dynamic fallback reports unsupported-instruction. Generated-entry native code executed, but fallback also ran; not full-static execution proof.",
+  "missingExplicitUpdateGuard": "PASS: research/native-host-probe-20261006-missing-update/status.json reports MissingRequiredContent before guest execution.",
+  "dynamicFallbackObservations": 6
+}

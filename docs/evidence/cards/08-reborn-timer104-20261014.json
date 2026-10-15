@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-14",
+  "status": "PARTIAL",
+  "scope": "Canonical TU2 game frame timer mapping and upstream runtime comparison",
+  "upstream": "https://github.com/whompay/FNCReborn",
+  "upstream_pin": "7f68ee3c1e8d9f68be05b672dfd5ede379fb5521",
+  "timer_evidence": "research/performance-20261014/tu2-frame-timer104/evidence.json",
+  "reproducer": "research/performance-20261014/tu2-frame-timer104/Record-Timer104.py",
+  "runtime_comparison": "research/performance-20261014/reborn-runtime-audit103/REPORT.md",
+  "canonical_payload_sha256": "EBDCBE683DB2F1C29AA43AC97E79492926C099B2EE253DB502CABCBEC133D52F",
+  "static_mapping": "Float30 at82008574 feeds827C9378 from822A9540 with LR822A9564; float60 at82008598 feeds the same constructor from822AA530 with LR822AA558. Complete827C8E58 setter computes single-precision1e9/rate plus0.5 into period field72.",
+  "difference": "Current present_fps_limit limits host paints only. Upstream retail timer hook cannot be copied by address into TU2. Current heap pool, wait backoff and blocking timer queue changes are absent; current readback default none means upstream readback performance claims do not establish savings here.",
+  "limitations": "Static source/byte comparison; no game timer invocation, faster gameplay or higher-rate timing/audio/replay qualification. Existing Manual91 remains user owned.",
+  "next": "Review isolated candidate105 with exact caller/rate guards and complete original delegation before a future30/60 comparison; continue native qualification and bounded storage cleanup."
+}
