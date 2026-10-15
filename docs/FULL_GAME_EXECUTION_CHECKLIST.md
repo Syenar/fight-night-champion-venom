@@ -1,5 +1,7 @@
 # Full-game execution checklist
 
+2026-10-15 actual244 revision2: autosave input accepted, settings and active boxing observed, nine clock decreases/seven script requests, then visually verified get-up minigame misclassified UNKNOWN. Ordinary title/observer exits0/0. Five-second capture gaps leave the replay interval unknown. Performance245 link succeeds but ordinal ABI review blocks loading; DLC246 finds a missing Legends header and unreliable import success checks. No FPS, replay or DLC acceptance is promoted. [Evidence](evidence/cards/08-actual244-knockdown-20261015.json).
+
 2026-10-15 manual225: supported read-only inspection observes active round9/10 and final ten-round judges scorecard (Ali by decision). User confirms physical controls. This is an observed manual bout completion; replay, save/reload, unique game FPS and broad full-game acceptance remain open. [Evidence](evidence/cards/08-manual225-scorecard-20261015.json).
 
 2026-10-15 actual221/offline222: native diagnostic invocation and ordinary0/0 close verified, but all11 captures remain SETUP/UNKNOWN with zero input. Actual Reader205 replay and exact prompt transform reject seven retained cover frames while208 positive passes. Prepare only a fixed capture-phase experiment; full bout, displayed FPS and crash repair remain open. [Evidence](evidence/cards/08-runtime221-offline222-20261015.json).

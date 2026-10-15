@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-15",
+  "agent": "/root",
+  "card": 8,
+  "status": "PARTIAL",
+  "run": "probe80-bout121-60-m",
+  "source_freeze_sha256": "489F2516BE332B06C36127FD50CF83226ED444C44F57BA0C7EE94C0AB5847D4F",
+  "source_review_sha256": "8A1D65FB2D68A6028EB30E6B8C6580E5BC84F0242FF79C917C27E64BA5C1FA3F",
+  "root_adoption_sha256": "8E1D0E51F5E1206154A1B95AF54CF5B97E663F39013E9974FA81B074CD4BB0C8",
+  "command": "Pinned Python -B -X utf8 Supervisor244Rev2.py --probe-id m --game-frame-rate 60; root verifies source/adoption/marker; exact native argv retained locally in probe-manifest.json.",
+  "tuple": {
+    "exe_sha256": "CE3CAE7B29C6252416DE2EBB83E0A9F7A358B2AA0C8759E3B62A66968DB0622F",
+    "runtime_sha256": "78560493A2CC140AD7ACA5F82111060C172B5C5F2124BC231604DE21F083BA62",
+    "gpu_sha256": "3CAD259900D0C226B4F4CC7B033815169B8DAFC2E587540C2E356EAC4EDFE5B7"
+  },
+  "observations": {
+    "clock_decreases": 9,
+    "script_requests": 7,
+    "observer_blocker": "FIGHT_HUD_LOST_RESULT_UNKNOWN:UNKNOWN",
+    "root_visual_classification": "GETUP_MINIGAME_LS_RS",
+    "last_hud_sha256": "65FEB3F1203CB710F85588F8AA3EB9167C28924267D7405AF97250D4A3C911B9",
+    "getup_frame_sha256": "7381EF0AA5814FE3EE817121EB485E528E1E67310CB46AD257D1691F22BB106B",
+    "capture_gap_seconds_approximately": 5
+  },
+  "cleanup": {"title_pid": 28988, "observer_pid": 30320, "title_exit": 0, "observer_exit": 0, "ordinary_close": true, "watchdog": false, "survivors": false},
+  "limitations": ["Capture interval cannot exclude an intervening replay", "No complete scripted bout", "No clean gameplay FPS measurement or improvement", "No DLC/save/SBS/browser acceptance"],
+  "next": "Review narrowly anchored neutral-LS get-up recognition; observe complete knockdown through replay and recovery without scripted recovery inputs",
+  "local_evidence": "research/rexglue-qualification-20261012/bout102-supervisor/probe80-bout121-60-m",
+  "proprietary_data": "excluded from repository"
+}

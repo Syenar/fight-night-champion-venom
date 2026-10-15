@@ -1,5 +1,13 @@
 # Quality-loop progress
 
+## Actual244 / performance245 / DLC247 — 2026-10-15
+
+- Actual244 source passed fresh review; runtime reached boxing and a visually confirmed get-up screen. Strict recognition failed at the neutral LS phase; prepare a narrow subtype while preserving neutral observation and lifecycle bounds.
+- Performance245 linked but failed independent ordinal ABI review; candidate remains isolated. Explicit baseline ordinal repair is in progress.
+- DLC246 invalidates complete-install inference from receipt237. DLC247 checked-I/O source awaits fresh critic; native behavior remains unverified.
+- Replay248 source audit cannot connect field20 to replay identity or prove the current clamp fixes replays. Capture the full knockdown-to-recovery interval next.
+- GitHub private repository created and source/documentation pushed; generated code, native artifacts and owned data remain local.
+
 ## Run167 — exact XEX wrapper and dispatcher hint repair — 2026-10-09
 
 - Builder: constructed a research-only XEX2 wrapper around the exact Run166 effective image and recomputed `section_digest` using the loader's first-page algorithm. `xenon-prepare --query` accepted the wrapper and returned effective image SHA-1 `b771b41caef2483549bfbc7d726be3eb56943f99`.

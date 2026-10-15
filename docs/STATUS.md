@@ -1,5 +1,17 @@
 # Active status
 
+## Actual244 reaches knockdown recovery; performance ABI and DLC defects isolated — 2026-10-15
+
+Private GitHub repository: https://github.com/Syenar/fight-night-champion-venom, default branch `codex/venom-bootstrap`. Only the audited source/documentation tree is published; proprietary inputs, generated guest code, research captures and native binaries remain local.
+
+Runtime244 revision2 passes fresh source review and root admission on unchanged Integration235. The qualified autosave A hold is accepted by the native runtime; menus, observed one-round/one-minute selection, fighter introductions and active Tyson/Ali boxing follow. Nine HUD clock decreases and seven scripted requests precede a recovery screen. Root visually confirms final frame70 is the LS/RS get-up minigame, not a black frame. The observer incorrectly classifies it UNKNOWN and stops. Title28988 and observer30320 both exit0, ordinary close, no watchdog or survivors. Five-second capture gaps cannot establish whether the intervening replay played. Full bout and replay correctness remain open. [Evidence](evidence/cards/08-actual244-knockdown-20261015.json).
+
+Performance relink245 completes with exact executed response provenance and all226 input pins stable, but independent PE review blocks the DLL: appending an explicit new export ordinal shifted all10257 existing ordinals. The candidate is neither staged nor loaded. Revision8 will explicitly preserve every baseline name/ordinal before any runtime trial. No FPS gain is established; VSync remains off.
+
+DLC246 corrects the earlier import claim: the isolated installation has12 package directories but only11 metadata headers; Legends is missing its header. Positive Win32-style failures can be misclassified by the current XFAILED/XSUCCEEDED checks, and extraction I/O is incompletely checked. Receipt COMPLETE therefore does not prove complete installation. DLC247 prepares checked I/O, explicit zero-result success and12 persisted-header completion gating for independent source review; it is uncompiled. The title-wide license API still returns its default placeholder value; no synthetic unlock is introduced. Owned originals remain unchanged.
+
+Next: narrowly recognize the authenticated neutral get-up screen, retain neutral bounded observation, capture the actual knockdown/replay/get-up interval, review the ABI repair and DLC source independently, then admit separately rebuilt artifacts. Native full-game, saves/reload, DLC UI availability, FPS, true SBS and standalone browser gates remain open.
+
 ## Actual240 repairs launch; input acceptance remains the next gate — 2026-10-15
 
 Runtime240 passes fresh source review and root admission on the unchanged Integration235 tuple. It omits the rejected empty DLC CLI option, uses the verified empty default, and revalidates the authentic Runtime236 neutral evidence. Actual title33956 passes loaded-module admission, logs guarded effective60, warning coalescing and positive actual EDRAM clamps. Native captures validate Press Start and autosave. Title and observer exit0 with ordinary close, no watchdog, no survivor and no cleanup errors.
