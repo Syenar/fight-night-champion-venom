@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-15",
+  "agent": "/root",
+  "card": 8,
+  "status": "PARTIAL",
+  "milestone": "FAIL_NATIVE_FPS_MENU_VISIBILITY",
+  "supersedes_live_unknown_in": "08-native-fps-menu279-20261015.json",
+  "session": "manual279",
+  "user_observation": "No DISPLAY tab",
+  "decision": "The requested in-game setting fails its first live acceptance check. Component/build/archive passes do not close this gate.",
+  "diagnostic": "A loose original gamesettingdata.big remains in the derived asset tree alongside the patched packed archive. Actual resource precedence is not yet proved.",
+  "candidate_repair": "Use a successor derived asset tree with the already reviewed nested candidate at the exact loose settings path, preserving the original and failed279 asset tree. Reuse unchanged reviewed native binaries.",
+  "desktop_capture": "Stopped by physical Escape; no further Computer Use calls or input issued in that turn",
+  "active_session_policy": "Preserve the open user test session until a concrete reviewed successor is ready; no live-file mutation",
+  "next": "Review successor loose-resource staging, restart with exact new asset root, verify actual main and pause settings and persistence",
+  "fps_gain": "UNKNOWN",
+  "proprietary_data": "Excluded from repository"
+}

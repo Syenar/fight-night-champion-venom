@@ -1,5 +1,12 @@
 # Quality-loop progress
 
+## Loose settings repair281 / user test282 — 2026-10-15
+
+- User rejects279: no DISPLAY tab. Preserve this live failure despite source/build/archive passes. Desktop capture stopped by physical Escape; no further Computer Use issued.
+- Source281 identifies original loose settings data alongside patched archive. Fresh source and actual-assets reviews pass a successor tree: one8,794-byte exclusive loose copy,12,997 hardlinks, no full archive copy.
+- Root closes279 ordinarily0/reaps, then opens reviewed manual282 with a responsive window and detected Xbox controller. No automatic close or synthetic input; VSync off. User visibility/cap/persistence check pending; keep session open.
+- DLC extended-path repair and synthetic helper repro preparation pass source review, remain unbuilt. Corrected performance280 plan keeps default30 and existing CPU/CSV instrumentation.
+
 ## Native FPS user test279 — 2026-10-15
 
 - Source build274 critic finds an interrupted-link success gap; successorR2 passes and actual276 compiles two units/links0 with stable889 pins. Fresh artifact review verifies strong hooks, fallback helpers and runtime imports.

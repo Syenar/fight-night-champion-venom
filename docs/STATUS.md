@@ -1,5 +1,17 @@
 # Active status
 
+## Corrected loose-resource test282 is open — 2026-10-15
+
+Actual279 has an original loose settings resource alongside the patched archive. Successor281 preserves both old trees and exclusively copies the reviewed8,794-byte candidate into the exact loose path, with12,997 unchanged-file hardlinks and no full archive copy. Fresh source and actual-assets critics pass. Root closes279 ordinarily0 and reaps its launcher.
+
+Separately reviewed manual282 launches the same admitted native tuple against the successor asset root. PID42164 starts01:03:25.643075Z and has a responsive visible game window; the native log detects the Xbox Series X Controller. Physical/background SDL is enabled; synthetic input and automatic closure are disabled, VSync remains off. The user is rechecking Settings. Actual main/pause DISPLAY visibility, cap selection/persistence and FPS gain remain unpassed. Leave this session running. [Evidence](evidence/cards/08-native-fps-menu282-loose-resource-20261015.json).
+
+DLC long-path source and separate synthetic repro preparation pass fresh source reviews only; actual helper compile/run/import must wait for the user session to end. Performance280 successor preserves default30 and proposes a smaller CPU/guest-CSV discriminator without new runtime telemetry; source observer/capture pause preparation continues.
+
+## User rejects live FPS menu279: no DISPLAY tab — 2026-10-15
+
+The user reports no DISPLAY tab in Settings. This fails native FPS menu visibility; prior source/build/archive passes remain component evidence only. Desktop capture is stopped by physical Escape and no further Computer Use calls are issued. Source investigation finds an unchanged loose settings resource alongside the patched packed archive. Prepare a successor tree covering that exact loose resource while preserving the failed279 tree and open session; resource precedence and the repaired UI still require runtime observation. [Failure/addendum](evidence/cards/08-native-fps-menu281-live-failure-20261015.json).
+
 ## Native FPS menu build276 and manual279 user test open — 2026-10-15
 
 Both optimized FPS host/hook compiles and direct link return0, reap their children and preserve input hashes. Independent artifact review passes all889 input pins, three strong callbacks/original fallbacks, host config setter and392 named runtime imports. EXE SHA 8ADFFB70D6DD2DEB6AE5F335283C88954FA8F48B61E265AEC0A9DDCBF940228F. Resource and actual asset reviews pass: one derived248MB archive,12,996 hardlinks, original archive unchanged. Intended route is main and pause Settings / DISPLAY / Frame Rate Limit. [Evidence](evidence/cards/08-native-fps-menu279-20261015.json).
