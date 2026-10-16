@@ -50,7 +50,7 @@ All required offline rows must pass on native and browser-native in normal and t
 - [ ] Fighters, arenas, crowds, commentary, music, and sound effects
 - [ ] DLC and title-update content
 - [ ] Resolution, controller layouts, vibration, accessibility, and pause
-- [ ] Visible FPS limit, live changes and saved/reloaded preference; application display VSync off; unchanged bout timing and measured active-play performance
+- [ ] Frame Rate Limit in the game's own settings, reachable from both the main menu and paused gameplay without F4; live changes and saved/reloaded preference; application display VSync off; unchanged bout timing and measured active-play performance
 - [ ] Repeated cold starts and long-session stability
 - [ ] Normal single-view mode: complete game session on one composed view
 - [ ] True left|right SBS mode: complete game session with measurable two-eye disparity

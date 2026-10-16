@@ -1,5 +1,15 @@
 # Active status
 
+## Native FPS menu requirement; four repaired runtime units compile and link — 2026-10-15
+
+The user requires Frame Rate Limit in the game's own settings from both the main menu and paused gameplay, without F4. Existing `present_fps_limit` is only the backend/diagnostic control and does not close this user-flow gate. Work269 identifies the shared GameSettings resources and the correct TU2 native get/default/set callbacks; a local resource and hook candidate is being prepared. It is not built, reviewed or demonstrated. VSync remains off.
+
+Manual254 exits normally0 at23:49:37.978814Z; its retained launcher has no automatic-stop path. Native log records ordinary window closing and execution complete. Fresh real-desktop checks subsequently find no title process.
+
+Actual260 compiler invocation fails before C++ because Clang's default GNU response tokenizer strips Windows backslashes; failed sources/outputs are preserved. Root262 proves actual response parsing with an explicit Windows selector outside the response. Fresh253 revision3 and261 source reviews pass. Actual266 compiles both checked DLC250 units; actual268 compiles physical-priority/background-controller255 units. All four optimized compiles return0, reap their owned children and preserve their input hashes.
+
+Combined link271 returns0. Independent artifact review passes all244 input pins, exact executed response, four intended object replacements, retained dispatcher, all10258 export names/ordinals and title/GPU import resolution. Runtime DLL SHA `CEC40DD5F6DC691F4B7C7278FB87F5647DEC34549D3C2D535676AA83630D0B61`; review SHA `31EEE9521863C31D767D6B46689E6AB199F37C495A4942BC368A45EBDB993489`. It is not yet staged or loaded. Runtime DLC installation/visibility, shared controller use, FPS gain and native FPS-menu acceptance remain unpassed. Prepare a fresh isolated owned-DLC import qualification without reusing the failed237 root or fabricating license bits.
+
 ## Manual254 running; corrected performance DLL passes ABI review — 2026-10-15
 
 At the user's request, Manual254 launches unchanged Integration235 with normal physical SDL controllers, scripted controller/start/accept/get-up overrides disabled, no automatic close, no PPM/CSV capture and field20/EDRAM tracing off. Title25832 has a responsive game window. The user subsequently reports missing DLC; this session uses a fresh copy of the known profile/cache seed and has no DLC installed. Keep this user test session running while source work continues. Launch alone is not controller, FPS or full-game acceptance.

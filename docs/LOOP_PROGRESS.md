@@ -1,5 +1,12 @@
 # Quality-loop progress
 
+## Native FPS menu and combined271 — 2026-10-15
+
+- User rejects F4-only access: Frame Rate Limit must be in the game's own settings from main and pause menus. Shared resource/native callback269 candidate is in preparation; no UI acceptance yet.
+- Manual254 closes ordinarily0; all native processes absent before rebuild.
+- Actual260 exposes a real compiler response-parser mismatch; preserve it. Root262 actual-response proof and fresh253R3/261 critics precede successful four-TU compiles266/268.
+- Combined271 links and independently passes ABI/import/all244-input checks. Still unstaged/unloaded; prepare fresh DLC import qualification and controller runtime checks.
+
 ## Manual254 and corrected link252 — 2026-10-15
 
 - User test session254 is running on235 with physical SDL and no synthetic inputs or automatic stop; fresh profile has no DLC.

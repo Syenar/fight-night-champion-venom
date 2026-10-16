@@ -1,5 +1,7 @@
 # Full-game execution checklist
 
+2026-10-15 user clarification: Frame Rate Limit must appear in the game's own main-menu and paused-game settings. F4-only CVar exposure does not satisfy this requirement. Preserve VSync off, both controller-driven menu routes, live changes and saved/reloaded preference; actual performance improvement remains a separate measurement gate.
+
 2026-10-15 actual244 revision2: autosave input accepted, settings and active boxing observed, nine clock decreases/seven script requests, then visually verified get-up minigame misclassified UNKNOWN. Ordinary title/observer exits0/0. Five-second capture gaps leave the replay interval unknown. Performance245 link succeeds but ordinal ABI review blocks loading; DLC246 finds a missing Legends header and unreliable import success checks. No FPS, replay or DLC acceptance is promoted. [Evidence](evidence/cards/08-actual244-knockdown-20261015.json).
 
 2026-10-15 manual225: supported read-only inspection observes active round9/10 and final ten-round judges scorecard (Ali by decision). User confirms physical controls. This is an observed manual bout completion; replay, save/reload, unique game FPS and broad full-game acceptance remain open. [Evidence](evidence/cards/08-manual225-scorecard-20261015.json).
