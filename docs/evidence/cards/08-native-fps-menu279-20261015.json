@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-15",
+  "agent": "/root",
+  "card": 8,
+  "status": "PARTIAL",
+  "milestone": "Native FPS menu compiled, independently reviewed, user test session open",
+  "requirement": "Frame Rate Limit in actual main and pause Settings without F4; VSync off",
+  "hook_source_review_sha256": "978F9E49C0B2AC720399E226CC205656B4D66CC7903022798A9329851C52F2D4",
+  "build_source_review_sha256": "29DE132D48FAEFF453C87CBEEC9486409A08757E5A8365D89ECAAF8AB0972733",
+  "artifact_review_sha256": "89B53664BE40F93D81EFC5C2CD94287EFAB128B81D4356769B8FEE2446647B8C",
+  "resource_source_review_sha256": "8EF23B26C37948B051D21F3CF5E9D397BB8CE834813C40A84A893FEFC588717E",
+  "asset_stage_review_sha256": "086ADB7E0734D18FA1DCA74D8FDAC2CD5D96F717C881CF14AD39A2E04965F2D0",
+  "launcher_review_sha256": "8A8C32A794AD507DAB9DD514C00064C28F4B431BAC88C542FF0F5B88036EDCF6",
+  "exe_sha256": "8ADFFB70D6DD2DEB6AE5F335283C88954FA8F48B61E265AEC0A9DDCBF940228F",
+  "runtime_sha256": "CEC40DD5F6DC691F4B7C7278FB87F5647DEC34549D3C2D535676AA83630D0B61",
+  "compile_link": {
+    "two_optimized_compiles": "exit0, reaped, input hashes stable",
+    "direct_link": "exit0, not timed out, not interrupted, reaped",
+    "objects": 228,
+    "unchanged_objects": 226,
+    "runtime_named_imports_resolved": 392,
+    "actual_map": "Three strong menu callbacks, original guest fallbacks and config setter verified",
+    "input_pin_checks": 889
+  },
+  "resource": {
+    "intended_route": "Settings / DISPLAY / Frame Rate Limit, main and pause contexts",
+    "choices": ["Unlimited", "30", "60", "90", "120", "144", "165", "240"],
+    "single_derived_archive_bytes": 248537552,
+    "unchanged_file_hardlinks": 12996,
+    "asset_payload_copies_during_staging": 0,
+    "owned_original_archive_unchanged": true
+  },
+  "failed_launch278": "Explicit empty DLC import option reaches import validation and exits 0xC0000374 before a game window; preserved. Exact parser causality not established.",
+  "manual279": {
+    "launcher": "research/manual279-preparation/LaunchManual279.py",
+    "command": "Pinned Python -B -X utf8 LaunchManual279.py after fresh root desktop no-title proof",
+    "started_utc": "2026-10-16T00:51:01.214569+00:00",
+    "pid": 35984,
+    "observed": "Responsive visible Fight Night Champion Venom window after omitting empty options",
+    "input": "Physical SDL, background enabled, no synthetic controls",
+    "automatic_close": false,
+    "vsync": false,
+    "guest_timing_override": false,
+    "cli_presentation_cap_override": false,
+    "dlc_import": false
+  },
+  "live_settings_visibility": "UNKNOWN - user testing",
+  "live_cap_callback": "UNKNOWN",
+  "restart_persistence": "UNKNOWN",
+  "fps_gain": "UNKNOWN",
+  "next": "Observe both actual Settings contexts, controller selection and persisted cap/restart; leave requested manual session open. Continue checked DLC long-path repair separately.",
+  "proprietary_data": "All resource bytes, generated code, binaries and captures excluded from repository"
+}

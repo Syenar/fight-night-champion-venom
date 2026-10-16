@@ -1,5 +1,25 @@
 # Active status
 
+## Native FPS menu build276 and manual279 user test open — 2026-10-15
+
+Both optimized FPS host/hook compiles and direct link return0, reap their children and preserve input hashes. Independent artifact review passes all889 input pins, three strong callbacks/original fallbacks, host config setter and392 named runtime imports. EXE SHA 8ADFFB70D6DD2DEB6AE5F335283C88954FA8F48B61E265AEC0A9DDCBF940228F. Resource and actual asset reviews pass: one derived248MB archive,12,996 hardlinks, original archive unchanged. Intended route is main and pause Settings / DISPLAY / Frame Rate Limit. [Evidence](evidence/cards/08-native-fps-menu279-20261015.json).
+
+Manual278 fails before its window after an explicit empty DLC import option reaches import validation; preserve its0xC0000374 exit. Separately reviewed279 omits empty options and opens a responsive game window with the same admitted binaries/assets. PID35984 starts00:51:01.214569Z; physical SDL/background input is enabled, synthetic input and automatic closure disabled, VSync off, no guest-rate or CLI FPS-cap override. The user is testing; leave this session running. Menu visibility, live selection, restart persistence and FPS gain remain unpassed.
+
+The DLC extended-path/error-reporting successor passes source review only; actual Windows helper qualification and runtime rebuild/import remain pending. No title-wide entitlement override is justified.
+
+## Fresh owned-DLC startup273 fails closed; FPS compile metadata275 passes — 2026-10-15
+
+After independent staged-artifact review passes, root launches the exact273 tuple in its fresh isolated root. The first package fails checked extraction at `dlc/dimecontentinfo.xml`, `operation=open_output result=0x5`, with zero completed packages and no persisted headers. The process then exits `0xC0000374`; no forced termination occurs and all four immutable seed-source hashes remain unchanged. This is a failed startup qualification, not working DLC or controller acceptance. Preserve the consumed273 root; diagnose the checked output-open failure and abnormal exit before another import. Source repairs continue independently of the FPS menu.
+
+Root275 invokes both proposed FPS host/hook compiler response files with the explicit Windows response selector and `-###`. Both return0 and report an integrated frontend, without creating native outputs. Actual compilation, linker proof, the derived Apt resource and live main/pause Settings checks remain pending.
+
+## FPS menu persistence passes source review; combined runtime staged — 2026-10-15
+
+The actual game Settings entry remains the requirement in both the main menu and paused gameplay, with no F4 dependency. FPS269 revision2 passes independent source review (`978F9E49C0B2AC720399E226CC205656B4D66CC7903022798A9329851C52F2D4`). It routes only the new row through native Apt callbacks and updates only `present_fps_limit` in a safely parsed private TOML config. It includes actual host source candidates; neither the new host/hook nor the visible Apt row is built or demonstrated yet. VSync and guest timing are unchanged. A presentation cap does not establish an improvement in low gameplay FPS.
+
+Integration273 passes independent source review (`10527883FC069349F1FA4C1403BA0E320FE07D60E2A120F17F08A060B4D51BBE`) and root staging succeeds. The five-file tuple contains combined runtime271; twelve existing local owned-package files are hardlinked into a new isolated cohort, preserving old237's marker and failed import. Four mutable seed files are independent copies. No asset tree or PDB is duplicated. Fresh staged-artifact review and a separate root launch gate are still required. DLC installation/visibility and simultaneous physical/scripted controller behavior remain unpassed.
+
 ## Native FPS menu requirement; four repaired runtime units compile and link — 2026-10-15
 
 The user requires Frame Rate Limit in the game's own settings from both the main menu and paused gameplay, without F4. Existing `present_fps_limit` is only the backend/diagnostic control and does not close this user-flow gate. Work269 identifies the shared GameSettings resources and the correct TU2 native get/default/set callbacks; a local resource and hook candidate is being prepared. It is not built, reviewed or demonstrated. VSync remains off.

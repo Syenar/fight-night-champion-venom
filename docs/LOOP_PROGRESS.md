@@ -1,5 +1,19 @@
 # Quality-loop progress
 
+## Native FPS user test279 — 2026-10-15
+
+- Source build274 critic finds an interrupted-link success gap; successorR2 passes and actual276 compiles two units/links0 with stable889 pins. Fresh artifact review verifies strong hooks, fallback helpers and runtime imports.
+- Actual derived archive and12,996 hardlinks pass independent reviews; only one248MB archive adds bulk payload.
+- Manual278 fails before a window with explicit empty DLC option. Reviewed279 omits empty options and reaches a responsive game window. User is testing; physical controller input on, VSync off, no synthetic input or automatic close.
+- Actual main/pause row visibility, cap change/persistence and performance gain remain open. DLC extended-path successor passes source review only.
+
+## Actual game FPS row274 and startup273 — 2026-10-15
+
+- FPS269R2 native callback/persistence source passes independent review. Safely edits only the private FPS key; no global CVar serialization.
+- Resource274 independently passes source review and root creates one derived248MB archive. DISPLAY / Frame Rate Limit is explicitly appended to both main and pause contexts, matching eight backend choices. Native visibility remains unproved.
+- Root275 actual-response metadata passes both integrated compiler commands. Build274 preparation critic finds a concrete interrupted-link success predicate defect; preserve it and repair a successor before compiling.
+- The combined271 tuple is staged and launched by fresh owned-DLC startup273. First extraction fails at an output path261 UTF16 units; no headers complete, and child exits0xC0000374 without forced termination. The loaded-module snapshot is unavailable after the early exit. Extended path handling and exact error diagnostics are under repair. Immutable seeds and failed273 evidence are preserved.
+
 ## Native FPS menu and combined271 — 2026-10-15
 
 - User rejects F4-only access: Frame Rate Limit must be in the game's own settings from main and pause menus. Shared resource/native callback269 candidate is in preparation; no UI acceptance yet.
