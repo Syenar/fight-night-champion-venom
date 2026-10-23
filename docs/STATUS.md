@@ -42,12 +42,12 @@ The repository does not contain the commercial game image or other proprietary g
 
 Repair the normal launcher logging path, then rerun the bounded custom-versus-stock texture diagnostic through the already-proven playable local runtime. Record the resulting evidence before making any texture, stereo, or completion claim.
 
-The current reviewed successor selection has been consumed by the latest bounded capture. The next batch requires another disjoint selection and source-pin review before any new GO or capture.
+The reviewed r4 selection is consumed. A new disjoint source-only selection is prepared for the remaining 404 rows (448–851), with zero overlap against prior selections; it still requires independent source-pin review before any new GO or capture.
 
 ## Decompilation evidence
 
 A bounded decompilation batch completed with independent review. Across the seventeen reviewed batches, 544 callers and seven retained controls were captured in paired baseline and candidate runs, with raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
 
-The current reviewed function selection has been consumed. The next batch requires a new disjoint source selection and independent review before execution.
+The current reviewed function selection has been consumed. The prepared 404-row successor selection requires independent review before execution.
 
 
