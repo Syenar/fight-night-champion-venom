@@ -23,7 +23,7 @@ The game opens and reaches playable boxing in the current local test runtime, wi
 - Completing the full game decompilation and proving that reconstructed code matches the original behavior.
 - Diagnosing why some custom fighters and outfit pieces can appear without their intended textures.
 - Connecting renderer resource tracing to a verified left and right eye presentation path.
-- A controlled renderer launch was attempted with the current diagnostic build and with the preserved comparison build. Both stopped at startup with the same Windows `0xC0000409` error before producing a renderer trace. This points to a shared title/runtime startup issue, not a proven texture regression.
+- The normal launcher still stops before startup with Windows `0xC0000409` because its rotating log sink cannot open the configured path. A separate writable local test runtime, launched under the debugger with exception handling, opened the game and reached active boxing; that test was cleanly shut down and is recorded privately. This confirms current playability while leaving the normal launcher repair and texture trace open.
 
 ## Not proven yet
 
