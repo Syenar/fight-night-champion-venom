@@ -16,7 +16,7 @@ The game opens and reaches playable boxing in the current local test runtime, wi
 - The launcher signaling test suite passes when run with its isolated test ports.
 - Source and evidence are organized for continued decompilation and renderer work.
 - The current local test path opens the game and reaches active boxing; no automatic input or capture is used.
-- A bounded decompilation batch completed with independent review: 32 callers plus seven controls were captured in paired baseline and candidate runs. It is retained as raw representation evidence only; it adds zero semantic coverage and does not prove behavior, runtime, or gameplay.
+- Two bounded decompilation batches have completed with independent review: 64 callers plus seven retained controls were captured in paired baseline and candidate runs. The new batch is retained as raw representation evidence only; cumulative semantic coverage remains unchanged and behavior is not claimed.
 
 ## Being investigated
 
@@ -46,7 +46,7 @@ The reviewed decompile selection is currently exhausted. The next batch requires
 
 ## Decompilation evidence
 
-A bounded decompilation batch completed with independent review. It captured 32 callers and seven retained controls in paired baseline and candidate runs, with all 39 raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
+A bounded decompilation batch completed with independent review. Across the two reviewed batches, 64 callers and seven retained controls were captured in paired baseline and candidate runs, with raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
 
 The current reviewed function selection is exhausted. The next batch requires a new disjoint source selection and independent review before execution.
 
