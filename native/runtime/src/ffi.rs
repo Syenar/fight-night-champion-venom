@@ -3,6 +3,7 @@ use std::ffi::c_void;
 use std::path::PathBuf;
 
 #[no_mangle]
+#[allow(clippy::not_unsafe_ptr_arg_deref)]
 pub extern "C" fn fnc_runtime_create(root: *const u8, len: usize) -> *mut c_void {
     if root.is_null() {
         return std::ptr::null_mut();
@@ -31,7 +32,14 @@ pub extern "C" fn fnc_runtime_tick(handle: *mut c_void, ticks: u64) -> i32 {
 }
 
 #[no_mangle]
-pub extern "C" fn fnc_runtime_present_sbs(handle: *mut c_void, width: u32, height: u32) -> i32 {
+pub extern "C" fn fnc_runtime_present_sbs(
+    handle: *mut c_void,
+    frame_id: u64,
+    width: u32,
+    height: u32,
+    left_view_id: u64,
+    right_view_id: u64,
+) -> i32 {
     let Some(runtime) = (unsafe { (handle as *mut Runtime).as_mut() }) else {
         return -1;
     };
@@ -40,7 +48,7 @@ pub extern "C" fn fnc_runtime_present_sbs(handle: *mut c_void, width: u32, heigh
     }
     runtime
         .video
-        .present_sbs(width, height)
+        .present_sbs(frame_id, width, height, left_view_id, right_view_id)
         .map(|_| 0)
         .unwrap_or(-1)
 }
@@ -53,3 +61,4 @@ pub extern "C" fn fnc_runtime_destroy(handle: *mut c_void) {
         }
     }
 }
+
