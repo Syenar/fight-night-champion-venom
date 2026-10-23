@@ -42,12 +42,33 @@ The repository does not contain the commercial game image or other proprietary g
 
 Repair the normal launcher logging path, then rerun the bounded custom-versus-stock texture diagnostic through the already-proven playable local runtime. Record the resulting evidence before making any texture, stereo, or completion claim.
 
-The reviewed r4 selection is consumed. A new disjoint source-only selection is prepared for the remaining 404 rows (448–851), with zero overlap against prior selections; it still requires independent source-pin review before any new GO or capture.
+The reviewed r5 selection is consumed. Its final 20-row tail was executed through the reviewed parameterized tail engine and qualified as raw representation only; no additional caller selection is pending from that packet.
 
 ## Decompilation evidence
 
 A bounded decompilation batch completed with independent review. Across the thirty reviewed batches, 948 callers and seven retained controls were captured in paired baseline and candidate runs, with raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
 
-The current reviewed function selection has been consumed. The remaining selection is complete: 12 full 32-row batches plus an independently reviewed 20-row tail were captured.
+The current reviewed function selection has been consumed. The prepared successor selection had 12 full 32-row batches plus a final 20-row tail. All of those rows have now been captured through independently reviewed packets. The results remain raw representation evidence only; semantic coverage and exception closure are unresolved.
+
+## SBS eye-frame contract checkpoint
+
+- `research/active-work/sbs-eye-boundary-candidate608/sbs-eye-frame-contract-receipt.json` records the executable contract test, SHA `FE330A7DEAEEB1E47E847FBE8CDC770ABCB4FA351660B1894EE9D05E3F336AD5`.
+- The test exited `0` and passed incomplete-input rejection, distinct per-eye resource validation, right-eye lookup, alias rejection, and copy isolation.
+- This is static contract execution evidence only. It does not prove runtime renderer linkage, left/right presentation, parallax, texture correctness, playable SBS, or full-game decompilation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
