@@ -32,11 +32,11 @@ pub fn poll_xinput(player: u32) -> Result<InputFrame, &'static str> {
         ) -> *mut core::ffi::c_void;
     }
     type GetState = unsafe extern "system" fn(u32, *mut State) -> u32;
-    let module = unsafe { LoadLibraryA(b"xinput1_4.dll\0".as_ptr()) };
+    let module = unsafe { LoadLibraryA(c"xinput1_4.dll".as_ptr().cast()) };
     if module.is_null() {
         return Err("XInput runtime DLL is unavailable");
     }
-    let address = unsafe { GetProcAddress(module, b"XInputGetState\0".as_ptr()) };
+    let address = unsafe { GetProcAddress(module, c"XInputGetState".as_ptr().cast()) };
     if address.is_null() {
         return Err("XInputGetState is unavailable");
     }
@@ -70,3 +70,4 @@ pub fn poll_xinput(player: u32) -> Result<InputFrame, &'static str> {
 pub fn poll_xinput(_player: u32) -> Result<InputFrame, &'static str> {
     Err("XInput is only available on Windows")
 }
+
