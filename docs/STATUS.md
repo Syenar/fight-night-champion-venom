@@ -16,7 +16,7 @@ The game opens and reaches playable boxing in the current local test runtime, wi
 - The launcher signaling test suite passes when run with its isolated test ports.
 - Source and evidence are organized for continued decompilation and renderer work.
 - The current local test path opens the game and reaches active boxing; no automatic input or capture is used.
-- Seventeen bounded decompilation batches have completed with independent review: 544 callers plus seven retained controls were captured in paired baseline and candidate runs. The newest batch is retained as raw representation evidence only; cumulative semantic coverage remains unchanged and behavior is not claimed.
+- Eighteen bounded decompilation batches have completed with independent review: 576 callers plus seven retained controls were captured in paired baseline and candidate runs. The newest batch is retained as raw representation evidence only; cumulative semantic coverage remains unchanged and behavior is not claimed.
 
 ## Being investigated
 
@@ -46,7 +46,7 @@ The reviewed r4 selection is consumed. A new disjoint source-only selection is p
 
 ## Decompilation evidence
 
-A bounded decompilation batch completed with independent review. Across the seventeen reviewed batches, 544 callers and seven retained controls were captured in paired baseline and candidate runs, with raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
+A bounded decompilation batch completed with independent review. Across the eighteen reviewed batches, 576 callers and seven retained controls were captured in paired baseline and candidate runs, with raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
 
 The current reviewed function selection has been consumed. The prepared 404-row successor selection requires independent review before execution.
 
