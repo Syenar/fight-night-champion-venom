@@ -6,7 +6,7 @@ This project is an active engineering build for a fan made Fight Night Champion 
 
 ## Gameplay playability
 
-The game remains playable in qualified local runs, including boxing and gameplay interaction. The latest launch path has a temporary startup regression while a shared failure is repaired. The project remains a playable-game effort, but full-game acceptance, save/reload coverage, and a distributable build remain open.
+The game remains playable in qualified local runs, with boxing interaction and HUD progression demonstrated. The latest launch path has a temporary startup regression while a shared failure is repaired. The project remains a playable-game effort, but a complete bout, save/reload coverage, and a distributable build remain open.
 
 ## Working now
 
