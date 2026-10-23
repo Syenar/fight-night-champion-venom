@@ -40,7 +40,7 @@ The repository does not contain the commercial game image or other proprietary g
 
 ## Next step
 
-Diagnose the shared title/runtime startup issue, then rerun the bounded custom versus stock texture diagnostic only when the local launch contract is repaired. Record the resulting evidence before making any runtime, texture, stereo, or completion claim.
+Repair the normal launcher logging path, then rerun the bounded custom-versus-stock texture diagnostic through the already-proven playable local runtime. Record the resulting evidence before making any texture, stereo, or completion claim.
 
 The current reviewed successor selection has been consumed by the latest bounded capture. The next batch requires another disjoint selection and source-pin review before any new GO or capture.
 
