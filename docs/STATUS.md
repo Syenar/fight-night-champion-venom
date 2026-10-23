@@ -16,7 +16,7 @@ The game opens and reaches playable boxing in the current local test runtime, wi
 - The launcher signaling test suite passes when run with its isolated test ports.
 - Source and evidence are organized for continued decompilation and renderer work.
 - The current local test path opens the game and reaches active boxing; no automatic input or capture is used.
-- Twelve bounded decompilation batches have completed with independent review: 384 callers plus seven retained controls were captured in paired baseline and candidate runs. The newest batch is retained as raw representation evidence only; cumulative semantic coverage remains unchanged and behavior is not claimed.
+- Thirteen bounded decompilation batches have completed with independent review: 416 callers plus seven retained controls were captured in paired baseline and candidate runs. The newest batch is retained as raw representation evidence only; cumulative semantic coverage remains unchanged and behavior is not claimed.
 
 ## Being investigated
 
@@ -46,7 +46,7 @@ The current reviewed successor selection has been consumed by the latest bounded
 
 ## Decompilation evidence
 
-A bounded decompilation batch completed with independent review. Across the twelve reviewed batches, 384 callers and seven retained controls were captured in paired baseline and candidate runs, with raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
+A bounded decompilation batch completed with independent review. Across the thirteen reviewed batches, 416 callers and seven retained controls were captured in paired baseline and candidate runs, with raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
 
 The current reviewed function selection has been consumed. The next batch requires a new disjoint source selection and independent review before execution.
 
