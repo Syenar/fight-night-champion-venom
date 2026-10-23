@@ -15,8 +15,13 @@ Authority:
 - `docs/FULL_GAME_EXECUTION_CHECKLIST.md`
 - `docs/STATUS.md`
 
-Scope is Xbox 360 only. Do not read or use the deprecated PS3 tree in the parent project, including `3D Research`, `release`, `harness`, `artifacts`, `tools`, or PS3 screenshots. The PS3 ZIP is retained only as an archive.
 
 Never modify the owned ISO, `default.xex`, title updates, DLC, or Xenia installations. Keep source dumps, Ghidra projects, generated proprietary code, and captures in local gitignored research paths. Do not commit or package them.
 
 Run cards in order and do not promote a failed gate. Diagnose and repair it while continuing independent authorized work. Use docs/COMPLETION_REPAIR_PLAN.md for detailed repair steps and card dependencies. A compile is not runtime proof; each card needs hashes, logs, captures, replays, or other evidence.
+
+## D-authoritative research storage policy — resumed (2026-10-17)
+
+The user resumed work on D: after return342 was refused for capacity. `CAPACITY_REFUSED_SOURCE_RETAINED` (exit 2): no C: stage, copy certificate, namespace switch, or D payload deletion occurred; do not retry the return. Keep the canonical workspace anchor at `C:\Users\samsa\Desktop\Workplace\Projects\Fight Night Champion Mods\xbox-full-game-sbs`; scripts must use this explicit anchor, not a junction-resolved path. Put new bulky outputs, temporary files, and logs under the physical D: path `D:\Fight Night Champion Venom\xbox-full-game-sbs\research\active-work`. The existing `research/d-drive-work` junction remains valid and usable again. Small policy and status metadata may remain in the canonical C: workspace. Do not claim that project data was returned to C:.
+
+
