@@ -17,7 +17,7 @@ This project is an active engineering build for a fan made Fight Night Champion 
 - Completing the full game decompilation and proving that reconstructed code matches the original behavior.
 - Diagnosing why some custom fighters and outfit pieces can appear without their intended textures.
 - Connecting renderer resource tracing to a verified left and right eye presentation path.
-- Preparing a controlled texture comparison and a bounded renderer run using locally supplied test inputs.
+- A controlled renderer launch was attempted with the current diagnostic build and with the preserved comparison build. Both stopped at startup with the same Windows `0xC0000409` error before producing a renderer trace. This points to a shared title/runtime startup issue, not a proven texture regression.
 
 ## Not proven yet
 
@@ -34,5 +34,5 @@ The repository does not contain the commercial game image or other proprietary g
 
 ## Next step
 
-Finish the independent review of the newest renderer readiness packet, then run the bounded custom versus stock texture diagnostic only when its local prerequisites are satisfied. Record the resulting evidence before making any runtime, texture, stereo, or completion claim.
+Diagnose the shared title/runtime startup issue, then rerun the bounded custom versus stock texture diagnostic only when the local launch contract is repaired. Record the resulting evidence before making any runtime, texture, stereo, or completion claim.
 
