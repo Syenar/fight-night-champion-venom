@@ -84,26 +84,50 @@ impl AudioBackend {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct VideoFrame {
+    pub frame_id: u64,
     pub width: u32,
     pub height: u32,
-    pub left_pixels: usize,
-    pub right_pixels: usize,
+    pub left_view_id: u64,
+    pub right_view_id: u64,
+    pub pixels_per_eye: usize,
 }
 #[derive(Debug, Default)]
 pub struct VideoBackend {
     last: Option<VideoFrame>,
 }
 impl VideoBackend {
-    pub fn present_sbs(&mut self, width: u32, height: u32) -> Result<(), &'static str> {
+    /// Record a complete SBS pair after both eye views have been produced.
+    /// This metadata contract does not render, validate disparity, or composite pixels.
+    pub fn present_sbs(
+        &mut self,
+        frame_id: u64,
+        width: u32,
+        height: u32,
+        left_view_id: u64,
+        right_view_id: u64,
+    ) -> Result<(), &'static str> {
+        if frame_id == 0 {
+            return Err("frame id must be non-zero");
+        }
         if width == 0 || height == 0 {
             return Err("video dimensions must be non-zero");
         }
-        let pixels = (width as usize).saturating_mul(height as usize);
+        if left_view_id == 0 || right_view_id == 0 {
+            return Err("eye view ids must be non-zero");
+        }
+        if left_view_id == right_view_id {
+            return Err("left and right views must be distinct");
+        }
+        let Some(pixels_per_eye) = (width as usize).checked_mul(height as usize) else {
+            return Err("video dimensions overflow addressable pixel count");
+        };
         self.last = Some(VideoFrame {
+            frame_id,
             width,
             height,
-            left_pixels: pixels,
-            right_pixels: pixels,
+            left_view_id,
+            right_view_id,
+            pixels_per_eye,
         });
         Ok(())
     }
@@ -172,3 +196,4 @@ impl DlcBackend {
         self.entries.values()
     }
 }
+
