@@ -6,7 +6,7 @@ This project is an active engineering build for a fan made Fight Night Champion 
 
 ## Gameplay playability
 
-No complete playable bout is currently verified. Confirmed full-game playable coverage is **0 of the required acceptance gates**. Partial runtime experiments are not counted as a playable game release.
+The game has previously reached playable boxing in qualified local runs. The current launch path is temporarily unplayable while a shared startup failure is repaired. The project remains a playable-game effort, but full-game acceptance, save/reload coverage, and a distributable build remain open.
 
 ## Working now
 
@@ -26,7 +26,7 @@ No complete playable bout is currently verified. Confirmed full-game playable co
 ## Not proven yet
 
 - A complete behaviorally equivalent decompilation.
-- A complete playable game build, saved progress, or a full bout.
+- A complete playable game build, saved progress, or a full bout in the current launch path.
 - Correct custom character and outfit textures in all relevant scenes.
 - Independent left and right eye rendering, verified parallax, and a playable stereo experience.
 - Standalone browser execution without a separately running local game host.
@@ -36,4 +36,4 @@ The repository does not contain the commercial game image or other proprietary g
 
 ## Next step
 
-Diagnose the shared startup issue, then rerun the bounded texture comparison only after the local launch contract is repaired.
+Diagnose the shared startup issue, then restore the temporary gameplay regression and rerun the bounded texture comparison before making any runtime, texture, stereo, or completion claim.
