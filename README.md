@@ -6,7 +6,7 @@ This repository contains source code, browser interface, native runtime contract
 
 Development is active and incomplete. The repository currently provides buildable runtime and launcher scaffolding. Full-game semantic decompilation, complete native gameplay, texture correctness, independent stereo rendering, parallax, and standalone browser acceptance still require additional work.
 
-**Gameplay status:** The game remains playable in qualified local runs, with boxing interaction and HUD progression demonstrated. The latest launcher path has a temporary startup regression while a shared failure is repaired. A complete bout, save/reload coverage, and a distributable build are still open.
+**Gameplay status:** The game opens and reaches playable boxing in the current local test runtime, with boxing interaction and HUD progression demonstrated. The normal launcher still needs its logging-path repair before it is the standard one-click route. A complete bout, save/reload coverage, and a distributable build are still open.
 
 ## What you need
 
