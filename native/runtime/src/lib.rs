@@ -195,8 +195,12 @@ mod tests {
         assert_eq!(r.input.poll().buttons, 1);
         r.audio.submit_i16(&[0; 8]);
         assert_eq!(r.audio.submitted_samples(), 8);
-        assert!(r.video.present_sbs(1280, 720).is_ok());
-        assert_eq!(r.video.last().unwrap().right_pixels, 921600);
+        assert!(r.video.present_sbs(1, 1280, 720, 11, 12).is_ok());
+        let frame = r.video.last().unwrap();
+        assert_eq!(frame.pixels_per_eye, 921600);
+        assert_eq!((frame.left_view_id, frame.right_view_id), (11, 12));
+        assert!(r.video.present_sbs(2, 1280, 720, 11, 11).is_err());
+        assert_eq!(r.video.last().unwrap().frame_id, 1);
         r.graphics.submit_draw();
         assert_eq!(r.graphics.draw_calls(), 1);
         r.saves.write_slot(1, b"state").unwrap();
@@ -225,8 +229,16 @@ mod tests {
             crate::ffi::fnc_runtime_tick(handle, 1),
             ContractStatus::Ready as i32
         );
-        assert_eq!(crate::ffi::fnc_runtime_present_sbs(handle, 640, 360), 0);
+        assert_eq!(
+            crate::ffi::fnc_runtime_present_sbs(handle, 1, 640, 360, 11, 12),
+            0
+        );
+        assert_eq!(
+            crate::ffi::fnc_runtime_present_sbs(handle, 2, 640, 360, 11, 11),
+            -1
+        );
         crate::ffi::fnc_runtime_destroy(handle);
         let _ = fs::remove_dir_all(root);
     }
 }
+
