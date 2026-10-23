@@ -6,7 +6,7 @@ This repository contains source code, browser interface, native runtime contract
 
 Development is active and incomplete. The repository currently provides buildable runtime and launcher scaffolding. Full-game semantic decompilation, complete native gameplay, texture correctness, independent stereo rendering, parallax, and standalone browser acceptance still require additional work.
 
-**Gameplay status:** The game opens and reaches playable boxing in the current local test runtime, with boxing interaction and HUD progression demonstrated. The normal launcher still needs its logging-path repair before it is the standard one-click route. A complete bout, save/reload coverage, and a distributable build are still open.
+**Gameplay status:** The game opens and reaches playable boxing in the current local test runtime, with boxing interaction and HUD progression demonstrated. Gameplay is working; the separate one-click launcher has a logging-path repair pending before it becomes the standard route. A complete bout, save/reload coverage, and a distributable build are still open.
 
 ## What you need
 
@@ -42,6 +42,4 @@ The launcher serves local host and client pages for the current SBS transport pr
 - [Browser and SBS plan](docs/FULL_GAME_BROWSER_SBS_PLAN.md)
 
 All proprietary game files, extracted assets, generated game code, and private runtime captures remain local and are excluded from releases.
-
-
 
