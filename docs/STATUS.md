@@ -4,6 +4,10 @@ Updated: 2026-10-23
 
 This project is an active engineering build for a fan made Fight Night Champion recompilation and browser viewing experience. Work is moving forward, but it is not a finished game release.
 
+## Gameplay playability
+
+No complete playable bout is currently verified. Confirmed full-game playable coverage is **0 of the required acceptance gates**. Partial runtime experiments are not counted as a playable game release.
+
 ## Working now
 
 - The native runtime scaffold builds successfully in debug and release configurations.
@@ -14,25 +18,22 @@ This project is an active engineering build for a fan made Fight Night Champion 
 
 ## Being investigated
 
-- Completing the full game decompilation and proving that reconstructed code matches the original behavior.
-- Diagnosing why some custom fighters and outfit pieces can appear without their intended textures.
-- Connecting renderer resource tracing to a verified left and right eye presentation path.
-- A controlled renderer launch was attempted with the current diagnostic build and with the preserved comparison build. Both stopped at startup with the same Windows `0xC0000409` error before producing a renderer trace. This points to a shared title/runtime startup issue, not a proven texture regression.
+- Completing the full game decompilation and proving reconstructed code matches original behavior.
+- Diagnosing missing or incorrect custom fighter and outfit textures.
+- Connecting renderer resource tracing to verified left and right eye presentation.
+- Repairing the shared startup failure that currently stops bounded game launches before a renderer trace.
 
 ## Not proven yet
 
-The following acceptance gates remain open:
-
-- A complete, behaviorally equivalent decompilation.
-- A complete playable game build with saved progress and a full bout.
+- A complete behaviorally equivalent decompilation.
+- A complete playable game build, saved progress, or a full bout.
 - Correct custom character and outfit textures in all relevant scenes.
 - Independent left and right eye rendering, verified parallax, and a playable stereo experience.
 - Standalone browser execution without a separately running local game host.
-- A self contained downloadable or installable game package from this repository.
+- A self-contained downloadable or installable game package from this repository.
 
 The repository does not contain the commercial game image or other proprietary game files. It cannot download or install those files. Anyone testing the project must provide their own legally obtained game inputs and keep them outside version control.
 
 ## Next step
 
-Diagnose the shared title/runtime startup issue, then rerun the bounded custom versus stock texture diagnostic only when the local launch contract is repaired. Record the resulting evidence before making any runtime, texture, stereo, or completion claim.
-
+Diagnose the shared startup issue, then rerun the bounded texture comparison only after the local launch contract is repaired.
