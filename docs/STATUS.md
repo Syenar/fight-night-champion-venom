@@ -48,6 +48,6 @@ The reviewed r4 selection is consumed. A new disjoint source-only selection is p
 
 A bounded decompilation batch completed with independent review. Across the twenty-nine reviewed batches, 928 callers and seven retained controls were captured in paired baseline and candidate runs, with raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
 
-The current reviewed function selection has been consumed. The prepared successor selection has 12 full 32-row batches plus a final 20-row tail. The full batches can proceed after review; the current pinned launcher admits exactly 32 callers plus seven controls, so the tail remains source-only until the launcher is extended.
+The current reviewed function selection has been consumed. The prepared successor selection has 12 full 32-row batches plus a final 20-row tail. The full batches can proceed after review; an independently reviewed source-only tail engine now parameterizes the 20-caller's cardinality, but no tail GO or execution has been issued.
 
 
