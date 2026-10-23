@@ -16,7 +16,7 @@ The game opens and reaches playable boxing in the current local test runtime, wi
 - The launcher signaling test suite passes when run with its isolated test ports.
 - Source and evidence are organized for continued decompilation and renderer work.
 - The current local test path opens the game and reaches active boxing; no automatic input or capture is used.
-- Twenty-nine bounded decompilation batches have completed with independent review: 928 callers plus seven retained controls were captured in paired baseline and candidate runs. The newest batch is retained as raw representation evidence only; cumulative semantic coverage remains unchanged and behavior is not claimed.
+- Thirty bounded decompilation batches have completed with independent review: 948 callers plus seven retained controls were captured in paired baseline and candidate runs. The newest batch is retained as raw representation evidence only; cumulative semantic coverage remains unchanged and behavior is not claimed.
 
 ## Being investigated
 
@@ -46,8 +46,8 @@ The reviewed r4 selection is consumed. A new disjoint source-only selection is p
 
 ## Decompilation evidence
 
-A bounded decompilation batch completed with independent review. Across the twenty-nine reviewed batches, 928 callers and seven retained controls were captured in paired baseline and candidate runs, with raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
+A bounded decompilation batch completed with independent review. Across the thirty reviewed batches, 948 callers and seven retained controls were captured in paired baseline and candidate runs, with raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
 
-The current reviewed function selection has been consumed. The prepared successor selection has 12 full 32-row batches plus a final 20-row tail. The full batches can proceed after review; an independently reviewed source-only tail engine now parameterizes the 20-caller's cardinality, but no tail GO or execution has been issued.
+The current reviewed function selection has been consumed. The remaining selection is complete: 12 full 32-row batches plus an independently reviewed 20-row tail were captured.
 
 
