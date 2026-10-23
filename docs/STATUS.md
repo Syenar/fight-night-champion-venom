@@ -15,6 +15,7 @@ The game remains playable in qualified local runs, with boxing interaction and H
 - The local launcher and browser entry points bundle successfully.
 - The launcher signaling test suite passes when run with its isolated test ports.
 - Source and evidence are organized for continued decompilation and renderer work.
+- A bounded TU2 decompile batch completed with independent review: 32 callers plus seven controls were captured in paired baseline and candidate runs. It is retained as raw representation evidence only; it adds zero semantic coverage and does not prove behavior, runtime, or gameplay.
 
 ## Being investigated
 
@@ -39,5 +40,7 @@ The repository does not contain the commercial game image or other proprietary g
 ## Next step
 
 Diagnose the shared title/runtime startup issue, then rerun the bounded custom versus stock texture diagnostic only when the local launch contract is repaired. Record the resulting evidence before making any runtime, texture, stereo, or completion claim.
+
+The reviewed decompile selection is currently exhausted. The next batch requires a new disjoint selection and source-pin review before any new GO or capture.
 
 
