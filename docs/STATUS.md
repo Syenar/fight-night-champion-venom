@@ -1,25 +1,38 @@
-# Current project status
+# Fight Night Champion Venom — current status
 
-The Xbox 360 recompilation and browser SBS project is active and incomplete.
+Updated: 2026-10-23
 
-## Progress
+This project is an active engineering build for a fan made Fight Night Champion recompilation and browser viewing experience. Work is moving forward, but it is not a finished game release.
 
-- Reviewed raw decompilation batches for the current selection are complete.
-- Native runtime and launcher contract checks pass.
-- The current renderer diagnostic source compiled and linked.
-- A fresh isolated diagnostic launch was attempted with a strict time bound. It exited with Windows status 0xC0000409 before producing a renderer trace.
-- The failed launch is preserved as evidence. It does not establish gameplay, texture correctness, stereo rendering, parallax, or browser acceptance.
+## Working now
 
-## Remaining gates
+- The native runtime scaffold builds successfully in debug and release configurations.
+- Native lifecycle, foreign function interface, and stereo bridge checks pass.
+- The local launcher and browser entry points bundle successfully.
+- The launcher signaling test suite passes when run with its isolated test ports.
+- Source and evidence are organized for continued decompilation and renderer work.
 
-- Semantic equivalence and exception-handling coverage remain open.
-- Full-game native execution, saves, reload, and complete offline feature coverage remain open.
-- Custom-outfit texture identity and custom-versus-stock draw comparison remain open.
-- True left/right SBS with independent eye resources, depth, and parallax remains open.
-- Standalone WASM/WebGPU game execution remains open.
+## Being investigated
 
-## Installation boundary
+- Completing the full game decompilation and proving that reconstructed code matches the original behavior.
+- Diagnosing why some custom fighters and outfit pieces can appear without their intended textures.
+- Connecting renderer resource tracing to a verified left and right eye presentation path.
+- Preparing a controlled texture comparison and a bounded renderer run using locally supplied test inputs.
 
-This repository contains source, runtime scaffolding, browser tooling, and documentation. It does not download, install, or distribute the proprietary game image, title updates, DLC, generated game code, or research captures. Those inputs must remain local and user-owned.
+## Not proven yet
 
-See the execution checklist and repair plan for the next engineering steps.
+The following acceptance gates remain open:
+
+- A complete, behaviorally equivalent decompilation.
+- A complete playable game build with saved progress and a full bout.
+- Correct custom character and outfit textures in all relevant scenes.
+- Independent left and right eye rendering, verified parallax, and a playable stereo experience.
+- Standalone browser execution without a separately running local game host.
+- A self contained downloadable or installable game package from this repository.
+
+The repository does not contain the commercial game image or other proprietary game files. It cannot download or install those files. Anyone testing the project must provide their own legally obtained game inputs and keep them outside version control.
+
+## Next step
+
+Finish the independent review of the newest renderer readiness packet, then run the bounded custom versus stock texture diagnostic only when its local prerequisites are satisfied. Record the resulting evidence before making any runtime, texture, stereo, or completion claim.
+
