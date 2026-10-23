@@ -42,12 +42,12 @@ The repository does not contain the commercial game image or other proprietary g
 
 Diagnose the shared title/runtime startup issue, then rerun the bounded custom versus stock texture diagnostic only when the local launch contract is repaired. Record the resulting evidence before making any runtime, texture, stereo, or completion claim.
 
-The reviewed decompile selection is currently exhausted. The next batch requires a new disjoint selection and source-pin review before any new GO or capture.
+The current reviewed successor selection has been consumed by the latest bounded capture. The next batch requires another disjoint selection and source-pin review before any new GO or capture.
 
 ## Decompilation evidence
 
 A bounded decompilation batch completed with independent review. Across the two reviewed batches, 64 callers and seven retained controls were captured in paired baseline and candidate runs, with raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
 
-The current reviewed function selection is exhausted. The next batch requires a new disjoint source selection and independent review before execution.
+The current reviewed function selection has been consumed. The next batch requires a new disjoint source selection and independent review before execution.
 
 
