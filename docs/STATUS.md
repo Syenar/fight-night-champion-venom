@@ -23,7 +23,7 @@ The game opens and reaches playable boxing in the current local test runtime, wi
 - Completing the full game decompilation and proving that reconstructed code matches the original behavior.
 - Diagnosing why some custom fighters and outfit pieces can appear without their intended textures.
 - Connecting renderer resource tracing to a verified left and right eye presentation path.
-- The normal launcher still stops before startup with Windows `0xC0000409` because its rotating log sink cannot open the configured path. A separate writable local test runtime, launched under the debugger with exception handling, opened the game and reached active boxing; that test was cleanly shut down and is recorded privately. This confirms current playability while leaving the normal launcher repair and texture trace open.
+- The normal one-click launcher still has a separate logging-path defect (`0xC0000409`) in its rotating log sink. That is not a game startup or playability failure: the writable local test runtime launched successfully, reached an active fight, and was cleanly shut down. The private receipt records that successful playable run; only the launcher logging repair and texture trace remain open.
 
 ## Not proven yet
 
