@@ -43,4 +43,10 @@ Diagnose the shared title/runtime startup issue, then rerun the bounded custom v
 
 The reviewed decompile selection is currently exhausted. The next batch requires a new disjoint selection and source-pin review before any new GO or capture.
 
+## Decompilation evidence
+
+A bounded decompilation batch completed with independent review. It captured 32 callers and seven retained controls in paired baseline and candidate runs, with all 39 raw instruction arrays matching. This is raw representation evidence only: it adds zero semantic coverage, does not establish equivalent behavior or exception handling, and does not prove runtime or gameplay acceptance.
+
+The current reviewed function selection is exhausted. The next batch requires a new disjoint source selection and independent review before execution.
+
 
