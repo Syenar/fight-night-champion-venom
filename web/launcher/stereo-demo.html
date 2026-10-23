@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Venom | Independent-eye SBS renderer</title>
+  <style>
+    :root{color-scheme:dark;font:15px/1.45 system-ui,sans-serif;background:#080c12;color:#e8eef7}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0,#172337,#080c12 65%)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:18px clamp(16px,4vw,56px);border-bottom:1px solid #263344}
+    h1{font-size:16px;letter-spacing:.12em;text-transform:uppercase;margin:0;color:#d9e7f7}header small{color:#93a6bc}
+    main{max-width:1320px;margin:28px auto;padding:0 18px}.stage{position:relative;aspect-ratio:16/5;min-height:280px;background:#05080d;border:1px solid #31435a;box-shadow:0 22px 70px #0009;overflow:hidden}
+    canvas{display:block;width:100%;height:100%}.eye-label{position:absolute;top:14px;padding:5px 9px;background:#09111dcc;border:1px solid #60758c;color:#c4e5ff;font-size:11px;letter-spacing:.16em}
+    .eye-label.left{left:14px}.eye-label.right{left:calc(50% + 14px)}.divider{position:absolute;inset:0 auto 0 50%;width:1px;background:#d7e8ff55;pointer-events:none}
+    .hud{position:absolute;top:42px;width:50%;display:flex;justify-content:center;pointer-events:none}.hud.left{left:0}.hud.right{left:50%}.hud-card{display:flex;align-items:center;gap:14px;padding:6px 12px;background:#09111dc9;border:1px solid #71849a;color:#f2f5fa;font-weight:650;font-size:12px;letter-spacing:.07em}
+    .red{color:#ff987f}.blue{color:#83c8ff}.timer{font-variant-numeric:tabular-nums;font-size:16px}.legend{display:flex;gap:18px;flex-wrap:wrap;color:#9baec3;font-size:12px;margin-top:12px}
+    .controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px;padding:14px 16px;background:#101721;border:1px solid #263344}.controls label{display:flex;align-items:center;gap:10px}.controls input{accent-color:#61c3ff}.controls button{border:1px solid #4c6681;background:#172638;color:#e8f4ff;padding:7px 12px;border-radius:3px;font:inherit;cursor:pointer}.metric{margin-left:auto;color:#b7c8d9;font-variant-numeric:tabular-nums}
+    .note{color:#90a1b5;font-size:12px;margin:16px 0}.error{color:#ffb3a7}
+  </style>
+</head>
+<body>
+  <header><h1>Venom / independent-eye renderer</h1><small>Local WebGL stereo proof of path</small></header>
+  <main>
+    <section class="stage" aria-label="Side-by-side stereo scene">
+      <canvas id="scene" aria-label="Two independently rendered eye views"></canvas>
+      <div class="eye-label left">LEFT EYE · CAMERA −X</div><div class="eye-label right">RIGHT EYE · CAMERA +X</div>
+      <div class="divider"></div>
+      <div class="hud left"><div class="hud-card"><span class="red">RED CORNER</span><span>1</span><span class="timer">2:41</span><span>0</span><span class="blue">BLUE CORNER</span></div></div>
+      <div class="hud right"><div class="hud-card"><span class="red">RED CORNER</span><span>1</span><span class="timer">2:41</span><span>0</span><span class="blue">BLUE CORNER</span></div></div>
+    </section>
+    <div class="legend"><span>Same scene state and frame ID in both passes</span><span>Separate camera matrices and viewport renders</span><span>HUD duplicated at zero disparity</span></div>
+    <section class="controls">
+      <label for="ipd">Eye separation <input id="ipd" type="range" min="0" max="0.24" step="0.005" value="0.12"><output id="ipd-value">0.120</output></label>
+      <button id="pause" type="button">Pause scene</button>
+      <button id="fullscreen" type="button">Fullscreen</button>
+      <output class="metric" id="metric">Starting WebGL…</output>
+    </section>
+    <p class="note">This demo draws a synthetic boxing-ring scene. It demonstrates independent eye rendering, SBS packing, and a zero-disparity UI policy; it does not load or render Fight Night Champion.</p>
+  </main>
+  <script type="module" src="/stereo-demo.js"></script>
+</body>
+</html>
+
