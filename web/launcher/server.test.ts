@@ -1,7 +1,9 @@
 import { expect, test } from "bun:test";
 
+const testPort = (offset: number) => 40000 + ((process.pid + offset) % 2000);
+
 test("health endpoint reports the signaling service", async () => {
-  const port = 18787;
+  const port = testPort(0);
   const proc = Bun.spawn(["bun", "run", "server.ts"], { cwd: import.meta.dir, env: { ...process.env, PORT: String(port) }, stdout: "pipe", stderr: "pipe" });
   try {
     for (let i = 0; i < 30; i++) {
@@ -17,7 +19,7 @@ test("health endpoint reports the signaling service", async () => {
 });
 
 test("host route serves the local capture adapter", async () => {
-  const port = 18789;
+  const port = testPort(1);
   const proc = Bun.spawn(["bun", "run", "server.ts"], { cwd: import.meta.dir, env: { ...process.env, PORT: String(port) }, stdout: "pipe", stderr: "pipe" });
   try {
     for (let i = 0; i < 30; i++) {
@@ -28,7 +30,7 @@ test("host route serves the local capture adapter", async () => {
 });
 
 test("offer is relayed only between roles in the same session", async () => {
-  const port = 18788;
+  const port = testPort(2);
   const proc = Bun.spawn(["bun", "run", "server.ts"], { cwd: import.meta.dir, env: { ...process.env, PORT: String(port) }, stdout: "pipe", stderr: "pipe" });
   try {
     for (let i = 0; i < 30; i++) {
@@ -47,3 +49,4 @@ test("offer is relayed only between roles in the same session", async () => {
     browser.close(); host.close();
   } finally { proc.kill(); }
 });
+
