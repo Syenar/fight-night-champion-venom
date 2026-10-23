@@ -1,5 +1,6 @@
 const port = Number(process.env.PORT ?? 8787);
 const sessions = new Map<string, Set<ServerWebSocket<{ role: string; session: string }>>>();
+const videoFormats = new Map<string, { type: "host-video-format"; width: number; height: number; frameRate: number; layout: "side-by-side" }>();
 
 function sessionPeers(session: string) {
   let peers = sessions.get(session);
@@ -48,16 +49,40 @@ const server = Bun.serve<{ role: string; session: string }>({
       return new Response("websocket upgrade failed", { status: 500 });
     }
     if (url.pathname === "/host") return new Response(Bun.file(new URL("./host.html", import.meta.url)));
+    if (url.pathname === "/stereo-demo") return new Response(Bun.file(new URL("./stereo-demo.html", import.meta.url)));
+    if (url.pathname === "/stereo-demo.js") return new Response(Bun.file(new URL("./stereo-demo.js", import.meta.url)), {
+      headers: { "content-type": "text/javascript; charset=utf-8" }
+    });
     return new Response(Bun.file(new URL("./index.html", import.meta.url)));
   },
   websocket: {
-    open(ws) { sessionPeers(ws.data.session).add(ws); },
+    open(ws) {
+      sessionPeers(ws.data.session).add(ws);
+      if (ws.data.role === "browser") {
+        const format = videoFormats.get(ws.data.session);
+        if (format) ws.send(JSON.stringify(format));
+      }
+    },
     message(ws, message) {
       try {
         const value = JSON.parse(String(message));
         if (!value || typeof value.type !== "string") throw new Error("message type required");
-        if (!["offer", "answer", "ice", "host-ready", "host-stats", "host-input"].includes(value.type)) throw new Error("unsupported message type");
+        if (!["offer", "answer", "ice", "host-ready", "host-stats", "host-input", "host-video-format"].includes(value.type)) throw new Error("unsupported message type");
         if (value.type === "host-input" && ws.data.role !== "host") throw new Error("host-input requires host role");
+        if (value.type === "host-video-format") {
+          if (ws.data.role !== "host") throw new Error("host-video-format requires host role");
+          const { width, height, frameRate, layout } = value;
+          if (!Number.isInteger(width) || width < 1 || width > 16384 || !Number.isInteger(height) || height < 1 || height > 16384) {
+            throw new Error("host-video-format requires valid frame dimensions");
+          }
+          if (typeof frameRate !== "number" || !Number.isFinite(frameRate) || frameRate < 0 || frameRate > 240 || layout !== "side-by-side") {
+            throw new Error("host-video-format requires a supported side-by-side layout and frame rate");
+          }
+          const format = { type: "host-video-format" as const, width, height, frameRate, layout: "side-by-side" as const };
+          videoFormats.set(ws.data.session, format);
+          relay(ws, format);
+          return;
+        }
         if (value.type === "host-input") bridgeHostInput(value);
         relay(ws, value);
       } catch (error) {
@@ -67,9 +92,17 @@ const server = Bun.serve<{ role: string; session: string }>({
     close(ws) {
       const peers = sessions.get(ws.data.session);
       peers?.delete(ws);
-      if (peers && peers.size === 0) sessions.delete(ws.data.session);
+      if (ws.data.role === "host") {
+        videoFormats.delete(ws.data.session);
+        relay(ws, { type: "host-ended" });
+      }
+      if (peers && peers.size === 0) {
+        sessions.delete(ws.data.session);
+        videoFormats.delete(ws.data.session);
+      }
     }
   }
 });
 
 console.log(`Fight Night SBS signaling server listening on http://localhost:${server.port}`);
+
