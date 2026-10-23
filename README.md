@@ -6,6 +6,8 @@ This repository contains source code, browser interface, native runtime contract
 
 Development is active and incomplete. The repository currently provides buildable runtime and launcher scaffolding. Full-game semantic decompilation, complete native gameplay, texture correctness, independent stereo rendering, parallax, and standalone browser acceptance still require additional work.
 
+**Gameplay status:** No complete playable bout is currently verified. Confirmed full-game playable coverage is **0 of the required acceptance gates**; partial private runtime experiments do not qualify as a playable release.
+
 ## What you need
 
 The repository does not contain or download the commercial game. To perform a private local run, you must supply game data that you own, including the Xbox 360 game image or extracted executable, the matching title update, and any required downloadable content. Keep those files outside version control and do not redistribute them.
@@ -40,3 +42,5 @@ The launcher serves local host and client pages for the current SBS transport pr
 - [Browser and SBS plan](docs/FULL_GAME_BROWSER_SBS_PLAN.md)
 
 All proprietary game files, extracted assets, generated game code, and private runtime captures remain local and are excluded from releases.
+
+
