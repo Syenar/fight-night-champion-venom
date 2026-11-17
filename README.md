@@ -6,7 +6,7 @@ This repository contains source code, browser interface, native runtime contract
 
 Development is active and incomplete. The repository currently provides buildable runtime and launcher scaffolding. Full-game semantic decompilation, complete native gameplay, texture correctness, independent stereo rendering, parallax, and standalone browser acceptance still require additional work.
 
-**Gameplay status:** The game opens and reaches playable boxing in the current local test runtime, with boxing interaction and HUD progression demonstrated. Gameplay is working; the separate one-click launcher has a logging-path repair pending before it becomes the standard route. A complete bout, save/reload coverage, and a distributable build are still open.
+**November 17, 2026** — The native TU2 test runtime reached a controller-driven bout. A player confirmed that the created boxer LAST rendered correctly against George Foreman, including the face, neck, and body skin that had shown black and cyan artifacts in earlier tests. [Verified build and test scope](native/GITHUB_MILESTONE_20261117.md)
 
 ## What you need
 
