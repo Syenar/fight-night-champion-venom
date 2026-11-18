@@ -29,7 +29,7 @@
   "stacks": {
     "runtime": {
       "patch": "runtime/sdk.patch",
-      "patchSha256": "bf24eb508192b2661ad8315f183278364ee9eb6a83235352c20ba87ab0f41822",
+      "patchSha256": "cf85ec4764e685d7e8619bcc8356122ecbdb86c89b52b07e470239ef75fc3af1",
       "files": [
         {
           "path": "CMakeLists.txt",
@@ -178,7 +178,7 @@
         {
           "path": "src/input/input_system.cpp",
           "beforeSha256": "a2101f593abff808585a78de1aa1c25e41521fd4ed9be45f2102a6c968d033dc",
-          "afterSha256": "ab66a22b005cb5b1503d45579d135d79fc85d6b0ec9a91700ee5548007cdd527",
+          "afterSha256": "f939898d5ba75d5efd4a02e16060ce2fa4421e27c7662cc953b2458e69583088",
           "newFile": false
         },
         {

@@ -1646,7 +1646,13 @@
  namespace rex::input {
  
  namespace {
-@@ -41,13 +74,14 @@
+@@ -37,17 +70,21 @@
+ // flag and never reads this value.
+ constexpr uint32_t kSyntheticOrdinal = UINT32_MAX;
+ 
++std::mutex input_device_state_mutex;
++
+ }  // namespace
  
  InputSystem::InputSystem(rex::ui::Window* window) : window_(window) {}
  
@@ -1659,10 +1665,99 @@
  
  void InputSystem::Shutdown() {
 +  output::CloseAdmission();
++  const std::lock_guard lock(input_device_state_mutex);
    // device_owners_ holds raw driver pointers.
    devices_.clear();
    device_owners_.clear();
-@@ -245,6 +279,168 @@
+@@ -55,6 +92,7 @@
+ }
+ 
+ void InputSystem::AddDriver(std::unique_ptr<InputDriver> driver) {
++  const std::lock_guard lock(input_device_state_mutex);
+   drivers_.push_back(std::move(driver));
+ }
+ 
+@@ -66,12 +104,14 @@
+ }
+ 
+ void InputSystem::SetActiveCallback(std::function<bool()> callback) {
++  const std::lock_guard lock(input_device_state_mutex);
+   for (auto& driver : drivers_) {
+     driver->set_is_active_callback(callback);
+   }
+ }
+ 
+ void InputSystem::SetDeviceAssignment(std::unique_ptr<DeviceAssignment> assignment) {
++  const std::lock_guard lock(input_device_state_mutex);
+   assignment_ = std::move(assignment);
+   if (assignment_) {
+     assignment_->OnDevicesChanged(devices_);
+@@ -187,6 +227,7 @@
+ X_RESULT InputSystem::GetCapabilities(uint32_t user_index, uint32_t flags,
+                                       X_INPUT_CAPABILITIES* out_caps) {
+   SCOPE_profile_cpu_f("hid");
++  const std::lock_guard lock(input_device_state_mutex);
+   if (!out_caps || !assignment_) {
+     return X_ERROR_DEVICE_NOT_CONNECTED;
+   }
+@@ -214,37 +255,202 @@
+ 
+ X_RESULT InputSystem::GetState(uint32_t user_index, X_INPUT_STATE* out_state) {
+   SCOPE_profile_cpu_f("hid");
+-  if (!assignment_) {
+-    return X_ERROR_DEVICE_NOT_CONNECTED;
+-  }
+-
+-  RefreshDevices();
+-  std::vector<DeviceId> ids;
+-  assignment_->DevicesForUser(user_index, ids);
+-
+   X_INPUT_STATE merged = {};
+   bool any = false;
+-  for (DeviceId id : ids) {
+-    auto* driver = DriverForDevice(id);
+-    if (!driver) {
+-      continue;
+-    }
+-    X_INPUT_STATE state = {};
+-    if (driver->GetDeviceState(id, &state) != X_ERROR_SUCCESS) {
+-      continue;
+-    }
+-    active_devices_.Observe(user_index, id, state.gamepad);
+-    if (!any) {
+-      merged = state;
+-      any = true;
+-    } else {
+-      MergeInto(merged, state);
++  {
++    const std::lock_guard lock(input_device_state_mutex);
++    if (!assignment_) {
++      return X_ERROR_DEVICE_NOT_CONNECTED;
++    }
++
++    RefreshDevices();
++    std::vector<DeviceId> ids;
++    assignment_->DevicesForUser(user_index, ids);
++
++    for (DeviceId id : ids) {
++      auto* driver = DriverForDevice(id);
++      if (!driver) {
++        continue;
++      }
++      X_INPUT_STATE state = {};
++      if (driver->GetDeviceState(id, &state) != X_ERROR_SUCCESS) {
++        continue;
++      }
++      active_devices_.Observe(user_index, id, state.gamepad);
++      if (!any) {
++        merged = state;
++        any = true;
++      } else {
++        MergeInto(merged, state);
++      }
+     }
+   }
+ 
    if (!any) {
      return X_ERROR_DEVICE_NOT_CONNECTED;
    }
@@ -1831,7 +1926,7 @@
    if (out_state) {
      *out_state = merged;
    }
-@@ -252,6 +448,9 @@
+@@ -252,7 +458,11 @@
  }
  
  X_RESULT InputSystem::SetState(uint32_t user_index, X_INPUT_VIBRATION* vibration) {
@@ -1839,12 +1934,23 @@
 +    return X_ERROR_FUNCTION_FAILED;
 +  }
    SCOPE_profile_cpu_f("hid");
++  const std::lock_guard lock(input_device_state_mutex);
    if (!assignment_) {
      return X_ERROR_DEVICE_NOT_CONNECTED;
-@@ -303,6 +502,43 @@
+   }
+@@ -295,6 +505,7 @@
+ X_RESULT InputSystem::GetKeystroke(uint32_t user_index, uint32_t flags,
+                                    X_INPUT_KEYSTROKE* out_keystroke) {
+   SCOPE_profile_cpu_f("hid");
++  const std::lock_guard lock(input_device_state_mutex);
+   if (!assignment_) {
+     return X_ERROR_DEVICE_NOT_CONNECTED;
+   }
+@@ -302,6 +513,43 @@
+   RefreshDevices();
    std::vector<DeviceId> ids;
    assignment_->DevicesForUser(user_index, ids);
- 
++
 +  if (user_index == 0 && out_keystroke) {
 +    static const auto first_keystroke_poll = std::chrono::steady_clock::now();
 +    static std::atomic<bool> replay_dpad_sent{false};
@@ -1881,11 +1987,10 @@
 +      return X_ERROR_SUCCESS;
 +    }
 +  }
-+
+ 
    bool any_connected = false;
    for (DeviceId id : ids) {
-     auto* driver = DriverForDevice(id);
-@@ -356,3 +592,5 @@
+@@ -356,3 +604,5 @@
  }
  
  }  // namespace rex::input
