@@ -21,7 +21,7 @@ python -B native/installer/windows/build-installer.py `
   --sdk-version 10.0.26100.0
 
 python -B native/installer/windows/package-installer.py `
-  --version v0.1.0-preview.2 `
+  --version v0.1.1 `
   --installer-build E:/Venom-QA/installer-compile-r1 `
   --output E:/Venom-QA/installer-packages-r1
 ```

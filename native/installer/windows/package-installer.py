@@ -33,10 +33,10 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--output', type=Path, required=True, help='Fresh private package directory.')
     p.add_argument('--installer-build', type=Path, required=True, help='Private build directory containing verified installer receipt/exe.')
-    p.add_argument('--version', required=True, help='Release tag, such as v0.1.0-preview.2.')
+    p.add_argument('--version', required=True, help='Release tag, such as v0.1.1.')
     a = p.parse_args()
     if not re.fullmatch(r'v(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?', a.version):
-        p.error('--version must be a release tag such as v0.1.0-preview.2')
+        p.error('--version must be a release tag such as v0.1.1')
     out = a.output.resolve()
     if out.exists():
         raise ValueError('Preserve existing output; select a fresh directory.')
