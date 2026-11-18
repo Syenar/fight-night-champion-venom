@@ -33,3 +33,17 @@ Use the same command with --resume to revalidate completed stages. Incomplete fo
 The initial qualification executed the complete public SDK/helper/title build and normal installer with an explicit APT source directory. The bundled helpers then byte-matched all four tested files and reproduced the exact XP overlay hash. A subsequent normal resume reused the qualified compiled artifacts and created a fresh installation using output-staged bundled tools. The final readable driver is checked by AST equivalence and a further qualified resume/preflight. No game was launched by these checks, and no compilation is claimed for a resume whose fresh-build fields are false.
 
 Only source and non-proprietary manifests belong in these recipes. Game media, generated title sources, binaries, decoded data, and captures must not be committed or bundled with them. See the sibling content-tool attribution and SDK diagnostic limitations.
+
+## Launch with SDL
+
+The installed launcher uses XInput by default. If your controller needs SDL, open PowerShell 7 and run the installed script with the SDL backend. Replace the example path with your installation path.
+
+```powershell
+& 'D:/PrivateVenomBuild/build-r1/installed/Start-Installed-TU2.ps1' -InputBackend sdl
+```
+
+If SDL needs a custom mapping for your controller, pass the absolute path to an existing mapping file.
+
+```powershell
+& 'D:/PrivateVenomBuild/build-r1/installed/Start-Installed-TU2.ps1' -InputBackend sdl -ControllerMappingFile 'D:/Controllers/gamecontrollerdb.txt'
+```
