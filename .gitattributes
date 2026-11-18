@@ -1,0 +1,5 @@
+# Installer source locks hash exact bytes. Preserve those bytes on checkout.
+native/content-tool/** -text
+native/installer/** -text
+native/sdk/** -text
+native/title/** -text

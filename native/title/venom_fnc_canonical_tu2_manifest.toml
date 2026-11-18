@@ -1,0 +1,2143 @@
+[project]
+name = "venom_fnc_canonical_tu2"
+sdk_version = "1.0.0"
+game_root = "assets"
+[entrypoint]
+file_path = "assets/default.xex"
+out_directory_path = "generated/default"
+includes = []
+
+# Observed unresolved tail targets. No artificial size; discover full reachable bodies.
+[entrypoint.functions."0x82BDC028"]
+name = "tail_82BDC028"
+[entrypoint.functions."0x8230E2C8"]
+name = "tail_8230E2C8"
+[entrypoint.functions."0x82361D98"]
+name = "tail_82361D98"
+[entrypoint.functions."0x829177F8"]
+name = "tail_829177F8"
+
+# Observed real startup indirect target, probe18/19. Discover full body.
+[entrypoint.functions."0x822C6FA8"]
+name = "startup_indirect_822C6FA8"
+
+# Observed startup indirect target after prior entry repair, probe21.
+[entrypoint.functions."0x82EB2A10"]
+name = "startup_indirect_82EB2A10"
+
+# Observed after GPU interrupt initialization in probes23/24.
+[entrypoint.functions."0x826169A8"]
+name = "startup_indirect_826169A8"
+
+# Observed after third entry repair, probe26.
+[entrypoint.functions."0x828B8A48"]
+name = "startup_indirect_828B8A48"
+
+# Observed after fourth entry repair, probe28.
+[entrypoint.functions."0x828B89B8"]
+name = "startup_indirect_828B89B8"
+
+# Runtime-observed target 0x8298CDC0; full body discovery, no forced size.
+[entrypoint.functions."0x8298CDC0"]
+name = "startup_indirect_8298CDC0"
+
+# Runtime-observed target 0x828B8970; full body discovery, no forced size.
+[entrypoint.functions."0x828B8970"]
+name = "startup_indirect_828B8970"
+
+# Runtime-observed target 0x822CDD78; full body discovery, no forced size.
+[entrypoint.functions."0x822CDD78"]
+name = "startup_indirect_822CDD78"
+
+# Runtime-observed target 0x827282B8; full body discovery, no forced size.
+[entrypoint.functions."0x827282B8"]
+name = "startup_indirect_827282B8"
+
+# Runtime-observed target 0x82CFF778; full body discovery, no forced size.
+[entrypoint.functions."0x82CFF778"]
+name = "startup_indirect_82CFF778"
+
+# Runtime-observed target 0x827CD9D8; full body discovery, no forced size.
+[entrypoint.functions."0x827CD9D8"]
+name = "startup_indirect_827CD9D8"
+
+# Runtime-observed target 0x82616948; full body discovery, no forced size.
+[entrypoint.functions."0x82616948"]
+name = "startup_indirect_82616948"
+
+# Runtime-observed target 0x82B00028; full body discovery, no forced size.
+[entrypoint.functions."0x82B00028"]
+name = "startup_indirect_82B00028"
+
+# Runtime-observed target 0x8235EB40; full body discovery, no forced size.
+[entrypoint.functions."0x8235EB40"]
+name = "startup_indirect_8235EB40"
+
+# Runtime-observed target 0x82893328; full body discovery, no forced size.
+[entrypoint.functions."0x82893328"]
+name = "startup_indirect_82893328"
+
+# Runtime-observed target 0x82E1CC78; full body discovery, no forced size.
+[entrypoint.functions."0x82E1CC78"]
+name = "startup_indirect_82E1CC78"
+
+# Runtime-observed target 0x82DB45C0; full body discovery, no forced size.
+[entrypoint.functions."0x82DB45C0"]
+name = "startup_indirect_82DB45C0"
+
+# Runtime-observed target 0x828B8950; full body discovery, no forced size.
+[entrypoint.functions."0x828B8950"]
+name = "startup_indirect_828B8950"
+
+# Runtime-observed target 0x828B8930; full body discovery, no forced size.
+[entrypoint.functions."0x828B8930"]
+name = "startup_indirect_828B8930"
+
+# Runtime-observed target 0x828A7A00; full body discovery, no forced size.
+[entrypoint.functions."0x828A7A00"]
+name = "startup_indirect_828A7A00"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D878"]
+name = "callback_table_8291D878"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D8C0"]
+name = "callback_table_8291D8C0"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D860"]
+name = "callback_table_8291D860"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D890"]
+name = "callback_table_8291D890"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D830"]
+name = "callback_table_8291D830"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D848"]
+name = "callback_table_8291D848"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D8A8"]
+name = "callback_table_8291D8A8"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D8D8"]
+name = "callback_table_8291D8D8"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D8F0"]
+name = "callback_table_8291D8F0"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B88E0"]
+name = "callback_table_828B88E0"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B8A18"]
+name = "callback_table_828B8A18"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B8A30"]
+name = "callback_table_828B8A30"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B8988"]
+name = "callback_table_828B8988"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B89A0"]
+name = "callback_table_828B89A0"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B89D0"]
+name = "callback_table_828B89D0"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B89E8"]
+name = "callback_table_828B89E8"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B8A00"]
+name = "callback_table_828B8A00"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B8A60"]
+name = "callback_table_828B8A60"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B8A78"]
+name = "callback_table_828B8A78"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B8A90"]
+name = "callback_table_828B8A90"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B8AA8"]
+name = "callback_table_828B8AA8"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828B8AC0"]
+name = "callback_table_828B8AC0"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D908"]
+name = "callback_table_8291D908"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D920"]
+name = "callback_table_8291D920"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D938"]
+name = "callback_table_8291D938"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291D950"]
+name = "callback_table_8291D950"
+
+# Exact callback-table slot; constructor references and Ghidra entry-byte proof retained.
+[entrypoint.functions."0x8291DB40"]
+name = "callback_table_8291DB40"
+
+# Runtime-observed target 0x82E1A030; full body discovery, no forced size.
+[entrypoint.functions."0x82E1A030"]
+name = "startup_indirect_82E1A030"
+
+# Runtime-observed target 0x824DFF78; full body discovery, no forced size.
+[entrypoint.functions."0x824DFF78"]
+name = "startup_indirect_824DFF78"
+
+# Runtime-observed target 0x827CC418; full body discovery, no forced size.
+[entrypoint.functions."0x827CC418"]
+name = "startup_indirect_827CC418"
+
+# Runtime-observed target 0x82B53AC0; full body discovery, no forced size.
+[entrypoint.functions."0x82B53AC0"]
+name = "startup_indirect_82B53AC0"
+
+# Runtime-observed target 0x82B98D48; full body discovery, no forced size.
+[entrypoint.functions."0x82B98D48"]
+name = "startup_indirect_82B98D48"
+
+# Constructor-anchored menu callback slot; exact Ghidra entry-byte proof retained.
+[entrypoint.functions."0x82876D40"]
+name = "callback_menu_82876D40"
+
+# Constructor-anchored menu callback slot; exact Ghidra entry-byte proof retained.
+[entrypoint.functions."0x82876D50"]
+name = "callback_menu_82876D50"
+
+# Constructor-anchored menu callback slot; exact Ghidra entry-byte proof retained.
+[entrypoint.functions."0x82880250"]
+name = "callback_menu_82880250"
+
+# Constructor-anchored menu callback slot; exact Ghidra entry-byte proof retained.
+[entrypoint.functions."0x82881778"]
+name = "callback_menu_82881778"
+
+# Constructor-anchored menu callback slot; exact Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828888D8"]
+name = "callback_menu_828888D8"
+
+# Constructor-anchored menu callback slot; exact Ghidra entry-byte proof retained.
+[entrypoint.functions."0x828888E0"]
+name = "callback_menu_828888E0"
+
+# Constructor-anchored menu callback slot; exact Ghidra entry-byte proof retained.
+[entrypoint.functions."0x82B92388"]
+name = "callback_menu_82B92388"
+
+# Constructor-anchored menu callback slot; exact Ghidra entry-byte proof retained.
+[entrypoint.functions."0x82B98D60"]
+name = "callback_menu_82B98D60"
+
+# Constructor-anchored menu callback slot; exact Ghidra entry-byte proof retained.
+[entrypoint.functions."0x82B98D78"]
+name = "callback_menu_82B98D78"
+
+# Runtime-observed target 0x8239BA60; full body discovery, no forced size.
+[entrypoint.functions."0x8239BA60"]
+name = "startup_indirect_8239BA60"
+
+# Runtime-observed target 0x823A15A8; full body discovery, no forced size.
+[entrypoint.functions."0x823A15A8"]
+name = "startup_indirect_823A15A8"
+
+# Runtime-observed target 0x82417D70; full body discovery, no forced size.
+[entrypoint.functions."0x82417D70"]
+name = "startup_indirect_82417D70"
+
+# Runtime-observed target 0x82417D40; full body discovery, no forced size.
+[entrypoint.functions."0x82417D40"]
+name = "startup_indirect_82417D40"
+
+# Runtime-observed target 0x82396EC0; full body discovery, no forced size.
+[entrypoint.functions."0x82396EC0"]
+name = "startup_indirect_82396EC0"
+
+# Runtime-observed target 0x82396F60; full body discovery, no forced size.
+[entrypoint.functions."0x82396F60"]
+name = "startup_indirect_82396F60"
+
+# Runtime-observed target 0x8239BA88; full body discovery, no forced size.
+[entrypoint.functions."0x8239BA88"]
+name = "startup_indirect_8239BA88"
+
+# Runtime-observed target 0x82394B28; full body discovery, no forced size.
+[entrypoint.functions."0x82394B28"]
+name = "startup_indirect_82394B28"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x822D65E0"]
+name = "leaf_callback_822D65E0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8230EE60"]
+name = "leaf_callback_8230EE60"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8230EE50"]
+name = "leaf_callback_8230EE50"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8230EE48"]
+name = "leaf_callback_8230EE48"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8230EE58"]
+name = "leaf_callback_8230EE58"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8230F068"]
+name = "leaf_callback_8230F068"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8230EE80"]
+name = "leaf_callback_8230EE80"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8230EE78"]
+name = "leaf_callback_8230EE78"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82389630"]
+name = "leaf_callback_82389630"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394BE8"]
+name = "leaf_callback_82394BE8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394BD0"]
+name = "leaf_callback_82394BD0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394BB8"]
+name = "leaf_callback_82394BB8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82389570"]
+name = "leaf_callback_82389570"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394C10"]
+name = "leaf_callback_82394C10"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394BA0"]
+name = "leaf_callback_82394BA0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B70"]
+name = "leaf_callback_82394B70"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B38"]
+name = "leaf_callback_82394B38"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394AF0"]
+name = "leaf_callback_82394AF0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8238D200"]
+name = "leaf_callback_8238D200"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B78"]
+name = "leaf_callback_82394B78"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82389598"]
+name = "leaf_callback_82389598"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B40"]
+name = "leaf_callback_82394B40"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B00"]
+name = "leaf_callback_82394B00"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394C08"]
+name = "leaf_callback_82394C08"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B30"]
+name = "leaf_callback_82394B30"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394C00"]
+name = "leaf_callback_82394C00"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B98"]
+name = "leaf_callback_82394B98"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B68"]
+name = "leaf_callback_82394B68"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B80"]
+name = "leaf_callback_82394B80"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B58"]
+name = "leaf_callback_82394B58"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B18"]
+name = "leaf_callback_82394B18"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394C18"]
+name = "leaf_callback_82394C18"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394BF8"]
+name = "leaf_callback_82394BF8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F30"]
+name = "leaf_callback_82396F30"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396EF8"]
+name = "leaf_callback_82396EF8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F10"]
+name = "leaf_callback_82396F10"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B60"]
+name = "leaf_callback_82394B60"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394C20"]
+name = "leaf_callback_82394C20"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B48"]
+name = "leaf_callback_82394B48"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8238D208"]
+name = "leaf_callback_8238D208"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B08"]
+name = "leaf_callback_82394B08"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B88"]
+name = "leaf_callback_82394B88"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82394B20"]
+name = "leaf_callback_82394B20"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8238B338"]
+name = "leaf_callback_8238B338"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396E98"]
+name = "leaf_callback_82396E98"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396EF0"]
+name = "leaf_callback_82396EF0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396EC8"]
+name = "leaf_callback_82396EC8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396EA0"]
+name = "leaf_callback_82396EA0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F48"]
+name = "leaf_callback_82396F48"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396E80"]
+name = "leaf_callback_82396E80"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F38"]
+name = "leaf_callback_82396F38"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F78"]
+name = "leaf_callback_82396F78"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F50"]
+name = "leaf_callback_82396F50"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396ED8"]
+name = "leaf_callback_82396ED8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F28"]
+name = "leaf_callback_82396F28"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F08"]
+name = "leaf_callback_82396F08"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396EE8"]
+name = "leaf_callback_82396EE8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396ED0"]
+name = "leaf_callback_82396ED0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F20"]
+name = "leaf_callback_82396F20"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F00"]
+name = "leaf_callback_82396F00"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396EE0"]
+name = "leaf_callback_82396EE0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396EB8"]
+name = "leaf_callback_82396EB8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F80"]
+name = "leaf_callback_82396F80"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396EB0"]
+name = "leaf_callback_82396EB0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396E90"]
+name = "leaf_callback_82396E90"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82396F90"]
+name = "leaf_callback_82396F90"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8239BA68"]
+name = "leaf_callback_8239BA68"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8239BA58"]
+name = "leaf_callback_8239BA58"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE778"]
+name = "leaf_callback_823FE778"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE848"]
+name = "leaf_callback_823FE848"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE840"]
+name = "leaf_callback_823FE840"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9A8"]
+name = "leaf_callback_823FE9A8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7A8"]
+name = "leaf_callback_823FE7A8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE898"]
+name = "leaf_callback_823FE898"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8239BA18"]
+name = "leaf_callback_8239BA18"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6F8"]
+name = "leaf_callback_823FE6F8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8C0"]
+name = "leaf_callback_823FE8C0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7D0"]
+name = "leaf_callback_823FE7D0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE720"]
+name = "leaf_callback_823FE720"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE670"]
+name = "leaf_callback_823FE670"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE630"]
+name = "leaf_callback_823FE630"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB20"]
+name = "leaf_callback_823FEB20"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEC30"]
+name = "leaf_callback_823FEC30"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA00"]
+name = "leaf_callback_823FEA00"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5B0"]
+name = "leaf_callback_823FE5B0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB88"]
+name = "leaf_callback_823FEB88"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA68"]
+name = "leaf_callback_823FEA68"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE950"]
+name = "leaf_callback_823FE950"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE800"]
+name = "leaf_callback_823FE800"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6A8"]
+name = "leaf_callback_823FE6A8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE750"]
+name = "leaf_callback_823FE750"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5F8"]
+name = "leaf_callback_823FE5F8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE770"]
+name = "leaf_callback_823FE770"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6D8"]
+name = "leaf_callback_823FE6D8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE628"]
+name = "leaf_callback_823FE628"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEC28"]
+name = "leaf_callback_823FEC28"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5F0"]
+name = "leaf_callback_823FE5F0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAE8"]
+name = "leaf_callback_823FEAE8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBF0"]
+name = "leaf_callback_823FEBF0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9D8"]
+name = "leaf_callback_823FE9D8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEC20"]
+name = "leaf_callback_823FEC20"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB18"]
+name = "leaf_callback_823FEB18"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9F8"]
+name = "leaf_callback_823FE9F8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE900"]
+name = "leaf_callback_823FE900"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEC18"]
+name = "leaf_callback_823FEC18"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9F0"]
+name = "leaf_callback_823FE9F0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB10"]
+name = "leaf_callback_823FEB10"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8F8"]
+name = "leaf_callback_823FE8F8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB80"]
+name = "leaf_callback_823FEB80"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA60"]
+name = "leaf_callback_823FEA60"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE948"]
+name = "leaf_callback_823FE948"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE838"]
+name = "leaf_callback_823FE838"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAE0"]
+name = "leaf_callback_823FEAE0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8B8"]
+name = "leaf_callback_823FE8B8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9D0"]
+name = "leaf_callback_823FE9D0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7C8"]
+name = "leaf_callback_823FE7C8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9E8"]
+name = "leaf_callback_823FE9E8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8F0"]
+name = "leaf_callback_823FE8F0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7F8"]
+name = "leaf_callback_823FE7F8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE748"]
+name = "leaf_callback_823FE748"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5A8"]
+name = "leaf_callback_823FE5A8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA58"]
+name = "leaf_callback_823FEA58"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB78"]
+name = "leaf_callback_823FEB78"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE940"]
+name = "leaf_callback_823FE940"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBC8"]
+name = "leaf_callback_823FEBC8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAB0"]
+name = "leaf_callback_823FEAB0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9A0"]
+name = "leaf_callback_823FE9A0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE890"]
+name = "leaf_callback_823FE890"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6D0"]
+name = "leaf_callback_823FE6D0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEC10"]
+name = "leaf_callback_823FEC10"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE620"]
+name = "leaf_callback_823FE620"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB08"]
+name = "leaf_callback_823FEB08"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE650"]
+name = "leaf_callback_823FE650"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5A0"]
+name = "leaf_callback_823FE5A0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB70"]
+name = "leaf_callback_823FEB70"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA50"]
+name = "leaf_callback_823FEA50"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE598"]
+name = "leaf_callback_823FE598"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA48"]
+name = "leaf_callback_823FEA48"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB68"]
+name = "leaf_callback_823FEB68"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE938"]
+name = "leaf_callback_823FE938"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBC0"]
+name = "leaf_callback_823FEBC0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAA8"]
+name = "leaf_callback_823FEAA8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE998"]
+name = "leaf_callback_823FE998"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE888"]
+name = "leaf_callback_823FE888"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA40"]
+name = "leaf_callback_823FEA40"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE830"]
+name = "leaf_callback_823FE830"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE930"]
+name = "leaf_callback_823FE930"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE768"]
+name = "leaf_callback_823FE768"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE990"]
+name = "leaf_callback_823FE990"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE880"]
+name = "leaf_callback_823FE880"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7A0"]
+name = "leaf_callback_823FE7A0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6F0"]
+name = "leaf_callback_823FE6F0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8E8"]
+name = "leaf_callback_823FE8E8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE740"]
+name = "leaf_callback_823FE740"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7F0"]
+name = "leaf_callback_823FE7F0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6A0"]
+name = "leaf_callback_823FE6A0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE828"]
+name = "leaf_callback_823FE828"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE760"]
+name = "leaf_callback_823FE760"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6C8"]
+name = "leaf_callback_823FE6C8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE618"]
+name = "leaf_callback_823FE618"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6C0"]
+name = "leaf_callback_823FE6C0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEC08"]
+name = "leaf_callback_823FEC08"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE610"]
+name = "leaf_callback_823FE610"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB00"]
+name = "leaf_callback_823FEB00"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE648"]
+name = "leaf_callback_823FE648"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE590"]
+name = "leaf_callback_823FE590"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB60"]
+name = "leaf_callback_823FEB60"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA38"]
+name = "leaf_callback_823FEA38"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB58"]
+name = "leaf_callback_823FEB58"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE928"]
+name = "leaf_callback_823FE928"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA30"]
+name = "leaf_callback_823FEA30"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE820"]
+name = "leaf_callback_823FE820"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAA0"]
+name = "leaf_callback_823FEAA0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE988"]
+name = "leaf_callback_823FE988"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE878"]
+name = "leaf_callback_823FE878"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE798"]
+name = "leaf_callback_823FE798"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE718"]
+name = "leaf_callback_823FE718"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5C8"]
+name = "leaf_callback_823FE5C8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE668"]
+name = "leaf_callback_823FE668"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBB8"]
+name = "leaf_callback_823FEBB8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE698"]
+name = "leaf_callback_823FE698"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5E8"]
+name = "leaf_callback_823FE5E8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBE8"]
+name = "leaf_callback_823FEBE8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAD8"]
+name = "leaf_callback_823FEAD8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6B8"]
+name = "leaf_callback_823FE6B8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEC00"]
+name = "leaf_callback_823FEC00"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE608"]
+name = "leaf_callback_823FE608"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAF8"]
+name = "leaf_callback_823FEAF8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE640"]
+name = "leaf_callback_823FE640"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE588"]
+name = "leaf_callback_823FE588"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB50"]
+name = "leaf_callback_823FEB50"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA28"]
+name = "leaf_callback_823FEA28"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB48"]
+name = "leaf_callback_823FEB48"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE920"]
+name = "leaf_callback_823FE920"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA20"]
+name = "leaf_callback_823FEA20"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE818"]
+name = "leaf_callback_823FE818"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA98"]
+name = "leaf_callback_823FEA98"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE980"]
+name = "leaf_callback_823FE980"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE870"]
+name = "leaf_callback_823FE870"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE790"]
+name = "leaf_callback_823FE790"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6E8"]
+name = "leaf_callback_823FE6E8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE580"]
+name = "leaf_callback_823FE580"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE638"]
+name = "leaf_callback_823FE638"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB40"]
+name = "leaf_callback_823FEB40"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE660"]
+name = "leaf_callback_823FE660"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5C0"]
+name = "leaf_callback_823FE5C0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBB0"]
+name = "leaf_callback_823FEBB0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA90"]
+name = "leaf_callback_823FEA90"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9C8"]
+name = "leaf_callback_823FE9C8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7C0"]
+name = "leaf_callback_823FE7C0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8B0"]
+name = "leaf_callback_823FE8B0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE710"]
+name = "leaf_callback_823FE710"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8E0"]
+name = "leaf_callback_823FE8E0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7E8"]
+name = "leaf_callback_823FE7E8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE738"]
+name = "leaf_callback_823FE738"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE690"]
+name = "leaf_callback_823FE690"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9C0"]
+name = "leaf_callback_823FE9C0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7B8"]
+name = "leaf_callback_823FE7B8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8A8"]
+name = "leaf_callback_823FE8A8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE708"]
+name = "leaf_callback_823FE708"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8D8"]
+name = "leaf_callback_823FE8D8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7E0"]
+name = "leaf_callback_823FE7E0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE730"]
+name = "leaf_callback_823FE730"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE688"]
+name = "leaf_callback_823FE688"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA18"]
+name = "leaf_callback_823FEA18"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB38"]
+name = "leaf_callback_823FEB38"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE918"]
+name = "leaf_callback_823FE918"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBA8"]
+name = "leaf_callback_823FEBA8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA88"]
+name = "leaf_callback_823FEA88"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE978"]
+name = "leaf_callback_823FE978"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE868"]
+name = "leaf_callback_823FE868"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE700"]
+name = "leaf_callback_823FE700"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5B8"]
+name = "leaf_callback_823FE5B8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE658"]
+name = "leaf_callback_823FE658"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBA0"]
+name = "leaf_callback_823FEBA0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE680"]
+name = "leaf_callback_823FE680"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5E0"]
+name = "leaf_callback_823FE5E0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBE0"]
+name = "leaf_callback_823FEBE0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAD0"]
+name = "leaf_callback_823FEAD0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8D0"]
+name = "leaf_callback_823FE8D0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE728"]
+name = "leaf_callback_823FE728"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7D8"]
+name = "leaf_callback_823FE7D8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE678"]
+name = "leaf_callback_823FE678"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE810"]
+name = "leaf_callback_823FE810"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE758"]
+name = "leaf_callback_823FE758"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6B0"]
+name = "leaf_callback_823FE6B0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE600"]
+name = "leaf_callback_823FE600"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEB98"]
+name = "leaf_callback_823FEB98"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE970"]
+name = "leaf_callback_823FE970"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEA80"]
+name = "leaf_callback_823FEA80"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE860"]
+name = "leaf_callback_823FE860"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAC8"]
+name = "leaf_callback_823FEAC8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9B8"]
+name = "leaf_callback_823FE9B8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8A0"]
+name = "leaf_callback_823FE8A0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE7B0"]
+name = "leaf_callback_823FE7B0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5D8"]
+name = "leaf_callback_823FE5D8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAC0"]
+name = "leaf_callback_823FEAC0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBD8"]
+name = "leaf_callback_823FEBD8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9B0"]
+name = "leaf_callback_823FE9B0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBF8"]
+name = "leaf_callback_823FEBF8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAF0"]
+name = "leaf_callback_823FEAF0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE9E0"]
+name = "leaf_callback_823FE9E0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE8C8"]
+name = "leaf_callback_823FE8C8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE850"]
+name = "leaf_callback_823FE850"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE780"]
+name = "leaf_callback_823FE780"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE6E0"]
+name = "leaf_callback_823FE6E0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE968"]
+name = "leaf_callback_823FE968"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE858"]
+name = "leaf_callback_823FE858"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE788"]
+name = "leaf_callback_823FE788"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FE5D0"]
+name = "leaf_callback_823FE5D0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEBD0"]
+name = "leaf_callback_823FEBD0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x823FEAB8"]
+name = "leaf_callback_823FEAB8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82401C38"]
+name = "leaf_callback_82401C38"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82401C30"]
+name = "leaf_callback_82401C30"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82401C28"]
+name = "leaf_callback_82401C28"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82401C20"]
+name = "leaf_callback_82401C20"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417DA8"]
+name = "leaf_callback_82417DA8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D60"]
+name = "leaf_callback_82417D60"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D28"]
+name = "leaf_callback_82417D28"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D98"]
+name = "leaf_callback_82417D98"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C08"]
+name = "leaf_callback_82417C08"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BB8"]
+name = "leaf_callback_82417BB8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417DB0"]
+name = "leaf_callback_82417DB0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D68"]
+name = "leaf_callback_82417D68"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BC8"]
+name = "leaf_callback_82417BC8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417DC8"]
+name = "leaf_callback_82417DC8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D88"]
+name = "leaf_callback_82417D88"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C10"]
+name = "leaf_callback_82417C10"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BC0"]
+name = "leaf_callback_82417BC0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417DC0"]
+name = "leaf_callback_82417DC0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D80"]
+name = "leaf_callback_82417D80"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C80"]
+name = "leaf_callback_82417C80"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C20"]
+name = "leaf_callback_82417C20"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BD8"]
+name = "leaf_callback_82417BD8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417DD0"]
+name = "leaf_callback_82417DD0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CA8"]
+name = "leaf_callback_82417CA8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D30"]
+name = "leaf_callback_82417D30"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CF0"]
+name = "leaf_callback_82417CF0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CC8"]
+name = "leaf_callback_82417CC8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C50"]
+name = "leaf_callback_82417C50"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BD0"]
+name = "leaf_callback_82417BD0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CA0"]
+name = "leaf_callback_82417CA0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C38"]
+name = "leaf_callback_82417C38"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BF0"]
+name = "leaf_callback_82417BF0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BA0"]
+name = "leaf_callback_82417BA0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CC0"]
+name = "leaf_callback_82417CC0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D50"]
+name = "leaf_callback_82417D50"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D08"]
+name = "leaf_callback_82417D08"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CD8"]
+name = "leaf_callback_82417CD8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C68"]
+name = "leaf_callback_82417C68"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D20"]
+name = "leaf_callback_82417D20"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417DB8"]
+name = "leaf_callback_82417DB8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D78"]
+name = "leaf_callback_82417D78"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D38"]
+name = "leaf_callback_82417D38"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CF8"]
+name = "leaf_callback_82417CF8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BE8"]
+name = "leaf_callback_82417BE8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CB8"]
+name = "leaf_callback_82417CB8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C48"]
+name = "leaf_callback_82417C48"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C00"]
+name = "leaf_callback_82417C00"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BB0"]
+name = "leaf_callback_82417BB0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C40"]
+name = "leaf_callback_82417C40"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BF8"]
+name = "leaf_callback_82417BF8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BA8"]
+name = "leaf_callback_82417BA8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417DA0"]
+name = "leaf_callback_82417DA0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C78"]
+name = "leaf_callback_82417C78"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D18"]
+name = "leaf_callback_82417D18"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CE8"]
+name = "leaf_callback_82417CE8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C98"]
+name = "leaf_callback_82417C98"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C30"]
+name = "leaf_callback_82417C30"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CB0"]
+name = "leaf_callback_82417CB0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D48"]
+name = "leaf_callback_82417D48"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D00"]
+name = "leaf_callback_82417D00"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CD0"]
+name = "leaf_callback_82417CD0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C60"]
+name = "leaf_callback_82417C60"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C88"]
+name = "leaf_callback_82417C88"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C28"]
+name = "leaf_callback_82417C28"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417BE0"]
+name = "leaf_callback_82417BE0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C90"]
+name = "leaf_callback_82417C90"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C58"]
+name = "leaf_callback_82417C58"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417D10"]
+name = "leaf_callback_82417D10"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417CE0"]
+name = "leaf_callback_82417CE0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C70"]
+name = "leaf_callback_82417C70"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82417C18"]
+name = "leaf_callback_82417C18"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8267FED8"]
+name = "leaf_callback_8267FED8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82913F50"]
+name = "leaf_callback_82913F50"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x829161E0"]
+name = "leaf_callback_829161E0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82913F60"]
+name = "leaf_callback_82913F60"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82892AF8"]
+name = "leaf_callback_82892AF8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82893348"]
+name = "leaf_callback_82893348"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x828A1EE0"]
+name = "leaf_callback_828A1EE0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x829165A0"]
+name = "leaf_callback_829165A0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82917D70"]
+name = "leaf_callback_82917D70"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8289DB50"]
+name = "leaf_callback_8289DB50"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8291B130"]
+name = "leaf_callback_8291B130"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x828C7420"]
+name = "leaf_callback_828C7420"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8291D3E8"]
+name = "leaf_callback_8291D3E8"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x8291D968"]
+name = "leaf_callback_8291D968"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82959D80"]
+name = "leaf_callback_82959D80"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82A14220"]
+name = "leaf_callback_82A14220"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82B6E7D0"]
+name = "leaf_callback_82B6E7D0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82B6EA38"]
+name = "leaf_callback_82B6EA38"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82C9EFD0"]
+name = "leaf_callback_82C9EFD0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82E76118"]
+name = "leaf_callback_82E76118"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82E6EFA0"]
+name = "leaf_callback_82E6EFA0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82E6F248"]
+name = "leaf_callback_82E6F248"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82E6F2E0"]
+name = "leaf_callback_82E6F2E0"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82E6F378"]
+name = "leaf_callback_82E6F378"
+
+# Independently reviewed constructor-table leaf; full reachable-body discovery.
+[entrypoint.functions."0x82E76DB8"]
+name = "leaf_callback_82E76DB8"
+
+# Runtime-observed target 0x8244C508; full body discovery, no forced size.
+[entrypoint.functions."0x8244C508"]
+name = "startup_indirect_8244C508"
+
+# Runtime-observed target 0x8244C538; full body discovery, no forced size.
+[entrypoint.functions."0x8244C538"]
+name = "startup_indirect_8244C538"
+
+# Runtime-observed target 0x8244C580; full body discovery, no forced size.
+[entrypoint.functions."0x8244C580"]
+name = "startup_indirect_8244C580"
+
+# Constructor/table/Ghidra verified 24-byte delegation thunk; no forced size.
+[entrypoint.functions."0x8244C4F0"]
+name = "delegate_callback_8244C4F0"
+
+# Constructor/table/Ghidra verified 24-byte delegation thunk; no forced size.
+[entrypoint.functions."0x8244C520"]
+name = "delegate_callback_8244C520"
+
+# Constructor/table/Ghidra verified 24-byte delegation thunk; no forced size.
+[entrypoint.functions."0x8244C550"]
+name = "delegate_callback_8244C550"
+
+# Constructor/table/Ghidra verified 24-byte delegation thunk; no forced size.
+[entrypoint.functions."0x8244C568"]
+name = "delegate_callback_8244C568"
+
+# Constructor/table/Ghidra verified 24-byte delegation thunk; no forced size.
+[entrypoint.functions."0x8244C598"]
+name = "delegate_callback_8244C598"
+
+# Constructor/table/Ghidra verified 32-byte conditional reference increment; no forced size.
+[entrypoint.functions."0x8244C5B0"]
+name = "delegate_callback_8244C5B0"
+
+# Runtime-observed target 0x82B8AC50; full body discovery, no forced size.
+[entrypoint.functions."0x82B8AC50"]
+name = "startup_indirect_82B8AC50"
+
+# Runtime-observed target 0x82384430; full body discovery, no forced size.
+[entrypoint.functions."0x82384430"]
+name = "startup_indirect_82384430"
+
+# Runtime-observed target 0x82373698; full body discovery, no forced size.
+[entrypoint.functions."0x82373698"]
+name = "startup_indirect_82373698"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82394B50"]
+name = "data_leaf_82394B50"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82394B10"]
+name = "data_leaf_82394B10"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82394BD8"]
+name = "data_leaf_82394BD8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82394BC0"]
+name = "data_leaf_82394BC0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82394BA8"]
+name = "data_leaf_82394BA8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82394B90"]
+name = "data_leaf_82394B90"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82394BF0"]
+name = "data_leaf_82394BF0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82394BE0"]
+name = "data_leaf_82394BE0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82394BC8"]
+name = "data_leaf_82394BC8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82394BB0"]
+name = "data_leaf_82394BB0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82396FA0"]
+name = "data_leaf_82396FA0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82396F68"]
+name = "data_leaf_82396F68"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82396F40"]
+name = "data_leaf_82396F40"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82396F18"]
+name = "data_leaf_82396F18"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82394AF8"]
+name = "data_leaf_82394AF8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82396F98"]
+name = "data_leaf_82396F98"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82396F70"]
+name = "data_leaf_82396F70"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82396EA8"]
+name = "data_leaf_82396EA8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82396E88"]
+name = "data_leaf_82396E88"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82396F88"]
+name = "data_leaf_82396F88"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82396F58"]
+name = "data_leaf_82396F58"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x8239BA08"]
+name = "data_leaf_8239BA08"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x8239BA80"]
+name = "data_leaf_8239BA80"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x8239BA70"]
+name = "data_leaf_8239BA70"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x8239BA38"]
+name = "data_leaf_8239BA38"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x8239BA50"]
+name = "data_leaf_8239BA50"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x8239BA78"]
+name = "data_leaf_8239BA78"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FEB30"]
+name = "data_leaf_823FEB30"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FEA10"]
+name = "data_leaf_823FEA10"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FE910"]
+name = "data_leaf_823FE910"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FE808"]
+name = "data_leaf_823FE808"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FEA78"]
+name = "data_leaf_823FEA78"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FE960"]
+name = "data_leaf_823FE960"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FEC38"]
+name = "data_leaf_823FEC38"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FEA08"]
+name = "data_leaf_823FEA08"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FEB28"]
+name = "data_leaf_823FEB28"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FE908"]
+name = "data_leaf_823FE908"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FEB90"]
+name = "data_leaf_823FEB90"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FEA70"]
+name = "data_leaf_823FEA70"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x823FE958"]
+name = "data_leaf_823FE958"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82417DD8"]
+name = "data_leaf_82417DD8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82417D90"]
+name = "data_leaf_82417D90"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82417D58"]
+name = "data_leaf_82417D58"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82895218"]
+name = "data_leaf_82895218"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x8291B7E8"]
+name = "data_leaf_8291B7E8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82919650"]
+name = "data_leaf_82919650"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x829177B8"]
+name = "data_leaf_829177B8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82917BF0"]
+name = "data_leaf_82917BF0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x829177B0"]
+name = "data_leaf_829177B0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x8291D3E0"]
+name = "data_leaf_8291D3E0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82919658"]
+name = "data_leaf_82919658"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x829177C8"]
+name = "data_leaf_829177C8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82919838"]
+name = "data_leaf_82919838"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x8291CAC8"]
+name = "data_leaf_8291CAC8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82893A70"]
+name = "data_leaf_82893A70"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82893AD0"]
+name = "data_leaf_82893AD0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C82CF0"]
+name = "data_leaf_82C82CF0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C850D0"]
+name = "data_leaf_82C850D0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C850A8"]
+name = "data_leaf_82C850A8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C8B480"]
+name = "data_leaf_82C8B480"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C850B0"]
+name = "data_leaf_82C850B0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C8B1C8"]
+name = "data_leaf_82C8B1C8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C8B1B8"]
+name = "data_leaf_82C8B1B8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C8B1C0"]
+name = "data_leaf_82C8B1C0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C8B198"]
+name = "data_leaf_82C8B198"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C8B190"]
+name = "data_leaf_82C8B190"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C8B490"]
+name = "data_leaf_82C8B490"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C850C8"]
+name = "data_leaf_82C850C8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C8B498"]
+name = "data_leaf_82C8B498"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C8B478"]
+name = "data_leaf_82C8B478"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C850B8"]
+name = "data_leaf_82C850B8"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C8C578"]
+name = "data_leaf_82C8C578"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82C8D2C0"]
+name = "data_leaf_82C8D2C0"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82E75F60"]
+name = "data_leaf_82E75F60"
+
+# Independently reviewed data-table leaf; generation must preserve every old body.
+[entrypoint.functions."0x82E8BE08"]
+name = "data_leaf_82E8BE08"
+
+# Retained cycle36 runtime-observed full-body entry.
+[entrypoint.functions."0x823DB9A0"]
+name = "startup_indirect_823DB9A0"
+
+# Runtime-observed target 0x82DAFFA0; full body discovery, no forced size.
+[entrypoint.functions."0x82DAFFA0"]
+name = "startup_indirect_82DAFFA0"
+
+# Runtime-observed target 0x823DB438; full body discovery, no forced size.
+[entrypoint.functions."0x823DB438"]
+name = "startup_indirect_823DB438"
+
+# Runtime-observed target 0x82DAFF88; full body discovery, no forced size.
+[entrypoint.functions."0x82DAFF88"]
+name = "startup_indirect_82DAFF88"
+
+# Runtime-observed target 0x82DAFEB0; full body discovery, no forced size.
+[entrypoint.functions."0x82DAFEB0"]
+name = "startup_indirect_82DAFEB0"
+
+[entrypoint.functions."0x82D07248"]
+name = "sub_82D07248"
+[entrypoint.functions."0x822C6FC0"]
+name = "sub_822C6FC0"
+[entrypoint.functions."0x82728DB8"]
+name = "sub_82728DB8"
+[entrypoint.functions."0x82DAFF58"]
+name = "delegate_82DAFF58"

@@ -1,0 +1,560 @@
+{
+  "origin": "https://github.com/rexglue/rexglue-sdk.git",
+  "revision": "c94f5ebdcb3c9d1a460ca48e04f9758448f8d518",
+  "submodules": {
+    "thirdparty/FFmpeg": "0604b464c7cb4ebc94940cf1f324a3b26b87717c",
+    "thirdparty/catch2": "88abf9bf325c798c33f54f6b9220ef885b267f4f",
+    "thirdparty/cli11": "bfffd37e1f804ca4fae1caae106935791696b6a9",
+    "thirdparty/fmt": "407c905e45ad75fc29bf0f9bb7c5c2fd3475976f",
+    "thirdparty/glslang": "f4f1d8a352ca1908943aea2ad8c54b39b4879080",
+    "thirdparty/imgui": "6d910d5487d11ca567b61c7824b0c78c569d62f0",
+    "thirdparty/inja": "7d1b4600b68595085a949743331c2e5673f511ea",
+    "thirdparty/libmspack": "305907723a4e7ab2018e58040059ffb5e77db837",
+    "thirdparty/moltenvk": "db445ff2042d9ce348c439ad8451112f354b8d2a",
+    "thirdparty/o1heap": "388a73fd9007300e5130c5fe352d9ce3288b6dde",
+    "thirdparty/sdl3": "8bf3b7215ad9fc3deb583c6a3a37c6c67f2e24e4",
+    "thirdparty/simde": "71fd833d9666141edcd1d3c109a80e228303d8d7",
+    "thirdparty/spdlog": "79524ddd08a4ec981b7fea76afd08ee05f83755d",
+    "thirdparty/spirv-headers": "29981f65241605e08b0ede4cfeb999fe3b723c6a",
+    "thirdparty/spirv-tools": "9a49b0883b9b635689a85b5647dbfcb223268151",
+    "thirdparty/tomlplusplus": "30172438cee64926dc41fdd9c11fb3ba5b2ba9de",
+    "thirdparty/tracy": "05cceee0df3b8d7c6fa87e9638af311dbabc63cb",
+    "thirdparty/utfcpp": "63d64de49fd6b829f7c8694df5ab2ee625cb7134",
+    "thirdparty/vulkan-headers": "e3b1eec08173d6b825cd3ac88c885a63b621504a",
+    "thirdparty/vulkan-loader": "5f157b62e333c63260d05d81bf66faa216ab0fb8",
+    "thirdparty/vulkan-memory-allocator": "1d8f600fd424278486eade7ed3e877c99f0846b1",
+    "thirdparty/xxHash": "e626a72bc2321cd320e953a0ccf1584cad60f363"
+  },
+  "lineEndings": "LF for patch before/after validation",
+  "stacks": {
+    "runtime": {
+      "patch": "runtime/sdk.patch",
+      "patchSha256": "bf24eb508192b2661ad8315f183278364ee9eb6a83235352c20ba87ab0f41822",
+      "files": [
+        {
+          "path": "CMakeLists.txt",
+          "beforeSha256": "a83dd6b97e700271dd7d8b16537bdd560791f7ab497c2bfc12fa739914b0c888",
+          "afterSha256": "aad19d464bc4616e53bd5c1b3a243f4dc9b6c7e7ec1f1e1823e1c8fa93957bfb",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/graphics/flags.h",
+          "beforeSha256": "d521f1738e89b843a1a648c7347c9b7d028f27e3b0523cc17b3426c66eb2427e",
+          "afterSha256": "4f7da1603a817253740f01aede13761d654ff151c5376a395b8603f3c6594b41",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/input/output_lifetime.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "9b624318ca7bcfb853883e5d2d1413f4aee18be4c9b4f3409ed9ec38a87aa003",
+          "newFile": true
+        },
+        {
+          "path": "include/rex/input/output_lifetime_core.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "1fcdb394d3b54f25056aaa7be61988996fb4642cd020d3ffd3672e0aa42e9815",
+          "newFile": true
+        },
+        {
+          "path": "include/rex/input/research_recovery_command.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "947decd661b99b834b2792db821e2157777aa55be6ed921aaeb792d6286eb936",
+          "newFile": true
+        },
+        {
+          "path": "include/rex/input/sdl/callback_lifetime.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "fbe0eef12bb4eff1c069b542236a4c48ff8f35951ef7e79e9c7bb7ce2207cf5e",
+          "newFile": true
+        },
+        {
+          "path": "include/rex/input/sdl/sdl_input_driver.h",
+          "beforeSha256": "f9fe000a0499248923d4d5181752b0309e43c50cbe85752a691dde5ed6b02849",
+          "afterSha256": "98e690cf7283172dd0ba554aa43e79a934c81c81d3d5edf2b01e4014bbcb7a5d",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/ppc/context.h",
+          "beforeSha256": "5f84d78c38cf626cf4c8107293cd9824f6e8cf81225f201b608505698273dc36",
+          "afterSha256": "4662216e7cfed2aff046c7c88afee3cd3c95bb358e7a02ea93182d63ec6c6bb2",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/ppc/function.h",
+          "beforeSha256": "a132711cddf466c1945916260bcf41c3e5afb4fbca74a81b70bb01fb4cb274b6",
+          "afterSha256": "3f92d5ac5246ae9c90e317366a8b0258233d31894b06201e11c187193b1f88b5",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/ppc/vector_fma.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "ad21ad746e28f8d2a6f5ad7866b307fb74a6bb2bc54d0b887d4520321fb3de49",
+          "newFile": true
+        },
+        {
+          "path": "include/rex/runtime.h",
+          "beforeSha256": "8fcd287e79a6211d1052b12a6007bdd6be3fec200f968b3da190517aebf773b6",
+          "afterSha256": "abd633e93f2ee6b8279e1639640dc06266854a3c66282a30ee5415fa807b5080",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/system/dlc_checked_host_io.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "436990c9271677ffab0052b0be9a646ddb55c287e2cfc1b1570ca50f1dca9889",
+          "newFile": true
+        },
+        {
+          "path": "include/rex/ui/imgui_drawer.h",
+          "beforeSha256": "931534a68dbeb10d85b3a100152e390170289ddf283c75d9c3246f4d3a96ecb7",
+          "afterSha256": "a7c5b9acc323729a32540b91321f952e04adcb2294948c304d0b211175c8cdd7",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/ui/input_activity_snapshot.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "fa5d427582e4112c651372e7955850848455aea0a19eab4e716fb8db8556f299",
+          "newFile": true
+        },
+        {
+          "path": "src/codegen/builders/vector.cpp",
+          "beforeSha256": "b3528ed4a7e0642e2f390cf3d745e18d6e496f14d1707afef6f7049bb84fb39d",
+          "afterSha256": "b6a0d30c5ab6c921c66e8379ebde99a0dbd3b5f75e567441dc77032a0ff6b7c7",
+          "newFile": false
+        },
+        {
+          "path": "src/codegen/project_recompiler.cpp",
+          "beforeSha256": "41e38add35929b8be1105997de45b2f39c3c3f715925ca1d6f89ac68e1b81d14",
+          "afterSha256": "ec0534a0b0cae6df6f6c0ac8c79c9fcd6a8d9f976ea94cd7aaa1ab1cdb23b415",
+          "newFile": false
+        },
+        {
+          "path": "src/core/CMakeLists.txt",
+          "beforeSha256": "12fca720413bbca8cf38d166b739bc88e5029fdb4a5936de2297603dc6f312e5",
+          "afterSha256": "3785e906401b49cd1eda263d383b1fcb9bc1d5f9c19fab872879722ab23119f7",
+          "newFile": false
+        },
+        {
+          "path": "src/filesystem/virtual_file_system.cpp",
+          "beforeSha256": "461fd8f5d9b0077847ac477a6f106556bae4c4af0a3c7f70c4467946966a2d51",
+          "afterSha256": "9d4831081276b46094c521cff5abc60cf32b374c88aa30029803e44ca01c04e5",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/d3d12/command_processor.cpp",
+          "beforeSha256": "aeb26127de7b9dd0b797d6430187540e9b7ef970f2171e80a1819165318bdc58",
+          "afterSha256": "73ec987973921fccf5b2025cd3faa71358ef8017f6c2469ef49e9c54a4ed4c2e",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/d3d12/texture_cache.cpp",
+          "beforeSha256": "72ebe63457e42e1e11354e386635431a4be48a8239b0188bf6e82aaf4b114470",
+          "afterSha256": "37ff5f4e25c2c55d12bb80986c633529305b680b2ff39e9575c15bb328ab1f08",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/flags.cpp",
+          "beforeSha256": "3a2f50f825c856d66f139aa8620f400821470cb09128c741e9a46c1b15fa2f2f",
+          "afterSha256": "7980dae5e70bcffb16f22ed0f2ba4f576ef0edd5aaa7dfda058e86a33dc6c367",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/graphics_system.cpp",
+          "beforeSha256": "d834ab276411d69e6ec80e350fe6c7f64d6e4892f1eb0446ebff5e825d221042",
+          "afterSha256": "574c35758ef6e97c4ce20b68a8a4df951b9da0e4272493de192104a27b74a30f",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/vulkan/texture_cache.cpp",
+          "beforeSha256": "45ed9556bd49e575698f782d49383ebc284d226a2d6214e9088bac04307b417c",
+          "afterSha256": "537dc0ce4d52ff696f52f6d46dee6c305391e17f0736c1c5369b7c88c1f6a258",
+          "newFile": false
+        },
+        {
+          "path": "src/input/CMakeLists.txt",
+          "beforeSha256": "6d615a94e9326bbe344fcfcefff7b6c292b8d9c19c8e664f73e4235e2d8c6867",
+          "afterSha256": "a89e8ddcda50cd7ab633df2871d62e142e4aeec9f1791b4548044d18cf721792",
+          "newFile": false
+        },
+        {
+          "path": "src/input/input_system.cpp",
+          "beforeSha256": "a2101f593abff808585a78de1aa1c25e41521fd4ed9be45f2102a6c968d033dc",
+          "afterSha256": "ab66a22b005cb5b1503d45579d135d79fc85d6b0ec9a91700ee5548007cdd527",
+          "newFile": false
+        },
+        {
+          "path": "src/input/mnk/mnk_input_driver.cpp",
+          "beforeSha256": "3d1f0fb599817771dc583d790fd15630b54c51e068308e8b9260dfc31c6f9939",
+          "afterSha256": "00bab682802f9c43f64832fc3cb2384d568cbbab130d444debdb88979bdb5f39",
+          "newFile": false
+        },
+        {
+          "path": "src/input/output_lifetime.cpp",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "511db0efc7ae1a762a7e709aecd7c488a8cc6aa37b10f234fe6eff14a07aa1ab",
+          "newFile": true
+        },
+        {
+          "path": "src/input/sdl/sdl_input_driver.cpp",
+          "beforeSha256": "5317f106ddd16cbf68b590061dba188a8090b05238f460e25f24eec27840a30c",
+          "afterSha256": "00e9b713121e36722bcee82b0497500714c24af9681985e7e7361d5e8351dcc2",
+          "newFile": false
+        },
+        {
+          "path": "src/input/xinput/xinput_input_driver.cpp",
+          "beforeSha256": "94848d0fe27e7e6d4321743b43cdc63e72c7ff02302b98945be9c83276bef8e7",
+          "afterSha256": "483c5e264fa3c9a77e9931da5b0db5ce52f3c343c5d0e980d8e4537c3f0c848f",
+          "newFile": false
+        },
+        {
+          "path": "src/kernel/CMakeLists.txt",
+          "beforeSha256": "f75ffba39ad96e512d7b7445db1c0699e92a49eb6194ad709a277f54701e584c",
+          "afterSha256": "014e7fe6c5f5f181f1c40ebce3d2e080cf62eb89d7674d12caa8ca3a41ff2e91",
+          "newFile": false
+        },
+        {
+          "path": "src/kernel/xam/xam_content.cpp",
+          "beforeSha256": "b82be564159e2025555e81138be070b962865e7265081d20e925e9ac0f8be272",
+          "afterSha256": "b84bc0444929dc61f57ac34b22529a720b38585745d479e8eb83552e7905e0f8",
+          "newFile": false
+        },
+        {
+          "path": "src/kernel/xam/xam_input.cpp",
+          "beforeSha256": "5c71dd9978d0eda075c9ded55f044cd74035d3084ca02ea943e48cdf1dc7cd9f",
+          "afterSha256": "b608b5d440f2cab8fd375dce55574c93deecdc729d938a4501ac928f75c32fbf",
+          "newFile": false
+        },
+        {
+          "path": "src/kernel/xboxkrnl/xboxkrnl_video.cpp",
+          "beforeSha256": "5e8fa946b62678ccf8a29bbda170f5365af881238c1f77f1ff85e198116239f3",
+          "afterSha256": "6cf815988c6260e0f5c221adb11498a34e8a1f47eca4bc1c6011d576f48e4d5e",
+          "newFile": false
+        },
+        {
+          "path": "src/system/function_dispatcher.cpp",
+          "beforeSha256": "628485431855ec605420c134bace64e7361a03267a437512d8f14d689d65989b",
+          "afterSha256": "6969b584b9bf2cc6c229f984fdc8efe7351401b1098fca00236b89347399f838",
+          "newFile": false
+        },
+        {
+          "path": "src/system/kernel_state.cpp",
+          "beforeSha256": "9d4b787fe295c79ab12659c1ce42bb6310aa61cb8e5d83b10a32a36da9cde30a",
+          "afterSha256": "ece1ab4b5b54a411944ff64687f4bc1e3551985f406f8098219681594015969e",
+          "newFile": false
+        },
+        {
+          "path": "src/system/runtime.cpp",
+          "beforeSha256": "f55bd64cf055f7ad288c282883e94feec8fb53631a6807654f7a516ec7ab4af7",
+          "afterSha256": "6af12b3a26a8d9897119b2226af7881ba7fba004ca8ba5027ba993806a03f16b",
+          "newFile": false
+        },
+        {
+          "path": "src/system/user_module.cpp",
+          "beforeSha256": "43505572e7c6a1deefa051e1eb4307db57c0823f4a7f00424a33841c12f325c6",
+          "afterSha256": "7d694b26985d20514c19f804e639105aa2737d2f27c8d8aab44b6ffde1b9075a",
+          "newFile": false
+        },
+        {
+          "path": "src/system/xam/content_manager.cpp",
+          "beforeSha256": "dfbf096bd60bbac3a7d80da79d3129c8dcc9737b40a74318ec2dca404254b2c1",
+          "afterSha256": "acbf79b8f59436e3f45d2cf1b11e1b5e6e5dfafc0b566ba723823099e2121363",
+          "newFile": false
+        },
+        {
+          "path": "src/system/xmemory.cpp",
+          "beforeSha256": "97d19808714c2cb656c8d3c053cfd29a42d9b399bae47c9b3652ae21807fbf48",
+          "afterSha256": "0026172300c62add581ed3f73e9ef93836f606ef655e48f66b4d10ba2a52871c",
+          "newFile": false
+        },
+        {
+          "path": "src/ui/d3d12/d3d12_presenter.cpp",
+          "beforeSha256": "1763e91f87470754c3943e0e2443a59fa8848f816ee8f4937d08c0d3174dd502",
+          "afterSha256": "4b6091851a98f101bc3108a853f0f45500c4f58298b4a09848f3ce5c039c3148",
+          "newFile": false
+        },
+        {
+          "path": "src/ui/imgui_drawer.cpp",
+          "beforeSha256": "cb413f84a111f3d2acc99d924b794e7dbadc0e353bf56194ae4503bd778ee8ed",
+          "afterSha256": "24b1cac64a4c37356e842c68f0f235cf9ac2e4b0a9a3d06a13f3decc9b4a6510",
+          "newFile": false
+        },
+        {
+          "path": "src/ui/presenter.cpp",
+          "beforeSha256": "59fbdfbbe8eea7d589976bf1fd019d786cc7f1bbed154c6a6a16e18adbdad8d4",
+          "afterSha256": "75acef4792936d393e47f18c9e3e130601731c4c73c8ca66dd814f6cdfbf7e88",
+          "newFile": false
+        },
+        {
+          "path": "src/ui/rex_app.cpp",
+          "beforeSha256": "0ebbd4c0e484eb865f94de37cc71a70e3f25068b78d072cd7f577cdb811020b7",
+          "afterSha256": "575eabf55fcd326d014b305195f83e020d2e09be183e5fd5730a4c837b4421ad",
+          "newFile": false
+        },
+        {
+          "path": "src/ui/windowed_app_context_sdl.cpp",
+          "beforeSha256": "e580ca9dd75aedf46a64f019f11bcee4f6fa25dc51d44f858f3e37a7b5a377d1",
+          "afterSha256": "8365f92dfa4f1d1ab64aff46e12a1f774bc2363fb8857ffea04b7e67125b36bf",
+          "newFile": false
+        },
+        {
+          "path": "src/ui/windowed_app_main_sdl.cpp",
+          "beforeSha256": "49c1fe205eb4802967896791fe8883c10daad0a7bc0efa5f8e60ec4ecc4aabf7",
+          "afterSha256": "984fedce54bda2c15e25948da3c531d59d651fa67852748c3e113399eeb2a303",
+          "newFile": false
+        },
+        {
+          "path": "tests/ppc/asm/instr_rldicl.s",
+          "beforeSha256": "daf7264a0057b3b08bc9bf456409e9d3b0735de38806ec3bceda86bf133fcbe3",
+          "afterSha256": "2cd9b4b6056e1f4a691c3fd78c980cf22fd11fef32b39b312c1598bf23e6603f",
+          "newFile": false
+        },
+        {
+          "path": "thirdparty/sdl3/src/SDL.c",
+          "beforeSha256": "6a68103ee357837c6c62b5ee04555ede743e28a1e21151d609c1bdd874349a9f",
+          "afterSha256": "746afef384b623ff94dfb47bb5f95fa3af1a9173a5c322aa98c99e2d6572517c",
+          "newFile": false
+        },
+        {
+          "path": "thirdparty/sdl3/src/SDL_venom_finalization.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "ee679c664f7f888d7923af36bf31d13b7c625c5b039e1cf0749e20cf4acb26c4",
+          "newFile": true
+        }
+      ],
+      "verification": "PASS git apply --check, apply, all normalized after hashes match",
+      "thirdPartyDependencyFilesVerified": 1172,
+      "thirdPartyModifiedSources": [],
+      "symlinksToMaterialize": [
+        "thirdparty/libmspack/cabextract/mspack/lzx.h",
+        "thirdparty/libmspack/cabextract/mspack/lzxd.c",
+        "thirdparty/libmspack/cabextract/mspack/macros.h",
+        "thirdparty/libmspack/cabextract/mspack/mspack.h",
+        "thirdparty/libmspack/cabextract/mspack/readbits.h",
+        "thirdparty/libmspack/cabextract/mspack/readhuff.h",
+        "thirdparty/libmspack/cabextract/mspack/system.h"
+      ]
+    },
+    "gpu": {
+      "patch": "gpu/sdk.patch",
+      "patchSha256": "82761c539d5f8db24b4a8fbd827e156d7f82586e71ece683c876c46b9f6b0c1c",
+      "files": [
+        {
+          "path": "CMakeLists.txt",
+          "beforeSha256": "a83dd6b97e700271dd7d8b16537bdd560791f7ab497c2bfc12fa739914b0c888",
+          "afterSha256": "aad19d464bc4616e53bd5c1b3a243f4dc9b6c7e7ec1f1e1823e1c8fa93957bfb",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/graphics/flags.h",
+          "beforeSha256": "d521f1738e89b843a1a648c7347c9b7d028f27e3b0523cc17b3426c66eb2427e",
+          "afterSha256": "4f7da1603a817253740f01aede13761d654ff151c5376a395b8603f3c6594b41",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/ppc/context.h",
+          "beforeSha256": "5f84d78c38cf626cf4c8107293cd9824f6e8cf81225f201b608505698273dc36",
+          "afterSha256": "4662216e7cfed2aff046c7c88afee3cd3c95bb358e7a02ea93182d63ec6c6bb2",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/ppc/function.h",
+          "beforeSha256": "a132711cddf466c1945916260bcf41c3e5afb4fbca74a81b70bb01fb4cb274b6",
+          "afterSha256": "3f92d5ac5246ae9c90e317366a8b0258233d31894b06201e11c187193b1f88b5",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/runtime.h",
+          "beforeSha256": "8fcd287e79a6211d1052b12a6007bdd6be3fec200f968b3da190517aebf773b6",
+          "afterSha256": "abd633e93f2ee6b8279e1639640dc06266854a3c66282a30ee5415fa807b5080",
+          "newFile": false
+        },
+        {
+          "path": "src/codegen/builders/vector.cpp",
+          "beforeSha256": "b3528ed4a7e0642e2f390cf3d745e18d6e496f14d1707afef6f7049bb84fb39d",
+          "afterSha256": "b6a0d30c5ab6c921c66e8379ebde99a0dbd3b5f75e567441dc77032a0ff6b7c7",
+          "newFile": false
+        },
+        {
+          "path": "src/codegen/project_recompiler.cpp",
+          "beforeSha256": "41e38add35929b8be1105997de45b2f39c3c3f715925ca1d6f89ac68e1b81d14",
+          "afterSha256": "ec0534a0b0cae6df6f6c0ac8c79c9fcd6a8d9f976ea94cd7aaa1ab1cdb23b415",
+          "newFile": false
+        },
+        {
+          "path": "src/core/CMakeLists.txt",
+          "beforeSha256": "12fca720413bbca8cf38d166b739bc88e5029fdb4a5936de2297603dc6f312e5",
+          "afterSha256": "3785e906401b49cd1eda263d383b1fcb9bc1d5f9c19fab872879722ab23119f7",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/d3d12/command_processor.cpp",
+          "beforeSha256": "aeb26127de7b9dd0b797d6430187540e9b7ef970f2171e80a1819165318bdc58",
+          "afterSha256": "38c0c90fee9204c348204df14d1fac3152249b2f5eaff587c4da3d159315e9d9",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/d3d12/deferred_command_list.cpp",
+          "beforeSha256": "ffdf7fb66ec8171557d1e4195147de556bdda342acc7c3ed7eb81279494a3e30",
+          "afterSha256": "daf925bff66bfb0b0b6d35a35d486b1188a23a9e86295a17c3fb16862d5e743a",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/d3d12/render_target_cache.cpp",
+          "beforeSha256": "7bc68f0891b9ec0a108a3e1b34e980619245d28ab86f201846b40230760b1dd0",
+          "afterSha256": "c0d86a1bc01dd4dbec8494aadb8b4c8ced0df723611aa95652baa9712257b043",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/d3d12/texture_cache.cpp",
+          "beforeSha256": "72ebe63457e42e1e11354e386635431a4be48a8239b0188bf6e82aaf4b114470",
+          "afterSha256": "750e91acfc909bceb2ad399d2600270a74a6f087ba9efda56800f7d8df9c2dc2",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/flags.cpp",
+          "beforeSha256": "3a2f50f825c856d66f139aa8620f400821470cb09128c741e9a46c1b15fa2f2f",
+          "afterSha256": "0369ec578eeed37343a735691f8f58deee37ab1540dd334ac38769a82e9b59b9",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/graphics_system.cpp",
+          "beforeSha256": "d834ab276411d69e6ec80e350fe6c7f64d6e4892f1eb0446ebff5e825d221042",
+          "afterSha256": "574c35758ef6e97c4ce20b68a8a4df951b9da0e4272493de192104a27b74a30f",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/pipeline/render_target/cache.cpp",
+          "beforeSha256": "cf6539a76788b32262359bd0aa9da80503b641b2e4cecdec4a0e2dccc1e8052e",
+          "afterSha256": "e9880a96d21722d9ad78e1f9dbf18723fb98528293249617be784663aae7774d",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/pipeline/shader/dxbc_translator.cpp",
+          "beforeSha256": "03d2cb7b240e80f4cf0c09cde2d6155e1bd891f1b305ef6d57178a2a8db2c98f",
+          "afterSha256": "fd428dddf02bd4af97a68c82e1728933dcbca0320cfd8f11afe5841b664ed27c",
+          "newFile": false
+        },
+        {
+          "path": "src/graphics/vulkan/texture_cache.cpp",
+          "beforeSha256": "45ed9556bd49e575698f782d49383ebc284d226a2d6214e9088bac04307b417c",
+          "afterSha256": "537dc0ce4d52ff696f52f6d46dee6c305391e17f0736c1c5369b7c88c1f6a258",
+          "newFile": false
+        },
+        {
+          "path": "src/input/input_system.cpp",
+          "beforeSha256": "a2101f593abff808585a78de1aa1c25e41521fd4ed9be45f2102a6c968d033dc",
+          "afterSha256": "4fcd1546370fe3a922b84110a85e95bbd820c6c8491b29f473a2986435e0ea93",
+          "newFile": false
+        },
+        {
+          "path": "src/kernel/CMakeLists.txt",
+          "beforeSha256": "f75ffba39ad96e512d7b7445db1c0699e92a49eb6194ad709a277f54701e584c",
+          "afterSha256": "014e7fe6c5f5f181f1c40ebce3d2e080cf62eb89d7674d12caa8ca3a41ff2e91",
+          "newFile": false
+        },
+        {
+          "path": "src/kernel/xam/xam_content.cpp",
+          "beforeSha256": "b82be564159e2025555e81138be070b962865e7265081d20e925e9ac0f8be272",
+          "afterSha256": "b84bc0444929dc61f57ac34b22529a720b38585745d479e8eb83552e7905e0f8",
+          "newFile": false
+        },
+        {
+          "path": "src/system/runtime.cpp",
+          "beforeSha256": "f55bd64cf055f7ad288c282883e94feec8fb53631a6807654f7a516ec7ab4af7",
+          "afterSha256": "1adcbf2f44aa2388d28267a1f8a99415841f4c96376b9a04e681008349a013d8",
+          "newFile": false
+        },
+        {
+          "path": "src/system/user_module.cpp",
+          "beforeSha256": "43505572e7c6a1deefa051e1eb4307db57c0823f4a7f00424a33841c12f325c6",
+          "afterSha256": "a15969b8a060841813853ee5834f4da0a8d5f3cf487e61db0fec6b3577178719",
+          "newFile": false
+        },
+        {
+          "path": "src/system/xam/content_manager.cpp",
+          "beforeSha256": "dfbf096bd60bbac3a7d80da79d3129c8dcc9737b40a74318ec2dca404254b2c1",
+          "afterSha256": "acbf79b8f59436e3f45d2cf1b11e1b5e6e5dfafc0b566ba723823099e2121363",
+          "newFile": false
+        },
+        {
+          "path": "include/rex/input/research_recovery_command.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "947decd661b99b834b2792db821e2157777aa55be6ed921aaeb792d6286eb936",
+          "newFile": true
+        },
+        {
+          "path": "include/rex/ppc/vector_fma.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "ad21ad746e28f8d2a6f5ad7866b307fb74a6bb2bc54d0b887d4520321fb3de49",
+          "newFile": true
+        },
+        {
+          "path": "include/rex/system/dlc_checked_host_io.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "436990c9271677ffab0052b0be9a646ddb55c287e2cfc1b1570ca50f1dca9889",
+          "newFile": true
+        }
+      ],
+      "verification": "PASS git apply --check, apply, all normalized after hashes match",
+      "thirdPartyDependencyFilesVerified": 1147,
+      "thirdPartyModifiedSources": [],
+      "symlinksToMaterialize": [
+        "thirdparty/libmspack/cabextract/mspack/lzx.h",
+        "thirdparty/libmspack/cabextract/mspack/lzxd.c",
+        "thirdparty/libmspack/cabextract/mspack/macros.h",
+        "thirdparty/libmspack/cabextract/mspack/mspack.h",
+        "thirdparty/libmspack/cabextract/mspack/readbits.h",
+        "thirdparty/libmspack/cabextract/mspack/readhuff.h",
+        "thirdparty/libmspack/cabextract/mspack/system.h"
+      ],
+      "overlayFiles": {
+        "venom-gpu-overlays.cmake": "22ecc20654b14d7d417c83bbc1b8269001a9937181dfaa72bf9b49a274084a85",
+        "include-overlay-0/sbs736_matched_eye_resources.h": "d082a6599ae914a920c956678f6c244de2b7d0056dd05fca39267f90db98b511",
+        "include-overlay-0/sbs737_matched_deferred_eye_boundary.h": "7442a67f9a718682f19e5386811a94f854428834cc32ca45115c1cdc801a7910",
+        "include-overlay-0/sbs739_diagnostic_eye_boundary.h": "e81a71538dd200c4b1b467099b9cba5e9651bc2caf61b7a8a734faba75886e51",
+        "include-overlay-0/sbs746_stereo_clip_offset.h": "122ba07e1788687e959db5cf3da1836912429d4c15b47b3947c9cae7b526047e",
+        "include-overlay-0/sbs762_constants_writer.h": "0e4ef90069ca5b5680b9227e0be75918802fd4b6fc3a1c296e53d4e560ea8369",
+        "include-overlay-0/sbs769_scoped_constants.h": "a50f752d6913ad596501ddbe17935a5e47aad54fca653e1241b28f483b0c003c",
+        "include-overlay-0/sbs777_prepared_host_draw.h": "54465587f7d850f1d0dfec78a4081655f03562d7c5c144b20ccadd9bfd4bfeb5",
+        "include-overlay-0/sbs788_prepared_guest_eye_pair.h": "7d273cc8d797a897f4245cf925cfc587fcd73cd57908b74f2cc1ba3176cd272c",
+        "include-overlay-0/sbs792_gameplay_eye_color_readback.h": "6268c4951ff9378cbde59149635291baf771610166366bead663899b717413ca",
+        "include-overlay-0/sbs793_prepared_game_draw_gate.h": "954762dbe70c34a20a6f08bd73a83a0c2f04fb479479579e636f45ed6172fd55",
+        "include-overlay-0/sbs794_gameplay_pair_owner.h": "164081eff5c24135362368f300bc66787c568215ab2ab1a60e498cb6a0727a2f",
+        "include-overlay-0/sbs876_capture_output_path.h": "3439174678d81063340a3af499d434d4c3e9edd739d48b3ff8931485cf44554d",
+        "include-overlay-0/rex/graphics/d3d12/command_processor.h": "4da701be89aa0c53673d62ea3f335762f98f83b51b2f47d1162097a280f86870",
+        "include-overlay-0/rex/graphics/d3d12/deferred_command_list.h": "f8d2007bf454bce674573a23971034b45903a824ae0651a62afa25aa9a8c53b0",
+        "include-overlay-0/rex/graphics/d3d12/render_target_cache.h": "d72ab5e362a6c4f087c4a4296b4f8989b0060e57ed5b5d7df259b76894547b63",
+        "include-overlay-0/rex/graphics/pipeline/shader/dxbc_translator.h": "8bf43d028a548bd8f78b5fd87bdc6a957130b196431a315926f0b190d2ac58ff",
+        "include-overlay-1/rex/graphics/d3d12/command_processor.h": "0e9021735ccf435423e1f9db126a7b7ba81412fe90266c9474972c395e57acf4",
+        "include-overlay-2/rex/graphics/d3d12/command_processor.h": "23549abc9229a4159be4b8efb8ed44f20cd3311c4e181ea1c57bb8ced3bd08c3",
+        "include-overlay-3/rex/graphics/d3d12/command_processor.h": "c0c056161a1f5466e0f2b8395619e69c319cbbf9e7a66f8d5c37b80a6e9d7a1f",
+        "per-file-include-0/private-depth-texture-source.h": "0663f78cc05e35abc21142b3acff4ea3185049f57af86db32a8cc6b44266a351",
+        "per-file-include-0/sbs736_matched_eye_resources.h": "d082a6599ae914a920c956678f6c244de2b7d0056dd05fca39267f90db98b511",
+        "per-file-include-0/sbs737_matched_deferred_eye_boundary.h": "7442a67f9a718682f19e5386811a94f854428834cc32ca45115c1cdc801a7910",
+        "per-file-include-0/sbs739_diagnostic_eye_boundary.h": "e81a71538dd200c4b1b467099b9cba5e9651bc2caf61b7a8a734faba75886e51",
+        "per-file-include-0/sbs746_stereo_clip_offset.h": "122ba07e1788687e959db5cf3da1836912429d4c15b47b3947c9cae7b526047e",
+        "per-file-include-0/sbs762_constants_writer.h": "0e4ef90069ca5b5680b9227e0be75918802fd4b6fc3a1c296e53d4e560ea8369",
+        "per-file-include-0/sbs769_scoped_constants.h": "a50f752d6913ad596501ddbe17935a5e47aad54fca653e1241b28f483b0c003c",
+        "per-file-include-0/sbs777_prepared_host_draw.h": "54465587f7d850f1d0dfec78a4081655f03562d7c5c144b20ccadd9bfd4bfeb5",
+        "per-file-include-0/sbs788_prepared_guest_eye_pair.h": "7d273cc8d797a897f4245cf925cfc587fcd73cd57908b74f2cc1ba3176cd272c",
+        "per-file-include-0/sbs792_gameplay_eye_color_readback.h": "6268c4951ff9378cbde59149635291baf771610166366bead663899b717413ca",
+        "per-file-include-0/sbs793_prepared_game_draw_gate.h": "954762dbe70c34a20a6f08bd73a83a0c2f04fb479479579e636f45ed6172fd55",
+        "per-file-include-0/sbs794_gameplay_pair_owner.h": "164081eff5c24135362368f300bc66787c568215ab2ab1a60e498cb6a0727a2f",
+        "per-file-include-0/sbs876_capture_output_path.h": "3439174678d81063340a3af499d434d4c3e9edd739d48b3ff8931485cf44554d",
+        "per-file-include-0/rex/graphics/d3d12/command_processor.h": "4da701be89aa0c53673d62ea3f335762f98f83b51b2f47d1162097a280f86870",
+        "per-file-include-0/rex/graphics/d3d12/deferred_command_list.h": "f8d2007bf454bce674573a23971034b45903a824ae0651a62afa25aa9a8c53b0",
+        "per-file-include-0/rex/graphics/d3d12/render_target_cache.h": "d72ab5e362a6c4f087c4a4296b4f8989b0060e57ed5b5d7df259b76894547b63",
+        "per-file-include-0/rex/graphics/pipeline/shader/dxbc_translator.h": "8bf43d028a548bd8f78b5fd87bdc6a957130b196431a315926f0b190d2ac58ff",
+        "per-file-include-1/deferred_eye_pass_boundary.h": "c0a0186eabd3260bb64fa0d0041f12e6ac972601b2771df20c69bbbb453fce6c",
+        "per-file-include-1/eye_resource_allocator.h": "d90e4a6cb537883a29592b867c2ed33536168c116063fc068e4a4d4a10e653b0",
+        "per-file-include-1/sbs727_deferred_eye_color_readback.h": "10fe7aadd4371edcff5eef9bf02b05c0fc8096477297f0718dddf532aef9a2a7",
+        "per-file-include-1/sbs736_matched_eye_resources.h": "d082a6599ae914a920c956678f6c244de2b7d0056dd05fca39267f90db98b511",
+        "per-file-include-1/sbs737_matched_deferred_eye_boundary.h": "7442a67f9a718682f19e5386811a94f854428834cc32ca45115c1cdc801a7910",
+        "per-file-include-1/sbs739_diagnostic_eye_boundary.h": "e81a71538dd200c4b1b467099b9cba5e9651bc2caf61b7a8a734faba75886e51",
+        "per-file-include-1/sbs_eye_frame_input.h": "0ed1827d1a59f3125f67f95cf67b223f85f1bad741f263399b6e836151ace8f2",
+        "per-file-include-2/eye_pass_boundary.h": "98461a449bf590ed7de9b5dd99efc34bdb3a797a2b078cab4f785f89fc18f347",
+        "per-file-include-2/eye_resource_allocator.h": "d90e4a6cb537883a29592b867c2ed33536168c116063fc068e4a4d4a10e653b0",
+        "per-file-include-2/sbs_eye_frame_input.h": "0ed1827d1a59f3125f67f95cf67b223f85f1bad741f263399b6e836151ace8f2"
+      }
+    }
+  }
+}

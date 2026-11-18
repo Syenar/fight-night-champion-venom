@@ -1,0 +1,1352 @@
+{
+  "inputHashes": {
+    "retailXex": "90a698c71aa714e383ce092750ce767e07145f1ca38d8a9c9b3bd8005ea29ff6",
+    "tu2Xexp": "8429d60620012112285809e6b6545af646056b9fccba3d1b88bb71c32ea9a8ae",
+    "rexglue": "0200a97f962ce042ec154ab6e1dee3f73ef8017bc47120c1b02ce0ebe7a17c37"
+  },
+  "runtimeFiles": {
+    "rexruntimerd.dll": "8188e3420ded22badc27d736c53d2d8fc86882a81ad1c06e6bdbe09c0367485c",
+    "rexgpu-xenosrd.dll": "0d921292a077114bf6b203327d7549d8562e161d967b4f00e69c170789cee679",
+    "TracyClientrd.dll": "3cd94b3877c90db0c3dc5e71bb9b33577168d11c06da461ed5e42b5de6a51da5"
+  },
+  "sdkLibraries": {
+    "rexruntimerd.lib": "97e575c5004095e2da0b657bb87e2bcb60a12e6c9de44befe6b4ae08aa4ce9d6",
+    "spdlogrd.lib": "f8b63093ba389cbf4867199e31fb6db79610bb077eb8be15cecc73390146ab46",
+    "fmtrd.lib": "c332d9d837ff65bed46dc24d2ebb501f0687bbba4c3c109c315db7bba5b60c26",
+    "SDL3-staticrd.lib": "dd0ab51beff77a2ef639e4c7821a2c5c1752e2b4ac9b384968341894d10db449",
+    "TracyClientrd.lib": "d56f66b931c5c06f97c5e51f13ca420ec71b7e15bc28651135d386b05d1747a2"
+  },
+  "compilerVersions": {
+    "clang22": "22.1.8",
+    "clang23": "23.1.4"
+  },
+  "compileProfiles": {
+    "mapping": "-DNOMINMAX -DREXGLUE_BUILD_CONFIG=\\\"RelWithDebInfo\\\" -DREXGLUE_ENABLE_PERF_COUNTERS -DREXGLUE_ENABLE_PROFILING -DREX_HAS_D3D12=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_DELAYED_INIT -DTRACY_ENABLE -DTRACY_FIBERS -DTRACY_IMPORTS -DTRACY_MANUAL_LIFETIME -DTRACY_ON_DEMAND -DWIN32_LEAN_AND_MEAN -I\"${sdkSource}/thirdparty/renderdoc\" -I\"${project}\" -I\"${project}/src\" -I\"${project}/generated/default\" -I\"${sdkSource}/thirdparty/imgui\" -I\"${sdkSource}/include\" -I\"${sdkBuild}/include\" -I\"${sdkSource}/thirdparty/simde\" -I\"${sdkSource}/thirdparty/simde/simde\" -I\"${sdkSource}/thirdparty/fmt/include\" -I\"${sdkSource}/thirdparty/spdlog/include\" -I\"${sdkBuild}/thirdparty/sdl3/include-revision\" -I\"${sdkSource}/thirdparty/sdl3/include\" -I\"${sdkSource}/thirdparty/dxc/include\" -isystem \"${sdkSource}/thirdparty/tomlplusplus/include\" -isystem \"${sdkSource}/thirdparty/tracy/public\" -mssse3 -O2 -DNDEBUG -std=gnu++23 -D_DLL -D_MT -Xclang --dependent-lib=msvcrt -g -Xclang -gcodeview -msse4.1",
+    "guest": "-DNOMINMAX -DREXGLUE_ENABLE_PERF_COUNTERS -DREXGLUE_ENABLE_PROFILING -DREX_HAS_D3D12=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_DELAYED_INIT -DTRACY_ENABLE -DTRACY_FIBERS -DTRACY_IMPORTS -DTRACY_MANUAL_LIFETIME -DTRACY_ON_DEMAND -DWIN32_LEAN_AND_MEAN -I\"${sdkSource}/thirdparty/renderdoc\" -I\"${project}\" -I\"${project}/src\" -I\"${project}/generated/default\" -I\"${sdkSource}/include\" -I\"${sdkBuild}/include\" -I\"${sdkSource}/thirdparty/simde\" -I\"${sdkSource}/thirdparty/simde/simde\" -I\"${sdkSource}/thirdparty/fmt/include\" -I\"${sdkSource}/thirdparty/spdlog/include\" -I\"${sdkBuild}/thirdparty/sdl3/include-revision\" -I\"${sdkSource}/thirdparty/sdl3/include\" -I\"${sdkSource}/thirdparty/dxc/include\" -isystem \"${sdkSource}/thirdparty/tomlplusplus/include\" -isystem \"${sdkSource}/thirdparty/tracy/public\" -mssse3 -O2 -DNDEBUG -std=gnu++23 -D_DLL -D_MT -Xclang --dependent-lib=msvcrt -g -Xclang -gcodeview -msse4.1 -fasync-exceptions -gline-tables-only -fasync-exceptions -gline-tables-only -Xclang -include-pch -Xclang \"${pch}\" -Xclang -include -Xclang \"${pchHeader}\"",
+    "digital-events": "-DNOMINMAX -DREXGLUE_BUILD_CONFIG=\\\"RelWithDebInfo\\\" -DREXGLUE_ENABLE_PERF_COUNTERS -DREXGLUE_ENABLE_PROFILING -DREX_HAS_D3D12=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_DELAYED_INIT -DTRACY_ENABLE -DTRACY_FIBERS -DTRACY_IMPORTS -DTRACY_MANUAL_LIFETIME -DTRACY_ON_DEMAND -DWIN32_LEAN_AND_MEAN -I\"${sdkSource}/thirdparty/renderdoc\" -I\"${project}\" -I\"${project}/src\" -I\"${project}/generated/default\" -I\"${sdkSource}/thirdparty/imgui\" -I\"${sdkSource}/include\" -I\"${sdkBuild}/include\" -I\"${sdkSource}/thirdparty/simde\" -I\"${sdkSource}/thirdparty/simde/simde\" -I\"${sdkSource}/thirdparty/fmt/include\" -I\"${sdkSource}/thirdparty/spdlog/include\" -I\"${sdkBuild}/thirdparty/sdl3/include-revision\" -I\"${sdkSource}/thirdparty/sdl3/include\" -I\"${sdkSource}/thirdparty/dxc/include\" -isystem \"${sdkSource}/thirdparty/tomlplusplus/include\" -isystem \"${sdkSource}/thirdparty/tracy/public\" -mssse3 -O2 -DNDEBUG -std=gnu++23 -D_DLL -D_MT -Xclang --dependent-lib=msvcrt -g -Xclang -gcodeview -msse4.1",
+    "main.cpp": "-DNOMINMAX -DREXGLUE_BUILD_CONFIG=\\\"RelWithDebInfo\\\" -DREXGLUE_ENABLE_PERF_COUNTERS -DREXGLUE_ENABLE_PROFILING -DREX_HAS_D3D12=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_DELAYED_INIT -DTRACY_ENABLE -DTRACY_FIBERS -DTRACY_IMPORTS -DTRACY_MANUAL_LIFETIME -DTRACY_ON_DEMAND -DWIN32_LEAN_AND_MEAN -I\"${sdkSource}/thirdparty/renderdoc\" -I\"${project}\" -I\"${project}/src\" -I\"${project}/generated/default\" -I\"${sdkSource}/thirdparty/imgui\" -I\"${sdkSource}/include\" -I\"${sdkBuild}/include\" -I\"${sdkSource}/thirdparty/simde\" -I\"${sdkSource}/thirdparty/simde/simde\" -I\"${sdkSource}/thirdparty/fmt/include\" -I\"${sdkSource}/thirdparty/spdlog/include\" -I\"${sdkBuild}/thirdparty/sdl3/include-revision\" -I\"${sdkSource}/thirdparty/sdl3/include\" -I\"${sdkSource}/thirdparty/dxc/include\" -isystem \"${sdkSource}/thirdparty/tomlplusplus/include\" -isystem \"${sdkSource}/thirdparty/tracy/public\" -mssse3 -O2 -DNDEBUG -std=gnu++23 -D_DLL -D_MT -Xclang --dependent-lib=msvcrt -g -Xclang -gcodeview -msse4.1",
+    "fnc_hooks.cpp": "-DNOMINMAX -DREXGLUE_BUILD_CONFIG=\\\"RelWithDebInfo\\\" -DREXGLUE_ENABLE_PERF_COUNTERS -DREXGLUE_ENABLE_PROFILING -DREX_HAS_D3D12=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_DELAYED_INIT -DTRACY_ENABLE -DTRACY_FIBERS -DTRACY_IMPORTS -DTRACY_MANUAL_LIFETIME -DTRACY_ON_DEMAND -DWIN32_LEAN_AND_MEAN -I\"${sdkSource}/thirdparty/renderdoc\" -I\"${project}\" -I\"${project}/src\" -I\"${project}/generated/default\" -I\"${sdkSource}/thirdparty/imgui\" -I\"${sdkSource}/include\" -I\"${sdkBuild}/include\" -I\"${sdkSource}/thirdparty/simde\" -I\"${sdkSource}/thirdparty/simde/simde\" -I\"${sdkSource}/thirdparty/fmt/include\" -I\"${sdkSource}/thirdparty/spdlog/include\" -I\"${sdkBuild}/thirdparty/sdl3/include-revision\" -I\"${sdkSource}/thirdparty/sdl3/include\" -I\"${sdkSource}/thirdparty/dxc/include\" -isystem \"${sdkSource}/thirdparty/tomlplusplus/include\" -isystem \"${sdkSource}/thirdparty/tracy/public\" -mssse3 -O2 -DNDEBUG -std=gnu++23 -D_DLL -D_MT -Xclang --dependent-lib=msvcrt -g -Xclang -gcodeview -msse4.1",
+    "fnc_dlc_unlock.cpp": "-DNOMINMAX -DREXGLUE_BUILD_CONFIG=\\\"RelWithDebInfo\\\" -DREXGLUE_ENABLE_PERF_COUNTERS -DREXGLUE_ENABLE_PROFILING -DREX_HAS_D3D12=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_DELAYED_INIT -DTRACY_ENABLE -DTRACY_FIBERS -DTRACY_IMPORTS -DTRACY_MANUAL_LIFETIME -DTRACY_ON_DEMAND -DWIN32_LEAN_AND_MEAN -I\"${sdkSource}/thirdparty/renderdoc\" -I\"${project}\" -I\"${project}/src\" -I\"${project}/generated/default\" -I\"${sdkSource}/thirdparty/imgui\" -I\"${sdkSource}/include\" -I\"${sdkBuild}/include\" -I\"${sdkSource}/thirdparty/simde\" -I\"${sdkSource}/thirdparty/simde/simde\" -I\"${sdkSource}/thirdparty/fmt/include\" -I\"${sdkSource}/thirdparty/spdlog/include\" -I\"${sdkBuild}/thirdparty/sdl3/include-revision\" -I\"${sdkSource}/thirdparty/sdl3/include\" -I\"${sdkSource}/thirdparty/dxc/include\" -isystem \"${sdkSource}/thirdparty/tomlplusplus/include\" -isystem \"${sdkSource}/thirdparty/tracy/public\" -mssse3 -O2 -DNDEBUG -std=gnu++23 -D_DLL -D_MT -Xclang --dependent-lib=msvcrt -g -Xclang -gcodeview -msse4.1",
+    "windowed_app_main_sdl.cpp": "-DNOMINMAX -DREXGLUE_BUILD_CONFIG=\\\"RelWithDebInfo\\\" -DREXGLUE_ENABLE_PERF_COUNTERS -DREXGLUE_ENABLE_PROFILING -DREX_HAS_D3D12=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_DELAYED_INIT -DTRACY_ENABLE -DTRACY_FIBERS -DTRACY_IMPORTS -DTRACY_MANUAL_LIFETIME -DTRACY_ON_DEMAND -DWIN32_LEAN_AND_MEAN -I\"${sdkSource}/thirdparty/renderdoc\" -I\"${project}\" -I\"${project}/src\" -I\"${project}/generated/default\" -I\"${sdkSource}/thirdparty/imgui\" -I\"${sdkSource}/include\" -I\"${sdkBuild}/include\" -I\"${sdkSource}/thirdparty/simde\" -I\"${sdkSource}/thirdparty/simde/simde\" -I\"${sdkSource}/thirdparty/fmt/include\" -I\"${sdkSource}/thirdparty/spdlog/include\" -I\"${sdkBuild}/thirdparty/sdl3/include-revision\" -I\"${sdkSource}/thirdparty/sdl3/include\" -I\"${sdkSource}/thirdparty/dxc/include\" -isystem \"${sdkSource}/thirdparty/tomlplusplus/include\" -isystem \"${sdkSource}/thirdparty/tracy/public\" -mssse3 -O2 -DNDEBUG -std=gnu++23 -D_DLL -D_MT -Xclang --dependent-lib=msvcrt -g -Xclang -gcodeview -msse4.1",
+    "rex_app.cpp": "-DNOMINMAX -DREXGLUE_BUILD_CONFIG=\\\"RelWithDebInfo\\\" -DREXGLUE_ENABLE_PERF_COUNTERS -DREXGLUE_ENABLE_PROFILING -DREX_HAS_D3D12=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_DELAYED_INIT -DTRACY_ENABLE -DTRACY_FIBERS -DTRACY_IMPORTS -DTRACY_MANUAL_LIFETIME -DTRACY_ON_DEMAND -DWIN32_LEAN_AND_MEAN -I\"${sdkSource}/thirdparty/renderdoc\" -I\"${project}\" -I\"${project}/src\" -I\"${project}/generated/default\" -I\"${sdkSource}/thirdparty/imgui\" -I\"${sdkSource}/include\" -I\"${sdkBuild}/include\" -I\"${sdkSource}/thirdparty/simde\" -I\"${sdkSource}/thirdparty/simde/simde\" -I\"${sdkSource}/thirdparty/fmt/include\" -I\"${sdkSource}/thirdparty/spdlog/include\" -I\"${sdkBuild}/thirdparty/sdl3/include-revision\" -I\"${sdkSource}/thirdparty/sdl3/include\" -I\"${sdkSource}/thirdparty/dxc/include\" -isystem \"${sdkSource}/thirdparty/tomlplusplus/include\" -isystem \"${sdkSource}/thirdparty/tracy/public\" -mssse3 -O2 -DNDEBUG -std=gnu++23 -D_DLL -D_MT -Xclang --dependent-lib=msvcrt -g -Xclang -gcodeview -msse4.1",
+    "precompile": "-DNOMINMAX -DREXGLUE_ENABLE_PERF_COUNTERS -DREXGLUE_ENABLE_PROFILING -DREX_HAS_D3D12=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DTRACY_DELAYED_INIT -DTRACY_ENABLE -DTRACY_FIBERS -DTRACY_IMPORTS -DTRACY_MANUAL_LIFETIME -DTRACY_ON_DEMAND -DWIN32_LEAN_AND_MEAN -I\"${sdkSource}/thirdparty/renderdoc\" -I\"${project}\" -I\"${project}/src\" -I\"${project}/generated/default\" -I\"${sdkSource}/include\" -I\"${sdkBuild}/include\" -I\"${sdkSource}/thirdparty/simde\" -I\"${sdkSource}/thirdparty/simde/simde\" -I\"${sdkSource}/thirdparty/fmt/include\" -I\"${sdkSource}/thirdparty/spdlog/include\" -I\"${sdkBuild}/thirdparty/sdl3/include-revision\" -I\"${sdkSource}/thirdparty/sdl3/include\" -I\"${sdkSource}/thirdparty/dxc/include\" -isystem \"${sdkSource}/thirdparty/tomlplusplus/include\" -isystem \"${sdkSource}/thirdparty/tracy/public\" -mssse3 -O2 -DNDEBUG -std=gnu++23 -D_DLL -D_MT -Xclang --dependent-lib=msvcrt -g -Xclang -gcodeview -msse4.1 -fasync-exceptions -gline-tables-only -Xclang -emit-pch -Xclang -include -Xclang \"${pchHeader}\" -x c++-header"
+  },
+  "linkFlags": "-nostartfiles -nostdlib -mssse3 -O2 -DNDEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrt -g -Xclang -gcodeview -Xlinker /subsystem:windows -fuse-ld=lld-link",
+  "linkLibraries": "\"${sdkLibs}/rexruntimerd.lib\" \"${sdkLibs}/spdlogrd.lib\" \"${sdkLibs}/fmtrd.lib\" \"${sdkLibs}/SDL3-staticrd.lib\" -lkernel32.lib -luser32.lib -lgdi32.lib -lwinmm.lib -limm32.lib -lole32.lib -loleaut32.lib -lversion.lib -luuid.lib -ladvapi32.lib -lsetupapi.lib -lshell32.lib -lhid.lib -ldinput8.lib \"${sdkLibs}/TracyClientrd.lib\" -lws2_32.lib -ldbghelp.lib -ldxgi.lib -ldxguid.lib -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames",
+  "objects": [
+    {
+      "file": "venom_fnc_canonical_tu2_init.cpp",
+      "kind": "generated",
+      "profile": "mapping",
+      "compiler": "clang22"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_register.cpp",
+      "kind": "generated",
+      "profile": "mapping",
+      "compiler": "clang22"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.0.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.1.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.2.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.3.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.4.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.5.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.6.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.7.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.8.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.9.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.10.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.11.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.12.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.13.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.14.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.15.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.16.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.17.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.18.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.19.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.20.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.21.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.22.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.23.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.24.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.25.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.26.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.27.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.28.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.29.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.30.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.31.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.32.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.33.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.34.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.35.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.36.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.37.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.38.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.39.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.40.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.41.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.42.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.43.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.44.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.45.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.46.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.47.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.48.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.49.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.50.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.51.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.52.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.53.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.54.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.55.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.56.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.57.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.58.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.59.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.60.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.61.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.62.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.63.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.64.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.65.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.66.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.67.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.68.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.69.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.70.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.71.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.72.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.73.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.74.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.75.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.76.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.77.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.78.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.79.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.80.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.81.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.82.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.83.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.84.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.85.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.86.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.87.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.88.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.89.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.90.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.91.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.92.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.93.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.94.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.95.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.96.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.97.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.98.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.99.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.100.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.101.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.102.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.103.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.104.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.105.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.106.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.107.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.108.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.109.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.110.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.111.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.112.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.113.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.114.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.115.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.116.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.117.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.118.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.119.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.120.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.121.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.122.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.123.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.124.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.125.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.126.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.127.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.128.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.129.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.130.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.131.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.132.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.133.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.134.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.135.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.136.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.137.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.138.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.139.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.140.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.141.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.142.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.143.cpp",
+      "kind": "generated",
+      "profile": "digital-events",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.144.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.145.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.146.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.147.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.148.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.149.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.150.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.151.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.152.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.153.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.154.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.155.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.156.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.157.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.158.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.159.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.160.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.161.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.162.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.163.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.164.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.165.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.166.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.167.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.168.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.169.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.170.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.171.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.172.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.173.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.174.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.175.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.176.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.177.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.178.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.179.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.180.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.181.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.182.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.183.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.184.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.185.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.186.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.187.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.188.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.189.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.190.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.191.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.192.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.193.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.194.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.195.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.196.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.197.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.198.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.199.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.200.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.201.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.202.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.203.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.204.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.205.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.206.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.207.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.208.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.209.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.210.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "venom_fnc_canonical_tu2_recomp.211.cpp",
+      "kind": "generated",
+      "profile": "guest",
+      "compiler": "clang23"
+    },
+    {
+      "file": "main.cpp",
+      "kind": "host",
+      "profile": "main.cpp",
+      "compiler": "clang23"
+    },
+    {
+      "file": "fnc_hooks.cpp",
+      "kind": "host",
+      "profile": "fnc_hooks.cpp",
+      "compiler": "clang23"
+    },
+    {
+      "file": "fnc_dlc_unlock.cpp",
+      "kind": "host",
+      "profile": "fnc_dlc_unlock.cpp",
+      "compiler": "clang23"
+    },
+    {
+      "file": "windowed_app_main_sdl.cpp",
+      "kind": "sdk-ui",
+      "profile": "windowed_app_main_sdl.cpp",
+      "compiler": "clang23"
+    },
+    {
+      "file": "rex_app.cpp",
+      "kind": "sdk-ui",
+      "profile": "rex_app.cpp",
+      "compiler": "clang23"
+    }
+  ]
+}

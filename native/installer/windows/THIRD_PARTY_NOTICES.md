@@ -1,0 +1,7 @@
+# Source bundle attribution
+
+The SDK patches and overlay headers target ReXGlue SDK revision c94f5ebdcb3c9d1a460ca48e04f9758448f8d518 from https://github.com/rexglue/rexglue-sdk. Its exact root LICENSE is retained as notices/ReXGlue-LICENSE. The license credits Tom Clay and portions derived from Xenia by Ben Vanik and contributors. The SDK and populated dependency objects are supplied separately by the user; sdk-source-lock.json pins their revisions. Their licenses remain with those separately supplied sources and any privately built binaries.
+
+Bundled APT helpers derive from FNC Reborn by Whompay (https://github.com/whompay/FNCReborn), with FNC Reborn TU2 reference credit (https://github.com/bjarnimaron/FNCReborn-TU2). The exact upstream Apache 2.0 LICENSE and NOTICE are retained in native/installer/apt-tools and native/content-tool. The APT source lock identifies the supplied source hashes. The content helper README preserves its provenance and changes. The authored title hooks and transforms retain their source attribution in the public recipes; no generated game code or game media is included.
+
+The UI is built with Clang/LLVM, the Windows SDK and Microsoft static CRT. Build tools and SDK libraries are not bundled. The installer build receipt records their compiler/version identities. Windows system DLLs are provided by Windows. This notice does not grant rights to any game, title update, DLC or generated game code.

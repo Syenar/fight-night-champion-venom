@@ -1,0 +1,19 @@
+{
+  "Origin": "https://github.com/whompay/FNCReborn",
+  "UpstreamToolsTree": "c43b694f351cc8d80afc0debb85b6a5715249f08",
+  "UpstreamBlobs": {
+    "aptpatch_display.py": "7b64c6cb86b9539d610ec7da288919e20c05482e",
+    "ebbig.py": "d3372954ba38d76d6c89379d0d5954a44d7c6776",
+    "refpack_enc.py": "8733e1a515ceb5aaf2ac09efb4c0ebb5f3420f67",
+    "refpack.py": "8acf228e3cd0af3f3d26c53e5d52ff6feb480e27"
+  },
+  "BundledSha256": {
+    "aptpatch_display.py": "596D698C46DE67A0C3C86F12FCEDB720D705C8655D8E507BF1B61646E8F2FDFD",
+    "ebbig.py": "BA39F8C60BDC64AC4CAD84BD9443AE23D422F0A9DCECBB9B28A6C7E1A025F4EE",
+    "refpack_enc.py": "C9FF4171D0D4D91E398222E02776BCCE43F1E9CCD2E4A7433F03B56592002677",
+    "refpack.py": "548468DB5B136EBB2443D82560C9E9BD08632314605039E13646E99B5CDDD540"
+  },
+  "ModifiedFromUpstream": [
+    "aptpatch_display.py"
+  ]
+}

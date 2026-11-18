@@ -1,0 +1,232 @@
+[
+  {
+    "file": "venom_fnc_canonical_tu2_pch.h",
+    "beforeSha256": "a0f65d196b7c2eb032348ae78293e1749b067b3dd5c97bb49f88b1b8dbb493dd",
+    "afterSha256": "9f43e5015d9a4514785b4f2d39eec26fe54cb2e07c572aea2b20c3535c7d5bff",
+    "edits": [
+      {
+        "startLineZeroBased": 135,
+        "removeLineCount": 1,
+        "insertLines": [
+          "#define REX_STORE_U32(x, y) do { \\\n",
+          "  u32 rex_store_addr_ = (u32)(x); \\\n",
+          "  u32 rex_store_value_ = (u32)(y); \\\n",
+          "  if (rex_store_addr_ >= 0xB3FFB030u && rex_store_addr_ <= 0xB3FFB050u) { \\\n",
+          "    REXLOG_INFO(\"[VENOM_INPUT_OBJECT_WRITE] addr={:#x} value={:#x} lr={:#x}\", rex_store_addr_, rex_store_value_, ctx.lr); \\\n",
+          "  } \\\n",
+          "  *(volatile u32*)(base + rex_store_addr_ + REX_PHYS_HOST_OFFSET(rex_store_addr_)) = __builtin_bswap32(rex_store_value_); \\\n",
+          "} while (0)\n"
+        ]
+      },
+      {
+        "startLineZeroBased": 263,
+        "removeLineCount": 0,
+        "insertLines": [
+          "    if (rex_indirect_target_ >= 0x8280E000u && rex_indirect_target_ <= 0x8280F000u) {       \\\n",
+          "      REXLOG_INFO(\"[VENOM_INDIRECT_INPUT_TARGET] target={:#x} lr={:#x} r3={:#x} r4={:#x} r5={:#x} r6={:#x}\", \\\n",
+          "                  rex_indirect_target_, ctx.lr, ctx.r3.u32, ctx.r4.u32, ctx.r5.u32, ctx.r6.u32); \\\n",
+          "    }                                                                                      \\\n"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "venom_fnc_canonical_tu2_recomp.18.cpp",
+    "beforeSha256": "84dea8bb385ae69a068798747656f59467b6244933d210a0fa0626387e2e46e0",
+    "afterSha256": "1ac762332b09b51196cf9eeaa51e9a7f98be6e37e1f15a8cbab7cbb2e0aab3a4",
+    "edits": [
+      {
+        "startLineZeroBased": 34118,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\tconst uint32_t boxer_id = ctx.r5.u32;\n",
+          "\tREXLOG_INFO(\"[FNC-BOXER-LOCK-CALL] boxer_id={:#x}\", boxer_id);\n"
+        ]
+      },
+      {
+        "startLineZeroBased": 34131,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\tREXLOG_INFO(\"[FNC-BOXER-LOCK-RESULT] boxer_id={:#x} result={}\", boxer_id, ctx.r3.u32 & 0xFF);\n"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "venom_fnc_canonical_tu2_recomp.74.cpp",
+    "beforeSha256": "af1d3cccce9ed6e2031ca4ce3ae6332da5f67a649a515c619bb2e8bdd13ea8b3",
+    "afterSha256": "b13a6e2e9d5f98545c343abc0f2f7381423ccafab08a7dd965a07240a479303d",
+    "edits": [
+      {
+        "startLineZeroBased": 13183,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\textern void fnc_apply_forced_menu_event(PPCContext& __restrict, uint8_t*);\n",
+          "\tfnc_apply_forced_menu_event(ctx, base);\n",
+          "\tREXLOG_INFO(\"[VENOM_MENU_EVENT] callback={:#x} result={} code={:#x} value={:#x} user={} flags={:#x}\",\n",
+          "\t            ctx.ctr.u32, REX_LOAD_U32(ctx.r1.u32 + 112), REX_LOAD_U32(ctx.r1.u32 + 120),\n",
+          "\t            REX_LOAD_U32(ctx.r1.u32 + 116), ctx.r31.u32, ctx.r5.u32);\n"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "venom_fnc_canonical_tu2_recomp.103.cpp",
+    "beforeSha256": "646c0a7089cb1149cbf9eca76e4701f2674b9077074d50bb47fa3a5fa5eb651f",
+    "afterSha256": "b291b15999e69e39180c078ef71d9e7be89786b299715fea3c0eed4922694b48",
+    "edits": [
+      {
+        "startLineZeroBased": 15354,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\tREXLOG_INFO(\"[VENOM_INPUT_SET_CALLBACK_DIRECT] object={:#x} callback={:#x} context={:#x}\", ctx.r3.u32, ctx.r4.u32, ctx.r5.u32);\n"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "venom_fnc_canonical_tu2_recomp.125.cpp",
+    "beforeSha256": "7d9a50d3fe3fde611c41c744559f046e4e861b56c3d2aca16574a93d784b23a6",
+    "afterSha256": "f1a46433c7a5f7a37462ad8c34abc62b2e5cc9b990a874e772701fa6f01e48ca",
+    "edits": [
+      {
+        "startLineZeroBased": 15717,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\tREXLOG_INFO(\"[VENOM_INPUT_REGISTER_DIRECT] r3={:#x} r4={:#x} r5={:#x} r6={:#x}\", ctx.r3.u32, ctx.r4.u32, ctx.r5.u32, ctx.r6.u32);\n"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "venom_fnc_canonical_tu2_recomp.143.cpp",
+    "beforeSha256": "974cb191c76c8224a964bde6f092ad7688cd2d9bb5c82781f1c44ea28e664d94",
+    "afterSha256": "20c98d29d5012258ed63f7e5a5e58fafe894b01abc110b10a3aa43c990feb60d",
+    "edits": [
+      {
+        "startLineZeroBased": 14741,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\textern void fnc_inject_menu_state(PPCContext& __restrict, uint8_t*);\n",
+          "\tfnc_inject_menu_state(ctx, base);\n",
+          "\tREXLOG_INFO(\"[VENOM_INPUT_RESULT] user={} device_result={:#x} r29={:#x} r28={:#x} state={:#x} buttons1={:#x} buttons2={:#x} callback={:#x}\",\n",
+          "\t            ctx.r26.u32, ctx.r3.u32, ctx.r29.u32, ctx.r28.u32, ctx.r31.u32,\n",
+          "\t            REX_LOAD_U16(ctx.r1.u32 + 100), REX_LOAD_U16(ctx.r1.u32 + 212),\n",
+          "\t            REX_LOAD_U32(ctx.r30.u32 + 0));\n"
+        ]
+      },
+      {
+        "startLineZeroBased": 14761,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\tREXLOG_INFO(\"[VENOM_INPUT_BRANCH] user={} r29={:#x} r28={:#x} edge_flag={:#x} callback={:#x}\",\n",
+          "\t            ctx.r26.u32, ctx.r29.u32, ctx.r28.u32, REX_LOAD_U8(ctx.r31.u32 + 176),\n",
+          "\t            REX_LOAD_U32(ctx.r30.u32 + 0));\n"
+        ]
+      },
+      {
+        "startLineZeroBased": 14794,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\tREXLOG_INFO(\"[VENOM_INPUT_DISPATCH] edge=0 user={} cb={:#x} obj={:#x} state={:#x} buttons1={:#x} buttons2={:#x}\", ctx.r26.u32, ctx.ctr.u32, ctx.r31.u32, ctx.r29.u32, REX_LOAD_U16(ctx.r1.u32 + 100), REX_LOAD_U16(ctx.r1.u32 + 212));\n"
+        ]
+      },
+      {
+        "startLineZeroBased": 14824,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\tREXLOG_INFO(\"[VENOM_INPUT_DISPATCH] edge=1 user={} cb={:#x} obj={:#x} state={:#x} buttons1={:#x} buttons2={:#x}\", ctx.r26.u32, ctx.ctr.u32, ctx.r31.u32, ctx.r29.u32, REX_LOAD_U16(ctx.r1.u32 + 100), REX_LOAD_U16(ctx.r1.u32 + 212));\n"
+        ]
+      },
+      {
+        "startLineZeroBased": 15387,
+        "removeLineCount": 0,
+        "insertLines": [
+          "  REXLOG_INFO(\"VENOM_DIGITAL_EVENT id={} value={} button_state={} callback={:#x} user={}\",\n",
+          "              REX_LOAD_U32(ctx.r1.u32 + 156), float(temp.f32),\n",
+          "              REX_LOAD_U16(ctx.r1.u32 + 164), ctx.r11.u32, ctx.r26.u32);\n"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "venom_fnc_canonical_tu2_recomp.144.cpp",
+    "beforeSha256": "da218ec91476e550cf1ba9268246525cbd79905f6895613c63ebe91ba22ad1cb",
+    "afterSha256": "974f35d8fbed23564ed20a6b123aba8da64022324652d79e63deeb0e9e96ee2c",
+    "edits": [
+      {
+        "startLineZeroBased": 29486,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\tREXLOG_INFO(\"[VENOM_DLC_BASE_LICENSES_DIRECT]\");\n"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "venom_fnc_canonical_tu2_recomp.158.cpp",
+    "beforeSha256": "7b516bc050e7f42c46a3ad20c3c95045c98dc22c751031abb057e7abf715d59a",
+    "afterSha256": "2b10665a46e2d3dab804fa5fad5656ef08277b649485e0325310e117b4c74a51",
+    "edits": [
+      {
+        "startLineZeroBased": 32925,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\tREXLOG_INFO(\"[FNC-ROSTER-ITEM] index={:#x} table={:#x} out={:#x}\", ctx.r3.u32, ctx.r4.u32, ctx.r5.u32);\n"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "venom_fnc_canonical_tu2_recomp.166.cpp",
+    "beforeSha256": "75a402e96789f4947aff3a3727235b5bf8d994fe9ac85ff0a07ef86ae50f9464",
+    "afterSha256": "96fe0b3781cd82ca6a9b5defcc946982ee971cfea4445821e220ba28c7382843",
+    "edits": [
+      {
+        "startLineZeroBased": 1,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\n",
+          "extern \"C\" bool fnc_dlc_force_game_mode(uint32_t mode);\n"
+        ]
+      },
+      {
+        "startLineZeroBased": 32587,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\tREXLOG_INFO(\"[FNC-DLC-MODE-CALL] mode={}\", ctx.r3.u32);\n",
+          "\tif (fnc_dlc_force_game_mode(ctx.r3.u32)) {\n",
+          "\t\tctx.r3.u64 = 1;\n",
+          "\t\treturn;\n",
+          "\t}\n"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "venom_fnc_canonical_tu2_recomp.176.cpp",
+    "beforeSha256": "c71f4f03dbd8b386fb79f0e2aeefbfca4a095bf710be6e1a3732e7b5732daf83",
+    "afterSha256": "434a39ee4489ecce8660f76f27f393c2bfabb3f52bea90ebd382dd41fe7936f4",
+    "edits": [
+      {
+        "startLineZeroBased": 1,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\n",
+          "extern \"C\" bool fnc_dlc_force_feature(uint32_t feature);\n"
+        ]
+      },
+      {
+        "startLineZeroBased": 34980,
+        "removeLineCount": 0,
+        "insertLines": [
+          "\tREXLOG_INFO(\"[FNC-DLC-FEATURE-CALL] feature={}\", ctx.r4.u32);\n",
+          "\tif (fnc_dlc_force_feature(ctx.r4.u32)) {\n",
+          "\t\tctx.r3.u64 = 1;\n",
+          "\t\treturn;\n",
+          "\t}\n"
+        ]
+      }
+    ]
+  }
+]
