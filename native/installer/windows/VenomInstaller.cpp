@@ -29,7 +29,8 @@ enum FieldIndex
     NinjaField,
     PowerShellField,
     JobsField,
-    InstallField
+    InstallField,
+    PreviousOutputField
 };
 struct Field
 {
@@ -53,7 +54,8 @@ const Field fields[] = {
     {L"ninja", L"Ninja executable or PATH command", false, true, L"ninja"},
     {L"powershell", L"PowerShell 7 executable or PATH command", false, true, L"pwsh"},
     {L"jobs", L"Parallel compiler jobs", false, false, L"2"},
-    {L"install-root", L"Install folder override (blank = output/installed)", true, true, L""}};
+    {L"install-root", L"Install folder override (blank = output/installed)", true, true, L""},
+    {L"previous-output", L"Previous Venom output (optional)", true, true, L""}};
 constexpr int FieldCount = sizeof(fields) / sizeof(fields[0]);
 HWND mainWindow, fieldInputs[FieldCount], fieldLabels[FieldCount], browseButtons[FieldCount],
     introductionLabel, progressLog, statusLabel, reviewButton, buildButton, loadButton, rememberBox,
@@ -231,7 +233,7 @@ bool validateInputs(const std::vector<std::wstring> &inputValues, bool resume, s
     for (int fieldIndex = 0; fieldIndex < FieldCount; ++fieldIndex)
     {
         if (inputValues[fieldIndex].empty() && fieldIndex != AptOverrideField &&
-            fieldIndex != InstallField)
+            fieldIndex != InstallField && fieldIndex != PreviousOutputField)
         {
             error = L"Select or enter: " + std::wstring(fields[fieldIndex].label);
             return false;
@@ -250,7 +252,7 @@ bool validateInputs(const std::vector<std::wstring> &inputValues, bool resume, s
         return false;
     }
     for (int fieldIndex : {SdkField, RetailField, UpdateField, DlcField, Clang23Field, Clang22Field,
-                           PythonField, AptOverrideField})
+                           PythonField, AptOverrideField, PreviousOutputField})
     {
         if (inputValues[fieldIndex].empty())
         {
@@ -1079,6 +1081,7 @@ int wmain(int argumentCount, wchar_t **argumentValues)
     std::vector<std::wstring> inputValues(FieldCount, L"x");
     inputValues[AptOverrideField] = L"";
     inputValues[InstallField] = L"";
+    inputValues[PreviousOutputField] = L"";
     auto parsedArguments = makePipelineArguments(inputValues, false);
     if (std::find(parsedArguments.begin(), parsedArguments.end(), L"--apt-tools-root") !=
             parsedArguments.end() ||
@@ -1087,6 +1090,15 @@ int wmain(int argumentCount, wchar_t **argumentValues)
     {
         return 3;
     }
+    if (std::find(parsedArguments.begin(), parsedArguments.end(), L"--previous-output") != parsedArguments.end())
+        return 8;
+    inputValues[PreviousOutputField] = L"E:/previous Venom output";
+    auto upgradeArguments = makePipelineArguments(inputValues, false);
+    auto previousOption = std::find(upgradeArguments.begin(), upgradeArguments.end(), L"--previous-output");
+    if (previousOption == upgradeArguments.end() || std::next(previousOption) == upgradeArguments.end() ||
+        *std::next(previousOption) != inputValues[PreviousOutputField])
+        return 9;
+    inputValues[PreviousOutputField].clear();
     auto resumedArguments = makePipelineArguments(inputValues, true);
     if (resumedArguments.back() != L"--resume")
     {

@@ -11,6 +11,8 @@ import subprocess
 import sys
 import datetime
 
+from save_upgrade import prepare_saves
+
 
 PACKAGE = Path(__file__).resolve().parent
 NATIVE = PACKAGE.parent
@@ -164,6 +166,11 @@ def main():
         type=Path,
         help='Fresh installation directory inside output (default:output/installed).',
     )
+    parser.add_argument(
+        '--previous-output',
+        type=Path,
+        help='Optional earlier Venom output folder. A single existing install beside the new output is detected automatically.',
+    )
     parser.add_argument('--cmake', default='cmake')
     parser.add_argument('--ninja', default='ninja')
     parser.add_argument('--powershell', default='pwsh')
@@ -177,7 +184,7 @@ def main():
     arguments = parser.parse_args()
     require(arguments.jobs > 0, '--jobs must be positive')
     for name, value in vars(arguments).items():
-        if isinstance(value, Path):
+        if isinstance(value, Path) and name != 'previous_output':
             setattr(arguments, name, value.resolve())
     output_root = arguments.output
     arguments.install_root = arguments.install_root or output_root / 'installed'
@@ -239,7 +246,7 @@ def main():
         'args': {
             k: str(v) if isinstance(v, Path) else v
             for (k, v) in vars(arguments).items()
-            if k != 'resume'
+            if k not in ('resume', 'previous_output')
         },
         'retailSha256': digest(retail_xex),
         'tu2Sha256': digest(tu2_patch),
@@ -636,7 +643,8 @@ def main():
     run_root = output_root / 'runs'
     user_data_root = output_root / 'user-data'
     run_root.mkdir(exist_ok=True)
-    user_data_root.mkdir(exist_ok=True)
+    save_upgrade = prepare_saves(output_root, arguments.previous_output)
+    print(f"save upgrade: {save_upgrade['status']}, {save_upgrade['filesPreserved']} files preserved", flush=True)
     powershell = shutil.which(arguments.powershell)
     require(bool(powershell), 'PowerShell 7 is required')
     if not arguments.install_root.exists():
@@ -735,6 +743,7 @@ def main():
         'titleObjects': 219,
         'codegenMaterialsMatched': 431,
         'installedDlcFiles': len(dlc_manifest),
+        'saveUpgrade': save_upgrade,
         'ownedInputsUnchanged': True,
         'publicTitleProfileUnchanged': True,
         'receiptHashes': receipts,

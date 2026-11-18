@@ -47,3 +47,9 @@ If SDL needs a custom mapping for your controller, pass the absolute path to an 
 ```powershell
 & 'D:/PrivateVenomBuild/build-r1/installed/Start-Installed-TU2.ps1' -InputBackend sdl -ControllerMappingFile 'D:/Controllers/gamecontrollerdb.txt'
 ```
+
+## Preserving saves when upgrading
+
+Choose a new build output under the same parent as your previous Venom output. The installer automatically copies the existing profiles and saves into the new build after compilation. Downloads and rebuilds use the same process. Close the old game before the build reaches the save-copy step so the update includes your latest checkpoint.
+
+If you moved the previous build or several unrelated save histories are available, use **Previous Venom output** in the Windows installer or pass `--previous-output` with the old build output folder. The old build and saves stay available. The new build gets its own save copy and imports DLC from the supplied owned DLC folder. Use the new installed launcher after upgrading. Resuming an existing output keeps its current saves.

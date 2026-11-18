@@ -249,6 +249,8 @@ UiSelfTestScenario parseSelfTestScenario(const std::string &text)
     {
         keys.insert("field." + strictUtf8(field.key));
     }
+    // Preserve legacy pinned scenarios and their exact authorized command line.
+    values.try_emplace("field.previous-output", "");
     selfTestRequire(values.size() == keys.size(), "Scenario field set is incomplete");
     for (const auto &[key, value] : values)
     {
@@ -713,14 +715,20 @@ unsigned selfTestScenarioRegressions()
             value = "E:/Venom-Installer-QA/pipeline/new-install";
         if (&field == &fields[JobsField])
             value = "2";
-        if (&field == &fields[AptOverrideField])
+        if (&field == &fields[AptOverrideField] || &field == &fields[PreviousOutputField])
             value = "";
         valid += "field." + strictUtf8(field.key) + "=" + value + "\n";
     }
     auto scenario = parseSelfTestScenario(valid);
     selfTestRequire(scenario.values.size() == FieldCount && scenario.timeoutSeconds == 60,
                     "Valid self-test data did not parse");
-    unsigned count = 1;
+    auto legacy = valid;
+    auto optionalOffset = legacy.find("field.previous-output=\n");
+    selfTestRequire(optionalOffset != std::string::npos, "Optional field fixture missing");
+    legacy.erase(optionalOffset, std::string("field.previous-output=\n").size());
+    selfTestRequire(parseSelfTestScenario(legacy).values == scenario.values,
+                    "Omitted optional previous output changed legacy scenario");
+    unsigned count = 2;
     auto reject = [&](const std::string &text) {
         bool rejected = false;
         try
