@@ -13,7 +13,7 @@
 namespace fs = std::filesystem;
 constexpr UINT LogMessage = WM_APP + 1, BuildDoneMessage = WM_APP + 2;
 constexpr int ReviewCommandId = 300, BuildCommandId = 301, LoadInputsId = 302,
-              RememberInputsId = 303, ResumeBuildId = 304, OpenOutputId = 305;
+              RememberInputsId = 303, ResumeBuildId = 304, OpenOutputId = 305, AdvancedId = 306, BuildToolsId = 307;
 enum FieldIndex
 {
     SdkField,
@@ -59,9 +59,9 @@ const Field fields[] = {
 constexpr int FieldCount = sizeof(fields) / sizeof(fields[0]);
 HWND mainWindow, fieldInputs[FieldCount], fieldLabels[FieldCount], browseButtons[FieldCount],
     introductionLabel, progressLog, statusLabel, reviewButton, buildButton, loadButton, rememberBox,
-    resumeBox, openButton;
+    resumeBox, openButton, advancedButton, buildToolsButton;
 HFONT uiFont;
-bool running = false;
+bool running = false, simpleMode = true, simpleStarted = false, needsBuildTools = false;
 fs::path packageRoot, activeOutput;
 std::wstring windowText(HWND controlHandle)
 {
@@ -466,7 +466,48 @@ HANDLE createOwnedBuildJob()
     return job;
 }
 
-void runPipeline(std::vector<std::wstring> inputValues, bool resume, bool remember)
+fs::path systemPowerShell()
+{
+    wchar_t windows[32768]{};
+    const UINT size = GetSystemWindowsDirectoryW(windows, 32768);
+    if (!size || size >= 32768) return {};
+    return fs::path(windows) / L"System32/WindowsPowerShell/v1.0/powershell.exe";
+}
+
+std::wstring powerShellLiteral(const std::wstring &value)
+{
+    std::wstring out = L"'";
+    for (wchar_t character : value)
+    {
+        out += character;
+        if (character == L'\'') out += character;
+    }
+    return out + L"'";
+}
+
+std::vector<std::wstring> makeQuickArguments(const std::vector<std::wstring> &values)
+{
+    const auto installer = packageRoot / L"native/installer";
+    const auto systemShell = systemPowerShell();
+    if (!systemShell.empty() && fs::path(values[PythonField]) == systemShell)
+    {
+        std::ifstream script(installer / L"Quick-Python.ps1", std::ios::binary);
+        if (!script) throw std::runtime_error("The portable Python setup script is missing.");
+        const std::string body{std::istreambuf_iterator<char>(script), {}};
+        if (body.empty() || body.size() > 16000)
+            throw std::runtime_error("The portable Python setup script is incomplete.");
+        return {values[PythonField], L"-NoProfile", L"-NonInteractive", L"-Command",
+                L"& {\r\n" + decodeUtf8(body) + L"\r\n} -InstallerDirectory " +
+                powerShellLiteral(installer.wstring()) + L" -GameFolder " +
+                powerShellLiteral(values[RetailField]) + L" -Output " +
+                powerShellLiteral(values[OutputField])};
+    }
+    return {values[PythonField], L"-u", L"-B",
+            (installer / L"Quick-Install-Venom.py").wstring(),
+            L"--game-folder", values[RetailField], L"--output", values[OutputField]};
+}
+
+void runPipeline(std::vector<std::wstring> inputValues, bool resume, bool remember, bool quick)
 {
     lastChildPid.store(0);
     lastChildCode.store(STILL_ACTIVE);
@@ -517,7 +558,9 @@ void runPipeline(std::vector<std::wstring> inputValues, bool resume, bool rememb
             DeleteProcThreadAttributeList(startup.lpAttributeList);
             throw std::runtime_error("Cannot restrict inherited handles");
         }
-        auto commandLine = makeCommandLine(makePipelineArguments(inputValues, resume));
+        auto arguments = quick ? makeQuickArguments(inputValues)
+                               : makePipelineArguments(inputValues, resume);
+        auto commandLine = makeCommandLine(arguments);
         auto environment = selfTestChildEnvironment();
         BOOL created = CreateProcessW(
             inputValues[PythonField].c_str(), commandLine.data(), nullptr, nullptr, TRUE,
@@ -711,7 +754,7 @@ void setInputsEnabled(bool enabled)
             EnableWindow(browseButtons[fieldIndex], enabled);
         }
     }
-    for (HWND controlHandle : {reviewButton, buildButton, loadButton, rememberBox, resumeBox})
+    for (HWND controlHandle : {reviewButton, buildButton, loadButton, rememberBox, resumeBox, advancedButton})
     {
         EnableWindow(controlHandle, enabled);
     }
@@ -761,7 +804,7 @@ void reviewAndStart(bool build)
                                     L"below. The game will not launch.");
         appendLog(L"\r\n[Starting selected Python and pinned build/install pipeline.]\r\n");
         ownedBuildThread = std::thread(runPipeline, inputValues, resume,
-                                       SendMessageW(rememberBox, BM_GETCHECK, 0, 0) == BST_CHECKED);
+                                       SendMessageW(rememberBox, BM_GETCHECK, 0, 0) == BST_CHECKED, false);
     }
     catch (const std::exception &error)
     {
@@ -778,6 +821,79 @@ void reviewAndStart(bool build)
         }
     }
 }
+fs::path findInstalledPython()
+{
+    wchar_t buffer[32768];
+    const DWORD count = SearchPathW(nullptr, L"python.exe", nullptr, 32768, buffer, nullptr);
+    if (count && count < 32768)
+    {
+        fs::path path(buffer);
+        auto text = path.wstring();
+        std::transform(text.begin(), text.end(), text.begin(), [](wchar_t ch) { return towlower(ch); });
+        if (text.find(L"windowsapps") == std::wstring::npos && fs::is_regular_file(path))
+            return path;
+    }
+    const DWORD size = GetEnvironmentVariableW(L"LOCALAPPDATA", buffer, 32768);
+    if (!size || size >= 32768) return {};
+    const auto base = fs::path(buffer) / L"Programs/Python";
+    std::error_code error;
+    for (const auto &child : fs::directory_iterator(base, error))
+    {
+        const auto exe = child.path() / L"python.exe";
+        if (fs::is_regular_file(exe, error)) return exe;
+    }
+    return {};
+}
+void startQuickInstall()
+{
+    if (running) return;
+    try
+    {
+        auto values = collectInputs();
+        const fs::path game(values[RetailField]);
+        if (!game.is_absolute() || !fs::is_directory(game))
+        {
+            SetWindowTextW(statusLabel, L"Choose the folder containing your extracted game files.");
+            SetFocus(browseButtons[RetailField]);
+            return;
+        }
+        auto interpreter = values[PythonField].empty() ? systemPowerShell() : fs::path(values[PythonField]);
+        if (values[PythonField].empty() && !fs::is_regular_file(interpreter))
+            interpreter = findInstalledPython();
+        if (interpreter.empty() || !fs::is_regular_file(interpreter))
+        {
+            SetWindowTextW(statusLabel, L"Setup could not start its runtime. Choose Python in Advanced.");
+            return;
+        }
+        SYSTEMTIME now;
+        GetLocalTime(&now);
+        wchar_t suffix[64];
+        swprintf_s(suffix, L"Venom-%04u%02u%02u-%02u%02u%02u-%03u", now.wYear, now.wMonth,
+                   now.wDay, now.wHour, now.wMinute, now.wSecond, now.wMilliseconds);
+        const auto output = packageRoot.parent_path() / L"Venom Builds" / suffix;
+        if (hasReparsePoint(output) || fs::exists(output))
+            throw std::runtime_error("Choose a private output folder in Advanced.");
+        values[PythonField] = interpreter.wstring();
+        values[OutputField] = output.wstring();
+        SetWindowTextW(fieldInputs[OutputField], output.c_str());
+        activeOutput = output;
+        running = true;
+        simpleStarted = true;
+        needsBuildTools = false;
+        setInputsEnabled(false);
+        SetWindowPos(mainWindow, nullptr, 0, 0, 740, 525,
+                     SWP_NOMOVE | SWP_NOZORDER | SWP_NOACTIVATE);
+        SetWindowTextW(statusLabel, L"Checking the game folder and build tools…");
+        appendLog(L"\r\n[Checking game files and preparing the installation.]\r\n");
+        ownedBuildThread = std::thread(runPipeline, values, false, false, true);
+    }
+    catch (const std::exception &error)
+    {
+        running = false;
+        setInputsEnabled(true);
+        SetWindowTextW(statusLabel, decodeUtf8(error.what()).c_str());
+    }
+}
 HWND createControl(const wchar_t *className, const wchar_t *caption, DWORD style, int id = 0)
 {
     auto controlHandle = CreateWindowExW(
@@ -788,6 +904,35 @@ HWND createControl(const wchar_t *className, const wchar_t *caption, DWORD style
 }
 void layoutControls(int width, int height)
 {
+    const bool basic = simpleMode && !uiSelfTest;
+    for (int i = 0; i < FieldCount; ++i)
+    {
+        const int visibility = !basic || i == RetailField ? SW_SHOW : SW_HIDE;
+        ShowWindow(fieldInputs[i], visibility);
+        ShowWindow(fieldLabels[i], visibility);
+        if (browseButtons[i]) ShowWindow(browseButtons[i], visibility);
+    }
+    for (HWND control : {reviewButton, loadButton, rememberBox, resumeBox})
+        ShowWindow(control, basic ? SW_HIDE : SW_SHOW);
+    ShowWindow(advancedButton, uiSelfTest ? SW_HIDE : SW_SHOW);
+    ShowWindow(progressLog, !basic || simpleStarted ? SW_SHOW : SW_HIDE);
+    ShowWindow(buildToolsButton, basic && needsBuildTools ? SW_SHOW : SW_HIDE);
+    std::error_code error;
+    ShowWindow(openButton, !basic || fs::is_directory(activeOutput, error) ? SW_SHOW : SW_HIDE);
+    if (basic)
+    {
+        MoveWindow(introductionLabel, 24, 20, width - 48, 56, TRUE);
+        MoveWindow(fieldLabels[RetailField], 24, 88, width - 48, 22, TRUE);
+        MoveWindow(fieldInputs[RetailField], 24, 114, width - 160, 28, TRUE);
+        MoveWindow(browseButtons[RetailField], width - 125, 114, 101, 28, TRUE);
+        MoveWindow(buildButton, 24, 162, 118, 32, TRUE);
+        MoveWindow(advancedButton, 154, 162, 110, 32, TRUE);
+        MoveWindow(buildToolsButton, 276, 162, 166, 32, TRUE);
+        MoveWindow(openButton, width - 184, 162, 160, 32, TRUE);
+        MoveWindow(statusLabel, 24, 211, width - 48, 42, TRUE);
+        MoveWindow(progressLog, 24, 257, width - 48, std::max(70, height - 281), TRUE);
+        return;
+    }
     MoveWindow(introductionLabel, 16, 12, width - 32, 40, TRUE);
     int y = 60, labelWidth = 330, editWidth = std::max(200, width - 460);
     for (int fieldIndex = 0; fieldIndex < FieldCount; ++fieldIndex)
@@ -808,6 +953,7 @@ void layoutControls(int width, int height)
     MoveWindow(reviewButton, 180, y, 150, 30, TRUE);
     MoveWindow(buildButton, 339, y, 175, 30, TRUE);
     MoveWindow(openButton, 523, y, 170, 30, TRUE);
+    MoveWindow(advancedButton, 705, y, 135, 30, TRUE);
     y += 38;
     MoveWindow(statusLabel, 16, y, width - 32, 36, TRUE);
     y += 40;
@@ -818,7 +964,7 @@ LRESULT CALLBACK windowProcedure(HWND windowHandle, UINT message, WPARAM wordPar
 {
     switch (message)
     {
-    case WM_CREATE:
+    case WM_CREATE: {
         mainWindow = windowHandle;
         uiFont = (HFONT)GetStockObject(DEFAULT_GUI_FONT);
         introductionLabel =
@@ -856,6 +1002,16 @@ LRESULT CALLBACK windowProcedure(HWND windowHandle, UINT message, WPARAM wordPar
         buildButton = createControl(L"BUTTON", L"Build and install", WS_TABSTOP | BS_DEFPUSHBUTTON,
                                     BuildCommandId);
         openButton = createControl(L"BUTTON", L"Open output folder", WS_TABSTOP, OpenOutputId);
+        advancedButton = createControl(L"BUTTON", L"Advanced", WS_TABSTOP, AdvancedId);
+        buildToolsButton = createControl(L"BUTTON", L"Get C++ Build Tools", WS_TABSTOP, BuildToolsId);
+        if (!uiSelfTest)
+        {
+            SetWindowTextW(introductionLabel,
+                L"Select the folder containing your extracted Fight Night Champion files. "
+                L"Setup finds your update and DLC and downloads missing portable build tools.");
+            SetWindowTextW(fieldLabels[RetailField], L"Game folder");
+            SetWindowTextW(buildButton, L"Install");
+        }
         statusLabel = createControl(L"STATIC",
                                     L"Select inputs, then review command. Exact owned-media "
                                     L"validation is performed by the backend.",
@@ -864,12 +1020,18 @@ LRESULT CALLBACK windowProcedure(HWND windowHandle, UINT message, WPARAM wordPar
                                     WS_BORDER | WS_VSCROLL | WS_HSCROLL | ES_MULTILINE |
                                         ES_READONLY | ES_AUTOVSCROLL | ES_AUTOHSCROLL);
         SendMessageW(progressLog, EM_SETLIMITTEXT, 260000, 0);
+        if (!uiSelfTest)
+            SetWindowTextW(statusLabel, L"Install files go into Venom Builds beside the extracted installer.");
+        RECT bounds{};
+        GetClientRect(windowHandle, &bounds);
+        layoutControls(bounds.right, bounds.bottom);
         return 0;
+    }
     case WM_SIZE:
         layoutControls(LOWORD(longParameter), HIWORD(longParameter));
         return 0;
     case WM_GETMINMAXINFO:
-        ((MINMAXINFO *)longParameter)->ptMinTrackSize = {960, 800};
+        ((MINMAXINFO *)longParameter)->ptMinTrackSize = simpleMode && !uiSelfTest ? POINT{650, 325} : POINT{960, 800};
         return 0;
     case WM_COMMAND: {
         if (uiSelfTest)
@@ -884,7 +1046,9 @@ LRESULT CALLBACK windowProcedure(HWND windowHandle, UINT message, WPARAM wordPar
             auto selectedPath = selectPath(
                 fields[fieldIndex].folder,
                 fieldIndex == OutputField ? L"Choose parent for a NEW private Venom build folder"
-                                          : fields[fieldIndex].label);
+                                          : simpleMode && fieldIndex == RetailField
+                                              ? L"Choose your extracted Fight Night Champion folder"
+                                              : fields[fieldIndex].label);
             if (!selectedPath.empty())
             {
                 if (fieldIndex == OutputField)
@@ -907,7 +1071,29 @@ LRESULT CALLBACK windowProcedure(HWND windowHandle, UINT message, WPARAM wordPar
         }
         else if (controlId == BuildCommandId)
         {
-            reviewAndStart(true);
+            if (simpleMode) startQuickInstall();
+            else reviewAndStart(true);
+        }
+        else if (controlId == BuildToolsId && !running)
+        {
+            ShellExecuteW(windowHandle, L"open",
+                L"https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022",
+                nullptr, nullptr, SW_SHOWNORMAL);
+        }
+        else if (controlId == AdvancedId && !running)
+        {
+            simpleMode = !simpleMode;
+            SetWindowTextW(advancedButton, simpleMode ? L"Advanced" : L"Simple setup");
+            SetWindowTextW(buildButton, simpleMode ? L"Install" : L"Build and install");
+            SetWindowTextW(fieldLabels[RetailField], simpleMode ? L"Game folder" : fields[RetailField].label);
+            SetWindowTextW(introductionLabel, simpleMode
+                ? L"Select the folder containing your extracted Fight Night Champion files."
+                : L"Choose the owned files, build tools and installation output.");
+            SetWindowPos(mainWindow, nullptr, 0, 0, simpleMode ? 740 : 1120,
+                         simpleMode ? (simpleStarted ? 525 : 325) : 900, SWP_NOMOVE | SWP_NOZORDER | SWP_NOACTIVATE);
+            RECT bounds{};
+            GetClientRect(windowHandle, &bounds);
+            layoutControls(bounds.right, bounds.bottom);
         }
         else if (controlId == LoadInputsId)
         {
@@ -943,11 +1129,23 @@ LRESULT CALLBACK windowProcedure(HWND windowHandle, UINT message, WPARAM wordPar
         }
         running = false;
         setInputsEnabled(true);
-        SetWindowTextW(statusLabel, wordParameter == 0
-                                        ? L"Build/install exited 0 with receipt present. Runtime "
-                                          L"and release acceptance require separate verification."
-                                        : L"Build/install failed or completion unverified. "
-                                          L"Preserve output and inspect logs.");
+        if (simpleMode && !uiSelfTest)
+        {
+            needsBuildTools = wordParameter == 78;
+            SetWindowTextW(statusLabel, wordParameter == 0
+                ? L"Installation complete. Open the output folder to find your game launcher."
+                : needsBuildTools ? L"Install Microsoft C++ Build Tools, then click Install again."
+                                  : L"Setup needs attention. See the details below.");
+            RECT bounds{};
+            GetClientRect(windowHandle, &bounds);
+            layoutControls(bounds.right, bounds.bottom);
+        }
+        else
+        {
+            SetWindowTextW(statusLabel, wordParameter == 0
+                ? L"Build and install complete."
+                : L"Build or install failed. See the details below.");
+        }
         if (uiSelfTest)
         {
             finishUiSelfTest(static_cast<DWORD>(wordParameter));
@@ -1194,8 +1392,9 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int show)
     RegisterClassExW(&windowClass);
     HWND windowHandle = CreateWindowExW(
         uiSelfTest ? WS_EX_NOACTIVATE : 0, windowClass.lpszClassName,
-        L"Fight Night Champion Venom - local build and install", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT,
-        CW_USEDEFAULT, 1120, 900, nullptr, nullptr, instance, nullptr);
+        L"Fight Night Champion Venom - Setup", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT,
+        CW_USEDEFAULT, uiSelfTest ? 1120 : 740, uiSelfTest ? 900 : 325,
+        nullptr, nullptr, instance, nullptr);
     if (!windowHandle)
     {
         return 1;
