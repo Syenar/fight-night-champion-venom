@@ -5,6 +5,8 @@ param(
     [switch]$CheckOnly
 )
 $ErrorActionPreference = 'Stop'
+# A parent PowerShell 7 session can supply an incompatible module search path.
+$env:PSModulePath = Join-Path $PSHOME 'Modules'
 $package = [IO.Path]::GetFullPath($InstallerDirectory)
 $game = [IO.Path]::GetFullPath($GameFolder)
 $outputPath = [IO.Path]::GetFullPath($Output)
