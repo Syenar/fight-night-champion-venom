@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import os
 from pathlib import Path, PureWindowsPath
 from hashlib import sha256
 import shutil
@@ -10,6 +11,7 @@ import sys
 from tempfile import TemporaryDirectory
 
 from disc_image import XboxDisc
+from display_host import patch_launchers, upgrade_runtime
 from save_upgrade import (
     LOCAL_INSTALL_RECEIPT, PreviousOutputRequired, check_path,
     file_hash, prepare_saves, previous_profile, read_json,
@@ -41,6 +43,51 @@ def leaf_path(value):
     if len(path.parts) != 1 or path.anchor or value in {".", ".."}:
         raise ValueError(f"Invalid installed filename: {value}")
     return value
+
+
+WINDOW_MODES = ("Windowed", "Borderless", "Fullscreen")
+
+
+def supported_modes(powershell, launcher):
+    # Parse the installed script without running it to detect a mode-capable build.
+    probe = """
+$tokens = $null
+$errors = $null
+$ast = [System.Management.Automation.Language.Parser]::ParseFile(
+    $env:VENOM_VALIDATE_LAUNCHER, [ref]$tokens, [ref]$errors
+)
+if ($errors.Count) { exit 1 }
+if ($ast.ParamBlock.Parameters.Name.VariablePath.UserPath -contains 'WindowMode') {
+    Write-Output 'WindowModes'
+}
+"""
+    mode_probe = subprocess.run(
+        [str(powershell), "-NoProfile", "-NonInteractive", "-Command", probe],
+        env=dict(os.environ, VENOM_VALIDATE_LAUNCHER=str(launcher)),
+        check=True, capture_output=True, text=True,
+    )
+    return WINDOW_MODES if mode_probe.stdout.strip() == "WindowModes" else ()
+
+def check_installed_launcher(powershell, launcher):
+    modes = supported_modes(powershell, launcher)
+    verify = [str(powershell), "-NoProfile", "-NonInteractive", "-File", str(launcher),
+              "-InputBackend", "xinput", "-CheckOnly"]
+    for mode in modes or (None,):
+        flags = ["-WindowMode", mode] if mode is not None else []
+        subprocess.run(verify + flags, check=True)
+    return modes
+
+
+def write_play_commands(stage, powershell, modes):
+    base = (
+        '@echo off\n"' + str(powershell) +
+        '" -NoProfile -File "%~dp0installed\\Start-Installed-TU2.ps1" -InputBackend xinput'
+    )
+    (stage / "Play Venom.cmd").write_text(base + "\n", encoding="utf-8")
+    for mode in modes:
+        (stage / f"Play Venom ({mode}).cmd").write_text(
+            base + f" -WindowMode {mode}\n", encoding="utf-8",
+        )
 
 
 def install(args):
@@ -115,6 +162,18 @@ def install(args):
             leaf_path(name)
             checked_copy(runtime / name, copied_receipt.parent / name, expected)
 
+        upgraded_host = False
+        if not supported_modes(powershell, installed / "Start-Installed-TU2.ps1"):
+            name = "rexruntimerd.dll"
+            digest = upgrade_runtime(source_build, runtime_files[name],
+                                     copied_receipt.parent / name, Path(temporary) / "display-build")
+            runtime_files[name] = digest
+            build["runtimeFiles"][name] = digest
+            write_record(copied_receipt, build)
+            manifest["InstalledReceiptHashes"]["RuntimeReceipt"] = file_hash(copied_receipt)
+            patch_launchers(installed, manifest["InstalledFiles"])
+            upgraded_host = True
+
         print("Preserving the selected profile and installing owned DLC.", flush=True)
         migration = prepare_saves(stage, source_build)
         for item in dlc_items:
@@ -131,9 +190,7 @@ def install(args):
         paths.update({name: str(stage / relative) for name, relative in destination_paths.items()})
         write_record(manifest_path, manifest)
         print("Checking the installed launcher with controller input enabled.", flush=True)
-        subprocess.run([str(powershell), "-NoProfile", "-NonInteractive", "-File",
-                        str(installed / "Start-Installed-TU2.ps1"), "-InputBackend", "xinput",
-                        "-CheckOnly"], check=True)
+        modes = check_installed_launcher(powershell, installed / "Start-Installed-TU2.ps1")
 
         paths.update({name: str(output / relative) for name, relative in destination_paths.items()})
         write_record(manifest_path, manifest)
@@ -143,11 +200,9 @@ def install(args):
         write_record(stage / "build-install-receipt.json", {
             "status": "PASS_EXISTING_BUILD_INSTALL", "runtimeFiles": runtime_files,
             "sourceBuild": str(source_build), "saveUpgrade": migration, "compiled": False,
+            "windowModes": modes, "hostRuntimeRebuilt": upgraded_host,
         })
-        (stage / "Play Venom.cmd").write_text(
-            '@echo off\n"' + str(powershell) + '" -NoProfile -File "%~dp0installed\\Start-Installed-TU2.ps1" -InputBackend xinput\n',
-            encoding="utf-8",
-        )
+        write_play_commands(stage, powershell, modes)
         check_path(output)
         if output.exists():
             raise ValueError("The selected install destination already exists.")

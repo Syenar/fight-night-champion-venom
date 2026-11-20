@@ -1,4 +1,4 @@
-# Venom local-copy installer v0.1.5
+# Venom local-copy installer v0.1.6
 
 This Windows installer copies an existing Venom build already installed on your PC. Keep your game files, Title Update 2, helper tools and verified installation available. This download contains Setup and its source.
 
@@ -11,3 +11,9 @@ This Windows installer copies an existing Venom build already installed on your 
 Setup checks the ISO against your existing build, copies its executable and runtime, and keeps game data and shared tools at their existing locations. It copies saves and verified DLC into a separate profile and leaves the original installation available.
 
 The first run may require internet access for hash-checked portable Python and PowerShell. A first-time install with only an ISO requires an existing Venom installation first.
+
+## Display modes
+
+After installation, choose Play Venom (Windowed).cmd, Play Venom (Borderless).cmd, or Play Venom (Fullscreen).cmd. Alt+Enter toggles windowed and borderless fullscreen. All three launchers use XInput.
+
+Setup copies the display runtime when the selected build already supports these modes. For an older supported build, select the original build folder with its retained SDK build files and compiler tools. Setup builds only the shared SDL host runtime locally and copies the existing game executable unchanged. The archive includes the display source and does not redistribute the resulting runtime, game files, or saves.
