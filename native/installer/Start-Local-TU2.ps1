@@ -236,7 +236,8 @@ try {
         $locked = $true
     }
     if (!$locked) { throw 'A native launch is already in progress.' }
-    $old = @(Get-Process -Name 'venom*','xenia*','rexglue*' -ErrorAction SilentlyContinue)
+    $old = @(Get-Process -Name 'venom*','xenia*','rexglue*' -ErrorAction SilentlyContinue |
+        Where-Object { $_.ProcessName -ne 'VenomInstaller' })
     if ($old.Count) { throw "Close the previous game process before launching TU2 (PID $($old.Id -join ', '))." }
 
     $prepared = Initialize-TU2RunAssets
