@@ -29,7 +29,7 @@
   "stacks": {
     "runtime": {
       "patch": "runtime/sdk.patch",
-      "patchSha256": "cf85ec4764e685d7e8619bcc8356122ecbdb86c89b52b07e470239ef75fc3af1",
+      "patchSha256": "9510b6f80890e633c949b2e98c1843ef8dc29f3a4a9cad57d4ed8b8d51a600fd",
       "files": [
         {
           "path": "CMakeLists.txt",
@@ -76,7 +76,7 @@
         {
           "path": "include/rex/ppc/context.h",
           "beforeSha256": "5f84d78c38cf626cf4c8107293cd9824f6e8cf81225f201b608505698273dc36",
-          "afterSha256": "4662216e7cfed2aff046c7c88afee3cd3c95bb358e7a02ea93182d63ec6c6bb2",
+          "afterSha256": "7cf0ac39b3fb243ae2aadac10c5acf1fab82f2a8fcd744e65568b65aa478a11d",
           "newFile": false
         },
         {
@@ -118,7 +118,7 @@
         {
           "path": "src/codegen/builders/vector.cpp",
           "beforeSha256": "b3528ed4a7e0642e2f390cf3d745e18d6e496f14d1707afef6f7049bb84fb39d",
-          "afterSha256": "b6a0d30c5ab6c921c66e8379ebde99a0dbd3b5f75e567441dc77032a0ff6b7c7",
+          "afterSha256": "46e77286010e51cd643c17553bcb2ea03d1fbbfb69a57e8682285642b383493d",
           "newFile": false
         },
         {
@@ -317,6 +317,12 @@
           "path": "thirdparty/sdl3/src/SDL_venom_finalization.h",
           "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
           "afterSha256": "ee679c664f7f888d7923af36bf31d13b7c625c5b039e1cf0749e20cf4acb26c4",
+          "newFile": true
+        },
+        {
+          "path": "include/rex/ppc/vector_minmax.h",
+          "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "afterSha256": "ae982ad1d5ddbf638a44c9aba64690f1c13dd97090c65c9d58fc90266b001d55",
           "newFile": true
         }
       ],

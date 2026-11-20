@@ -662,11 +662,12 @@
  };
 --- a/include/rex/ppc/context.h
 +++ b/include/rex/ppc/context.h
-@@ -19,6 +19,7 @@
+@@ -19,6 +19,8 @@
  
  #include <rex/platform/fpscr.h>
  #include <rex/ppc/func.h>
 +#include <rex/ppc/vector_fma.h>
++#include <rex/ppc/vector_minmax.h>
  #include <rex/types.h>
  
  #include <simde/x86/avx.h>
@@ -1092,7 +1093,29 @@
        "simde_mm_castsi128_ps(simde_mm_set1_epi32(int(0x80000000)))));",
        ctx.v(ctx.insn.operands[0]), ctx.v(ctx.insn.operands[1]), ctx.v(ctx.insn.operands[2]),
        ctx.v(ctx.insn.operands[3]));
-@@ -148,10 +148,16 @@
+@@ -115,13 +115,19 @@
+ 
+ bool build_vmaxfp(BuilderContext& ctx) {
+   ctx.emit_set_flush_mode(true);
+-  ctx.emit_vec_fp_binary("max");
++  ctx.println(
++      "\tsimde_mm_store_ps({}.f32, rex::ppc::vector_max_fp(simde_mm_load_ps({}.f32), "
++      "simde_mm_load_ps({}.f32)));",
++      ctx.v(ctx.insn.operands[0]), ctx.v(ctx.insn.operands[1]), ctx.v(ctx.insn.operands[2]));
+   return true;
+ }
+ 
+ bool build_vminfp(BuilderContext& ctx) {
+   ctx.emit_set_flush_mode(true);
+-  ctx.emit_vec_fp_binary("min");
++  ctx.println(
++      "\tsimde_mm_store_ps({}.f32, rex::ppc::vector_min_fp(simde_mm_load_ps({}.f32), "
++      "simde_mm_load_ps({}.f32)));",
++      ctx.v(ctx.insn.operands[0]), ctx.v(ctx.insn.operands[1]), ctx.v(ctx.insn.operands[2]));
+   return true;
+ }
+ 
+@@ -148,10 +154,16 @@
    ctx.emit_set_flush_mode(true);
    ctx.println("\t{{");
    ctx.println("\t\tsimde__m128 x = simde_mm_load_ps({}.f32);", vA);
@@ -1112,7 +1135,7 @@
    // 4th-order minimax polynomial for 2^f, f in [0,1), ~12-bit accuracy
    ctx.println("\t\tsimde__m128 p = simde_mm_set1_ps(1.8775767e-3f);");
    ctx.println("\t\tp = simde_mm_add_ps(simde_mm_mul_ps(p, f), simde_mm_set1_ps(8.9893397e-3f));");
-@@ -162,10 +168,14 @@
+@@ -162,10 +174,14 @@
    // Construct 2^n by adding n to the IEEE 754 exponent bias and shifting into place
    ctx.println("\t\tsimde__m128i exp_bits = simde_mm_slli_epi32(");
    ctx.println("\t\t\tsimde_mm_add_epi32(simde_mm_cvttps_epi32(n), simde_mm_set1_epi32(127)), 23);");
@@ -1131,7 +1154,7 @@
    ctx.println("\t}}");
    return true;
  }
-@@ -1100,12 +1110,13 @@
+@@ -1100,12 +1116,13 @@
    // instead of 0xFF.
    for (size_t i = 0; i < 8; i++) {
      ctx.println("\t{}.u8[{}] = {}.u16[{}] > 0xFF ? 0xFF : (uint8_t){}.u16[{}];",
@@ -1147,7 +1170,7 @@
    return true;
  }
  
-@@ -1128,12 +1139,13 @@
+@@ -1128,12 +1145,13 @@
    // Saturate each u32 to [0, 0xFFFF], then pack to u16
    for (size_t i = 0; i < 4; i++) {
      ctx.println("\t{}.u16[{}] = {}.u32[{}] > 0xFFFF ? 0xFFFF : (uint16_t){}.u32[{}];",
@@ -5191,3 +5214,34 @@
 +}
 +#endif
 \ No newline at end of file
+--- /dev/null
++++ b/include/rex/ppc/vector_minmax.h
+@@ -0,0 +1,28 @@
++#pragma once
++
++#include <simde/x86/sse.h>
++
++namespace rex::ppc {
++namespace detail {
++inline simde__m128 select_fp_lanes(simde__m128 mask, simde__m128 yes, simde__m128 no) {
++  return simde_mm_or_ps(simde_mm_and_ps(mask, yes), simde_mm_andnot_ps(mask, no));
++}
++
++inline simde__m128 vmx_propagate_nan(simde__m128 a, simde__m128 b, simde__m128 ordered) {
++  const auto nan = select_fp_lanes(simde_mm_cmpunord_ps(a, a), a, b);
++  return select_fp_lanes(simde_mm_cmpunord_ps(a, b), nan, ordered);
++}
++}  // namespace detail
++
++// VMX keeps the first NaN operand and orders -0 below +0. SSE min/max
++// select the second operand for these cases, so evaluate both orders.
++inline simde__m128 vector_max_fp(simde__m128 a, simde__m128 b) {
++  const auto ordered = simde_mm_and_ps(simde_mm_max_ps(a, b), simde_mm_max_ps(b, a));
++  return detail::vmx_propagate_nan(a, b, ordered);
++}
++
++inline simde__m128 vector_min_fp(simde__m128 a, simde__m128 b) {
++  const auto ordered = simde_mm_or_ps(simde_mm_min_ps(a, b), simde_mm_min_ps(b, a));
++  return detail::vmx_propagate_nan(a, b, ordered);
++}
++}  // namespace rex::ppc

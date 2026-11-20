@@ -445,7 +445,7 @@ def main():
             generated / 'codegen.partition.json',
             (NATIVE / 'title/codegen.partition.json').read_bytes(),
         )
-        execute('sdk-owned-codegen', [sdk_cli, 'codegen', manifest.name], qualification)
+        execute('sdk-owned-codegen', [sdk_cli, 'codegen', manifest.name, "--ignore-stamp"], qualification)
         for name, expected_hash in expected_sources.items():
             expect(generated / name, expected_hash)
         require(len(expected_sources) == 431, 'Expected 431 qualified codegen materials')

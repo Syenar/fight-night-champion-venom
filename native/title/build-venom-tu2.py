@@ -110,7 +110,7 @@ def main():
     seed = PACKAGE / "codegen.partition.json"
     shutil.copyfile(seed, generated / seed.name)
     print("Applying TU2 and generating title sources locally.", flush=True)
-    execute([str(args.rexglue), "codegen", manifest.name], project, env, logs / "codegen.log")
+    execute([str(args.rexglue), "codegen", manifest.name, "--ignore-stamp"], project, env, logs / "codegen.log")
     execute([sys.executable, "-B", str(PACKAGE / "apply-author-hooks.py"), str(generated)],
             project, env, logs / "author-hooks.log")
 
