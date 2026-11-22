@@ -1,0 +1,26 @@
+--- a/runtime/source/include/rex/ui/presenter.h
++++ b/runtime/source/include/rex/ui/presenter.h
+@@
+-  // Bounded hold for brief inactive guest-output transitions.
+-  uint32_t guest_output_inactive_hold_frames_ = 0;
+ 
+--- a/runtime/source/src/ui/presenter.cpp
++++ b/runtime/source/src/ui/presenter.cpp
+@@
+ bool Presenter::RefreshGuestOutput(
+     uint32_t frontbuffer_width, uint32_t frontbuffer_height, uint32_t display_aspect_ratio_x,
+     uint32_t display_aspect_ratio_y,
+     std::function<bool(GuestOutputRefreshContext& context)> refresher) {
++  static thread_local uint32_t inactive_hold_frames = 0;
+@@
+-    guest_output_inactive_hold_frames_ = 0;
++    inactive_hold_frames = 0;
+@@
+-        guest_output_inactive_hold_frames_ < kMaxInactiveHoldFrames) {
+-      ++guest_output_inactive_hold_frames_;
++        inactive_hold_frames < kMaxInactiveHoldFrames) {
++      ++inactive_hold_frames;
+       return true;
+     }
+-    guest_output_inactive_hold_frames_ = 0;
++    inactive_hold_frames = 0;
